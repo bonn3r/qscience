@@ -1,7 +1,18 @@
-Editorial by HTML5 UP
-html5up.net | @ajlkn
-Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+Website criado por por: Jimi.7z (Willian Bonner) em 29/06/2026
+Última atualização:
+Versão: 1.0
 
+O modelo utilizado como base foi criado por:
+
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+
+E editado por Willian Bonner.
+
+===========================================================================================
+= Original READ ME                                                                        =
+===========================================================================================
 
 Say hello to Editorial, a blog/magazine-ish template built around a toggleable "locking"
 sidebar (scroll down to see what I mean) and an accordion-style menu. Not the usual landing
