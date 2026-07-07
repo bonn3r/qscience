@@ -1,0 +1,40 @@
+/*
+	Modelo Editorial, design de HTML5 UP.
+	Fonte: html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+	
+	Criado por: Jimi.7z (Willian Bonner) em 29/06/2026
+	Última atualização: 
+	Arquivo de imports do css, na ordem correta (sugerida pela IA DeepSeek)
+	Versão: 1.0
+*/
+
+@import url(fontawesome-all.min.css);
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,400italic,600italic|Roboto+Slab:400,700");
+@import url("reset.css");
+@import url("base.css");
+@import url("grid.css");
+@import url("layout.css");
+@import url("components.css");
+@import url("modules.css");
+@import url("menu.css");
+@import url("utilities.css");
+
+/* ============================================================
+   Cabeçalho fixo no topo ao rolar (sticky)
+   ============================================================ */
+
+#header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #ffffff;          /* fundo branco para não ver o conteúdo atrás */
+    padding-top: 2em;             /* ajuste o padding conforme necessário */
+    padding-bottom: 1em;
+    border-bottom: solid 4.5px #ad0000; /* mantém a borda vermelha */
+}
+
+/* Ajuste o padding do conteúdo principal para não ficar escondido atrás do header */
+#main > .inner {
+    padding-top: 1em;            /* valor padrão era 6em, mas agora o header é sticky */
+}
