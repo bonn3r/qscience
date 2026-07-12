@@ -1,0 +1,512 @@
+/*
+	Modelo Editorial, design de HTML5 UP.
+	Fonte: html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+	
+	Criado por: Jimi.7z (Willian Bonner) em 29/06/2026
+	Última atualização: 04/07/2026
+	Arquivo: layout - contém wrapper, main, side bar, header, footer, banner e estilos associados.
+	Versão: 3.1 - Correção do ajuste do conteúdo com classe no wrapper.
+*/
+
+/* ======================================================================= */
+/* WRAPPER – base flex, com transição no padding                          */
+/* ======================================================================= */
+#wrapper {
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -moz-flex-direction: row-reverse;
+  -webkit-flex-direction: row-reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+  min-height: 100vh;
+  -moz-transition: padding-left 0.5s ease;
+  -webkit-transition: padding-left 0.5s ease;
+  -ms-transition: padding-left 0.5s ease;
+  transition: padding-left 0.5s ease;
+  padding-left: 26em; /* espaço para a sidebar aberta */
+}
+
+/* Quando o menu está fechado, o conteúdo ocupa toda a largura */
+#wrapper.menu-closed {
+  padding-left: 0;
+}
+
+/* ======================================================================= */
+/* MAIN – agora usa largura total dentro do wrapper                       */
+/* ======================================================================= */
+#main {
+  -moz-flex-grow: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-grow: 1;
+  flex-grow: 1;
+  -moz-flex-shrink: 1;
+  -webkit-flex-shrink: 1;
+  -ms-flex-shrink: 1;
+  flex-shrink: 1;
+  width: 100%;
+  /* sem margem fixa – o padding do wrapper controla o recuo */
+}
+
+#main > .inner {
+  padding: 0 6em 0.1em 6em;
+  margin: 0 auto;
+  max-width: 110em;
+}
+#main > .inner > section {
+  padding: 6em 0 4em 0;
+  border-top: solid 2px rgba(210, 215, 217, 0.75);
+}
+#main > .inner > section:first-of-type {
+  border-top: 0 !important;
+}
+
+/* ======================================================================= */
+/* SIDEBAR – FIXA EM TODOS OS TAMANHOS                                   */
+/* ======================================================================= */
+#sidebar {
+  -moz-flex-grow: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-grow: 0;
+  flex-grow: 0;
+  -moz-flex-shrink: 0;
+  -webkit-flex-shrink: 0;
+  -ms-flex-shrink: 0;
+  flex-shrink: 0;
+  -moz-transition: left 0.5s ease, box-shadow 0.5s ease;
+  -webkit-transition: left 0.5s ease, box-shadow 0.5s ease;
+  -ms-transition: left 0.5s ease, box-shadow 0.5s ease;
+  transition: left 0.5s ease, box-shadow 0.5s ease;
+  background-color: #f5f6f7;
+  font-size: 0.9em;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 26em;
+  z-index: 10000;
+  box-shadow: 0 0 5em 0 rgba(0, 0, 0, 0.175);
+}
+
+/* Estado FECHADO */
+#sidebar.inactive {
+  left: -26em;
+  box-shadow: none;
+}
+
+/* Inner da sidebar (com rolagem interna) */
+#sidebar > .inner {
+  -webkit-overflow-scrolling: touch;
+  padding: 2.22222em 2.22222em 2.44444em 2.22222em;
+  position: relative;
+  width: 26em;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+#sidebar > .inner:after {
+  content: '';
+  display: block;
+  height: 4em;
+  width: 100%;
+}
+#sidebar > .inner > * {
+  border-bottom: solid 2px rgba(210, 215, 217, 0.75);
+  margin: 0 0 3.5em 0;
+  padding: 0 0 3.5em 0;
+}
+#sidebar > .inner > * > :last-child {
+  margin-bottom: 0;
+}
+#sidebar > .inner > *:last-child {
+  border-bottom: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+#sidebar > .inner > .alt {
+  background-color: #eff1f2;
+  border-bottom: 0;
+  margin: -2.22222em 0 4.44444em -2.22222em;
+  padding: 2.22222em;
+  width: calc(100% + 4.44444em);
+}
+
+/* ======================================================================= */
+/* TOGGLE (HAMBÚRGUER / X) – POSICIONADO NA BORDA DIREITA DA SIDEBAR      */
+/* ======================================================================= */
+#sidebar .toggle {
+  text-decoration: none;
+  -moz-transition: left 0.5s ease;
+  -webkit-transition: left 0.5s ease;
+  -ms-transition: left 0.5s ease;
+  transition: left 0.5s ease;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  border: 0;
+  display: block;
+  height: 4.5em;
+  line-height: 4.5em;
+  outline: 0;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  text-indent: -10em;
+  white-space: nowrap;
+  top: 1em;
+  width: 4.5em;
+  z-index: 10001;
+  left: 26em;
+}
+
+/* Ícone base – hambúrguer cinza */
+#sidebar .toggle:before {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+  text-transform: none !important;
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  content: '\f0c9';
+  font-size: 1.5rem;
+  height: inherit;
+  left: 0;
+  line-height: inherit;
+  position: absolute;
+  text-indent: 0;
+  top: 0;
+  width: inherit;
+  color: #85939e;
+  transition: transform 0.3s ease, color 0.3s ease, opacity 0.3s ease;
+  transform: scale(1) rotate(0deg);
+  opacity: 1;
+}
+
+#sidebar .toggle:hover:before {
+  transform: scale(1.2) rotate(0deg);
+  color: #ad0000;
+  opacity: 1;
+}
+
+#sidebar:not(.inactive) .toggle:before {
+  content: '\f00d';
+  color: #85939e;
+  transform: rotate(90deg) scale(1);
+  opacity: 1;
+}
+
+#sidebar:not(.inactive) .toggle:hover:before {
+  transform: rotate(90deg) scale(1.2);
+  color: #ad0000;
+}
+
+/* ======================================================================= */
+/* SEARCH (dentro da sidebar)                                             */
+/* ======================================================================= */
+#search form {
+  text-decoration: none;
+  position: relative;
+}
+#search form:before {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+  text-transform: none !important;
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  -moz-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  -ms-transform: scaleX(-1);
+  transform: scaleX(-1);
+  color: #7f888f;
+  content: '\f002';
+  cursor: default;
+  display: block;
+  font-size: 1.5em;
+  height: 2em;
+  line-height: 2em;
+  opacity: 0.325;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+  width: 2em;
+}
+#search form input[type="text"] {
+  padding-right: 2.75em;
+}
+
+/* ======================================================================= */
+/* BREAKPOINTS                                                             */
+/* ======================================================================= */
+
+/* 1680px – Sidebar 24em */
+@media screen and (max-width: 1680px) {
+  #sidebar {
+    width: 24em;
+  }
+  #sidebar.inactive {
+    left: -24em;
+  }
+  #sidebar > .inner {
+    padding: 1.66667em 1.66667em 1.33333em 1.66667em;
+    width: 24em;
+  }
+  #sidebar > .inner > .alt {
+    margin: -1.66667em 0 3.33333em -1.66667em;
+    padding: 1.66667em;
+    width: calc(100% + 3.33333em);
+  }
+  #sidebar .toggle {
+    height: 4em;
+    line-height: 4em;
+    width: 4em;
+    left: 24em;
+    top: 1em;
+  }
+  #sidebar .toggle:before {
+    font-size: 1.3rem;
+  }
+  #wrapper {
+    padding-left: 24em;
+  }
+  #wrapper.menu-closed {
+    padding-left: 0;
+  }
+}
+
+/* 1280px – Sidebar 26em (padrão) – apenas ajustes de espaçamento */
+@media screen and (max-width: 1280px) {
+  #sidebar {
+    width: 26em;
+  }
+  #sidebar.inactive {
+    left: -26em;
+  }
+  #sidebar > .inner {
+    width: 26em;
+  }
+  #sidebar .toggle {
+    height: 4em;
+    line-height: 4em;
+    width: 4em;
+    left: 26em;
+    top: 0.5em;
+  }
+  #sidebar .toggle:before {
+    font-size: 1.3rem;
+  }
+  #wrapper {
+    padding-left: 26em;
+  }
+  #wrapper.menu-closed {
+    padding-left: 0;
+  }
+  body.is-preload #sidebar {
+    display: none;
+  }
+}
+
+/* 736px (mobile) – Sidebar 22em */
+@media screen and (max-width: 736px) {
+  #sidebar {
+    width: 22em;
+  }
+  #sidebar.inactive {
+    left: -22em;
+  }
+  #sidebar > .inner {
+    width: 22em;
+  }
+  #sidebar .toggle {
+    height: 3.5em;
+    line-height: 3.5em;
+    width: 3.5em;
+    left: 22em;
+    top: 0.5em;
+  }
+  #sidebar .toggle:before {
+    font-size: 1.1rem;
+    color: #7f888f;
+  }
+  #sidebar .toggle:after {
+    background: rgba(222, 225, 226, 0.75);
+    border-radius: 0.375em;
+    content: '';
+    height: 3.5em;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 3.5em;
+    z-index: -1;
+  }
+  #wrapper {
+    padding-left: 22em;
+  }
+  #wrapper.menu-closed {
+    padding-left: 0;
+  }
+  /* Ajustes no conteúdo principal para mobile */
+  #main > .inner {
+    padding: 0 2em 0.1em 2em;
+  }
+  #main > .inner > section {
+    padding: 3em 0 1em 0;
+  }
+}
+
+/* ======================================================================= */
+/* HEADER, BANNER, FOOTER (sem alterações)                                */
+/* ======================================================================= */
+
+#header {
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  border-bottom: solid 5px #ad0000;
+  padding: 6em 0 1em 0;
+  position: relative;
+}
+#header > * {
+  -moz-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  margin-bottom: 0;
+}
+#header .logo {
+  border-bottom: 0;
+  color: inherit;
+  font-family: "Roboto Slab", serif;
+  font-size: 1.125em;
+}
+#header .icons {
+  text-align: right;
+}
+@media screen and (max-width: 1680px) {
+  #header {
+    padding-top: 5em;
+  }
+}
+@media screen and (max-width: 736px) {
+  #header {
+    padding-top: 6.5em;
+  }
+  #header .logo {
+    font-size: 1.25em;
+    margin: 0;
+  }
+  #header .icons {
+    height: 5em;
+    line-height: 5em;
+    position: absolute;
+    right: -0.5em;
+    top: 0;
+  }
+}
+
+#banner {
+  padding: 6em 0 4em 0;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+}
+#banner h1 {
+  margin-top: -0.125em;
+}
+#banner .content {
+  -moz-flex-grow: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-grow: 1;
+  flex-grow: 1;
+  -moz-flex-shrink: 1;
+  -webkit-flex-shrink: 1;
+  -ms-flex-shrink: 1;
+  flex-shrink: 1;
+  width: 50%;
+}
+#banner .image {
+  -moz-flex-grow: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-grow: 0;
+  flex-grow: 0;
+  -moz-flex-shrink: 0;
+  -webkit-flex-shrink: 0;
+  -ms-flex-shrink: 0;
+  flex-shrink: 0;
+  display: block;
+  margin: 0 0 2em 4em;
+  width: 50%;
+}
+#banner .image img {
+  height: 100%;
+  -moz-object-fit: cover;
+  -webkit-object-fit: cover;
+  -ms-object-fit: cover;
+  object-fit: cover;
+  -moz-object-position: center;
+  -webkit-object-position: center;
+  -ms-object-position: center;
+  object-position: center;
+  width: 100%;
+}
+@media screen and (orientation: portrait) {
+  #banner {
+    -moz-flex-direction: column-reverse;
+    -webkit-flex-direction: column-reverse;
+    -ms-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+  }
+  #banner h1 br {
+    display: none;
+  }
+  #banner .content {
+    -moz-flex-grow: 0;
+    -webkit-flex-grow: 0;
+    -ms-flex-grow: 0;
+    flex-grow: 0;
+    -moz-flex-shrink: 0;
+    -webkit-flex-shrink: 0;
+    -ms-flex-shrink: 0;
+    flex-shrink: 0;
+    width: 100%;
+  }
+  #banner .image {
+    -moz-flex-grow: 0;
+    -webkit-flex-grow: 0;
+    -ms-flex-grow: 0;
+    flex-grow: 0;
+    -moz-flex-shrink: 0;
+    -webkit-flex-shrink: 0;
+    -ms-flex-shrink: 0;
+    flex-shrink: 0;
+    margin: 0 0 4em 0;
+    height: 25em;
+    max-height: 50vh;
+    min-height: 18em;
+    width: 100%;
+  }
+}
+@media screen and (orientation: portrait) and (max-width: 480px) {
+  #banner .image {
+    max-height: 35vh;
+  }
+}
+
+#footer .copyright {
+  color: #9fa3a6;
+  font-size: 0.9em;
+}
+#footer .copyright a {
+  color: inherit;
+}

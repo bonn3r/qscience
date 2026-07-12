@@ -1,0 +1,265 @@
+/*
+	Modelo Editorial, design de HTML5 UP.
+	Fonte: html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+	
+	Criado por: Jimi.7z (Willian Bonner) em 29/06/2026
+	Última atualização: 
+	Arquivo: Menu - estilo personalizado do menu.
+	Versão: 1.0
+*/
+
+/* ======================================================================= */
+/*  BASE DO MENU                                                           */
+/* ======================================================================= */
+
+#menu ul {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: #434749; /*Cor original 434547*/
+  font-family: "Roboto Slab", serif;
+  letter-spacing: 0.075em;
+  list-style: none;
+  margin-bottom: 0;
+  padding: 0;
+  text-transform: uppercase;
+}
+
+/* ======================================================================= */
+/*  NÍVEL 1 – ITENS PRINCIPAIS                                             */
+/* ======================================================================= */
+
+#menu ul a,
+#menu ul span {
+  border-bottom: 0;
+  color: inherit;
+  cursor: pointer;
+  display: block;
+  font-size: 0.8rem;              /* tamanho base uniforme */
+  font-weight: 400;             /* normal (sem negrito) */
+  padding: 0.625em 2em 0.625em 0; /* espaço à direita para a seta */
+  text-transform: uppercase;
+}
+
+#menu ul a:hover,
+#menu ul span:hover {
+  color: #ad0000;
+}
+
+/* Ícones SVG personalizados na lista de contato */
+ul.contact li .svg-icon {
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: middle;
+    margin-right: 0.5em;
+    fill: #0F99AB; /* mesma cor dos outros ícones */
+}
+
+ul.contact li a:hover .svg-icon {
+    fill: #f67878; /* cor ao passar o mouse */
+}
+
+/* ======================================================================= */
+/*  OPENER (SETA) – POSICIONADA À DIREITA, CENTRALIZADA                    */
+/* ======================================================================= */
+
+#menu ul a.opener,
+#menu ul span.opener {
+  -moz-transition: color 0.2s ease-in-out;
+  -webkit-transition: color 0.2s ease-in-out;
+  -ms-transition: color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out;
+  text-decoration: none;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  position: relative;
+}
+
+#menu ul a.opener:before,
+#menu ul span.opener:before {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+  text-transform: none !important;
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  -moz-transition: color 0.2s ease-in-out, -moz-transform 0.2s ease-in-out;
+  -webkit-transition: color 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+  -ms-transition: color 0.2s ease-in-out, -ms-transform 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
+  color: #85939e; /*Cor das setas*/
+  content: '\f078';
+  position: absolute;
+  right: 0.5em;                 /* distância da borda direita */
+  top: 50%;                     /* centraliza verticalmente */
+  transform: translateY(-50%);  /* ajuste fino do centro */
+  font-size: 1.1em;             /* tamanho da seta (opcional) */
+}
+
+#menu ul a.opener:hover:before,
+#menu ul span.opener:hover:before {
+  color: #ad0000;
+}
+
+#menu ul a.opener.active + ul,
+#menu ul span.opener.active + ul {
+  display: block;
+}
+
+#menu ul a.opener.active:before,
+#menu ul span.opener.active:before {
+  -moz-transform: rotate(-180deg) translateY(50%); /* mantém centralizado após rotação */
+  -webkit-transform: rotate(-180deg) translateY(50%);
+  -ms-transform: rotate(-180deg) translateY(50%);
+  transform: rotate(-180deg) translateY(50%);
+}
+
+/* ======================================================================= */
+/*  ESTRUTURA DOS NÍVEIS                                                   */
+/* ======================================================================= */
+
+#menu > ul > li {
+  border-top: solid 1px rgb(218, 223, 225); /*Linhas que separam os ítens principal do menu*/
+  margin: 0.5em 0 0 0;
+  padding: 0.5em 0 0 0;
+}
+
+#menu > ul > li:first-child {
+  border-top: 0;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+/* ======================================================================= */
+/*  NÍVEL 2 – SUBMENUS (ex: Pesquisa, Ensino, Extensão...)                 */
+/* ======================================================================= */
+
+#menu > ul > li > ul {
+  color: #626567;
+  display: none;
+  margin: 0.5em 0 1.5em 0;
+  padding-left: 1em;
+}
+
+#menu > ul > li > ul > li {
+  margin: 0.125em 0 0 0;
+  padding: 0.125em 0 0 0;
+}
+
+#menu > ul > li > ul a,
+#menu > ul > li > ul span {
+  font-size: 0.8rem;        /* um pouco menor que o nível 1 */
+  font-weight: 400;         /* mesmo peso do nível 1 */
+  text-transform: none;     /* remove o uppercase para legibilidade */
+  padding: 0.5em 2em 0.5em 0; /* espaço para a seta */
+}
+
+/* ======================================================================= */
+/*  NÍVEL 3 – SUB‑SUBMENUS (ex: "Minhas iniciações científicas")           */
+/* ======================================================================= */
+
+#menu ul ul ul a,
+#menu ul ul ul span {
+  color: #828586;
+  font-size: 0.7rem;       /* ainda menor, para hierarquia */
+  font-weight: 300;         /* mais fino (light) */
+  padding-left: 1.5em;      /* recuo extra para indicar profundidade */
+  padding-right: 2em;       /* mantém espaço para a seta */
+  text-transform: none;
+}
+
+/* ======================================================================= */
+/*  OPENER DENTRO DE SUBMENUS (setas nos níveis mais profundos)            */
+/* ======================================================================= */
+
+/* Opener do nível 2 */
+#menu ul ul .opener {
+  font-weight: 500;         /* semi-negrito para destacar o item que abre */
+  font-size: 0.8rem;        /* mesmo tamanho dos links do nível 2 */
+}
+
+/* Opener do nível 3 */
+#menu ul ul ul .opener {
+  font-weight: 400;         /* normal, porque já está no terceiro nível */
+  font-size: 0.8rem;       /* mesmo tamanho dos links do nível 3 */
+}
+
+/* ======================================================================= */
+/*  COMPORTAMENTO DE ABRIR/FECHAR (não alterar)                            */
+/* ======================================================================= */
+
+#menu ul ul {
+  display: none;
+}
+
+#menu ul .opener.active + ul {
+  display: block;
+}
+
+/* TESTE 02 - 04/07/2026*/
+
+/* ======================================================================= */
+/*  BARRA DE ROLAGEM VERTICAL                                              */
+/* ======================================================================= */
+
+#menu {
+  max-height: 100vh;            /* ocupa toda a altura da janela */
+  overflow-y: auto;             /* ativa a rolagem vertical quando necessário */
+  scrollbar-width: thin;        /* para Firefox: barra mais fina */
+  scrollbar-color: #ad0000 transparent; /* cor do polegar e da trilha (Firefox) */
+}
+
+/* Estilização para navegadores WebKit (Chrome, Safari, Edge) */
+#menu::-webkit-scrollbar {
+  width: 6px;                  /* largura da barra */
+}
+
+#menu::-webkit-scrollbar-track {
+  background: transparent;      /* trilha invisível */
+}
+
+#menu::-webkit-scrollbar-thumb {
+  background-color: #ad0000;   /* cor do polegar (combina com o hover do menu) */
+  border-radius: 6px;          /* bordas arredondadas */
+}
+
+#menu::-webkit-scrollbar-thumb:hover {
+  background-color: #8a0000;   /* tom mais escuro ao passar o mouse */
+}
+
+
+/* ============================================================
+   ÍCONES SVG PERSONALIZADOS NA LISTA DE CONTATO (arquivo local)
+   ============================================================ */
+
+ul.contact li.svg-icon-item {
+    display: flex;                /* ativa flexbox */
+    align-items: center;          /* centraliza verticalmente */
+    gap: 0.75em;                 /* espaço entre ícone e texto */
+    list-style: none;
+    padding-left: 0;              /* remove o padding antigo */
+    /* se quiser manter o mesmo recuo dos outros itens, use padding-left: 2.5em ou similar */
+}
+
+ul.contact li.svg-icon-item:before {
+    content: none;
+    display: none;
+}
+
+ul.contact li.svg-icon-item .svg-icon {
+    width: 2em;
+    height: 2em;
+    flex-shrink: 0;               /* evita que o ícone encolha */
+    /*filter: brightness(0) saturate(100%) invert(20%) sepia(100%) saturate(5000%) hue-rotate(0deg) brightness(80%) contrast(110%);*/
+    /*filter: invert(78%) sepia(71%) saturate(6679%) hue-rotate(153deg) brightness(88%) contrast(88%);*/
+    transition: filter 0.2s;
+}
+
+ul.contact li.svg-icon-item a:hover .svg-icon {
+    filter: brightness(0) saturate(100%) invert(40%) sepia(100%) saturate(1000%) hue-rotate(0deg) brightness(100%) contrast(120%);
+}

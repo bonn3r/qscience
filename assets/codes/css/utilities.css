@@ -1,0 +1,29 @@
+/*
+	Modelo Editorial, design de HTML5 UP.
+	Fonte: html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+	
+	Criado por: Jimi.7z (Willian Bonner) em 29/06/2026
+	Última atualização: 
+	Arquivo: Clásses utilitárias (alinhamentos)
+	Versão: 1.0
+*/
+
+.align-left {
+  text-align: left;
+}
+.align-center {
+  text-align: center;
+}
+.align-right {
+  text-align: right;
+}
+
+/* Legenda das imagens */
+figcaption {
+    font-size: 0.75em;        /* 75% do tamanho normal */
+    color: #666;              /* cinza mais suave */
+    line-height: 1.4;         /* espaçamento entre linhas */
+    margin-top: 0.5em;        /* espaçamento acima da legenda */
+    text-align: justify;      /* texto justificado (opcional) */
+}
