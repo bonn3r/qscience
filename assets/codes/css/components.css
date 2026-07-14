@@ -311,6 +311,40 @@ a.image:hover img {
   transform: scale(1.075);
 }
 
+/* --- Legendads --- */
+
+.image figcaption {
+    display: block;        /* Garante que ocupe toda a largura disponível */
+    width: 100%;           /* Força a largura total do container .image */
+    margin-top: 0.75em;    /* Espaço entre a imagem e a legenda */
+    padding: 0;            /* Remove padding interno para alinhar exatamente com a imagem */
+    font-size: 0.85em;     /* Texto ligeiramente menor que o corpo */
+    line-height: 1.4;      /* Melhora a legibilidade em quebras de linha */
+    font-style: italic;    /* Estilo comum para legendas */
+    color: #666;           /* Cor suave para não competir com o texto principal */
+    text-align: left;      /* Alinha o texto à esquerda (borda esquerda da imagem) */
+    box-sizing: border-box; /* Garante que padding não quebre a largura, caso adicione */
+    
+    /* Previne quebras inesperadas em palavras muito longas */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* Ajuste opcional para imagens centralizadas (como .fit e .main) */
+
+.image.fit figcaption,
+.image.main figcaption {
+    text-align: center;    /* Centraliza a legenda em imagens que ocupam toda a tela */
+}
+
+/* Ajuste fino para imagens flutuantes (left/right) - herdará o text-align: left */
+
+.image.left figcaption,
+.image.right figcaption {
+    text-align: left;      /* Mantém a legenda alinhada com a borda esquerda da imagem */
+    /* Se preferir centralizar, troque para 'text-align: center;' */
+}
+
 /* List */
 ol {
   list-style: decimal;

@@ -19,12 +19,3 @@
   text-align: right;
 }
 
-/* Legenda das imagens */
-figcaption {
-    font-size: 0.75em;        /* 75% do tamanho normal */
-    color: #666;              /* cinza mais suave */
-    line-height: 1.4;         /* espaçamento entre linhas */
-    margin-top: 0.5em;        /* espaçamento acima da legenda */
-    text-align: justify;      /* texto justificado (opcional) */
-}
-

@@ -19,22 +19,3 @@
 @import url("modules.css");
 @import url("menu.css");
 @import url("utilities.css");
-
-/* ============================================================
-   Cabeçalho fixo no topo ao rolar (sticky)
-   ============================================================ */
-
-#header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background: #ffffff;          /* fundo branco para não ver o conteúdo atrás */
-    padding-top: 2em;             /* ajuste o padding conforme necessário */
-    padding-bottom: 1em;
-    border-bottom: solid 4.5px #ad0000; /* mantém a borda vermelha */
-}
-
-/* Ajuste o padding do conteúdo principal para não ficar escondido atrás do header */
-#main > .inner {
-    padding-top: 1em;            /* valor padrão era 6em, mas agora o header é sticky */
-}

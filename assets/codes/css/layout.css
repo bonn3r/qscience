@@ -26,7 +26,7 @@
   -webkit-transition: padding-left 0.5s ease;
   -ms-transition: padding-left 0.5s ease;
   transition: padding-left 0.5s ease;
-  padding-left: 26em; /* espaço para a sidebar aberta */
+  padding-left: 0; /* espaço para a sidebar aberta */
 }
 
 /* Quando o menu está fechado, o conteúdo ocupa toda a largura */
@@ -276,7 +276,7 @@
     font-size: 1.3rem;
   }
   #wrapper {
-    padding-left: 24em;
+    padding-left: 0;
   }
   #wrapper.menu-closed {
     padding-left: 0;
@@ -305,7 +305,7 @@
     font-size: 1.3rem;
   }
   #wrapper {
-    padding-left: 26em;
+    padding-left: 0;
   }
   #wrapper.menu-closed {
     padding-left: 0;
@@ -349,7 +349,7 @@
     z-index: -1;
   }
   #wrapper {
-    padding-left: 22em;
+    padding-left: 0;
   }
   #wrapper.menu-closed {
     padding-left: 0;
@@ -368,14 +368,33 @@
 /* ======================================================================= */
 
 #header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #ffffff;          /* fundo branco para não ver o conteúdo atrás */
+    padding-top: 2em;             /* ajuste o padding conforme necessário */
+    padding-bottom: 1em;
+    border-bottom: solid 4.5px #ad0000; /* mantém a borda vermelha */
+}
+
+/* Ajuste o padding do conteúdo principal para não ficar escondido atrás do header */
+#main > .inner {
+    padding-top: 1em;            /* valor padrão era 6em, mas agora o header é sticky */
+}
+
+/* ======================================================================= */
+/* HEADER – Base (comum a todos os tamanhos)                             */
+/* ======================================================================= */
+#header {
   display: -moz-flex;
   display: -webkit-flex;
   display: -ms-flex;
   display: flex;
+  background: #ffffff;
   border-bottom: solid 5px #ad0000;
-  padding: 6em 0 1em 0;
-  position: relative;
+  z-index: 1000;
 }
+
 #header > * {
   -moz-flex: 1;
   -webkit-flex: 1;
@@ -383,34 +402,90 @@
   flex: 1;
   margin-bottom: 0;
 }
+
 #header .logo {
   border-bottom: 0;
   color: inherit;
   font-family: "Roboto Slab", serif;
   font-size: 1.125em;
 }
+
 #header .icons {
   text-align: right;
 }
-@media screen and (max-width: 1680px) {
+
+/* ---------- DESKTOP (acima de 737px) – Fixo no topo ---------- */
+@media screen and (min-width: 737px) {
   #header {
-    padding-top: 5em;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;               /* mantém para o margin:auto funcionar */
+    width: 70%;             /* ← MUDE AQUI: 60%, 80% ou valor fixo como 900px */
+    max-width: 80%;      /* (opcional) impede que fique largo demais */
+    margin: 0 auto;         /* centraliza horizontalmente */
+    padding: 6em 0 1em 0;
+    background: #ffffff;
+    border-bottom: solid 5px #ad0000;
+    z-index: 1000;
+    display: flex;
+  }
+  /* Compensação do espaço ocupado pelo header no conteúdo principal */
+  #main > .inner {
+    padding-top: 7.5em; /* 6em (top) + 1em (bottom) + 0.5em (border) */
   }
 }
+
+/* ---------- TABLET (até 1680px) – Ajuste do padding ---------- */
+@media screen and (max-width: 1680px) and (min-width: 737px) {
+  #header {
+    padding-top: 5em; /* seu ajuste original para telas médias */
+    max-width: 100%;
+  }
+  #main > .inner {
+    padding-top: 6.5em; /* acompanha a redução */
+  }
+}
+
+/* ---------- MOBILE (até 736px) – Sticky (comportamento original) ---------- */
 @media screen and (max-width: 736px) {
   #header {
-    padding-top: 6.5em;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100vw;           /* força a largura total da viewport */
+    max-width: 100%;
+    padding: 6.5em 0 1em 0;  /* sem padding lateral */
+    margin: 0;
+    box-sizing: border-box;
+    background: #ffffff;
+    border-bottom: solid 5px #ad0000;
+    z-index: 1000;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
   }
+
   #header .logo {
     font-size: 1.25em;
     margin: 0;
+    padding-left: 1.2em;    /* respiro interno opcional */
   }
+
   #header .icons {
     height: 5em;
     line-height: 5em;
     position: absolute;
-    right: -0.5em;
+    right: 1em;
     top: 0;
+    padding-right: 0;
+  }
+
+  /* Ajuste no conteúdo principal para compensar a altura do header sticky */
+  #main > .inner {
+    padding-top: 1em;       /* já estava no seu original */
   }
 }
 
@@ -509,4 +584,19 @@
 }
 #footer .copyright a {
   color: inherit;
+}
+
+/* Faz as imagens dentro dos ícones das features serem responsivas e centralizadas */
+.features article .icon img {
+    max-width: 48%;           /* ocupa no máximo 70% do container (10em / 8em / 6em) */
+    height: auto;             /* mantém a proporção */
+    display: inline-block;    /* permite centralização vertical com vertical-align */
+    vertical-align: middle;   /* alinha verticalmente com o line-height do container */
+}
+
+/* Opcional: ajuste fino para telas muito pequenas */
+@media screen and (max-width: 480px) {
+    .features article .icon img {
+        max-width: 38%;       /* um pouco menor para não ficar apertado */
+    }
 }
