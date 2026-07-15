@@ -7,13 +7,13 @@
 
 	Edited by:
 		Jimi.7z
-		Created in: 28/06/2026
+		Created in: 09/07/2026
 		Version: 2.0 (sincronizado com index.html)
 		Last edition: 14/07/2026
 -->
 <html>
 	<head>
-		<title>Q-Science | Contato</title>
+		<title>Produção Científica | Q-Science</title>
 		<link rel="icon" href="assets/images/logo/cat-logo.svg" type="image/svg+xml" />
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 		<meta charset="utf-8" />
@@ -22,8 +22,6 @@
 		<!-- Biblioteca MathJax -->
 		<script src="assets/codes/js/mathjax_config.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
-		<script src="assets/codes/js/copiaremail.js"></script>
-		<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 	</head>
 	<body class="is-preload">
 
@@ -34,7 +32,6 @@
 			<div id="main">
 				<div class="inner">
 
-					<!-- Cabeçalho (idêntico ao index.html) -->
 					<header id="header">
 						<a href="index.html" class="logo">
 							<img src="assets/images/logo/cat-logo.svg" alt="Gato logomarca do site" style="height: 2em; width: auto; vertical-align: middle; margin-right: 0.5em;">
@@ -74,92 +71,75 @@
 						</ul>
 					</header>
 
-					<!-- Conteúdo principal: Formulário de Contato -->
+					<!-- Conteúdo principal: lista de pré‑prints -->
 					<section>
 						<header class="major">
-							<h2>Contato</h2>
+							<h2>Pré-prints no arXiv</h2>
+							<p>Ainda não possuo nada no arXiv... mas em breve!</p>
 						</header>
 
-						<p>
-							Preencha o formulário abaixo para enviar uma mensagem. Responderei assim que possível!
-						</p>
+						<!-- Card 0 -->
+						<div class="box" style="width: auto; max-width: 100%; margin: 0 auto; padding: 1em 1.5em; background: #f9f9f9; border-radius: 6px;">
+								<h3>
+									Título do Artigo
+								</h3>
+    							
+								<p>Lista de autores</p>
 
-						<div class="box" style="max-width: 800px; margin: 0 auto; background: #f5f5f5; padding: 2em; border-radius: 8px;">
-    						<form method="post" action="https://formsubmit.co/willianbonnermelo@gmail.com">
-								
-								<!-- Campos ocultos para configuração do FormSubmit -->
-								<input type="hidden" name="_captcha" value="true">
-								<input type="hidden" name="_next" value="https://bonn3r.github.io/qscience/index.html">
-								<!-- Honeypot para evitar spam -->
-								<input type="text" name="_honey" style="display:none;">
-		
-								<div class="row gtr-uniform">
-									<!-- Nome -->
-									 <div class="col-12">
-										<input type="text" name="Nome" id="Nome" placeholder="Nome" required />
-									</div>
-			
-									<!-- Email -->
-									<div class="col-12">
-										<input type="email" name="e-Mail" id="E-mail" placeholder="E-mail" required />
-									</div>
-			
-									<!-- Assunto -->
-									<div class="col-12">
-										<input type="text" name="Assunto" id="Assunto" placeholder="Assunto" required />
-									</div>
-
-            						<!-- Mensagem (textarea) -->
-									<div class="col-12">
-										<textarea name="message" id="message" placeholder="Digite sua mensagem..." rows="6" required></textarea>
-									</div>
-
-									<div class="col-12" style="display: flex; justify-content: center; margin-bottom: 1em;">
-										<div class="g-recaptcha" data-sitekey="SUA_CHAVE_DO_SITE" data-callback="onCaptchaSuccess"></div>
-									</div>
-
-            						<!-- Botões -->
-            						<div class="col-12">
-										<ul class="actions special">
-											<li><input type="submit" value="Enviar" class="primary" /></li>
-											<li><input type="reset" value="Limpar" /></li>
-										</ul>
-									</div>
-								</div>
-							</form>
-						</div>
-
-						<hr class="major" />
-							<div class="box" style="width: auto; max-width: 600px; margin: 0 auto; padding: 1em 1.5em; background: #f9f9f9; border-radius: 6px;">
-								<li class="svg-icon-item" style="display: flex; align-items: center; gap: 0.8rem;">
-    
-									<!-- Container fixo para o ícone + mensagem -->
-									<div style="position: relative; display: inline-flex; flex-direction: column; align-items: center; flex-shrink: 0; width: 2.5em; height: 2.5em; justify-content: center; ">
-        
-										<!-- Ícone do envelope -->
-										<img src="assets/images/logo/email-logo.svg" alt="Envelope representando um email"  id="emailIcon"  style="width: 3em; height: 3em; transition: filter 0.3s; flex-shrink: 0; cursor: pointer;"/>
-        
-										<!-- Mensagem de feedback (posicionada abaixo) -->
-										<span id="feedbackCopiar" style="position: absolute; top: 100%; left: 50%; transform: translateX(-50%); margin-top: 0.2rem; font-size: 0.7rem; font-weight: 600; white-space: nowrap; opacity: 0; transition: opacity 0.2s;">
-										</span>
-									</div>
-    								
-									<span class="contact-text" style="margin-left: 15px;">
-        								Se preferir, pode me escrever diretamente para meu email clicando no ícone ao lado.
-									</span>
-								</li>
+								<a href="#" class="button icon solid fa-download">Icon</a>
 							</div>
 
+						<!-- Card 1 -->
+						<div class="box">
+							<article style="border-bottom: 1px solid #eee; padding: 1.5em 0;">
+								<div style="display: flex; flex-wrap: wrap; gap: 1em; align-items: flex-start;">
+									<div style="flex: 1; min-width: 200px;">
+										<h3><a href="https://arxiv.org/abs/2401.12345" target="_blank" rel="noopener noreferrer">Título do seu primeiro pré‑print</a></h3>
+										<p><strong>Autores:</strong> Willian Bonner, Colaborador A, Colaborador B</p>
+										<p><strong>arXiv:</strong> 2401.12345 &nbsp;|&nbsp; <strong>Data:</strong> 15 de janeiro de 2024</p>
+										<p style="text-align: justify;"><strong>Resumo:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+									</div>
+								</div>
+							</article>
+
+						</div>
+
+						<!-- Card 2 -->
+						<article style="border-bottom: 1px solid #eee; padding: 1.5em 0;">
+							<div style="display: flex; flex-wrap: wrap; gap: 1em; align-items: flex-start;">
+								<div style="flex: 1; min-width: 200px;">
+									<h3><a href="https://arxiv.org/abs/2402.67890" target="_blank" rel="noopener noreferrer">Título do segundo pré‑print</a></h3>
+									<p><strong>Autores:</strong> Willian Bonner, Colaborador C</p>
+									<p><strong>arXiv:</strong> 2402.67890 &nbsp;|&nbsp; <strong>Data:</strong> 20 de fevereiro de 2024</p>
+									<p style="text-align: justify;"><strong>Resumo:</strong> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+								</div>
+							</div>
+						</article>
+
+						<!-- Card 3 -->
+						<article style="border-bottom: 1px solid #eee; padding: 1.5em 0;">
+							<div style="display: flex; flex-wrap: wrap; gap: 1em; align-items: flex-start;">
+								<div style="flex: 1; min-width: 200px;">
+									<h3><a href="https://arxiv.org/abs/2403.11111" target="_blank" rel="noopener noreferrer">Título do terceiro pré‑print</a></h3>
+									<p><strong>Autores:</strong> Willian Bonner, Colaborador D, Colaborador E</p>
+									<p><strong>arXiv:</strong> 2403.11111 &nbsp;|&nbsp; <strong>Data:</strong> 5 de março de 2024</p>
+									<p style="text-align: justify;"><strong>Resumo:</strong> Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+								</div>
+							</div>
+						</article>
+
+						<!-- Adicione mais cards conforme necessário -->
+
 					</section>
-					
-				<!-- Rodapé da página (Voltar ao topo) -->
-				<footer id="footer">
-					<ul class="actions">
-						<li style="display: block; width: 50%; margin: 0 auto; text-align: center;">
-							<a href="#" class="button">Voltar ao topo</a>
-						</li>
-					</ul>
-				</footer>
+
+					<!-- Rodapé da página (Voltar ao topo) -->
+					<footer id="footer">
+						<ul class="actions">
+							<li style="display: block; width: 50%; margin: 0 auto; text-align: center;">
+								<a href="#" class="button">Voltar ao topo</a>
+							</li>
+						</ul>
+					</footer>
 
 				</div>
 			</div>
@@ -217,7 +197,7 @@
 							<li>
 								<span class="opener">Extensão</span>
 								<ul>
-									<li><a href="/extensao/index.html">Visão Geral</a></li> <!-- corrigido -->
+									<li><a href="/extensao/index.html">Visão Geral</a></li>
 									<li><a href="#">Apresentações Orais</a></li>
 									<li><a href="#">Mini Cursos</a></li>
 									<li><a href="#">Posters</a></li>
@@ -236,7 +216,6 @@
 							</li>
 							<li><a href="bio.html">Bio completa</a></li>
 							<li><a href="credits.html">Créditos</a></li>
-							<li><a href="contato.html">Contato</a></li>
 						</ul>
 					</nav>
 
@@ -261,7 +240,7 @@
 						</div>
 					</section>
 
-					<!-- Contato (sidebar) -->
+					<!-- Contato (versão atualizada) -->
 					<section>
 						<header class="major">
 							<h2>Contato</h2>
