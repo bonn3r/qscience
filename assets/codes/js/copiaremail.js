@@ -48,11 +48,6 @@ document.addEventListener('DOMContentLoaded', function() {
 /* CONFIGURAÇÃO DO CAPTCHA===========================*/
 /*===================================================*/
 
-
-/*===================================================*/
-/* CONFIGURAÇÃO DO CAPTCHA===========================*/
-/*===================================================*/
-
 let captchaResolvido = false;
 
 // 1. Função chamada quando o captcha é resolvido
