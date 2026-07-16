@@ -49,76 +49,63 @@ document.addEventListener('DOMContentLoaded', function() {
 /*===================================================*/
 
 
-// ============================================================
-// 1. Variável para controlar se o captcha foi resolvido
-// ============================================================
+/*===================================================*/
+/* CONFIGURAÇÃO DO CAPTCHA===========================*/
+/*===================================================*/
 
 let captchaResolvido = false;
 
-// ============================================================
-// 2. Função chamada quando o captcha é resolvido
-// ============================================================
-
-function onCaptchaSuccess(token) {
+// 1. Função chamada quando o captcha é resolvido
+// Anexada ao window para garantir que o script do Google a encontre
+window.onCaptchaSuccess = function(token) {
     captchaResolvido = true;
-        // O token é o código gerado, mas não precisamos usá-lo aqui.
-        // O FormSubmit já espera o campo "g-recaptcha-response" automaticamente
-        // se o formulário for enviado via POST normal. Mas como usaremos AJAX,
-        // precisamos incluí-lo manualmente.
-}
+};
 
-// ============================================================
-// 3. Interceptar o envio do formulário
-// ============================================================
+// 2. Interceptar o envio do formulário
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.querySelector('form[action*="formsubmit.co"]');
-        if (!form) return;
+    if (!form) return;
 
-        form.addEventListener('submit', async function(e) {
-            e.preventDefault(); // Impede o envio padrão (que redirecionaria)
+    form.addEventListener('submit', async function(e) {
+        e.preventDefault(); // Impede o recarregamento da página
 
-            // Verifica se o captcha foi resolvido
-            if (!captchaResolvido) {
-                alert('Por favor, marque a caixa "Não sou um robô" antes de enviar.');
-                return;
-            }
+        if (!captchaResolvido) {
+            alert('Por favor, marque a caixa "Não sou um robô" antes de enviar.');
+            return;
+        }
 
-            // Obtém o token do reCAPTCHA (gerado automaticamente pelo widget)
-            const token = grecaptcha.getResponse();
-            if (!token) {
-                alert('Erro no captcha. Tente novamente.');
-                return;
-            }
+        const token = grecaptcha.getResponse();
+        if (!token) {
+            alert('Erro no captcha. Tente atualizar a página.');
+            return;
+        }
 
-            // Constrói os dados do formulário (inclui todos os campos)
-            const formData = new FormData(form);
-            // Adiciona o token explicitamente (necessário para o FormSubmit com AJAX)
-            formData.append('g-recaptcha-response', token);
+        const formData = new FormData(form);
+        // Opcional: Anexar o token ao payload, embora a validação real seja no frontend
+        formData.append('g-recaptcha-response', token);
 
-            try {
-                // Envia via fetch para o endpoint AJAX do FormSubmit
-                const response = await fetch('https://formsubmit.co/ajax/willianbonnermelo@gmail.com', {
-                    method: 'POST',
-                    body: formData
-                });
+        try {
+            // Usa o endpoint AJAX do FormSubmit
+            const response = await fetch('https://formsubmit.co/ajax/willianbonnermelo@gmail.com', {
+                method: 'POST',
+                body: formData
+            });
 
-                const result = await response.json();
+            const result = await response.json();
 
-                if (result.success) {
-                    // Sucesso: redireciona para a página de agradecimento
-                    window.location.href = 'https://bonn3r.github.io/qscience/obrigado.html';
-                } else {
-                    // Falha no envio (ex: captcha inválido, erro no servidor)
-                    alert('Erro ao enviar a mensagem. Tente novamente mais tarde.');
-                    // Reseta o captcha para forçar nova verificação
-                    grecaptcha.reset();
-                    captchaResolvido = false;
-                }
-            } catch (error) {
-                console.error('Erro de conexão:', error);
-                alert('Erro de conexão. Verifique sua internet e tente novamente.');
+            if (result.success) {
+                // Redireciona para sua página de sucesso
+                window.location.href = 'https://bonn3r.github.io/qscience/obrigado.html';
+            } else {
+                alert('Erro ao enviar a mensagem. Tente novamente mais tarde.');
                 grecaptcha.reset();
                 captchaResolvido = false;
             }
-        });
+        } catch (error) {
+            console.error('Erro de conexão:', error);
+            alert('Erro de conexão. Verifique sua internet e tente novamente.');
+            grecaptcha.reset();
+            captchaResolvido = false;
+        }
+    });
 });

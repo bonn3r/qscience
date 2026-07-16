@@ -115,7 +115,14 @@
 									</div>
 
 									<div class="col-12" style="display: flex; justify-content: center; margin-bottom: 1em;">
-										<div class="g-recaptcha" data-sitekey="6Ld9v1UtAAAAAE1MasG0uCdHJibmw_ZOIoif29EV" data-callback="onCaptchaSuccess"></div>
+										<div class="col-12" style="display: flex; justify-content: center; margin-bottom: 1em;">
+    										<div class="col-12" style="display: flex; justify-content: center; margin-bottom: 1em;">
+												<div class="g-recaptcha" 
+													data-sitekey="6Ld9v1UtAAAAAE1MasG0uCdHJibmw_ZOIoif29EV" 
+													data-callback="onCaptchaSuccess">
+												</div>
+											</div>
+										</div>
 									</div>
 
             						<!-- Botões -->
@@ -314,6 +321,11 @@
 		<script src="assets/codes/js/browser.min.js"></script>
 		<script src="assets/codes/js/breakpoints.min.js"></script>
 		<script src="assets/codes/js/util.js"></script>
+		<script>
+			function onSubmit(token) {
+				document.getElementById("demo-form").submit();
+			}
+		</script>
 		<script src="assets/codes/js/main.js"></script>
 
 	</body>
