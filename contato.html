@@ -160,7 +160,7 @@
 								<input type="hidden" name="_captcha" value="true">
 								<input type="hidden" name="_next" value="https://bonn3r.github.io/qscience/index.html">
 								<!-- ⬇️ NOVO: exclui o token do reCAPTCHA do corpo do e-mail ⬇️ -->
-								<input type="hidden" name="_excludes" value="g-recaptcha-response">
+								<input type="hidden" name="_excludes" value="g-captcha_token">
 								<!-- Honeypot -->
 								<input type="text" name="_honey" style="display:none;">
 		
@@ -197,7 +197,8 @@
 									<div class="col-12">
 										<ul class="actions special">
 											<li><input type="submit" value="Enviar" class="primary" /></li>
-											<li><input type="reset" value="Limpar" /></li>
+											<!--<li><input type="reset" value="Limpar" /></li>-->
+											<li><input type="button" value="Limpar" onclick="this.form.reset();" /></li>
 										</ul>
 									</div>
 								</div>

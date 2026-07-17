@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const formData = new FormData(form);
         // Mantém o token para validação no servidor (mas o campo _excludes o remove do e-mail)
-        formData.append('g-recaptcha-response', token);
+        formData.append('captcha_token', token);
 
         try {
             const response = await fetch('https://formsubmit.co/ajax/willianbonnermelo@gmail.com', {
