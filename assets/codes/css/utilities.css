@@ -18,3 +18,42 @@
 .align-right {
   text-align: right;
 }
+
+/* Balão de voz – posicionamento será feito via JavaScript */
+#captchaTooltip {
+  pointer-events: none;    /* permite clicar através do balão */
+  transition: opacity 0.2s;
+}
+
+/* Overlay de agradecimento */
+#thankYouOverlay {
+  display: none;           /* controlado via JS */
+}
+
+#captchaTooltip {
+    display: none;
+    position: fixed;
+    background: #fff;
+    border: 2px solid #ad0000;
+    border-radius: 12px;
+    padding: 12px 18px;
+    max-width: 260px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    z-index: 9999;
+    font-size: 0.9rem;
+    color: #333;
+    pointer-events: none;
+    transition: opacity 0.2s;
+}
+#captchaTooltip::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 30px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #fff;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}

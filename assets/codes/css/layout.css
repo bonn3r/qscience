@@ -415,6 +415,7 @@
 }
 
 /* ---------- DESKTOP (acima de 737px) – Fixo no topo ---------- */
+
 @media screen and (min-width: 737px) {
   #header {
     position: fixed;
@@ -424,7 +425,7 @@
     width: 70%;             /* ← MUDE AQUI: 60%, 80% ou valor fixo como 900px */
     max-width: 80%;      /* (opcional) impede que fique largo demais */
     margin: 0 auto;         /* centraliza horizontalmente */
-    padding: 6em 0 1em 0;
+    padding: 2em 0 1em 0;
     background: #ffffff;
     border-bottom: solid 5px #ad0000;
     z-index: 1000;
@@ -432,18 +433,19 @@
   }
   /* Compensação do espaço ocupado pelo header no conteúdo principal */
   #main > .inner {
-    padding-top: 7.5em; /* 6em (top) + 1em (bottom) + 0.5em (border) */
+    padding-top: 1.5em; /* 6em (top) + 1em (bottom) + 0.5em (border) */
   }
 }
 
 /* ---------- TABLET (até 1680px) – Ajuste do padding ---------- */
+
 @media screen and (max-width: 1680px) and (min-width: 737px) {
   #header {
-    padding-top: 5em; /* seu ajuste original para telas médias */
+    padding-top: 2.5em; /* seu ajuste original para telas médias */
     max-width: 100%;
   }
   #main > .inner {
-    padding-top: 6.5em; /* acompanha a redução */
+    padding-top: 3.8em; /* acompanha a redução */
   }
 }
 

@@ -8,8 +8,8 @@
 	Edited by:
 		Jimi.7z
 		Created in: 28/06/2026
-		Version: 2.0 (sincronizado com index.html)
-		Last edition: 14/07/2026
+		Version: 3.0 (com balão próximo ao captcha e overlay de agradecimento)
+		Last edition: 15/07/2026
 -->
 <html>
 	<head>
@@ -24,6 +24,80 @@
 		<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
 		<script src="assets/codes/js/copiaremail.js"></script>
 		<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+		<style>
+			/* Estilos adicionais para o balão e overlay */
+			#captchaTooltip {
+				position: fixed;
+				background: #fff;
+				border: 2px solid #ad0000;
+				border-radius: 12px;
+				padding: 12px 18px;
+				max-width: 260px;
+				box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+				z-index: 9999;
+				font-size: 0.95rem;
+				color: #333;
+				pointer-events: none;
+				transition: opacity 0.2s;
+				display: none;
+				opacity: 0;
+			}
+			#captchaTooltip::after {
+				content: '';
+				position: absolute;
+				bottom: -12px;
+				left: 30px;
+				width: 0;
+				height: 0;
+				border-left: 12px solid transparent;
+				border-right: 12px solid transparent;
+				border-top: 12px solid #fff;
+				filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+			}
+			#thankYouOverlay {
+				display: none;
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: rgba(0,0,0,0.5);
+				z-index: 10000;
+				justify-content: center;
+				align-items: center;
+			}
+			#thankYouBox {
+				background: #fff;
+				padding: 2.5em 3.5em;
+				border-radius: 16px;
+				box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+				text-align: center;
+				max-width: 400px;
+				margin: 0 1em;
+			}
+			#thankYouBox h2 {
+				color: #3d4449;
+				font-family: 'Roboto Slab', serif;
+				margin-bottom: 0.3em;
+			}
+			#thankYouBox p {
+				color: #7f888f;
+				font-size: 1rem;
+			}
+			#thankYouBox .countdown {
+				color: #9fa3a6;
+				font-size: 0.85rem;
+				margin-top: 1em;
+			}
+			/* Ajuste para o container do captcha (para posicionamento do balão) */
+			.g-recaptcha {
+				display: inline-block;
+			}
+			.captcha-wrapper {
+				text-align: center;
+				margin-bottom: 1em;
+			}
+		</style>
 	</head>
 	<body class="is-preload">
 
@@ -68,7 +142,7 @@
 							<li>
 								<a href="https://orcid.org/0009-0007-7458-8512" target="_blank" rel="noopener noreferrer" class="icon brands">
 									<img src="assets/images/logo/orcid-logo.svg" alt="Logomarca Orcid" width="20" height="20" style="vertical-align:middle;">
-									<span class="label">ORCID</span> <!-- corrigido -->
+									<span class="label">ORCID</span>
 								</a>
 							</li>
 						</ul>
@@ -84,8 +158,8 @@
 							Preencha o formulário abaixo para enviar uma mensagem. Responderei assim que possível!
 						</p>
 
-						<div class="box" style="max-width: 800px; margin: 0 auto; background: #f5f5f5; padding: 2em; border-radius: 8px;">
-    						<form method="post" action="https://formsubmit.co/willianbonnermelo@gmail.com">
+						<div class="box" style="max-width: 750px; margin: 0 auto; background: #f5f5f5; padding: 2em; border-radius: 8px;">
+							<form method="post" action="https://formsubmit.co/willianbonnermelo@gmail.com">
 								
 								<!-- Campos ocultos para configuração do FormSubmit -->
 								<input type="hidden" name="_captcha" value="true">
@@ -95,7 +169,7 @@
 		
 								<div class="row gtr-uniform">
 									<!-- Nome -->
-									 <div class="col-12">
+									<div class="col-12">
 										<input type="text" name="Nome" id="Nome" placeholder="Nome" required />
 									</div>
 			
@@ -109,26 +183,21 @@
 										<input type="text" name="Assunto" id="Assunto" placeholder="Assunto" required />
 									</div>
 
-            						<!-- Mensagem (textarea) -->
+									<!-- Mensagem (textarea) -->
 									<div class="col-12">
-										<textarea name="message" id="message" placeholder="Digite sua mensagem..." rows="6" required></textarea>
+										<textarea name="Mensagem" id="Mensagem" placeholder="Digite sua mensagem..." rows="6" required></textarea>
 									</div>
 
-									<div class="col-12" style="display: flex; justify-content: center; margin-bottom: 1em;">
-										<div class="col-12" style="display: flex; justify-content: center; margin-bottom: 1em;">
-    										<div class="col-12" style="display: flex; justify-content: center; margin-bottom: 1em;">
-												<div class="col-12" style="display: flex; justify-content: center; margin-bottom: 1em;">
-													<div class="g-recaptcha" 
-													data-sitekey="6Lc4bVctAAAAADuhSfZEqZYApsRkwCRxFAANV9gl" 
-													data-callback="onCaptchaSuccess">
-												</div>
-											</div>
-											</div>
+									<!-- reCAPTCHA -->
+									<div class="col-12 captcha-wrapper">
+										<div class="g-recaptcha" 
+											data-sitekey="6Lc4bVctAAAAADuhSfZEqZYApsRkwCRxFAANV9gl" 
+											data-callback="onCaptchaSuccess">
 										</div>
 									</div>
 
-            						<!-- Botões -->
-            						<div class="col-12">
+									<!-- Botões -->
+									<div class="col-12">
 										<ul class="actions special">
 											<li><input type="submit" value="Enviar" class="primary" /></li>
 											<li><input type="reset" value="Limpar" /></li>
@@ -139,36 +208,29 @@
 						</div>
 
 						<hr class="major" />
-							<div class="box" style="width: auto; max-width: 600px; margin: 0 auto; padding: 1em 1.5em; background: #f9f9f9; border-radius: 6px;">
-								<li class="svg-icon-item" style="display: flex; align-items: center; gap: 0.8rem;">
-    
-									<!-- Container fixo para o ícone + mensagem -->
-									<div style="position: relative; display: inline-flex; flex-direction: column; align-items: center; flex-shrink: 0; width: 2.5em; height: 2.5em; justify-content: center; ">
-        
-										<!-- Ícone do envelope -->
-										<img src="assets/images/logo/email-logo.svg" alt="Envelope representando um email"  id="emailIcon"  style="width: 3em; height: 3em; transition: filter 0.3s; flex-shrink: 0; cursor: pointer;"/>
-        
-										<!-- Mensagem de feedback (posicionada abaixo) -->
-										<span id="feedbackCopiar" style="position: absolute; top: 100%; left: 50%; transform: translateX(-50%); margin-top: 0.2rem; font-size: 0.7rem; font-weight: 600; white-space: nowrap; opacity: 0; transition: opacity 0.2s;">
-										</span>
-									</div>
-    								
-									<span class="contact-text" style="margin-left: 15px;">
-        								Se preferir, pode me escrever diretamente para meu email clicando no ícone ao lado.
-									</span>
-								</li>
-							</div>
+						<!-- Bloco de e-mail com ícone -->
+						<div class="box" style="width: auto; max-width: 600px; margin: 0 auto; padding: 1em 1.5em; background: #f9f9f9; border-radius: 6px;">
+							<li class="svg-icon-item" style="display: flex; align-items: center; gap: 0.8rem; list-style: none;">
+								<div style="position: relative; display: inline-flex; flex-direction: column; align-items: center; flex-shrink: 0; width: 2.5em; height: 2.5em; justify-content: center;">
+									<img src="assets/images/logo/email-logo.svg" alt="Envelope representando um email" id="emailIcon" style="width: 3em; height: 3em; transition: filter 0.3s; flex-shrink: 0; cursor: pointer;"/>
+									<span id="feedbackCopiar" style="position: absolute; top: 100%; left: 50%; transform: translateX(-50%); margin-top: 0.2rem; font-size: 0.7rem; font-weight: 600; white-space: nowrap; opacity: 0; transition: opacity 0.2s;"></span>
+								</div>
+								<span class="contact-text" style="margin-left: 15px;">
+									Se preferir, pode me escrever diretamente para meu email clicando no ícone ao lado.
+								</span>
+							</li>
+						</div>
 
 					</section>
 					
-				<!-- Rodapé da página (Voltar ao topo) -->
-				<footer id="footer">
-					<ul class="actions">
-						<li style="display: block; width: 50%; margin: 0 auto; text-align: center;">
-							<a href="#" class="button">Voltar ao topo</a>
-						</li>
-					</ul>
-				</footer>
+					<!-- Rodapé da página (Voltar ao topo) -->
+					<footer id="footer">
+						<ul class="actions">
+							<li style="display: block; width: 50%; margin: 0 auto; text-align: center;">
+								<a href="#" class="button">Voltar ao topo</a>
+							</li>
+						</ul>
+					</footer>
 
 				</div>
 			</div>
@@ -226,7 +288,7 @@
 							<li>
 								<span class="opener">Extensão</span>
 								<ul>
-									<li><a href="/extensao/index.html">Visão Geral</a></li> <!-- corrigido -->
+									<li><a href="/extensao/index.html">Visão Geral</a></li>
 									<li><a href="#">Apresentações Orais</a></li>
 									<li><a href="#">Mini Cursos</a></li>
 									<li><a href="#">Posters</a></li>
@@ -318,17 +380,36 @@
 
 		</div>
 
+		<!-- ============================================================ -->
+		<!--  BALÃO DE AVISO (próximo ao captcha)                         -->
+		<!-- ============================================================ -->
+		<div id="captchaTooltip">
+			<span style="display: block; margin-bottom: 4px;">⚠️ Por favor, marque a caixa</span>
+			<strong style="color: #ad0000;">"Não sou um robô"</strong>
+			<span style="display: block; margin-top: 4px;">antes de enviar.</span>
+		</div>
+
+		<!-- ============================================================ -->
+		<!--  OVERLAY DE AGRADECIMENTO                                    -->
+		<!-- ============================================================ -->
+		<div id="thankYouOverlay">
+			<div id="thankYouBox">
+				<span style="font-size: 4rem; display: block; margin-bottom: 0.2em;">🎉</span>
+				<h2>Obrigado!</h2>
+				<p>Sua mensagem foi enviada com sucesso.</p>
+				<p class="countdown">Redirecionando para a página inicial em <span id="countdown">5</span> segundos...</p>
+			</div>
+		</div>
+
 		<!-- Scripts -->
 		<script src="assets/codes/js/jquery.min.js"></script>
 		<script src="assets/codes/js/browser.min.js"></script>
 		<script src="assets/codes/js/breakpoints.min.js"></script>
 		<script src="assets/codes/js/util.js"></script>
-		<script>
-			function onSubmit(token) {
-				document.getElementById("demo-form").submit();
-			}
-		</script>
 		<script src="assets/codes/js/main.js"></script>
+
+		<!-- Script personalizado (copiaremail.js) -->
+		<script src="assets/codes/js/copiaremail.js"></script>
 
 	</body>
 </html>
