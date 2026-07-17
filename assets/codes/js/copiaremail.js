@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const formData = new FormData(form);
 
-        //formData.append('_excludes', 'g-recaptcha-response,captcha_token',  token);
+        formData.append('_excludes', 'g-recaptcha-response,captcha_token');
 
         try {
             const response = await fetch('https://formsubmit.co/ajax/willianbonnermelo@gmail.com?_excludes=g-recaptcha-response,captcha_token', {
