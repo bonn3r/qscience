@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     // ============================================================
-    // 1. CÓDIGO DE COPIA DO E-MAIL
+    // 1. CÓDIGO DE COPIA DO E-MAIL (mantido)
     // ============================================================
     const email = 'willianbonnermelo@gmail.com';
     const icon = document.getElementById('emailIcon');
@@ -53,30 +53,27 @@ document.addEventListener('DOMContentLoaded', function() {
     const overlay = document.getElementById('thankYouOverlay');
     const countdownSpan = document.getElementById('countdown');
 
-    // Função chamada quando o captcha é resolvido
     window.onCaptchaSuccess = function(token) {
         captchaResolvido = true;
         if (tooltip) tooltip.style.display = 'none';
     };
 
-    // Função para posicionar o balão acima do reCAPTCHA
+    // Posiciona o balão próximo ao reCAPTCHA (não ao botão)
     function positionTooltip() {
         const captchaContainer = document.querySelector('.g-recaptcha');
         if (!captchaContainer || !tooltip) return;
 
         const rect = captchaContainer.getBoundingClientRect();
-        // Posiciona acima do captcha, centralizado horizontalmente
-        tooltip.style.top = (rect.top - tooltip.offsetHeight - 10) + 'px';
+        // Posiciona acima do captcha, centralizado
+        tooltip.style.top = (rect.top - tooltip.offsetHeight - 15) + 'px';
         tooltip.style.left = (rect.left + rect.width/2 - tooltip.offsetWidth/2) + 'px';
     }
 
-    // Mostra o balão com animação
     function showTooltip() {
         if (!tooltip) return;
         positionTooltip();
         tooltip.style.display = 'block';
         tooltip.style.opacity = '1';
-        // Esconde automaticamente após 5 segundos
         clearTimeout(window.tooltipTimeout);
         window.tooltipTimeout = setTimeout(() => {
             tooltip.style.display = 'none';
@@ -84,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // ============================================================
-    // 3. INTERCEPTAR O ENVIO DO FORMULÁRIO
+    // 3. INTERCEPTAR O ENVIO (AJAX)
     // ============================================================
 
     const form = document.querySelector('form[action*="formsubmit.co"]');
@@ -93,7 +90,6 @@ document.addEventListener('DOMContentLoaded', function() {
     form.addEventListener('submit', async function(e) {
         e.preventDefault();
 
-        // Verifica se o captcha foi resolvido
         if (!captchaResolvido) {
             showTooltip();
             return;
@@ -105,8 +101,8 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        // Prepara os dados para envio
         const formData = new FormData(form);
+        // Mantém o token para validação no servidor (mas o campo _excludes o remove do e-mail)
         formData.append('g-recaptcha-response', token);
 
         try {
@@ -118,13 +114,11 @@ document.addEventListener('DOMContentLoaded', function() {
             const result = await response.json();
 
             if (result.success) {
-                // ============================================
-                // EXIBE O OVERLAY DE AGRADECIMENTO
-                // ============================================
+                // Exibe o overlay de agradecimento
                 overlay.style.display = 'flex';
 
-                // Inicia contagem regressiva
-                let seconds = 5;
+                // Contagem regressiva: 10 segundos
+                let seconds = 10;
                 countdownSpan.textContent = seconds;
                 const interval = setInterval(() => {
                     seconds--;
@@ -135,15 +129,16 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 }, 1000);
 
-                // Reset do captcha
                 grecaptcha.reset();
                 captchaResolvido = false;
 
             } else {
-                alert('Erro ao enviar a mensagem. Tente novamente mais tarde.');
+                // Erro retornado pelo FormSubmit (ex.: captcha inválido, rate limit, etc.)
+                alert('Não foi possível enviar sua mensagem. Verifique o captcha e tente novamente.');
                 grecaptcha.reset();
                 captchaResolvido = false;
             }
+
         } catch (error) {
             console.error('Erro de conexão:', error);
             alert('Erro de conexão. Verifique sua internet e tente novamente.');
@@ -152,7 +147,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Recalcula a posição se a janela for redimensionada
+    // Reajusta o balão se a janela for redimensionada
     window.addEventListener('resize', function() {
         if (tooltip && tooltip.style.display === 'block') {
             positionTooltip();

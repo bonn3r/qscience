@@ -8,7 +8,7 @@
 	Edited by:
 		Jimi.7z
 		Created in: 28/06/2026
-		Version: 3.0 (com balão próximo ao captcha e overlay de agradecimento)
+		Version: 3.1 (correções: excludes, tempo 10s, melhorias)
 		Last edition: 15/07/2026
 -->
 <html>
@@ -25,7 +25,7 @@
 		<script src="assets/codes/js/copiaremail.js"></script>
 		<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 		<style>
-			/* Estilos adicionais para o balão e overlay */
+			/* Balão de aviso próximo ao captcha */
 			#captchaTooltip {
 				position: fixed;
 				background: #fff;
@@ -54,6 +54,7 @@
 				border-top: 12px solid #fff;
 				filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
 			}
+			/* Overlay de agradecimento */
 			#thankYouOverlay {
 				display: none;
 				position: fixed;
@@ -89,10 +90,6 @@
 				font-size: 0.85rem;
 				margin-top: 1em;
 			}
-			/* Ajuste para o container do captcha (para posicionamento do balão) */
-			.g-recaptcha {
-				display: inline-block;
-			}
 			.captcha-wrapper {
 				text-align: center;
 				margin-bottom: 1em;
@@ -108,7 +105,7 @@
 			<div id="main">
 				<div class="inner">
 
-					<!-- Cabeçalho (idêntico ao index.html) -->
+					<!-- Cabeçalho -->
 					<header id="header">
 						<a href="index.html" class="logo">
 							<img src="assets/images/logo/cat-logo.svg" alt="Gato logomarca do site" style="height: 2em; width: auto; vertical-align: middle; margin-right: 0.5em;">
@@ -148,23 +145,23 @@
 						</ul>
 					</header>
 
-					<!-- Conteúdo principal: Formulário de Contato -->
+					<!-- Conteúdo principal: Formulário -->
 					<section>
 						<header class="major">
 							<h2>Contato</h2>
 						</header>
+						<p>Preencha o formulário abaixo para enviar uma mensagem. Responderei assim que possível!</p>
 
-						<p>
-							Preencha o formulário abaixo para enviar uma mensagem. Responderei assim que possível!
-						</p>
-
-						<div class="box" style="max-width: 750px; margin: 0 auto; background: #f5f5f5; padding: 2em; border-radius: 8px;">
+						<div class="box" style="max-width: 800px; margin: 0 auto; background: #f5f5f5; padding: 2em; border-radius: 8px;">
 							<form method="post" action="https://formsubmit.co/willianbonnermelo@gmail.com">
 								
-								<!-- Campos ocultos para configuração do FormSubmit -->
+								<!-- Configurações do FormSubmit -->
+								<input type="hidden" name="_template" value="box">
 								<input type="hidden" name="_captcha" value="true">
 								<input type="hidden" name="_next" value="https://bonn3r.github.io/qscience/index.html">
-								<!-- Honeypot para evitar spam -->
+								<!-- ⬇️ NOVO: exclui o token do reCAPTCHA do corpo do e-mail ⬇️ -->
+								<input type="hidden" name="_excludes" value="g-recaptcha-response">
+								<!-- Honeypot -->
 								<input type="text" name="_honey" style="display:none;">
 		
 								<div class="row gtr-uniform">
@@ -183,13 +180,13 @@
 										<input type="text" name="Assunto" id="Assunto" placeholder="Assunto" required />
 									</div>
 
-									<!-- Mensagem (textarea) -->
+									<!-- Mensagem -->
 									<div class="col-12">
 										<textarea name="Mensagem" id="Mensagem" placeholder="Digite sua mensagem..." rows="6" required></textarea>
 									</div>
 
 									<!-- reCAPTCHA -->
-									<div class="col-12 captcha-wrapper">
+									<div class="col-12 captcha-wrapper"  style="display: flex; justify-content: center; width: 100%;">
 										<div class="g-recaptcha" 
 											data-sitekey="6Lc4bVctAAAAADuhSfZEqZYApsRkwCRxFAANV9gl" 
 											data-callback="onCaptchaSuccess">
@@ -212,7 +209,7 @@
 						<div class="box" style="width: auto; max-width: 600px; margin: 0 auto; padding: 1em 1.5em; background: #f9f9f9; border-radius: 6px;">
 							<li class="svg-icon-item" style="display: flex; align-items: center; gap: 0.8rem; list-style: none;">
 								<div style="position: relative; display: inline-flex; flex-direction: column; align-items: center; flex-shrink: 0; width: 2.5em; height: 2.5em; justify-content: center;">
-									<img src="assets/images/logo/email-logo.svg" alt="Envelope representando um email" id="emailIcon" style="width: 3em; height: 3em; transition: filter 0.3s; flex-shrink: 0; cursor: pointer;"/>
+									<img src="assets/images/logo/email-logo.svg" alt="Envelope" id="emailIcon" style="width: 3em; height: 3em; transition: filter 0.3s; flex-shrink: 0; cursor: pointer;"/>
 									<span id="feedbackCopiar" style="position: absolute; top: 100%; left: 50%; transform: translateX(-50%); margin-top: 0.2rem; font-size: 0.7rem; font-weight: 600; white-space: nowrap; opacity: 0; transition: opacity 0.2s;"></span>
 								</div>
 								<span class="contact-text" style="margin-left: 15px;">
@@ -223,7 +220,7 @@
 
 					</section>
 					
-					<!-- Rodapé da página (Voltar ao topo) -->
+					<!-- Rodapé da página -->
 					<footer id="footer">
 						<ul class="actions">
 							<li style="display: block; width: 50%; margin: 0 auto; text-align: center;">
@@ -235,11 +232,9 @@
 				</div>
 			</div>
 
-			<!-- Sidebar (idêntica ao index.html) -->
+			<!-- Sidebar (idêntica) -->
 			<div id="sidebar" class="inactive">
 				<div class="inner">
-
-					<!-- Search com logotipo -->
 					<section id="search" class="alt">
 						<img src="assets/images/logo/cat-logo.svg" alt="Gato logomarca do site" style="height: 2em; width: auto; vertical-align: middle; margin-right: 0.5em; margin-bottom: 5px;">
 						<strong>Q</strong>-Science
@@ -248,7 +243,6 @@
 						</form>
 					</section>
 
-					<!-- Menu -->
 					<nav id="menu">
 						<header class="major">
 							<h2>Menu</h2>
@@ -311,28 +305,26 @@
 						</ul>
 					</nav>
 
-					<!-- Publicações Recentes -->
 					<section>
 						<header class="major">
 							<h2>Publicações Recentes</h2>
 						</header>
 						<div class="mini-posts">
 							<article>
-								<a href="#" class="image"><img src="assets/ordinary-pages/pesquisa/tcc/tcc_pub.svg" alt="Imagem com convite para conhecer meu TCC" /></a>
+								<a href="#" class="image"><img src="assets/ordinary-pages/pesquisa/tcc/tcc_pub.svg" alt="TCC" /></a>
 								<p>Publicação do TCC aqui.</p>
 							</article>
 							<article>
-								<a href="#" class="image"><img src="assets/ordinary-pages/pesquisa/ics/pub/ic_pub.svg" alt="Imagem com convite para conhecer minhas iniciações científica" /></a>
+								<a href="#" class="image"><img src="assets/ordinary-pages/pesquisa/ics/pub/ic_pub.svg" alt="IC" /></a>
 								<p>Publicação da minha última IC</p>
 							</article>
 							<article>
-								<a href="#" class="image"><img src="assets/exta-pages/apresentacao_pub.svg" alt="Imagem com convite para conhecer a origem do site" /></a>
+								<a href="#" class="image"><img src="assets/exta-pages/apresentacao_pub.svg" alt="Apresentação" /></a>
 								<p>A pensar...</p>
 							</article>
 						</div>
 					</section>
 
-					<!-- Contato (sidebar) -->
 					<section>
 						<header class="major">
 							<h2>Contato</h2>
@@ -346,22 +338,21 @@
 						<p><strong>Me acompanhe:</strong></p>
 						<ul class="contact">
 							<li class="svg-icon-item">
-								<img src="assets/images/logo/bluesky-logo.svg" alt="Logomarca Bluesky" class="svg-icon" />
+								<img src="assets/images/logo/bluesky-logo.svg" alt="Bluesky" class="svg-icon" />
 								<a href="https://bsky.app/profile/bonner.bsky.social" target="_blank" rel="noopener noreferrer">@bonner</a>
 							</li>
 							<li class="svg-icon-item">
-								<img src="assets/images/logo/insta-logo.svg" alt="Logomarca Instagram" class="svg-icon" />
+								<img src="assets/images/logo/insta-logo.svg" alt="Instagram" class="svg-icon" />
 								<a href="https://www.instagram.com/jimi.7z" target="_blank" rel="noopener noreferrer">@jimi.7z</a>
 							</li>
 						</ul>
 					</section>
 
-					<!-- Vínculo institucional -->
 					<section>
 						<div class="box" style="border-left: 4px solid #a90a15; padding: 1em;">
 							<ul class="contact">
 								<li class="svg-icon-item">
-									<img src="assets/images/logo/university-logo.svg" alt="Logomarca Universidade" class="svg-icon" />
+									<img src="assets/images/logo/university-logo.svg" alt="Universidade" class="svg-icon" />
 									<span class="contact-text">
 										Atualmente estou aguardando a confirmação da bolsa para dar início ao Mestrado...
 									</span>
@@ -370,34 +361,28 @@
 						</div>
 					</section>
 
-					<!-- Footer -->
 					<footer id="footer">
 						<p class="copyright">&copy;2026 Jimi.7z. All rights reserved. Design by: <a href="https://html5up.net/editorial" target="_blank" rel="noopener noreferrer">HTML5 UP</a>. Redesign by: Willian Bonner.</p>
 					</footer>
-
 				</div>
 			</div>
 
 		</div>
 
-		<!-- ============================================================ -->
-		<!--  BALÃO DE AVISO (próximo ao captcha)                         -->
-		<!-- ============================================================ -->
+		<!-- Balão de aviso -->
 		<div id="captchaTooltip">
 			<span style="display: block; margin-bottom: 4px;">⚠️ Por favor, marque a caixa</span>
 			<strong style="color: #ad0000;">"Não sou um robô"</strong>
 			<span style="display: block; margin-top: 4px;">antes de enviar.</span>
 		</div>
 
-		<!-- ============================================================ -->
-		<!--  OVERLAY DE AGRADECIMENTO                                    -->
-		<!-- ============================================================ -->
+		<!-- Overlay de agradecimento -->
 		<div id="thankYouOverlay">
 			<div id="thankYouBox">
-				<span style="font-size: 4rem; display: block; margin-bottom: 0.2em;">🎉</span>
+				<!--<span style="font-size: 4rem; display: block; margin-bottom: 0.2em;">🎉</span>-->
 				<h2>Obrigado!</h2>
 				<p>Sua mensagem foi enviada com sucesso.</p>
-				<p class="countdown">Redirecionando para a página inicial em <span id="countdown">5</span> segundos...</p>
+				<p class="countdown">Redirecionando para a página inicial em <span id="countdown">10</span> segundos...</p>
 			</div>
 		</div>
 
@@ -407,8 +392,6 @@
 		<script src="assets/codes/js/breakpoints.min.js"></script>
 		<script src="assets/codes/js/util.js"></script>
 		<script src="assets/codes/js/main.js"></script>
-
-		<!-- Script personalizado (copiaremail.js) -->
 		<script src="assets/codes/js/copiaremail.js"></script>
 
 	</body>
