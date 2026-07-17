@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', function() {
         formData.append('_excludes', 'g-recaptcha-response,captcha_token');
 
         try {
-            const response = await fetch('https://formsubmit.co/ajax/willianbonnermelo@gmail.com?_excludes=g-recaptcha-response,captcha_token', {
+            const response = await fetch('https://formsubmit.co/ajax/willianbonnermelo@gmail.com', {
                 method: 'POST',
                 body: formData
             });
