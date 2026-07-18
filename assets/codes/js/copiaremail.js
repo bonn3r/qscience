@@ -101,10 +101,22 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        const formData = new FormData(form);
+        //const formData = new FormData(form);
 
         // Atualizado: usando .set para evitar a duplicação do parâmetro _excludes
-        formData.set('_excludes', 'g-recaptcha-response,captcha_token');
+        //formData.set('_excludes', 'g-recaptcha-response,captcha_token');
+
+        const formData = new FormData(form);
+
+        // A MÁGICA ACONTECE AQUI: 
+        // Apagamos fisicamente o campo do reCAPTCHA do pacote de dados antes do envio
+        formData.delete('g-recaptcha-response');
+        
+        // Mantemos o _excludes só por precaução para outras variáveis ocultas
+        formData.set('_excludes', 'captcha_token');
+
+        try {
+            const response = await fetch('https://formsubmit.co/ajax/willianbonnermelo@gmail.com', {
 
         try {
             // Atualizado: URL limpa, sem parâmetros de query na string de destino
