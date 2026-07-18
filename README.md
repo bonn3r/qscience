@@ -1,6 +1,6 @@
 # Q-Science, por Willian Bonner.
 
-[Q-Science](https://bonn3r.github.io/qscience) é o meu site pessoal para divulgar trabalhos acadêmicos em geral e divulgação científica. O site foi construído com base no modelo [Editorial](https://html5up.net/editorial) do criador [HTML5 UP](https://html5up.net). O README original está disponível no fim dessa descrição. Aqui vou descrever a estrutura de arquivos do projeto e observações pertinentes sempre que necessário.
+[Q-Science](https://bonn3r.github.io/qscience) é o meu site pessoal para divulgar trabalhos acadêmicos em geral e divulgação científica. O site foi construído com base no modelo [Editorial](https://html5up.net/editorial) do criador [HTML5 UP](https://html5up.net), eu optei por não usar soluções como [Hugo](https://gohugo.io/documentation/) ou similares por adicionar epois.... O README original está disponível no fim dessa descrição. Aqui vou descrever a estrutura de arquivos do projeto e observações pertinentes sempre que necessário.
 
 ## **1.** Estrutura de arquivos
 

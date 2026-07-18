@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="refresh" content="0; url=/br/">
+  <title>Q-Science</title>
+  <script>
+    // Detecta o idioma do navegador
+    const userLang = navigator.language || navigator.userLanguage;
+    // Se começar com 'en', vai para inglês. Senão, vai para português (padrão)
+    const lang = userLang.startsWith('en') ? 'en' : 'br';
+    window.location.href = '/' + lang + '/';
+  </script>
+</head>
+<body>
+  <p>Redirecionando... <a href="/br/">Português</a> | <a href="/en/">English</a></p>
+</body>
+</html>
