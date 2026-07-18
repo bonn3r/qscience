@@ -1,7 +1,12 @@
+// ============================================================
+// copiaremail.js — Versão corrigida e estável
+// ============================================================
+
 document.addEventListener('DOMContentLoaded', function() {
-    // ============================================================
+
+    // ==========================================================
     // 1. CÓDIGO DE COPIA DO E-MAIL (mantido)
-    // ============================================================
+    // ==========================================================
     const email = 'willianbonnermelo@gmail.com';
     const icon = document.getElementById('emailIcon');
     const feedback = document.getElementById('feedbackCopiar');
@@ -44,27 +49,26 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ============================================================
+    // ==========================================================
     // 2. CONFIGURAÇÃO DO CAPTCHA E ENVIO DO FORMULÁRIO
-    // ============================================================
+    // ==========================================================
 
     let captchaResolvido = false;
-    const tooltip = document.getElementById('captchaTooltip');
+    const tooltip = document.getElementById('captchaTooltip');   // (opcional, não usado no HTML atual)
     const overlay = document.getElementById('thankYouOverlay');
     const countdownSpan = document.getElementById('countdown');
 
+    // Função chamada pelo widget do reCAPTCHA quando resolvido
     window.onCaptchaSuccess = function(token) {
         captchaResolvido = true;
         if (tooltip) tooltip.style.display = 'none';
     };
 
-    // Posiciona o balão próximo ao reCAPTCHA (não ao botão)
+    // Posiciona o balão de aviso (se utilizado)
     function positionTooltip() {
         const captchaContainer = document.querySelector('.g-recaptcha');
         if (!captchaContainer || !tooltip) return;
-
         const rect = captchaContainer.getBoundingClientRect();
-        // Posiciona acima do captcha, centralizado
         tooltip.style.top = (rect.top - tooltip.offsetHeight - 15) + 'px';
         tooltip.style.left = (rect.left + rect.width/2 - tooltip.offsetWidth/2) + 'px';
     }
@@ -80,16 +84,17 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 5000);
     }
 
-    // ============================================================
+    // ==========================================================
     // 3. INTERCEPTAR O ENVIO (AJAX)
-    // ============================================================
+    // ==========================================================
 
     const form = document.querySelector('form[action*="formsubmit.co"]');
-    if (!form) return;
+    if (!form) return;   // se não houver formulário, encerra
 
     form.addEventListener('submit', async function(e) {
-        e.preventDefault();
+        e.preventDefault();   // impede o envio tradicional
 
+        // --- Verifica se o captcha foi resolvido ---
         if (!captchaResolvido) {
             showTooltip();
             return;
@@ -101,25 +106,19 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        //const formData = new FormData(form);
-
-        // Atualizado: usando .set para evitar a duplicação do parâmetro _excludes
-        //formData.set('_excludes', 'g-recaptcha-response,captcha_token');
-
+        // --- Monta o FormData com todos os campos ---
         const formData = new FormData(form);
 
-        // A MÁGICA ACONTECE AQUI: 
-        // Apagamos fisicamente o campo do reCAPTCHA do pacote de dados antes do envio
-        formData.delete('g-recaptcha-response');
-        
-        // Mantemos o _excludes só por precaução para outras variáveis ocultas
-        formData.set('_excludes', 'captcha_token');
+        // NÃO remova o g-recaptcha-response! O FormSubmit precisa dele
+        // para validar o captcha. O parâmetro _excludes já cuida de
+        // não incluí-lo no corpo do e-mail.
+        // formData.delete('g-recaptcha-response');   // <-- NUNCA faça isso
+
+        // Garante que o _excludes esteja presente (já está no HTML)
+        // Mas se quiser forçar, pode usar formData.set('_excludes', 'g-recaptcha-response,captcha_token');
 
         try {
-            const response = await fetch('https://formsubmit.co/ajax/willianbonnermelo@gmail.com', {
-
-        try {
-            // Atualizado: URL limpa, sem parâmetros de query na string de destino
+            // --- Envia via AJAX para o endpoint do FormSubmit ---
             const response = await fetch('https://formsubmit.co/ajax/willianbonnermelo@gmail.com', {
                 method: 'POST',
                 body: formData
@@ -143,6 +142,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 }, 1000);
 
+                // Reseta o captcha para futuros envios
                 grecaptcha.reset();
                 captchaResolvido = false;
 
@@ -161,10 +161,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Reajusta o balão se a janela for redimensionada
+    // Reajusta o balão se a janela for redimensionada (opcional)
     window.addEventListener('resize', function() {
         if (tooltip && tooltip.style.display === 'block') {
             positionTooltip();
         }
     });
+
 });
