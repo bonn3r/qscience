@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+
+<svg
+   width="800"
+   height="578"
+   viewBox="0 0 36 26.01"
+   aria-hidden="true"
+   role="img"
+   class="iconify iconify--twemoji"
+   preserveAspectRatio="xMidYMid"
+   version="1.1"
+   id="svg4"
+   sodipodi:docname="united-kingdom-logo.svg"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="namedview4"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.96625"
+     inkscape:cx="400.51746"
+     inkscape:cy="400"
+     inkscape:current-layer="svg4" />
+  <g
+     id="g4"
+     inkscape:label="United Kingdom flag"
+     transform="matrix(0.99999997,0,0,1.0003846,3.7249531e-7,-5.0019226)">
+    <path
+       fill="#00247d"
+       d="M 0,9.059 V 13 H 5.628 Z M 4.664,31 H 13 V 25.163 Z M 23,25.164 V 31 h 8.335 z M 0,23 v 3.941 L 5.63,23 Z M 31.337,5 H 23 v 5.837 z M 36,26.942 V 23 H 30.369 Z M 36,13 V 9.059 L 30.371,13 Z M 13,5 H 4.664 L 13,10.837 Z"
+       id="path1" />
+    <path
+       fill="#cf1b2b"
+       d="m 25.14,23 9.712,6.801 a 3.977,3.977 0 0 0 0.99,-1.749 L 28.627,23 Z M 13,23 h -2.141 l -9.711,6.8 c 0.521,0.53 1.189,0.909 1.938,1.085 L 13,23.943 Z M 23,13 h 2.141 L 34.852,6.2 A 3.988,3.988 0 0 0 32.915,5.115 L 23,12.057 Z M 10.859,13 1.148,6.2 A 3.994,3.994 0 0 0 0.157,7.949 L 7.372,13 Z"
+       id="path2" />
+    <path
+       fill="#eeeeee"
+       d="M 36,21 H 21 v 10 h 2 V 25.164 L 31.335,31 H 32 a 3.99,3.99 0 0 0 2.852,-1.199 L 25.14,23 h 3.487 l 7.215,5.052 C 35.935,27.715 36,27.366 36,27 V 26.942 L 30.369,23 H 36 Z M -3.350094e-7,21 v 2 H 5.6299997 L -3.350094e-7,26.941 V 27 c 0,1.091 0.4389999950094,2.078 1.1480000350094,2.8 L 10.859,23 H 13 v 0.943 l -9.9140003,6.941 c 0.294,0.07 0.598,0.116 0.914,0.116 h 0.664 L 13,25.163 V 31 h 2 V 21 Z M 36,9 A 3.983,3.983 0 0 0 34.852,6.2 L 25.141,13 H 23 V 12.057 L 32.915,5.115 A 4.001,4.001 0 0 0 32,5 H 31.337 L 23,10.837 V 5 H 21 V 15 H 36 V 13 H 30.371 L 36,9.059 Z M 13,5 v 5.837 L 4.6639997,5 h -0.664 a 3.985,3.985 0 0 0 -2.852,1.2 L 10.859,13 H 7.3719997 L 0.15699966,7.949 A 3.968,3.968 0 0 0 -3.350094e-7,9 V 9.059 L 5.6279997,13 H -3.350094e-7 v 2 H 15 V 5 Z"
+       id="path3" />
+    <path
+       fill="#cf1b2b"
+       d="M 21,15 V 5 H 15 V 15 H 0 v 6 h 15 v 10 h 6 V 21 h 15 v -6 z"
+       id="path4" />
+  </g>
+</svg>

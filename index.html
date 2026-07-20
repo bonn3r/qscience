@@ -1,11 +1,123 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0; url=/qscience/br/">
-    <title>Q-Science</title>
-</head>
-<body>
-    <p>Redirecionando para a versão em português... Se não funcionar, <a href="/qscience/br/">clique aqui</a>.</p>
-</body>
+<!DOCTYPE HTML>
+<!--
+	Original creator:	
+		Editorial by HTML5 UP
+		html5up.net | @ajlkn
+		Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+
+	Edited by:
+		Jimi.7z
+		Created in: 19/07/2026
+		Version: 2.1 – redirecionamento automático com contagem regressiva
+-->
+<html>
+	<head>
+		<title>Q-Science</title>
+		<link rel="icon" href="/qscience/assets/images/logo/cat-logo.svg" type="image/svg+xml" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/qscience/assets/codes/css/main.css"/>
+		<!-- MathJax (opcional) -->
+		<script src="/qscience/assets/codes/js/mathjax_config.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+		<div id="wrapper">
+
+			<!-- Main -->
+			<div id="main">
+				<div class="inner">
+
+					<header id="header">
+						<a href="#" class="logo">
+							<img src="/qscience/assets/images/logo/cat-logo.svg" alt="Gato logomarca do site" style="height: 2em; width: auto; vertical-align: middle; margin-right: 0.5em;">
+							<strong>Q</strong>-Science
+						</a>
+						<!-- Dropdown de idiomas -->
+						
+					</header>
+
+					<section>
+						<h1 style="text-align: center;">Q-Science</h1>
+						<div class="content" style="text-align: center;">
+							<div class="image">
+								<img src="/qscience/assets/images/logo/cat-logo.svg" alt="Gato logomarca do site" style="max-width: 300px; justify-content: center;">
+							</div>
+							<!-- Contador regressivo -->
+							<div id="countdown">Redirecionando em 15 segundos...</div>
+						</div>
+					</section>
+
+					<footer id="footer">
+						<p class="copyright" style="text-align: center;">&copy;2026 Jimi.7z. All rights reserved. Design by: <a href="https://html5up.net/editorial" target="_blank" rel="noopener noreferrer">HTML5 UP</a>. Redesign by: Willian Bonner.</p>
+					</footer>
+				</div>
+			</div>
+
+		</div>
+
+		<!-- Scripts -->
+		<script src="/qscience/assets/codes/js/jquery.min.js"></script>
+		<script src="/qscience/assets/codes/js/browser.min.js"></script>
+		<script src="/qscience/assets/codes/js/breakpoints.min.js"></script>
+		<script src="/qscience/assets/codes/js/util.js"></script>
+		<script src="/qscience/assets/codes/js/main.js"></script>
+		<script src="/qscience/assets/codes/js/language.js"></script>
+
+		<!-- Script de redirecionamento automático com contagem -->
+		<!--<script>
+			(function() {
+				// Só executa se não estiver já em uma subpasta de idioma
+				var path = window.location.pathname;
+				if (path.includes('/br/') || path.includes('/en/')) {
+					return; // já está na página correta
+				}
+
+				// Detecta idioma do navegador
+				var userLang = navigator.language || navigator.languages[0] || 'en';
+				var targetPath = userLang.toLowerCase().startsWith('pt') ? '/qscience/br/' : '/qscience/en/';
+
+				var countdownEl = document.getElementById('countdown');
+				var seconds = 15;
+
+				// Atualiza o contador a cada segundo
+				var interval = setInterval(function() {
+					seconds--;
+					if (countdownEl) {
+						countdownEl.textContent = 'Redirecionando em ' + seconds + ' segundos...';
+					}
+					if (seconds <= 0) {
+						clearInterval(interval);
+						window.location.href = targetPath;
+					}
+				}, 1000);
+
+				// Se o usuário clicar em qualquer link do dropdown, cancela o redirecionamento automático
+				var dropdownLinks = document.querySelectorAll('.lang-dropdown-menu a');
+				dropdownLinks.forEach(function(link) {
+					link.addEventListener('click', function(e) {
+						clearInterval(interval);
+						// O redirecionamento será feito pelo link normalmente
+					});
+				});
+
+				// Toggle do dropdown (mantido do script original)
+				var btn = document.getElementById('langDropdownBtn');
+				var menu = document.getElementById('langDropdownMenu');
+				if (btn && menu) {
+					btn.addEventListener('click', function(e) {
+						e.stopPropagation();
+						menu.classList.toggle('show');
+					});
+					document.addEventListener('click', function() {
+						menu.classList.remove('show');
+					});
+				}
+			})();
+		</script>-->
+
+	</body>
 </html>
