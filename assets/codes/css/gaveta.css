@@ -1,0 +1,69 @@
+/* ========== Gavetas (Drawers) ========== */
+.drawer {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.3s ease, margin 0.3s ease;
+    margin-top: 0;
+    border-top: 1px solid transparent;
+}
+
+.drawer.open {
+    max-height: 600px;   /* valor suficiente para o conteúdo */
+    opacity: 1;
+    margin-top: 1em;
+    border-top-color: #ccc;
+}
+
+.drawer-content {
+    padding: 0.5em 0;
+    background: #fefefe;
+    border-radius: 4px;
+}
+
+.drawer-content p {
+    margin: 0 0 0.75em 0;
+}
+
+.drawer-content pre {
+    background: #f0f0f0;
+    padding: 0.75em 1em;
+    border-radius: 4px;
+    overflow-x: auto;
+    font-size: 0.9em;
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+
+.drawer-buttons {
+    display: flex;
+    gap: 0.5em;
+    justify-content: flex-end;
+    margin-top: 0.5em;
+}
+
+/* Botões dentro da gaveta */
+.drawer-close,
+.drawer-copy {
+    background: #e0e0e0 !important;
+    color: #333 !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.drawer-close:hover,
+.drawer-copy:hover {
+    background: #d0d0d0 !important;
+}
+
+/* Ajuste para os botões do card */
+.card-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    margin-top: 0.5em;
+}
+
+.card-actions .button {
+    margin-bottom: 0;
+}

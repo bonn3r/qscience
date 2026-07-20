@@ -24,6 +24,23 @@
 		<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
 	</head>
 	<body class="is-preload">
+		<div class="lang-dropdown" id="langDropdown" >
+			<button class="lang-dropdown-btn" id="langDropdownBtn" aria-haspopup="true" aria-expanded="false">
+				<img src="/qscience/assets/images/logo/brazilian-logo.svg" alt="Português" style="width:24px; height:16px; border-radius:2px;">
+			</button>
+			
+			<ul class="lang-dropdown-menu" id="langDropdownMenu" role="menu">
+				<li role="none">
+					<a href="/qscience/br/" role="menuitem" class="active-lang">
+					<img src="/qscience/assets/images/logo/brazilian-logo.svg" alt="Português">Português</a>
+				</li>
+		
+				<li role="none">
+					<a href="/qscience/en/" role="menuitem">
+					<img src="/qscience/assets/images/logo/united-kingdom-logo.svg" alt="English">English</a>
+				</li>
+			</ul>
+		</div>
 
 		<!-- Wrapper -->
 		<div id="wrapper">
@@ -308,6 +325,7 @@
 		<script src="/qscience/assets/codes/js/breakpoints.min.js"></script>
 		<script src="/qscience/assets/codes/js/util.js"></script>
 		<script src="/qscience/assets/codes/js/main.js"></script>
+		<script src="/qscience/assets/codes/js/language.js"></script>
 
 	</body>
 </html>

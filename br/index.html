@@ -23,7 +23,25 @@
 		<script src="/qscience/assets/codes/js/mathjax_config.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
 	</head>
+	
 	<body class="is-preload">
+		<div class="lang-dropdown" id="langDropdown" >
+			<button class="lang-dropdown-btn" id="langDropdownBtn" aria-haspopup="true" aria-expanded="false">
+				<img src="/qscience/assets/images/logo/brazilian-logo.svg" alt="Português" style="width:24px; height:16px; border-radius:2px;">
+			</button>
+			
+			<ul class="lang-dropdown-menu" id="langDropdownMenu" role="menu">
+				<li role="none">
+					<a href="/qscience/br/" role="menuitem" class="active-lang">
+					<img src="/qscience/assets/images/logo/brazilian-logo.svg" alt="Português">Português</a>
+				</li>
+		
+				<li role="none">
+					<a href="/qscience/en/" role="menuitem">
+					<img src="/qscience/assets/images/logo/united-kingdom-logo.svg" alt="English">English</a>
+				</li>
+			</ul>
+		</div>
 		
 		<!-- Wrapper -->
 		<div id="wrapper">
@@ -277,15 +295,15 @@
 						</header>
 						<div class="mini-posts">
 							<article>
-								<a href="#" class="image"><img src="/qscience/assets/ordinary-pages/pesquisa/tcc/tcc_pub.svg" alt="Imagem com convite para conhecer meu TCC" /></a>
+								<a href="#" class="image"><img src="/qscience/br/pesquisa/tcc/tcc_pub.svg" alt="Imagem com convite para conhecer meu TCC" /></a>
 								<p>Publicação do TCC aqui.</p>
 							</article>
 							<article>
-								<a href="#" class="image"><img src="/qscience/assets/images/" alt="Imagem com convite para conhecer minhas iniciações científica" /></a>
+								<a href="#" class="image"><img src="/qscience/br/pesquisa/ics/pub/ic_pub.svg" alt="Imagem com convite para conhecer minhas iniciações científica" /></a>
 								<p>Publicação da minha última IC</p>
 							</article>
 							<article>
-								<a href="#" class="image"><img src="/qscience/assets/exta-pages/apresentacao_pub.svg" alt="Imagem com convite para conhecer a origem do site" /></a>
+								<a href="#" class="image"><img src="/qscience/br/extras/apresentacao_pub.svg" alt="Imagem com convite para conhecer a origem do site" /></a>
 								<p>A pensar...</p>
 							</article>
 						</div>
@@ -339,6 +357,7 @@
 		<script src="/qscience/assets/codes/js/breakpoints.min.js"></script>
 		<script src="/qscience/assets/codes/js/util.js"></script>
 		<script src="/qscience/assets/codes/js/main.js"></script>
+		<script src="/qscience/assets/codes/js/language.js"></script>
 
 	</body>
 </html>
