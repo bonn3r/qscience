@@ -1,299 +1,359 @@
 <!DOCTYPE HTML>
 <!--
-	Original creator:	
-		Editorial by HTML5 UP
-		html5up.net | @ajlkn
-		Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+    Original creator:   
+        Editorial by HTML5 UP
+        html5up.net | @ajlkn
+        Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 
-	Edited by:
-		Jimi.7z
-		Created in: 09/07/2026
-		Version: 2.0 (sincronizado com index.html)
-		Last edition: 14/07/2026
+    Edited by:
+        Jimi.7z
+        Created in: 09/07/2026
+        Version: 2.0 (sincronizado com index.html)
+        Last edition: 18/07/2026 – adaptado para /br/
 -->
 <html>
-	<head>
-		<title>Produção Científica | Q-Science</title>
-		<link rel="icon" href="assets/images/logo/cat-logo.svg" type="image/svg+xml" />
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/codes/css/main.css" />
-		<!-- Biblioteca MathJax -->
-		<script src="assets/codes/js/mathjax_config.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
-	</head>
-	<body class="is-preload">
+<head>
+    <title>Produção Científica | Q-Science</title>
+    <link rel="icon" href="/qscience/assets/images/logo/cat-logo.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/qscience/assets/codes/css/main.css" />
+    <!-- CSS das Gavetas -->
+    <link rel="stylesheet" href="/qscience/assets/codes/css/gaveta.css" />
+    <!-- MathJax -->
+    <script src="/qscience/assets/codes/js/mathjax_config.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+</head>
+<body class="is-preload">
+    <!-- Language Dropdown (mantido) -->
+    <div class="lang-dropdown" id="langDropdown" >
+        <button class="lang-dropdown-btn" id="langDropdownBtn" aria-haspopup="true" aria-expanded="false">
+			<!--<i class="fas fa-globe" style="margin-right: 6px;"></i>-->
+			<img id="langFlag" src="/qscience/assets/images/logo/united-kingdom-logo.svg" alt="Português" style="width:24px; height:16px; border-radius:2px;">
+		</button>
+        <ul class="lang-dropdown-menu" id="langDropdownMenu" role="menu">
+            <li role="none">
+                <a href="/qscience/br/arxiv.html" role="menuitem" >
+                    <img src="/qscience/assets/images/logo/brazilian-logo.svg" alt="Português">Português
+                </a>
+            </li>
+            <li role="none">
+                <a href="/qscience/en/" role="menuitem" class="active-lang">
+                    <img src="/qscience/assets/images/logo/united-kingdom-logo.svg" alt="English">English
+                </a>
+            </li>
+        </ul>
+    </div>
 
-		<!-- Wrapper -->
-		<div id="wrapper">
+    <!-- Wrapper -->
+    <div id="wrapper">
 
-			<!-- Main -->
-			<div id="main">
-				<div class="inner">
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
 
-					<header id="header">
-						<a href="index.html" class="logo">
-							<img src="assets/images/logo/cat-logo.svg" alt="Gato logomarca do site" style="height: 2em; width: auto; vertical-align: middle; margin-right: 0.5em;">
-							<strong>Q</strong>-Science
-						</a>
-						<ul class="icons">
-							<li>
-								<a href="producaocientifica.html" class="icon brands">
-									<img src="assets/images/logo/arxiv-logo.svg" alt="Logomarca do arXiv" width="20" height="20" style="vertical-align:middle;">
-									<span class="label">Arxiv</span>
-								</a>
-							</li>
-							<li>
-								<a href="https://github.com/bonn3r" target="_blank" rel="noopener noreferrer" class="icon brands">
-									<img src="assets/images/logo/github-logo.svg" alt="Logomarca do Github" width="20" height="20" style="vertical-align:middle;">
-									<span class="label">Github</span>
-								</a>
-							</li>
-							<li>
-								<a href="http://lattes.cnpq.br/3294938329763314" target="_blank" rel="noopener noreferrer" class="icon brands">
-									<img src="assets/images/logo/lattes-logo.svg" alt="Logomarca da Plataforma Lattes" width="20" height="20" style="vertical-align:middle;">
-									<span class="label">Lattes</span>
-								</a>
-							</li>
-							<li>
-								<a href="https://linkedin.com/in/willianbonnerbsc" target="_blank" rel="noopener noreferrer" class="icon brands">
-									<img src="assets/images/logo/linkedin-logo.svg" alt="Logomarca Linkedin" width="20" height="20" style="vertical-align:middle;">
-									<span class="label">Linked</span>
-								</a>
-							</li>
-							<li>
-								<a href="https://orcid.org/0009-0007-7458-8512" target="_blank" rel="noopener noreferrer" class="icon brands">
-									<img src="assets/images/logo/orcid-logo.svg" alt="Logomarca Orcid" width="20" height="20" style="vertical-align:middle;">
-									<span class="label">ORCID</span> <!-- corrigido -->
-								</a>
-							</li>
-						</ul>
-					</header>
+                <header id="header">
+                    <a href="/qscience/en/index.html" class="logo">
+                        <img src="/qscience/assets/images/logo/cat-logo.svg" alt="Gato logomarca do site" style="height: 2em; width: auto; vertical-align: middle; margin-right: 0.5em;">
+                        <strong>Q</strong>-Science
+                    </a>
+                    <ul class="icons">
+                        <li>
+                            <a href="#" class="icon brands">
+                                <img src="/qscience/assets/images/logo/arxiv-logo.svg" alt="Logomarca do arXiv" width="20" height="20" style="vertical-align:middle;">
+                                <span class="label">Arxiv</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/bonn3r" target="_blank" rel="noopener noreferrer" class="icon brands">
+                                <img src="/qscience/assets/images/logo/github-logo.svg" alt="Logomarca do Github" width="20" height="20" style="vertical-align:middle;">
+                                <span class="label">Github</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://lattes.cnpq.br/3294938329763314" target="_blank" rel="noopener noreferrer" class="icon brands">
+                                <img src="/qscience/assets/images/logo/lattes-logo.svg" alt="Logomarca da Plataforma Lattes" width="20" height="20" style="vertical-align:middle;">
+                                <span class="label">Lattes</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://linkedin.com/in/willianbonnerbsc" target="_blank" rel="noopener noreferrer" class="icon brands">
+                                <img src="/qscience/assets/images/logo/linkedin-logo.svg" alt="Logomarca Linkedin" width="20" height="20" style="vertical-align:middle;">
+                                <span class="label">Linked</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://orcid.org/0009-0007-7458-8512" target="_blank" rel="noopener noreferrer" class="icon brands">
+                                <img src="/qscience/assets/images/logo/orcid-logo.svg" alt="Logomarca Orcid" width="20" height="20" style="vertical-align:middle;">
+                                <span class="label">ORCID</span>
+                            </a>
+                        </li>
+                    </ul>
+                </header>
 
-					<!-- Conteúdo principal: lista de pré‑prints -->
-					<section>
-						<header class="major">
-							<h2>Pré-prints no arXiv</h2>
-							<p>Ainda não possuo nada no arXiv... mas em breve!</p>
-						</header>
+                <!-- Conteúdo principal: lista de pré‑prints -->
+                <section>
+                    <header class="major">
+                        <h2>Publications on the ArXiv</h2>
+                    </header>
 
-						<!-- Card 0 -->
-						<div class="box" style="width: auto; max-width: 100%; margin: 0 auto; padding: 1em 1.5em; background: #f9f9f9; border-radius: 6px;">
-								<h3>
-									Título do Artigo
-								</h3>
-    							
-								<p>Lista de autores</p>
+					<p>How the ArXiv doesn't have an "home page with all my articles" I have created this page to this. The articles can be listet according to I write and submited.</p>
 
-								<a href="#" class="button icon solid fa-download">Icon</a>
-							</div>
+                    <!-- ========== Card 1 ========== -->
+                    <div class="box article-card" style="width: auto; max-width: 100%; margin: 0 auto; padding: 1em 1.5em; background: #f9f9f9; border-radius: 6px;">
+                        <h3>
+                            <a href="#">The name of article</a>
+                        </h3>
+                        <p><strong>Authors:</strong> Name of authores</p>
 
-						<!-- Card 1 -->
-						<div class="box">
-							<article style="border-bottom: 1px solid #eee; padding: 1.5em 0;">
-								<div style="display: flex; flex-wrap: wrap; gap: 1em; align-items: flex-start;">
-									<div style="flex: 1; min-width: 200px;">
-										<h3><a href="https://arxiv.org/abs/2401.12345" target="_blank" rel="noopener noreferrer">Título do seu primeiro pré‑print</a></h3>
-										<p><strong>Autores:</strong> Willian Bonner, Colaborador A, Colaborador B</p>
-										<p><strong>arXiv:</strong> 2401.12345 &nbsp;|&nbsp; <strong>Data:</strong> 15 de janeiro de 2024</p>
-										<p style="text-align: justify;"><strong>Resumo:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-									</div>
-								</div>
-							</article>
+                        <div class="card-actions">
+                            <button class="button small drawer-toggle" data-target="resumo-1">Abstract</button>
+                            <a href="https://arxiv.org/pdf/2305.17453" class="button small" target="_blank" rel="noopener noreferrer">See PDF</a>
+                            <button class="button small drawer-toggle" data-target="bibtex-1">LaTex</button>
+                        </div>
 
-						</div>
+                        <!-- Gaveta de Resumo -->
+                        <div class="drawer" id="drawer-resumo-1">
+                            <div class="drawer-content">
+                                <p>
+                                    <strong>Abstract:</strong> Este trabalho investiga aspectos não perturbativos da teoria quântica de campos em espaços-tempo curvos, com ênfase na criação de partículas e na dependência do vácuo. Utilizamos técnicas de integrais de trajetória e métodos de função de Green para analisar a estabilidade do vácuo em backgrounds cosmológicos.
+                                </p>
+                                <button class="button small drawer-close" data-target="resumo-1">Close</button>
+                            </div>
+                        </div>
 
-						<!-- Card 2 -->
-						<article style="border-bottom: 1px solid #eee; padding: 1.5em 0;">
-							<div style="display: flex; flex-wrap: wrap; gap: 1em; align-items: flex-start;">
-								<div style="flex: 1; min-width: 200px;">
-									<h3><a href="https://arxiv.org/abs/2402.67890" target="_blank" rel="noopener noreferrer">Título do segundo pré‑print</a></h3>
-									<p><strong>Autores:</strong> Willian Bonner, Colaborador C</p>
-									<p><strong>arXiv:</strong> 2402.67890 &nbsp;|&nbsp; <strong>Data:</strong> 20 de fevereiro de 2024</p>
-									<p style="text-align: justify;"><strong>Resumo:</strong> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-								</div>
-							</div>
-						</article>
+                        <!-- Gaveta de BibTeX -->
+                        <div class="drawer" id="drawer-bibtex-1">
+                            <div class="drawer-content">
+                                <pre><code class="bibtex-content">@article{Alves:2023abc,
+    author = {Alves, N\'{i}ckolas de Aguiar},
+    title = {Nonperturbative Aspects of Quantum Field Theory in Curved Spacetime},
+    journal = {arXiv e-prints},
+    year = {2023},
+    eprint = {2305.17453},
+    archivePrefix = {arXiv},
+    primaryClass = {hep-th}
+}</code></pre>
+                                <div class="drawer-buttons">
+                                    <button class="button small drawer-copy" data-target="bibtex-1">Copy</button>
+                                    <button class="button small drawer-close" data-target="bibtex-1">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-						<!-- Card 3 -->
-						<article style="border-bottom: 1px solid #eee; padding: 1.5em 0;">
-							<div style="display: flex; flex-wrap: wrap; gap: 1em; align-items: flex-start;">
-								<div style="flex: 1; min-width: 200px;">
-									<h3><a href="https://arxiv.org/abs/2403.11111" target="_blank" rel="noopener noreferrer">Título do terceiro pré‑print</a></h3>
-									<p><strong>Autores:</strong> Willian Bonner, Colaborador D, Colaborador E</p>
-									<p><strong>arXiv:</strong> 2403.11111 &nbsp;|&nbsp; <strong>Data:</strong> 5 de março de 2024</p>
-									<p style="text-align: justify;"><strong>Resumo:</strong> Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-								</div>
-							</div>
-						</article>
+                    <!-- ========== Card 2 ========== -->
+                    <div class="box article-card" style="width: auto; max-width: 100%; margin: 1.5em auto 0; padding: 1em 1.5em; background: #f9f9f9; border-radius: 6px;">
+                        <h3>
+                            <a href="https://arxiv.org/abs/2401.12345">Another article</a>
+                        </h3>
+                        <p><strong>Authors:</strong> the authors name!</p>
 
-						<!-- Adicione mais cards conforme necessário -->
+                        <div class="card-actions">
+                            <button class="button small drawer-toggle" data-target="resumo-2">Abstract</button>
+                            <a href="https://arxiv.org/pdf/2401.12345" class="button small" target="_blank" rel="noopener noreferrer">See PDF</a>
+                            <button class="button small drawer-toggle" data-target="bibtex-2">LaTex</button>
+                        </div>
 
-					</section>
+                        <!-- Gaveta de Resumo -->
+                        <div class="drawer" id="drawer-resumo-2">
+                            <div class="drawer-content">
+                                <p>
+                                    <strong>Resumo:</strong> Este é um resumo fictício para demonstrar que cada card tem suas próprias gavetas independentes. O conteúdo aqui é apenas ilustrativo.
+                                </p>
+                                <button class="button small drawer-close" data-target="resumo-2">Close</button>
+                            </div>
+                        </div>
 
-					<!-- Rodapé da página (Voltar ao topo) -->
-					<footer id="footer">
-						<ul class="actions">
-							<li style="display: block; width: 50%; margin: 0 auto; text-align: center;">
-								<a href="#" class="button">Voltar ao topo</a>
-							</li>
-						</ul>
-					</footer>
+                        <!-- Gaveta de BibTeX -->
+                        <div class="drawer" id="drawer-bibtex-2">
+                            <div class="drawer-content">
+                                <pre><code class="bibtex-content">@article{Exemplo:2024xyz,
+    author = {Exemplo, Autor},
+    title = {Outro Artigo Interessante},
+    journal = {arXiv e-prints},
+    year = {2024},
+    eprint = {2401.12345},
+    archivePrefix = {arXiv},
+    primaryClass = {quant-ph}
+}</code></pre>
+                                <div class="drawer-buttons">
+                                    <button class="button small drawer-copy" data-target="bibtex-2">Copy</button>
+                                    <button class="button small drawer-close" data-target="bibtex-2">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-				</div>
-			</div>
+                </section>
 
-			<!-- Sidebar (idêntica ao index.html) -->
-			<div id="sidebar" class="inactive">
-				<div class="inner">
+                <!-- Rodapé -->
+                <footer id="footer">
+                    <ul class="actions">
+                        <li style="display: block; width: 50%; margin: 0 auto; text-align: center;">
+                            <a href="#" class="button">Back to the top</a>
+                        </li>
+                    </ul>
+                </footer>
 
-					<!-- Search com logotipo -->
-					<section id="search" class="alt">
-						<img src="assets/images/logo/cat-logo.svg" alt="Gato logomarca do site" style="height: 2em; width: auto; vertical-align: middle; margin-right: 0.5em; margin-bottom: 5px;">
-						<strong>Q</strong>-Science
-						<form method="post" action="#">
-							<input type="text" name="query" id="query" placeholder="Pesquisar..." />
-						</form>
-					</section>
+            </div>
+        </div>
 
-					<!-- Menu -->
-					<nav id="menu">
-						<header class="major">
-							<h2>Menu</h2>
-						</header>
-						<ul>
-							<li><a href="index.html">Home</a></li>
-							<li>
-								<span class="opener">Pesquisa</span>
-								<ul>
-									<li><a href="#">Visão Geral</a></li>
-									<li><a href="#">Trabalhos atuais</a></li>
-									<li><a href="#">Dissertação</a></li>
-									<li><a href="#">Trabalho de Conclusão de Curso</a></li>
-									<li>
-										<span class="opener">Minhas Iniciações Científicas</span>
-										<ul>
-											<li><a href="#">Visão Geral</a></li>
-											<li><a href="#">2023 - Operador de Laplace e Características Geometricas de Espaços Curvos</a></li>
-											<li><a href="#">2022 - Iniciação à Geometria Diferencial</a></li>
-											<li><a href="#">2021 - Estudo da Análise em $\mathbb{R}^n$</a></li>
-											<li><a href="#">2020 - Métodos Variacionais em Equações Diferenciais Parciais</a></li>
-										</ul>
-									</li>
-								</ul>
-							</li>
-							<li>
-								<span class="opener">Estudos</span>
-								<ul>
-									<li><a href="#">Visão Geral</a></li>
-									<li><a href="#">Anotações de Aulas</a></li>
-									<li><a href="#">Anotações de Estudos</a></li>
-									<li><a href="#">Material da Monitoria</a></li>
-									<li><a href="#">Slides</a></li>
-									<li><a href="#">Tópicos Adicionais</a></li>
-								</ul>
-							</li>
-							<li>
-								<span class="opener">Extensão</span>
-								<ul>
-									<li><a href="/extensao/index.html">Visão Geral</a></li>
-									<li><a href="#">Apresentações Orais</a></li>
-									<li><a href="#">Mini Cursos</a></li>
-									<li><a href="#">Posters</a></li>
-									<li><a href="#">Tópicos Adicionais</a></li>
-								</ul>
-							</li>
-							<li>
-								<span class="opener">Meus textos</span>
-								<ul>
-									<li><a href="#">Visão Geral</a></li>
-									<li><a href="#">Filosofia</a></li>
-									<li><a href="#">Física</a></li>
-									<li><a href="#">Matemática</a></li>
-									<li><a href="#">Política & Sociedade</a></li>
-								</ul>
-							</li>
-							<li><a href="bio.html">Bio completa</a></li>
-							<li><a href="credits.html">Créditos</a></li>
-						</ul>
-					</nav>
+        <!-- Sidebar (idêntica) -->
+        <div id="sidebar" class="inactive">
+            <div class="inner">
 
-					<!-- Publicações Recentes -->
-					<section>
-						<header class="major">
-							<h2>Publicações Recentes</h2>
-						</header>
-						<div class="mini-posts">
-							<article>
-								<a href="#" class="image"><img src="assets/ordinary-pages/pesquisa/tcc/tcc_pub.svg" alt="Imagem com convite para conhecer meu TCC" /></a>
+                <!-- Search -->
+                <section id="search" class="alt">
+                    <img src="/qscience/assets/images/logo/cat-logo.svg" alt="Gato logomarca do site" style="height: 2em; width: auto; vertical-align: middle; margin-right: 0.5em; margin-bottom: 5px;">
+                    <strong>Q</strong>-Science
+                    <form method="post" action="#">
+                        <input type="text" name="query" id="query" placeholder="Pesquisar..." />
+                    </form>
+                </section>
+
+                <!-- Menu -->
+                <nav id="menu">
+                    <header class="major">
+                        <h2>Menu</h2>
+                    </header>
+                    <ul>
+                        <li><a href="/qscience/br/index.html">Home</a></li>
+                        <li>
+                            <span class="opener">Pesquisa</span>
+                            <ul>
+                                <li><a href="#">Visão Geral</a></li>
+                                <li><a href="#">Trabalhos atuais</a></li>
+                                <li><a href="#">Dissertação</a></li>
+                                <li><a href="#">Trabalho de Conclusão de Curso</a></li>
+                                <li>
+                                    <span class="opener">Minhas Iniciações Científicas</span>
+                                    <ul>
+                                        <li><a href="#">Visão Geral</a></li>
+                                        <li><a href="#">2023 - Operador de Laplace e Características Geometricas de Espaços Curvos</a></li>
+                                        <li><a href="#">2022 - Iniciação à Geometria Diferencial</a></li>
+                                        <li><a href="#">2021 - Estudo da Análise em $\mathbb{R}^n$</a></li>
+                                        <li><a href="#">2020 - Métodos Variacionais em Equações Diferenciais Parciais</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span class="opener">Estudos</span>
+                            <ul>
+                                <li><a href="#">Visão Geral</a></li>
+                                <li><a href="#">Anotações de Aulas</a></li>
+                                <li><a href="#">Anotações de Estudos</a></li>
+                                <li><a href="#">Material da Monitoria</a></li>
+                                <li><a href="#">Slides</a></li>
+                                <li><a href="#">Tópicos Adicionais</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span class="opener">Extensão</span>
+                            <ul>
+                                <li><a href="/qscience/br/extensao/index.html">Visão Geral</a></li>
+                                <li><a href="#">Apresentações Orais</a></li>
+                                <li><a href="#">Mini Cursos</a></li>
+                                <li><a href="#">Posters</a></li>
+                                <li><a href="#">Tópicos Adicionais</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span class="opener">Meus textos</span>
+                            <ul>
+                                <li><a href="#">Visão Geral</a></li>
+                                <li><a href="#">Filosofia</a></li>
+                                <li><a href="#">Física</a></li>
+                                <li><a href="#">Matemática</a></li>
+                                <li><a href="#">Política & Sociedade</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="/qscience/br/bio.html">Bio completa</a></li>
+                        <li><a href="/qscience/br/creditos.html">Créditos</a></li>
+                        <li><a href="/qscience/br/contato.html">Contato</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Publicações Recentes -->
+                <section>
+                    <header class="major">
+                        <h2>Publicações Recentes</h2>
+                    </header>
+                    <div class="mini-posts">
+                        <article>
+								<a href="#" class="image"><img src="/qscience/br/pesquisa/tcc/tcc_pub.svg" alt="Imagem com convite para conhecer meu TCC" /></a>
 								<p>Publicação do TCC aqui.</p>
 							</article>
 							<article>
-								<a href="#" class="image"><img src="assets/ordinary-pages/pesquisa/ics/pub/ic_pub.svg" alt="Imagem com convite para conhecer minhas iniciações científica" /></a>
+								<a href="#" class="image"><img src="/qscience/br/pesquisa/ics/pub/ic_pub.svg" alt="Imagem com convite para conhecer minhas iniciações científica" /></a>
 								<p>Publicação da minha última IC</p>
 							</article>
 							<article>
-								<a href="#" class="image"><img src="assets/exta-pages/apresentacao_pub.svg" alt="Imagem com convite para conhecer a origem do site" /></a>
+								<a href="#" class="image"><img src="/qscience/br/extras/apresentacao_pub.svg" alt="Imagem com convite para conhecer a origem do site" /></a>
 								<p>A pensar...</p>
 							</article>
-						</div>
-					</section>
+                    </div>
+                </section>
 
-					<!-- Contato (versão atualizada) -->
-					<section>
-						<header class="major">
-							<h2>Contato</h2>
-						</header>
-						<p>Adoro conversar sobre física, matemática e ciências em geral! Se tiver dúvidas, perguntas, sugestões</p>
-						<ul class="actions">
-							<li style="display: block; margin: 0 auto; text-align: center;">
-								<a href="contato.html" class="button small">fale comigo</a>
-							</li>
-						</ul>
-						<p><strong>Me acompanhe:</strong></p>
-						<ul class="contact">
-							<li class="svg-icon-item">
-								<img src="assets/images/logo/bluesky-logo.svg" alt="Logomarca Bluesky" class="svg-icon" />
-								<a href="https://bsky.app/profile/bonner.bsky.social" target="_blank" rel="noopener noreferrer">@bonner</a>
-							</li>
-							<li class="svg-icon-item">
-								<img src="assets/images/logo/insta-logo.svg" alt="Logomarca Instagram" class="svg-icon" />
-								<a href="https://www.instagram.com/jimi.7z" target="_blank" rel="noopener noreferrer">@jimi.7z</a>
-							</li>
-						</ul>
-					</section>
+                <!-- Contato -->
+                <section>
+                    <header class="major">
+                        <h2>Contato</h2>
+                    </header>
+                    <p>Adoro conversar sobre física, matemática e ciências em geral! Se tiver dúvidas, perguntas, sugestões</p>
+                    <ul class="actions">
+                        <li style="display: block; margin: 0 auto; text-align: center;">
+                            <a href="/qscience/br/contato.html" class="button small">fale comigo</a>
+                        </li>
+                    </ul>
+                    <p><strong>Me acompanhe:</strong></p>
+                    <ul class="contact">
+                        <li class="svg-icon-item">
+                            <img src="/qscience/assets/images/logo/bluesky-logo.svg" alt="Logomarca Bluesky" class="svg-icon" />
+                            <a href="https://bsky.app/profile/bonner.bsky.social" target="_blank" rel="noopener noreferrer">@bonner</a>
+                        </li>
+                        <li class="svg-icon-item">
+                            <img src="/qscience/assets/images/logo/insta-logo.svg" alt="Logomarca Instagram" class="svg-icon" />
+                            <a href="https://www.instagram.com/jimi.7z" target="_blank" rel="noopener noreferrer">@jimi.7z</a>
+                        </li>
+                    </ul>
+                </section>
 
-					<!-- Vínculo institucional -->
-					<section>
-						<div class="box" style="border-left: 4px solid #a90a15; padding: 1em;">
-							<ul class="contact">
-								<li class="svg-icon-item">
-									<img src="assets/images/logo/university-logo.svg" alt="Logomarca Universidade" class="svg-icon" />
-									<span class="contact-text">
-										Atualmente estou aguardando a confirmação da bolsa para dar início ao Mestrado...
-									</span>
-								</li>
-							</ul>
-						</div>
-					</section>
+                <!-- Vínculo institucional -->
+                <section>
+                    <div class="box" style="border-left: 4px solid #a90a15; padding: 1em;">
+                        <ul class="contact">
+                            <li class="svg-icon-item">
+                                <img src="/qscience/assets/images/logo/university-logo.svg" alt="Logomarca Universidade" class="svg-icon" />
+                                <span class="contact-text">
+                                    Atualmente estou aguardando a confirmação da bolsa para dar início ao Mestrado...
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
 
-					<!-- Footer -->
-					<footer id="footer">
-						<p class="copyright">&copy;2026 Jimi.7z. All rights reserved. Design by: <a href="https://html5up.net/editorial" target="_blank" rel="noopener noreferrer">HTML5 UP</a>. Redesign by: Willian Bonner.</p>
-					</footer>
+                <!-- Footer -->
+                <footer id="footer">
+                    <p class="copyright">&copy;2026 Jimi.7z. All rights reserved. Design by: <a href="https://html5up.net/editorial" target="_blank" rel="noopener noreferrer">HTML5 UP</a>. Redesign by: Willian Bonner.</p>
+                </footer>
 
-				</div>
-			</div>
+            </div>
+        </div>
 
-		</div>
+    </div>
 
-		<!-- Scripts -->
-		<script src="assets/codes/js/jquery.min.js"></script>
-		<script src="assets/codes/js/browser.min.js"></script>
-		<script src="assets/codes/js/breakpoints.min.js"></script>
-		<script src="assets/codes/js/util.js"></script>
-		<script src="assets/codes/js/main.js"></script>
-
-	</body>
+    <!-- Scripts -->
+    <script src="/qscience/assets/codes/js/jquery.min.js"></script>
+    <script src="/qscience/assets/codes/js/browser.min.js"></script>
+    <script src="/qscience/assets/codes/js/breakpoints.min.js"></script>
+    <script src="/qscience/assets/codes/js/util.js"></script>
+    <script src="/qscience/assets/codes/js/main.js"></script>
+    <script src="/qscience/assets/codes/js/language.js"></script>
+    <script src="/qscience/assets/codes/js/copiaremail.js"></script>
+    <!-- JS das Gavetas -->
+    <script src="/qscience/assets/codes/js/gaveta.js"></script>
+</body>
 </html>
