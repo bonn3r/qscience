@@ -4,39 +4,19 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 	
 	Criado por: Jimi.7z (Willian Bonner) em 29/06/2026
-	Última atualização: 04/07/2026
-	Arquivo: layout - contém wrapper, main, side bar, header, footer, banner e estilos associados.
-	Versão: 3.1 - Correção do ajuste do conteúdo com classe no wrapper.
+	Arquivo: layout - contém main, side bar, header, footer, banner e estilos associados.
+  Última atualização: 24/07/2026
+	
+    Versão: 2.0:
+      - Atualização para suporte ao modo noturno;
+      - Remoção do Wrapper (que recuava a página para o menu principal abrir)
+
 */
 
 /* ======================================================================= */
-/* WRAPPER – base flex, com transição no padding                          */
+/* MAIN                                                                    */
 /* ======================================================================= */
-#wrapper {
-  display: -moz-flex;
-  display: -webkit-flex;
-  display: -ms-flex;
-  display: flex;
-  -moz-flex-direction: row-reverse;
-  -webkit-flex-direction: row-reverse;
-  -ms-flex-direction: row-reverse;
-  flex-direction: row-reverse;
-  min-height: 100vh;
-  -moz-transition: padding-left 0.5s ease;
-  -webkit-transition: padding-left 0.5s ease;
-  -ms-transition: padding-left 0.5s ease;
-  transition: padding-left 0.5s ease;
-  padding-left: 0; /* espaço para a sidebar aberta */
-}
 
-/* Quando o menu está fechado, o conteúdo ocupa toda a largura */
-#wrapper.menu-closed {
-  padding-left: 0;
-}
-
-/* ======================================================================= */
-/* MAIN – agora usa largura total dentro do wrapper                       */
-/* ======================================================================= */
 #main {
   -moz-flex-grow: 1;
   -webkit-flex-grow: 1;
@@ -47,7 +27,6 @@
   -ms-flex-shrink: 1;
   flex-shrink: 1;
   width: 100%;
-  /* sem margem fixa – o padding do wrapper controla o recuo */
 }
 
 #main > .inner {
@@ -66,6 +45,7 @@
 /* ======================================================================= */
 /* SIDEBAR – FIXA EM TODOS OS TAMANHOS                                   */
 /* ======================================================================= */
+
 #sidebar {
   -moz-flex-grow: 0;
   -webkit-flex-grow: 0;
@@ -113,7 +93,7 @@
   width: 100%;
 }
 #sidebar > .inner > * {
-  border-bottom: solid 2px rgba(210, 215, 217, 0.75);
+  border-bottom: solid 2px rgba(208, 216, 219, 0.75);
   margin: 0 0 3.5em 0;
   padding: 0 0 3.5em 0;
 }
@@ -181,13 +161,13 @@
   top: 0;
   width: inherit;
   color: #85939e;
-  transition: transform 0.3s ease, color 0.3s ease, opacity 0.3s ease;
-  transform: scale(1) rotate(0deg);
+  transition: transform 0.5s ease, color 0.3s ease, opacity 0.3s ease;
+  transform: scale(1);
   opacity: 1;
 }
 
 #sidebar .toggle:hover:before {
-  transform: scale(1.2) rotate(0deg);
+  transform: scale(1.2);
   color: #ad0000;
   opacity: 1;
 }
@@ -195,12 +175,12 @@
 #sidebar:not(.inactive) .toggle:before {
   content: '\f00d';
   color: #85939e;
-  transform: rotate(90deg) scale(1);
+  transform: scale(1);
   opacity: 1;
 }
 
 #sidebar:not(.inactive) .toggle:hover:before {
-  transform: rotate(90deg) scale(1.2);
+  transform: scale(1.2);
   color: #ad0000;
 }
 
@@ -275,12 +255,7 @@
   #sidebar .toggle:before {
     font-size: 1.3rem;
   }
-  #wrapper {
-    padding-left: 0;
-  }
-  #wrapper.menu-closed {
-    padding-left: 0;
-  }
+
 }
 
 /* 1280px – Sidebar 26em (padrão) – apenas ajustes de espaçamento */
@@ -304,18 +279,13 @@
   #sidebar .toggle:before {
     font-size: 1.3rem;
   }
-  #wrapper {
-    padding-left: 0;
-  }
-  #wrapper.menu-closed {
-    padding-left: 0;
-  }
+
   body.is-preload #sidebar {
     display: none;
   }
 }
 
-/* 736px (mobile) – Sidebar 22em */
+/* 736px (mobile) */
 @media screen and (max-width: 736px) {
   #sidebar {
     width: 22em;
@@ -348,12 +318,7 @@
     width: 3.5em;
     z-index: -1;
   }
-  #wrapper {
-    padding-left: 0;
-  }
-  #wrapper.menu-closed {
-    padding-left: 0;
-  }
+
   /* Ajustes no conteúdo principal para mobile */
   #main > .inner {
     padding: 0 2em 0.1em 2em;
@@ -456,7 +421,7 @@
     top: 0;
     left: 0;
     right: 0;
-    width: 100vw;           /* força a largura total da viewport */
+    width: 100%;           /* força a largura total da viewport */
     max-width: 100%;
     padding: 6.5em 0 1em 0;  /* sem padding lateral */
     margin: 0;

@@ -112,12 +112,12 @@ ul.contact li a:hover .svg-icon {
 }
 
 #menu ul a.opener.active:before,
-#menu ul span.opener.active:before {
-  -moz-transform: rotate(-180deg) translateY(50%); /* mantém centralizado após rotação */
+/*#menu ul span.opener.active:before {
+  -moz-transform: rotate(-180deg) translateY(50%); /* mantém centralizado após rotação 
   -webkit-transform: rotate(-180deg) translateY(50%);
   -ms-transform: rotate(-180deg) translateY(50%);
   transform: rotate(-180deg) translateY(50%);
-}
+}*/
 
 /* ======================================================================= */
 /*  ESTRUTURA DOS NÍVEIS                                                   */
