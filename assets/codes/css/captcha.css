@@ -1,0 +1,75 @@
+#captchaTooltip {
+	position: fixed;
+	background: #fff;
+	border: 2px solid #ad0000;
+	border-radius: 12px;
+	padding: 12px 18px;
+	max-width: 260px;
+	box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+	z-index: 9999;
+	font-size: 0.95rem;
+	color: #333;
+	pointer-events: none;
+	transition: opacity 0.2s;
+	display: none;
+	opacity: 0;
+}
+
+#captchaTooltip::after {
+	content: '';
+	position: absolute;
+	bottom: -12px;
+	left: 30px;
+	width: 0;
+	height: 0;
+	border-left: 12px solid transparent;
+	border-right: 12px solid transparent;
+	border-top: 12px solid #fff;
+	filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+
+/* Overlay de agradecimento */
+#thankYouOverlay {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.5);
+	z-index: 10000;
+	justify-content: center;
+	align-items: center;
+}
+
+#thankYouBox {
+	background: #fff;
+	padding: 2.5em 3.5em;
+	border-radius: 16px;
+	box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+	text-align: center;
+	max-width: 400px;
+	margin: 0 1em;
+}
+
+#thankYouBox h2 {
+	color: #3d4449;
+	font-family: 'Roboto Slab', serif;
+	margin-bottom: 0.3em;
+}
+
+#thankYouBox p {
+	color: #7f888f;
+	font-size: 1rem;
+}
+
+#thankYouBox .countdown {
+	color: #9fa3a6;
+	font-size: 0.85rem;
+	margin-top: 1em;
+}
+
+.captcha-wrapper {
+	text-align: center;
+	margin-bottom: 1em;
+}
