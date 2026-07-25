@@ -1,101 +1,102 @@
 /*
-	Criado por: Jimi.7z (Willian Bonner) em 29/06/2026
-	Última atualização: 
-	Arquivo: Componentes - contém todos os componentes reutilizáveis: artigo/sessão, formulários, caixas, ícones, imagens, listas, ações, contato, paginação, tabela e botões.
-	Versão: 1.0
+Criado em: 29/06/2026
+Autor: Jimi	
+Código: Componentes - contém todos os componentes reutilizáveis: artigo/sessão, formulários, caixas, ícones, imagens, listas, ações, contato, paginação, tabela e botões.
+Última atualização: 25/07/2026
+Versão: 2.0
 */
 
 /* ========== Botão de idioma especial (retangular) ========== */
 .lang-dropdown {
-    position: fixed;
-    top: 1.2em;          /* ← ajuste a distância do topo */
-    right: 1.5em;        /* ← ajuste a distância da direita */
-    z-index: 1000;
+  position: fixed;
+  top: 1.2em;
+  right: 1.5em;
+  z-index: 1000;
 }
 
 .lang-dropdown-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;   /* centraliza a bandeira horizontalmente */
-    background: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(4px);
-    border: 1px solid #ddd;
-    padding: 6px 12px;         /* ← ajuste o padding interno (vertical | horizontal) */
-    border-radius: 4px;        /* ← bordas levemente arredondadas (altere para 0 se quiser retângulo perfeito) */
-    cursor: pointer;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-    transition: all 0.2s ease;
-    width: 36px;               /* ← largura fixa para centralizar melhor (opcional) */
-    height: 30px;              /* ← altura fixa (opcional) */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-dropdown);
+  backdrop-filter: blur(4px);
+  border: 1px solid var(--border-light);
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: var(--shadow-toggle);
+  transition: all 0.2s ease;
+  width: 36px;
+  height: 30px;
 }
 
 .lang-dropdown-btn:hover {
-    background: #ffffff;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  background: var(--bg-body);
+  box-shadow: var(--shadow-dropdown);
 }
 
 .lang-dropdown-btn img {
-    display: block;
-    width: 24px;
-    height: 16px;
-    border-radius: 2px;
-    object-fit: cover;
+  display: block;
+  width: 24px;
+  height: 16px;
+  border-radius: 2px;
+  object-fit: cover;
 }
 
 /* Menu dropdown – mantido igual */
 .lang-dropdown-menu {
-    position: absolute;
-    top: 110%;
-    right: 0;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-    padding: 6px 0;
-    min-width: 160px;
-    display: none;
-    list-style: none;
-    margin: 0;
-    border: 1px solid #eee;
+  position: absolute;
+  top: 110%;
+  right: 0;
+  background: var(--bg-dropdown);
+  border-radius: 8px;
+  box-shadow: var(--shadow-dropdown);
+  padding: 6px 0;
+  min-width: 160px;
+  display: none;
+  list-style: none;
+  margin: 0;
+  border: 1px solid var(--border-light);
 }
 
 .lang-dropdown-menu.show {
-    display: block;
+  display: block;
 }
 
 .lang-dropdown-menu li a {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 8px 16px;
-    text-decoration: none;
-    color: #333;
-    font-size: 0.9em;
-    transition: background 0.15s;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 16px;
+  text-decoration: none;
+  color: var(--text-body);
+  font-size: 0.9em;
+  transition: background 0.15s;
 }
 
 .lang-dropdown-menu li a:hover {
-    background: #f5f5f5;
+  background: var(--bg-table-zebra);
 }
 
 .lang-dropdown-menu li a.active-lang {
-    background: #e9f0ff;
-    font-weight: 600;
-    color: #0056b3;
+  background: rgba(0, 86, 179, 0.1);
+  font-weight: 600;
+  color: var(--color-primary);
 }
 
 .lang-dropdown-menu li a img {
-    width: 22px;
-    height: 14px;
-    border-radius: 2px;
+  width: 22px;
+  height: 14px;
+  border-radius: 2px;
 }
 
 .lang-dropdown-menu li {
-    border-bottom: none !important;      /* remove linha pontilhada em <li> */
-    list-style: none !important;         /* remove marcadores */
+  border-bottom: none !important;
+  list-style: none !important;
 }
 
 .lang-dropdown-menu li a {
-    border-bottom: none !important;      /* remove linha pontilhada em <a> */
-    text-decoration: none !important;    /* remove sublinhado */
-    outline: none !important;            /* remove contorno ao focar */
+  border-bottom: none !important;
+  text-decoration: none !important;
+  outline: none !important;
 }

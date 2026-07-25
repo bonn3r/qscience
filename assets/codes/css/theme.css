@@ -1,0 +1,116 @@
+/*
+Criado em 25/07/2026
+Autor: Jimi
+Código: theme.css - Variáveis de tema para modo claro e escuro
+*/
+
+:root {
+  /* Fundos principais */
+  --bg-body: #ffffff;
+  --bg-sidebar: #f5f6f7;
+  --bg-header: #ffffff;
+
+  /* Fundos secundários */
+  --bg-box: #ffffff;
+  --bg-drawer: #fefefe;
+  --bg-code: #f0f0f0;
+  --bg-input: #ffffff;
+  --bg-table-zebra: rgba(230, 235, 237, 0.25);
+  --bg-dropdown: rgba(255, 255, 255, 0.9);
+  --bg-highlight-sidebar: #eff1f2;
+  --bg-toggle: rgba(222, 225, 226, 0.75);
+  --bg-drawer-button: #e0e0e0;
+
+  /* Textos principais */
+  --text-body: #7f888f;
+  --text-title: #3d4449;
+  --text-link: #ad0000;
+  --text-menu: #3b3b3b;
+  --text-menu-level2: #626567;
+  --text-menu-level3: #828586;
+  --text-input: #7f888f;
+
+  /* Textos secundários */
+  --text-muted: #9fa3a6;
+  --text-caption: #666666;
+  --text-icon-toggle: #85939e;
+  --text-opener: #3b3b3b;
+  --text-placeholder: #9fa3a6;
+
+  /* Cor principal */
+  --color-primary: #ad0000;
+  --color-primary-hover: #f67878;
+  --color-primary-active: #f45c5c;
+  --color-primary-dark: #8a0000;
+
+  /* Bordas e divisores */
+  --border-color: rgba(210, 215, 217, 0.75);
+  --border-menu: rgba(59, 59, 59, 0.15);
+  --border-header: #ad0000;
+  --border-light: #dddddd;
+  --border-toggle-mobile: rgba(222, 225, 226, 0.75);
+
+  /* Ícones e setas */
+  --icon-color: #7f888f;
+  --icon-opener: #3b3b3b;
+  --icon-features: #f56a6a;
+  --icon-contact-svg: #0F99AB;
+
+  /* Sombras */
+  --shadow-sidebar: 0 0 5em 0 rgba(0, 0, 0, 0.175);
+  --shadow-dropdown: 0 8px 24px rgba(0, 0, 0, 0.12);
+  --shadow-tooltip: 0 4px 12px rgba(0, 0, 0, 0.2);
+  --shadow-toggle: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* Modo noturno – ativado pela classe .dark-mode no <body> */
+.dark-mode {
+  --bg-body: #1e1e1e;
+  --bg-sidebar: #2c2c2c;
+  --bg-header: #1e1e1e;
+
+  --bg-box: #2a2a2a;
+  --bg-drawer: #2a2a2a;
+  --bg-code: #333333;
+  --bg-input: #2a2a2a;
+  --bg-table-zebra: rgba(255, 255, 255, 0.05);
+  --bg-dropdown: #2a2a2a;
+  --bg-highlight-sidebar: #3a3a3a;
+  --bg-toggle: rgba(255, 255, 255, 0.15);
+  --bg-drawer-button: #444444;
+
+  --text-body: #cccccc;
+  --text-title: #eeeeee;
+  --text-link: #ff6b6b;
+  --text-menu: #dddddd;
+  --text-menu-level2: #bbbbbb;
+  --text-menu-level3: #999999;
+  --text-input: #cccccc;
+
+  --text-muted: #888888;
+  --text-caption: #aaaaaa;
+  --text-icon-toggle: #aaaaaa;
+  --text-opener: #dddddd;
+  --text-placeholder: #777777;
+
+  --color-primary: #ff4d4d;
+  --color-primary-hover: #ff8080;
+  --color-primary-active: #e60000;
+  --color-primary-dark: #cc0000;
+
+  --border-color: rgba(255, 255, 255, 0.15);
+  --border-menu: rgba(255, 255, 255, 0.1);
+  --border-header: #ff4d4d;
+  --border-light: #444444;
+  --border-toggle-mobile: rgba(255, 255, 255, 0.15);
+
+  --icon-color: #aaaaaa;
+  --icon-opener: #dddddd;
+  --icon-features: #ff6b6b;
+  --icon-contact-svg: #66ccff;
+
+  --shadow-sidebar: 0 0 5em 0 rgba(0, 0, 0, 0.5);
+  --shadow-dropdown: 0 8px 24px rgba(0, 0, 0, 0.4);
+  --shadow-tooltip: 0 4px 12px rgba(0, 0, 0, 0.5);
+  --shadow-toggle: 0 2px 8px rgba(0, 0, 0, 0.2);
+}

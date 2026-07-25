@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+
+<svg
+   width="800px"
+   height="800px"
+   viewBox="0 0 24 24"
+   fill="none"
+   version="1.1"
+   id="svg9"
+   sodipodi:docname="sun-logo.svg"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs9" />
+  <sodipodi:namedview
+     id="namedview9"
+     pagecolor="#161600"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.96625"
+     inkscape:cx="400"
+     inkscape:cy="400"
+     inkscape:current-layer="svg9" />
+  <g
+     id="g3">
+    <rect
+       x="8"
+       y="8"
+       width="8"
+       height="8"
+       rx="4"
+       stroke="#333333"
+       stroke-width="2"
+       stroke-linecap="round"
+       stroke-linejoin="round"
+       id="rect1"
+       style="fill:#ffff00;fill-opacity:1;stroke:#ffff00;stroke-opacity:1"
+       ry="4" />
+    <g
+       id="g1"
+       transform="translate(-0.30144131,0.04157966)">
+      <line
+         x1="12.176379"
+         y1="4.5754247"
+         x2="12.176379"
+         y2="1.6779526"
+         stroke="#333333"
+         stroke-width="2.40727"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         id="line2"
+         style="fill:#ffff00;fill-opacity:1;stroke:#ffff00;stroke-opacity:1" />
+      <line
+         x1="4.9889684"
+         y1="12.031048"
+         x2="2.3339684"
+         y2="12.031048"
+         stroke="#333333"
+         stroke-width="2.30434"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         id="line3"
+         style="fill:#ffff00;fill-opacity:1;stroke:#ffff00;stroke-opacity:1" />
+      <line
+         x1="12.176379"
+         y1="22.250473"
+         x2="12.176379"
+         y2="19.408491"
+         stroke="#333333"
+         stroke-width="2.3841"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         id="line6"
+         style="fill:#ffff00;fill-opacity:1;stroke:#ffff00;stroke-opacity:1" />
+      <line
+         x1="22.231489"
+         y1="12"
+         x2="19.401215"
+         y2="12"
+         stroke="#333333"
+         stroke-width="2.37919"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         id="line7"
+         style="fill:#ffff00;fill-opacity:1;stroke:#ffff00;stroke-opacity:1" />
+    </g>
+    <g
+       id="g2">
+      <line
+         x1="6.5323"
+         y1="17.149139"
+         x2="5.1180801"
+         y2="18.563339"
+         stroke="#333333"
+         stroke-width="2"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         id="line4"
+         style="fill:#ffff00;fill-opacity:1;stroke:#ffff00;stroke-opacity:1" />
+      <line
+         x1="16.787069"
+         y1="17.149139"
+         x2="18.201269"
+         y2="18.563339"
+         stroke="#333333"
+         stroke-width="2"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         id="line5"
+         style="fill:#ffff00;fill-opacity:1;stroke:#ffff00;stroke-opacity:1" />
+      <line
+         x1="18.201269"
+         y1="5.1491351"
+         x2="16.787069"
+         y2="6.563345"
+         stroke="#333333"
+         stroke-width="2"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         id="line8"
+         style="fill:#ffff00;fill-opacity:1;stroke:#ffff00;stroke-opacity:1" />
+      <line
+         x1="5.1180797"
+         y1="5.1180849"
+         x2="6.5323"
+         y2="6.5322948"
+         stroke="#333333"
+         stroke-width="2"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         id="line9"
+         style="fill:#ffff00;fill-opacity:1;stroke:#ffff00;stroke-opacity:1" />
+    </g>
+  </g>
+</svg>

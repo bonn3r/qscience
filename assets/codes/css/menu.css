@@ -1,12 +1,8 @@
 /*
-	Modelo Editorial, design de HTML5 UP.
-	Fonte: html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-	
-	Criado por: Jimi.7z (Willian Bonner) em 29/06/2026
-	Última atualização: 
-	Arquivo: Menu - estilo personalizado do menu.
-	Versão: 1.0
+Criado em: 29/06/2026
+Autor: Jimi
+Última atualização: 25/07/2026 – suporte a modo noturno
+Versão: 2.0
 */
 
 /* ======================================================================= */
@@ -18,13 +14,12 @@
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  color: #434749; /*Cor original 434547*/
+  color: var(--text-menu);
   font-family: "Roboto Slab", serif;
   letter-spacing: 0.075em;
   list-style: none;
   margin-bottom: 0;
   padding: 0;
-  text-transform: uppercase;
 }
 
 /* ======================================================================= */
@@ -37,28 +32,27 @@
   color: inherit;
   cursor: pointer;
   display: block;
-  font-size: 0.8rem;              /* tamanho base uniforme */
-  font-weight: 400;             /* normal (sem negrito) */
-  padding: 0.625em 2em 0.625em 0; /* espaço à direita para a seta */
-  text-transform: uppercase;
+  font-size: 0.85rem;
+  font-weight: 400;
+  padding: 0.625em 2em 0.625em 0;
 }
 
 #menu ul a:hover,
 #menu ul span:hover {
-  color: #ad0000;
+  color: var(--color-primary);
 }
 
 /* Ícones SVG personalizados na lista de contato */
 ul.contact li .svg-icon {
-    width: 1.5em;
-    height: 1.5em;
-    vertical-align: middle;
-    margin-right: 0.5em;
-    fill: #0F99AB; /* mesma cor dos outros ícones */
+  width: 1.5em;
+  height: 1.5em;
+  vertical-align: middle;
+  margin-right: 0.5em;
+  fill: var(--icon-contact-svg);
 }
 
 ul.contact li a:hover .svg-icon {
-    fill: #f67878; /* cor ao passar o mouse */
+  fill: var(--color-primary-hover);
 }
 
 /* ======================================================================= */
@@ -72,7 +66,7 @@ ul.contact li a:hover .svg-icon {
   -ms-transition: color 0.2s ease-in-out;
   transition: color 0.2s ease-in-out;
   text-decoration: none;
-  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-tap-highlight-color: var(--text-menu);
   position: relative;
 }
 
@@ -92,18 +86,18 @@ ul.contact li a:hover .svg-icon {
   -webkit-transition: color 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
   -ms-transition: color 0.2s ease-in-out, -ms-transform 0.2s ease-in-out;
   transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
-  color: #85939e; /*Cor das setas*/
+  color: var(--text-opener);
   content: '\f078';
   position: absolute;
-  right: 0.5em;                 /* distância da borda direita */
-  top: 50%;                     /* centraliza verticalmente */
-  transform: translateY(-50%);  /* ajuste fino do centro */
-  font-size: 1.1em;             /* tamanho da seta (opcional) */
+  right: 0.5em;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.1em;
 }
 
 #menu ul a.opener:hover:before,
 #menu ul span.opener:hover:before {
-  color: #ad0000;
+  color: var(--color-primary);
 }
 
 #menu ul a.opener.active + ul,
@@ -112,19 +106,19 @@ ul.contact li a:hover .svg-icon {
 }
 
 #menu ul a.opener.active:before,
-/*#menu ul span.opener.active:before {
-  -moz-transform: rotate(-180deg) translateY(50%); /* mantém centralizado após rotação 
+#menu ul span.opener.active:before {
+  -moz-transform: rotate(-180deg) translateY(50%);
   -webkit-transform: rotate(-180deg) translateY(50%);
   -ms-transform: rotate(-180deg) translateY(50%);
   transform: rotate(-180deg) translateY(50%);
-}*/
+}
 
 /* ======================================================================= */
 /*  ESTRUTURA DOS NÍVEIS                                                   */
 /* ======================================================================= */
 
 #menu > ul > li {
-  border-top: solid 1px rgb(218, 223, 225); /*Linhas que separam os ítens principal do menu*/
+  border-top: solid 1px var(--border-menu);
   margin: 0.5em 0 0 0;
   padding: 0.5em 0 0 0;
 }
@@ -140,7 +134,7 @@ ul.contact li a:hover .svg-icon {
 /* ======================================================================= */
 
 #menu > ul > li > ul {
-  color: #626567;
+  color: var(--text-menu-level2);
   display: none;
   margin: 0.5em 0 1.5em 0;
   padding-left: 1em;
@@ -153,10 +147,10 @@ ul.contact li a:hover .svg-icon {
 
 #menu > ul > li > ul a,
 #menu > ul > li > ul span {
-  font-size: 0.8rem;        /* um pouco menor que o nível 1 */
-  font-weight: 400;         /* mesmo peso do nível 1 */
-  text-transform: none;     /* remove o uppercase para legibilidade */
-  padding: 0.5em 2em 0.5em 0; /* espaço para a seta */
+  font-size: 0.8rem;
+  font-weight: 400;
+  text-transform: none;
+  padding: 0.5em 2em 0.5em 0;
 }
 
 /* ======================================================================= */
@@ -165,11 +159,11 @@ ul.contact li a:hover .svg-icon {
 
 #menu ul ul ul a,
 #menu ul ul ul span {
-  color: #828586;
-  font-size: 0.7rem;       /* ainda menor, para hierarquia */
-  font-weight: 300;         /* mais fino (light) */
-  padding-left: 1.5em;      /* recuo extra para indicar profundidade */
-  padding-right: 2em;       /* mantém espaço para a seta */
+  color: var(--text-menu-level3);
+  font-size: 0.7rem;
+  font-weight: 300;
+  padding-left: 1.5em;
+  padding-right: 2em;
   text-transform: none;
 }
 
@@ -177,16 +171,14 @@ ul.contact li a:hover .svg-icon {
 /*  OPENER DENTRO DE SUBMENUS (setas nos níveis mais profundos)            */
 /* ======================================================================= */
 
-/* Opener do nível 2 */
 #menu ul ul .opener {
-  font-weight: 500;         /* semi-negrito para destacar o item que abre */
-  font-size: 0.8rem;        /* mesmo tamanho dos links do nível 2 */
+  font-weight: 500;
+  font-size: 0.8rem;
 }
 
-/* Opener do nível 3 */
 #menu ul ul ul .opener {
-  font-weight: 400;         /* normal, porque já está no terceiro nível */
-  font-size: 0.8rem;       /* mesmo tamanho dos links do nível 3 */
+  font-weight: 400;
+  font-size: 0.8rem;
 }
 
 /* ======================================================================= */
@@ -201,84 +193,76 @@ ul.contact li a:hover .svg-icon {
   display: block;
 }
 
-/* TESTE 02 - 04/07/2026*/
-
 /* ======================================================================= */
 /*  BARRA DE ROLAGEM VERTICAL                                              */
 /* ======================================================================= */
 
 #menu {
-  max-height: 100vh;            /* ocupa toda a altura da janela */
-  overflow-y: auto;             /* ativa a rolagem vertical quando necessário */
-  scrollbar-width: thin;        /* para Firefox: barra mais fina */
-  scrollbar-color: #ad0000 transparent; /* cor do polegar e da trilha (Firefox) */
+  max-height: 100vh;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-primary) transparent;
 }
 
-/* Estilização para navegadores WebKit (Chrome, Safari, Edge) */
 #menu::-webkit-scrollbar {
-  width: 6px;                  /* largura da barra */
+  width: 6px;
 }
 
 #menu::-webkit-scrollbar-track {
-  background: transparent;      /* trilha invisível */
+  background: transparent;
 }
 
 #menu::-webkit-scrollbar-thumb {
-  background-color: #ad0000;   /* cor do polegar (combina com o hover do menu) */
-  border-radius: 6px;          /* bordas arredondadas */
+  background-color: var(--color-primary);
+  border-radius: 6px;
 }
 
 #menu::-webkit-scrollbar-thumb:hover {
-  background-color: #8a0000;   /* tom mais escuro ao passar o mouse */
+  background-color: var(--color-primary-dark);
 }
 
-
-/* ============================================================
-   ÍCONES SVG PERSONALIZADOS NA LISTA DE CONTATO (arquivo local)
-   ============================================================ */
+/* ============================================================ */
+/*   ÍCONES SVG PERSONALIZADOS NA LISTA DE CONTATO               */
+/* ============================================================ */
 
 ul.contact li.svg-icon-item {
-    display: flex;                /* ativa flexbox */
-    align-items: center;          /* centraliza verticalmente */
-    gap: 0.75em;                 /* espaço entre ícone e texto */
-    list-style: none;
-    padding-left: 0;              /* remove o padding antigo */
-    /* se quiser manter o mesmo recuo dos outros itens, use padding-left: 2.5em ou similar */
+  display: flex;
+  align-items: center;
+  gap: 0.75em;
+  list-style: none;
+  padding-left: 0;
 }
 
 ul.contact li.svg-icon-item:before {
-    content: none;
-    display: none;
+  content: none;
+  display: none;
 }
 
 ul.contact li.svg-icon-item .svg-icon {
-    width: 2em;
-    height: 2em;
-    flex-shrink: 0;               /* evita que o ícone encolha */
-    /*filter: brightness(0) saturate(100%) invert(20%) sepia(100%) saturate(5000%) hue-rotate(0deg) brightness(80%) contrast(110%);*/
-    /*filter: invert(78%) sepia(71%) saturate(6679%) hue-rotate(153deg) brightness(88%) contrast(88%);*/
-    transition: filter 0.2s;
+  width: 2em;
+  height: 2em;
+  flex-shrink: 0;
+  transition: filter 0.2s;
 }
 
 ul.contact li.svg-icon-item a:hover .svg-icon {
-    filter: brightness(0) saturate(100%) invert(40%) sepia(100%) saturate(1000%) hue-rotate(0deg) brightness(100%) contrast(120%);
+  filter: brightness(0) saturate(100%) invert(40%) sepia(100%) saturate(1000%) hue-rotate(0deg) brightness(100%) contrast(120%);
 }
 
 /* Item de menu ativo (link correspondente à página atual) */
 #menu .active-link {
-    font-weight: 700 !important;
-    color: #111010 !important;
-    background-color: #434749;
+  font-weight: 700 !important;
+  color: var(--text-title) !important;
 }
 
 /* Item pai (li) que contém um link ativo ou um submenu ativo */
 #menu .active-menu-item > a,
 #menu .active-parent > a {
-    font-weight: 700 !important;
-    /*color: #ad0000 !important;*/
+  font-weight: 700 !important;
+  color: var(--text-title) !important;
 }
 
 /* Opcional: manter o opener ativo com a mesma cor */
 #menu .opener.active {
-    font-weight: 700;
+  font-weight: 700;
 }

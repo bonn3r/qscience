@@ -1,18 +1,15 @@
 /*
-	Modelo Editorial, design de HTML5 UP.
-	Fonte: html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-	
-	Criado por: Jimi.7z (Willian Bonner) em 29/06/2026
-	Última atualização: 
-	Arquivo: Componentes - contém todos os componentes reutilizáveis: artigo/sessão, formulários, caixas, ícones, imagens, listas, ações, contato, paginação, tabela e botões.
-	Versão: 1.0
+Criado em: 29/06/2026
+Autor: Jimi
+Código: -
 */
 
 /* Section/Article */
-section.special, article.special {
+section.special,
+article.special {
   text-align: center;
 }
+
 header p {
   font-family: "Roboto Slab", serif;
   font-size: 1em;
@@ -21,12 +18,14 @@ header p {
   margin-top: -0.5em;
   text-transform: uppercase;
 }
+
 header.major > :last-child {
-  border-bottom: solid 3px #ad0000;
+  border-bottom: solid 3px var(--color-primary);
   display: inline-block;
   margin: 0 0 2em 0;
   padding: 0 0.75em 0.5em 0;
 }
+
 header.main > :last-child {
   margin: 0 0 1em 0;
 }
@@ -35,13 +34,15 @@ header.main > :last-child {
 form {
   margin: 0 0 2em 0;
 }
+
 label {
-  color: #3d4449;
+  color: var(--text-title);
   display: block;
   font-size: 0.9em;
   font-weight: 600;
   margin: 0 0 1em 0;
 }
+
 input[type="text"],
 input[type="password"],
 input[type="email"],
@@ -54,17 +55,19 @@ textarea {
   -webkit-appearance: none;
   -ms-appearance: none;
   appearance: none;
-  background: #ffffff;
+  background: var(--bg-input);
   border-radius: 0.375em;
   border: none;
-  border: solid 1px rgba(210, 215, 217, 0.75);
-  color: inherit;
+  border: solid 1px var(--border-color);
+  color: var(--text-input);
   display: block;
   outline: 0;
   padding: 0 1em;
   text-decoration: none;
   width: 100%;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
+
 input[type="text"]:invalid,
 input[type="password"]:invalid,
 input[type="email"]:invalid,
@@ -75,6 +78,7 @@ select:invalid,
 textarea:invalid {
   box-shadow: none;
 }
+
 input[type="text"]:focus,
 input[type="password"]:focus,
 input[type="email"]:focus,
@@ -83,9 +87,10 @@ input[type="search"]:focus,
 input[type="url"]:focus,
 select:focus,
 textarea:focus {
-  border-color: #ad0000;
-  box-shadow: 0 0 0 1px #ad0000;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 1px var(--color-primary);
 }
+
 select {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' preserveAspectRatio='none' viewBox='0 0 40 40'%3E%3Cpath d='M9.4,12.3l10.4,10.4l10.4-10.4c0.2-0.2,0.5-0.4,0.9-0.4c0.3,0,0.6,0.1,0.9,0.4l3.3,3.3c0.2,0.2,0.4,0.5,0.4,0.9 c0,0.4-0.1,0.6-0.4,0.9L20.7,31.9c-0.2,0.2-0.5,0.4-0.9,0.4c-0.3,0-0.6-0.1-0.9-0.4L4.3,17.3c-0.2-0.2-0.4-0.5-0.4-0.9 c0-0.4,0.1-0.6,0.4-0.9l3.3-3.3c0.2-0.2,0.5-0.4,0.9-0.4S9.1,12.1,9.4,12.3z' fill='rgba(210, 215, 217, 0.75)' /%3E%3C/svg%3E");
   background-size: 1.25em;
@@ -95,16 +100,20 @@ select {
   padding-right: 2.75em;
   text-overflow: ellipsis;
 }
+
 select option {
-  color: #3d4449;
-  background: #ffffff;
+  color: var(--text-title);
+  background: var(--bg-input);
 }
+
 select:focus::-ms-value {
   background-color: transparent;
 }
+
 select::-ms-expand {
   display: none;
 }
+
 input[type="text"],
 input[type="password"],
 input[type="email"],
@@ -114,9 +123,11 @@ input[type="url"],
 select {
   height: 2.75em;
 }
+
 textarea {
   padding: 0.75em 1em;
 }
+
 input[type="checkbox"],
 input[type="radio"] {
   -moz-appearance: none;
@@ -130,10 +141,11 @@ input[type="radio"] {
   width: 1em;
   z-index: -1;
 }
+
 input[type="checkbox"] + label,
 input[type="radio"] + label {
   text-decoration: none;
-  color: #7f888f;
+  color: var(--text-body);
   cursor: pointer;
   display: inline-block;
   font-size: 1em;
@@ -142,6 +154,7 @@ input[type="radio"] + label {
   padding-right: 0.75em;
   position: relative;
 }
+
 input[type="checkbox"] + label:before,
 input[type="radio"] + label:before {
   -moz-osx-font-smoothing: grayscale;
@@ -154,9 +167,9 @@ input[type="radio"] + label:before {
   text-transform: none !important;
   font-family: 'Font Awesome 5 Free';
   font-weight: 900;
-  background: #ffffff;
+  background: var(--bg-input);
   border-radius: 0.375em;
-  border: solid 1px rgba(210, 215, 217, 0.75);
+  border: solid 1px var(--border-color);
   content: '';
   display: inline-block;
   font-size: 0.8em;
@@ -168,47 +181,53 @@ input[type="radio"] + label:before {
   top: 0;
   width: 2.0625em;
 }
+
 input[type="checkbox"]:checked + label:before,
 input[type="radio"]:checked + label:before {
-  background: #3d4449;
-  border-color: #3d4449;
+  background: var(--text-title);
+  border-color: var(--text-title);
   color: #ffffff;
   content: '\f00c';
 }
+
 input[type="checkbox"]:focus + label:before,
 input[type="radio"]:focus + label:before {
-  border-color: #ad0000;
-  box-shadow: 0 0 0 1px #ad0000;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 1px var(--color-primary);
 }
+
 input[type="checkbox"] + label:before {
   border-radius: 0.375em;
 }
+
 input[type="radio"] + label:before {
   border-radius: 100%;
 }
+
 ::-webkit-input-placeholder {
-  color: #9fa3a6 !important;
+  color: var(--text-placeholder) !important;
   opacity: 1.0;
 }
 :-moz-placeholder {
-  color: #9fa3a6 !important;
+  color: var(--text-placeholder) !important;
   opacity: 1.0;
 }
 ::-moz-placeholder {
-  color: #9fa3a6 !important;
+  color: var(--text-placeholder) !important;
   opacity: 1.0;
 }
 :-ms-input-placeholder {
-  color: #9fa3a6 !important;
+  color: var(--text-placeholder) !important;
   opacity: 1.0;
 }
 
 /* Box */
 .box {
   border-radius: 0.375em;
-  border: solid 1px rgba(210, 215, 217, 0.75);
+  border: solid 1px var(--border-color);
   margin-bottom: 2em;
   padding: 1.5em;
+  transition: border-color 0.3s ease;
 }
 .box > :last-child,
 .box > :last-child > :last-child,
@@ -263,10 +282,12 @@ input[type="radio"] + label:before {
   border-radius: 0.375em;
   display: block;
 }
-.image.left, .image.right {
+.image.left,
+.image.right {
   max-width: 40%;
 }
-.image.left img, .image.right img {
+.image.left img,
+.image.right img {
   width: 100%;
 }
 .image.left {
@@ -311,38 +332,30 @@ a.image:hover img {
   transform: scale(1.075);
 }
 
-/* --- Legendads --- */
-
+/* --- Legendas --- */
 .image figcaption {
-    display: block;        /* Garante que ocupe toda a largura disponível */
-    width: 100%;           /* Força a largura total do container .image */
-    margin-top: 0.75em;    /* Espaço entre a imagem e a legenda */
-    padding: 0;            /* Remove padding interno para alinhar exatamente com a imagem */
-    font-size: 0.85em;     /* Texto ligeiramente menor que o corpo */
-    line-height: 1.4;      /* Melhora a legibilidade em quebras de linha */
-    font-style: italic;    /* Estilo comum para legendas */
-    color: #666;           /* Cor suave para não competir com o texto principal */
-    text-align: left;      /* Alinha o texto à esquerda (borda esquerda da imagem) */
-    box-sizing: border-box; /* Garante que padding não quebre a largura, caso adicione */
-    
-    /* Previne quebras inesperadas em palavras muito longas */
-    word-wrap: break-word;
-    overflow-wrap: break-word;
+  display: block;
+  width: 100%;
+  margin-top: 0.75em;
+  padding: 0;
+  font-size: 0.85em;
+  line-height: 1.4;
+  font-style: italic;
+  color: var(--text-caption);
+  text-align: left;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
-
-/* Ajuste opcional para imagens centralizadas (como .fit e .main) */
 
 .image.fit figcaption,
 .image.main figcaption {
-    text-align: center;    /* Centraliza a legenda em imagens que ocupam toda a tela */
+  text-align: center;
 }
-
-/* Ajuste fino para imagens flutuantes (left/right) - herdará o text-align: left */
 
 .image.left figcaption,
 .image.right figcaption {
-    text-align: left;      /* Mantém a legenda alinhada com a borda esquerda da imagem */
-    /* Se preferir centralizar, troque para 'text-align: center;' */
+  text-align: left;
 }
 
 /* List */
@@ -368,7 +381,7 @@ ul.alt {
   padding-left: 0;
 }
 ul.alt li {
-  border-top: solid 1px rgba(210, 215, 217, 0.75);
+  border-top: solid 1px var(--border-color);
   padding: 0.5em 0;
 }
 ul.alt li:first-child {
@@ -466,7 +479,6 @@ ul.icons li .icon {
 ul.icons li .icon:before {
   font-size: 1.25em;
 }
-
 ul.icons li a {
   display: inline-block;
   transition: transform 0.3s ease, background-color 0.3s ease;
@@ -478,15 +490,13 @@ ul.icons li a:hover {
 }
 
 /* Contact */
-
-
 ul.contact {
   list-style: none;
   padding: 0;
 }
 ul.contact li {
   text-decoration: none;
-  border-top: solid 1px rgba(210, 217, 210, 0.75);
+  border-top: solid 1px var(--border-color);
   margin: 1.5em 0 0 0;
   padding: 1.5em 0 0 3em;
   position: relative;
@@ -502,7 +512,7 @@ ul.contact li:before {
   text-transform: none !important;
   font-family: 'Font Awesome 5 Free';
   font-weight: 400;
-  color: #ad0000;
+  color: var(--color-primary);
   display: inline-block;
   font-size: 1.5em;
   height: 1.125em;
@@ -524,7 +534,6 @@ ul.contact li:first-child:before {
 ul.contact li a {
   color: inherit;
 }
-
 
 /* Pagination */
 ul.pagination {
@@ -555,14 +564,14 @@ ul.pagination li > .page {
   text-align: center;
 }
 ul.pagination li > .page.active {
-  background-color: #ad0000;
+  background-color: var(--color-primary);
   color: #ffffff !important;
 }
 ul.pagination li > .page.active:hover {
-  background-color: #d50000;
+  background-color: var(--color-primary-hover);
 }
 ul.pagination li > .page.active:active {
-  background-color: #2600ff;
+  background-color: var(--color-primary-active);
 }
 ul.pagination li:first-child {
   padding-right: 0.75em;
@@ -589,34 +598,34 @@ table {
   width: 100%;
 }
 table tbody tr {
-  border: solid 1px rgba(210, 215, 217, 0.75);
+  border: solid 1px var(--border-color);
   border-left: 0;
   border-right: 0;
 }
 table tbody tr:nth-child(2n + 1) {
-  background-color: rgba(230, 235, 237, 0.25);
+  background-color: var(--bg-table-zebra);
 }
 table td {
   padding: 0.75em 0.75em;
 }
 table th {
-  color: #3d4449;
+  color: var(--text-title);
   font-size: 0.9em;
   font-weight: 600;
   padding: 0 0.75em 0.75em 0.75em;
   text-align: left;
 }
 table thead {
-  border-bottom: solid 2px rgba(210, 215, 217, 0.75);
+  border-bottom: solid 2px var(--border-color);
 }
 table tfoot {
-  border-top: solid 2px rgba(210, 215, 217, 0.75);
+  border-top: solid 2px var(--border-color);
 }
 table.alt {
   border-collapse: separate;
 }
 table.alt tbody tr td {
-  border: solid 1px rgba(210, 215, 217, 0.75);
+  border: solid 1px var(--border-color);
   border-left-width: 0;
   border-top-width: 0;
 }
@@ -643,15 +652,15 @@ button,
   -webkit-appearance: none;
   -ms-appearance: none;
   appearance: none;
-  -moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-  -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-  -ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  -moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  -ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
   background-color: transparent;
   border-radius: 0.375em;
   border: 0;
-  box-shadow: inset 0 0 0 2px #ad0000;
-  color: #ad0000 !important;
+  box-shadow: inset 0 0 0 2px var(--color-primary);
+  color: var(--color-primary) !important;
   cursor: pointer;
   display: inline-block;
   font-family: "Roboto Slab", serif;
@@ -715,7 +724,7 @@ input[type="reset"].primary,
 input[type="button"].primary,
 button.primary,
 .button.primary {
-  background-color: #ad0000;
+  background-color: var(--color-primary);
   box-shadow: none;
   color: #ffffff !important;
 }
@@ -724,20 +733,82 @@ input[type="reset"].primary:hover,
 input[type="button"].primary:hover,
 button.primary:hover,
 .button.primary:hover {
-  background-color: #f67878;
+  background-color: var(--color-primary-hover);
 }
 input[type="submit"].primary:active,
 input[type="reset"].primary:active,
 input[type="button"].primary:active,
 button.primary:active,
 .button.primary:active {
-  background-color: #f45c5c;
+  background-color: var(--color-primary-active);
 }
-input[type="submit"].disabled, input[type="submit"]:disabled,
-input[type="reset"].disabled, input[type="reset"]:disabled,
-input[type="button"].disabled, input[type="button"]:disabled,
-button.disabled, button:disabled,
-.button.disabled, .button:disabled {
+input[type="submit"].disabled,
+input[type="submit"]:disabled,
+input[type="reset"].disabled,
+input[type="reset"]:disabled,
+input[type="button"].disabled,
+input[type="button"]:disabled,
+button.disabled,
+button:disabled,
+.button.disabled,
+.button:disabled {
   pointer-events: none;
   opacity: 0.25;
+}
+
+/* ============================================================ */
+/* BOTÃO DE MODO NOTURNO – mesmo estilo do botão de idioma       */
+/* ============================================================ */
+
+.theme-toggle {
+  /* Posicionamento fixo – ao lado esquerdo do botão de idiomas */
+  position: fixed;
+  top: 1.2em;
+  right: calc(1.5em + 36px + 10px); /* idioma está em right: 1.5em */
+  z-index: 1000;
+
+  /* Mesmo visual do botão de idioma */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-dropdown);
+  backdrop-filter: blur(4px);
+  border: 1px solid var(--border-light);
+  border-radius: 4px;
+  padding: 6px 12px;
+  width: 36px;
+  height: 30px;
+  cursor: pointer;
+  box-shadow: var(--shadow-toggle);
+  transition: all 0.2s ease;
+}
+
+/* Efeito hover – igual ao botão de idioma */
+.theme-toggle:hover {
+  background: var(--bg-body);
+  box-shadow: var(--shadow-dropdown);
+}
+
+/* Estilo das imagens dentro do botão */
+.theme-toggle .theme-img {
+  width: 18px;
+  height: 18px;
+  display: block;
+  object-fit: contain;
+  flex-shrink: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Ajuste para telas menores (opcional) */
+@media screen and (max-width: 736px) {
+  .theme-toggle {
+    top: 0.8em;
+    right: calc(1em + 36px + 8px);
+    width: 32px;
+    height: 28px;
+  }
+  .theme-toggle .theme-img {
+    width: 16px;
+    height: 16px;
+  }
 }

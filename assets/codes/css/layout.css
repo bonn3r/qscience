@@ -1,16 +1,7 @@
 /*
-	Modelo Editorial, design de HTML5 UP.
-	Fonte: html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-	
-	Criado por: Jimi.7z (Willian Bonner) em 29/06/2026
-	Arquivo: layout - contém main, side bar, header, footer, banner e estilos associados.
-  Última atualização: 24/07/2026
-	
-    Versão: 2.0:
-      - Atualização para suporte ao modo noturno;
-      - Remoção do Wrapper (que recuava a página para o menu principal abrir)
-
+Criado em 29/06/2026
+Autor: Jimi
+Código: layout - configura o estilo do main, side bar, header, footer, banner e estilos associados.
 */
 
 /* ======================================================================= */
@@ -36,7 +27,7 @@
 }
 #main > .inner > section {
   padding: 6em 0 4em 0;
-  border-top: solid 2px rgba(210, 215, 217, 0.75);
+  border-top: solid 2px var(--border-color);
 }
 #main > .inner > section:first-of-type {
   border-top: 0 !important;
@@ -55,11 +46,11 @@
   -webkit-flex-shrink: 0;
   -ms-flex-shrink: 0;
   flex-shrink: 0;
-  -moz-transition: left 0.5s ease, box-shadow 0.5s ease;
-  -webkit-transition: left 0.5s ease, box-shadow 0.5s ease;
-  -ms-transition: left 0.5s ease, box-shadow 0.5s ease;
-  transition: left 0.5s ease, box-shadow 0.5s ease;
-  background-color: #f5f6f7;
+  -moz-transition: left 0.5s ease, box-shadow 0.5s ease, background-color 0.3s ease;
+  -webkit-transition: left 0.5s ease, box-shadow 0.5s ease, background-color 0.3s ease;
+  -ms-transition: left 0.5s ease, box-shadow 0.5s ease, background-color 0.3s ease;
+  transition: left 0.5s ease, box-shadow 0.5s ease, background-color 0.3s ease;
+  background-color: var(--bg-sidebar);
   font-size: 0.9em;
   position: fixed;
   top: 0;
@@ -67,7 +58,7 @@
   height: 100vh;
   width: 26em;
   z-index: 10000;
-  box-shadow: 0 0 5em 0 rgba(0, 0, 0, 0.175);
+  box-shadow: var(--shadow-sidebar);
 }
 
 /* Estado FECHADO */
@@ -93,7 +84,7 @@
   width: 100%;
 }
 #sidebar > .inner > * {
-  border-bottom: solid 2px rgba(208, 216, 219, 0.75);
+  border-bottom: solid 2px var(--border-color);
   margin: 0 0 3.5em 0;
   padding: 0 0 3.5em 0;
 }
@@ -106,7 +97,7 @@
   padding-bottom: 0;
 }
 #sidebar > .inner > .alt {
-  background-color: #eff1f2;
+  background-color: var(--bg-highlight-sidebar);
   border-bottom: 0;
   margin: -2.22222em 0 4.44444em -2.22222em;
   padding: 2.22222em;
@@ -139,7 +130,7 @@
   left: 26em;
 }
 
-/* Ícone base – hambúrguer cinza */
+/* Ícone base – hambúrguer */
 #sidebar .toggle:before {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -160,7 +151,7 @@
   text-indent: 0;
   top: 0;
   width: inherit;
-  color: #85939e;
+  color: var(--text-icon-toggle);
   transition: transform 0.5s ease, color 0.3s ease, opacity 0.3s ease;
   transform: scale(1);
   opacity: 1;
@@ -168,20 +159,20 @@
 
 #sidebar .toggle:hover:before {
   transform: scale(1.2);
-  color: #ad0000;
+  color: var(--color-primary);
   opacity: 1;
 }
 
 #sidebar:not(.inactive) .toggle:before {
   content: '\f00d';
-  color: #85939e;
+  color: var(--text-icon-toggle);
   transform: scale(1);
   opacity: 1;
 }
 
 #sidebar:not(.inactive) .toggle:hover:before {
   transform: scale(1.2);
-  color: #ad0000;
+  color: var(--color-primary);
 }
 
 /* ======================================================================= */
@@ -206,7 +197,7 @@
   -webkit-transform: scaleX(-1);
   -ms-transform: scaleX(-1);
   transform: scaleX(-1);
-  color: #7f888f;
+  color: var(--text-muted);
   content: '\f002';
   cursor: default;
   display: block;
@@ -255,7 +246,6 @@
   #sidebar .toggle:before {
     font-size: 1.3rem;
   }
-
 }
 
 /* 1280px – Sidebar 26em (padrão) – apenas ajustes de espaçamento */
@@ -279,7 +269,6 @@
   #sidebar .toggle:before {
     font-size: 1.3rem;
   }
-
   body.is-preload #sidebar {
     display: none;
   }
@@ -305,10 +294,10 @@
   }
   #sidebar .toggle:before {
     font-size: 1.1rem;
-    color: #7f888f;
+    color: var(--text-icon-toggle);
   }
   #sidebar .toggle:after {
-    background: rgba(222, 225, 226, 0.75);
+    background: var(--bg-toggle);
     border-radius: 0.375em;
     content: '';
     height: 3.5em;
@@ -333,18 +322,19 @@
 /* ======================================================================= */
 
 #header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background: #ffffff;          /* fundo branco para não ver o conteúdo atrás */
-    padding-top: 2em;             /* ajuste o padding conforme necessário */
-    padding-bottom: 1em;
-    border-bottom: solid 4.5px #ad0000; /* mantém a borda vermelha */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--bg-header);
+  padding-top: 2em;
+  padding-bottom: 1em;
+  border-bottom: solid 4.5px var(--border-header);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 /* Ajuste o padding do conteúdo principal para não ficar escondido atrás do header */
 #main > .inner {
-    padding-top: 1em;            /* valor padrão era 6em, mas agora o header é sticky */
+  padding-top: 1em;
 }
 
 /* ======================================================================= */
@@ -355,9 +345,10 @@
   display: -webkit-flex;
   display: -ms-flex;
   display: flex;
-  background: #ffffff;
-  border-bottom: solid 5px #ad0000;
+  background: var(--bg-header);
+  border-bottom: solid 5px var(--border-header);
   z-index: 1000;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 #header > * {
@@ -380,37 +371,34 @@
 }
 
 /* ---------- DESKTOP (acima de 737px) – Fixo no topo ---------- */
-
 @media screen and (min-width: 737px) {
   #header {
     position: fixed;
     top: 0;
     left: 0;
-    right: 0;               /* mantém para o margin:auto funcionar */
-    width: 70%;             /* ← MUDE AQUI: 60%, 80% ou valor fixo como 900px */
-    max-width: 80%;      /* (opcional) impede que fique largo demais */
-    margin: 0 auto;         /* centraliza horizontalmente */
+    right: 0;
+    width: 70%;
+    max-width: 80%;
+    margin: 0 auto;
     padding: 2em 0 1em 0;
-    background: #ffffff;
-    border-bottom: solid 5px #ad0000;
+    background: var(--bg-header);
+    border-bottom: solid 5px var(--border-header);
     z-index: 1000;
     display: flex;
   }
-  /* Compensação do espaço ocupado pelo header no conteúdo principal */
   #main > .inner {
-    padding-top: 1.5em; /* 6em (top) + 1em (bottom) + 0.5em (border) */
+    padding-top: 1.5em;
   }
 }
 
 /* ---------- TABLET (até 1680px) – Ajuste do padding ---------- */
-
 @media screen and (max-width: 1680px) and (min-width: 737px) {
   #header {
-    padding-top: 2.5em; /* seu ajuste original para telas médias */
+    padding-top: 2.5em;
     max-width: 100%;
   }
   #main > .inner {
-    padding-top: 3.8em; /* acompanha a redução */
+    padding-top: 3.8em;
   }
 }
 
@@ -421,26 +409,24 @@
     top: 0;
     left: 0;
     right: 0;
-    width: 100%;           /* força a largura total da viewport */
+    width: 100%;
     max-width: 100%;
-    padding: 6.5em 0 1em 0;  /* sem padding lateral */
+    padding: 6.5em 0 1em 0;
     margin: 0;
     box-sizing: border-box;
-    background: #ffffff;
-    border-bottom: solid 5px #ad0000;
+    background: var(--bg-header);
+    border-bottom: solid 5px var(--border-header);
     z-index: 1000;
     display: -moz-flex;
     display: -webkit-flex;
     display: -ms-flex;
     display: flex;
   }
-
   #header .logo {
     font-size: 1.25em;
     margin: 0;
-    padding-left: 1.2em;    /* respiro interno opcional */
+    padding-left: 1.2em;
   }
-
   #header .icons {
     height: 5em;
     line-height: 5em;
@@ -449,10 +435,8 @@
     top: 0;
     padding-right: 0;
   }
-
-  /* Ajuste no conteúdo principal para compensar a altura do header sticky */
   #main > .inner {
-    padding-top: 1em;       /* já estava no seu original */
+    padding-top: 1em;
   }
 }
 
@@ -546,7 +530,7 @@
 }
 
 #footer .copyright {
-  color: #9fa3a6;
+  color: var(--text-muted);
   font-size: 0.9em;
 }
 #footer .copyright a {
@@ -555,15 +539,14 @@
 
 /* Faz as imagens dentro dos ícones das features serem responsivas e centralizadas */
 .features article .icon img {
-    max-width: 48%;           /* ocupa no máximo 70% do container (10em / 8em / 6em) */
-    height: auto;             /* mantém a proporção */
-    display: inline-block;    /* permite centralização vertical com vertical-align */
-    vertical-align: middle;   /* alinha verticalmente com o line-height do container */
+  max-width: 48%;
+  height: auto;
+  display: inline-block;
+  vertical-align: middle;
 }
 
-/* Opcional: ajuste fino para telas muito pequenas */
 @media screen and (max-width: 480px) {
-    .features article .icon img {
-        max-width: 38%;       /* um pouco menor para não ficar apertado */
-    }
+  .features article .icon img {
+    max-width: 38%;
+  }
 }

@@ -1,17 +1,13 @@
 /*
-	Modelo Editorial, design de HTML5 UP.
-	Fonte: html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-	
-	Criado por: Jimi.7z (Willian Bonner) em 29/06/2026
-	Última atualização: 
-	Arquivo de imports do css, na ordem correta (sugerida pela IA DeepSeek)
-	Versão: 1.0
+Criado em 25/07/2026
+Autor: Jimi
+Código: Arquivo de imports do css, na ordem correta (sugerida pela IA DeepSeek)
 */
 
 @import url(fontawesome-all.min.css);
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,400italic,600italic|Roboto+Slab:400,700");
 @import url("reset.css");
+@import url("theme.css"); 
 @import url("base.css");
 @import url("grid.css");
 @import url("layout.css");
