@@ -97,6 +97,9 @@
 		</style>
 	</head>
 	<body class="is-preload">
+		
+		<div id="sidebar"></div>
+		
 		<div class="lang-dropdown" id="langDropdown" >
 			<button class="lang-dropdown-btn" id="langDropdownBtn" aria-haspopup="true" aria-expanded="false">
 				<img src="/qscience/assets/images/logo/brazilian-logo.svg" alt="Português" style="width:24px; height:16px; border-radius:2px;">
@@ -115,278 +118,143 @@
 			</ul>
 		</div>
 
-		<!-- Wrapper -->
-		<div id="wrapper">
+		<div id="main">
+		<div class="inner">
 
-			<!-- Main -->
-			<div id="main">
-				<div class="inner">
-
-					<!-- Cabeçalho -->
-					<header id="header">
-						<a href="/qscience/br/index.html" class="logo">
-							<img src="/qscience/assets/images/logo/cat-logo.svg" alt="Gato logomarca do site" style="height: 2em; width: auto; vertical-align: middle; margin-right: 0.5em;">
-							<strong>Q</strong>-Science
+			<!-- Cabeçalho -->
+			<header id="header">
+				<a href="/qscience/br/index.html" class="logo">
+					<img src="/qscience/assets/images/logo/cat-logo.svg" alt="Gato logomarca do site" style="height: 2em; width: auto; vertical-align: middle; margin-right: 0.5em;">
+					<strong>Q</strong>-Science
+				</a>
+				<ul class="icons">
+					<li>
+						<a href="/qscience/br/arxiv.html" class="icon brands">
+							<img src="/qscience/assets/images/logo/arxiv-logo.svg" alt="Logomarca do arXiv" width="20" height="20" style="vertical-align:middle;">
+							<span class="label">Arxiv</span>
 						</a>
-						<ul class="icons">
-							<li>
-								<a href="/qscience/br/arxiv.html" class="icon brands">
-									<img src="/qscience/assets/images/logo/arxiv-logo.svg" alt="Logomarca do arXiv" width="20" height="20" style="vertical-align:middle;">
-									<span class="label">Arxiv</span>
-								</a>
-							</li>
-							<li>
-								<a href="https://github.com/bonn3r" target="_blank" rel="noopener noreferrer" class="icon brands">
-									<img src="/qscience/assets/images/logo/github-logo.svg" alt="Logomarca do Github" width="20" height="20" style="vertical-align:middle;">
-									<span class="label">Github</span>
-								</a>
-							</li>
-							<li>
-								<a href="http://lattes.cnpq.br/3294938329763314" target="_blank" rel="noopener noreferrer" class="icon brands">
-									<img src="/qscience/assets/images/logo/lattes-logo.svg" alt="Logomarca da Plataforma Lattes" width="20" height="20" style="vertical-align:middle;">
-									<span class="label">Lattes</span>
-								</a>
-							</li>
-							<li>
-								<a href="https://linkedin.com/in/willianbonnerbsc" target="_blank" rel="noopener noreferrer" class="icon brands">
-									<img src="/qscience/assets/images/logo/linkedin-logo.svg" alt="Logomarca Linkedin" width="20" height="20" style="vertical-align:middle;">
-									<span class="label">Linked</span>
-								</a>
-							</li>
-							<li>
-								<a href="https://orcid.org/0009-0007-7458-8512" target="_blank" rel="noopener noreferrer" class="icon brands">
-									<img src="/qscience/assets/images/logo/orcid-logo.svg" alt="Logomarca Orcid" width="20" height="20" style="vertical-align:middle;">
-									<span class="label">ORCID</span>
-								</a>
-							</li>
-						</ul>
-					</header>
-					<div class="lang-dropdown" id="langDropdown" >
-						<button class="lang-dropdown-btn" id="langDropdownBtn" aria-haspopup="true" aria-expanded="false">
-							<img src="/qscience/assets/images/logo/brazilian-logo.svg" alt="Português" style="width:24px; height:16px; border-radius:2px;">
-						</button>
+					</li>
+					<li>
+						<a href="https://github.com/bonn3r" target="_blank" rel="noopener noreferrer" class="icon brands">
+							<img src="/qscience/assets/images/logo/github-logo.svg" alt="Logomarca do Github" width="20" height="20" style="vertical-align:middle;">
+							<span class="label">Github</span>
+						</a>
+					</li>
+					<li>
+						<a href="http://lattes.cnpq.br/3294938329763314" target="_blank" rel="noopener noreferrer" class="icon brands">
+							<img src="/qscience/assets/images/logo/lattes-logo.svg" alt="Logomarca da Plataforma Lattes" width="20" height="20" style="vertical-align:middle;">
+							<span class="label">Lattes</span>
+						</a>
+					</li>
+					<li>
+						<a href="https://linkedin.com/in/willianbonnerbsc" target="_blank" rel="noopener noreferrer" class="icon brands">
+							<img src="/qscience/assets/images/logo/linkedin-logo.svg" alt="Logomarca Linkedin" width="20" height="20" style="vertical-align:middle;">
+							<span class="label">Linked</span>
+						</a>
+					</li>
+					<li>
+						<a href="https://orcid.org/0009-0007-7458-8512" target="_blank" rel="noopener noreferrer" class="icon brands">
+							<img src="/qscience/assets/images/logo/orcid-logo.svg" alt="Logomarca Orcid" width="20" height="20" style="vertical-align:middle;">
+							<span class="label">ORCID</span>
+						</a>
+					</li>
+				</ul>
 			
-						<ul class="lang-dropdown-menu" id="langDropdownMenu" role="menu">
-							<li role="none">
-								<a href="/qscience/br/" role="menuitem" class="active-lang">
-								<img src="/qscience/assets/images/logo/brazilian-logo.svg" alt="Português">Português</a>
-							</li>
+			</header>
+				
+			<div class="lang-dropdown" id="langDropdown" >
+				<button class="lang-dropdown-btn" id="langDropdownBtn" aria-haspopup="true" aria-expanded="false">
+					<img src="/qscience/assets/images/logo/brazilian-logo.svg" alt="Português" style="width:24px; height:16px; border-radius:2px;">
+				</button>
+			
+				<ul class="lang-dropdown-menu" id="langDropdownMenu" role="menu">
+					<li role="none">
+						<a href="/qscience/br/" role="menuitem" class="active-lang">
+						<img src="/qscience/assets/images/logo/brazilian-logo.svg" alt="Português">Português</a>
+					</li>
 		
-							<li role="none">
-								<a href="/qscience/en/" role="menuitem">
-								<img src="/qscience/assets/images/logo/united-kingdom-logo.svg" alt="English">English</a>
-							</li>
-						</ul>
+					<li role="none">
+						<a href="/qscience/en/" role="menuitem">
+						<img src="/qscience/assets/images/logo/united-kingdom-logo.svg" alt="English">English</a>
+					</li>
+				</ul>
+			</div>
+
+				<!-- Conteúdo principal: Formulário -->
+				<section>
+					<header class="major">
+						<h2>Contato</h2>
+					</header>
+					<p>Sem algoritmos, sem pressa. Este é meu laboratório de aprendizado com ferramentas web. Dúvidas, sugestões de pauta ou opiniões divergentes sobre os posts? Tudo é bem-vindo. É só escrever aqui embaixo — fico genuinamente curioso para saber o que você pensa.</p>
+
+					<div class="box" style="max-width: 800px; margin: 0 auto; background: #f5f5f5; padding: 2em; border-radius: 8px;">
+						<form id="contactForm">
+							<div class="row gtr-uniform">
+								<!-- Nome -->
+								<div class="col-12">
+									<input type="text" name="Nome" id="Nome" placeholder="Nome" required />
+								</div>
+			
+								<!-- Email -->
+								<div class="col-12">
+									<input type="email" name="e-Mail" id="E-mail" placeholder="E-mail" required />
+								</div>
+			
+								<!-- Assunto -->
+								<div class="col-12">
+									<input type="text" name="Assunto" id="Assunto" placeholder="Assunto" required />
+								</div>
+
+								<!-- Mensagem -->
+								<div class="col-12">
+									<textarea name="Mensagem" id="Mensagem" placeholder="Digite sua mensagem..." rows="6" required></textarea>
+								</div>
+
+								<!-- reCAPTCHA -->
+								<div class="col-12 captcha-wrapper" style="display: flex; justify-content: center; width: 100%;">
+									<div class="g-recaptcha" 
+										data-sitekey="6Lc4bVctAAAAADuhSfZEqZYApsRkwCRxFAANV9gl" 
+										data-callback="onCaptchaSuccess">
+									</div>
+								</div>
+
+								<!-- Botões -->
+								<div class="col-12">
+									<ul class="actions special">
+										<li><input type="submit" value="Enviar" class="primary" /></li>
+										<li><input type="button" value="Limpar" onclick="this.form.reset(); grecaptcha.reset();" /></li>
+									</ul>
+								</div>
+							</div>
+						</form>
 					</div>
 
-					<!-- Conteúdo principal: Formulário -->
-					<section>
-						<header class="major">
-							<h2>Contato</h2>
-						</header>
-						<p>Sem algoritmos, sem pressa. Este é meu laboratório de aprendizado com ferramentas web. Dúvidas, sugestões de pauta ou opiniões divergentes sobre os posts? Tudo é bem-vindo. É só escrever aqui embaixo — fico genuinamente curioso para saber o que você pensa.</p>
-
-						<div class="box" style="max-width: 800px; margin: 0 auto; background: #f5f5f5; padding: 2em; border-radius: 8px;">
-							<!-- O formulário NÃO tem mais action e method tradicionais:
-							     o JavaScript interceptará o submit e fará a requisição AJAX -->
-							<form id="contactForm">
-								<div class="row gtr-uniform">
-									<!-- Nome -->
-									<div class="col-12">
-										<input type="text" name="Nome" id="Nome" placeholder="Nome" required />
-									</div>
-			
-									<!-- Email -->
-									<div class="col-12">
-										<input type="email" name="e-Mail" id="E-mail" placeholder="E-mail" required />
-									</div>
-			
-									<!-- Assunto -->
-									<div class="col-12">
-										<input type="text" name="Assunto" id="Assunto" placeholder="Assunto" required />
-									</div>
-
-									<!-- Mensagem -->
-									<div class="col-12">
-										<textarea name="Mensagem" id="Mensagem" placeholder="Digite sua mensagem..." rows="6" required></textarea>
-									</div>
-
-									<!-- reCAPTCHA -->
-									<div class="col-12 captcha-wrapper" style="display: flex; justify-content: center; width: 100%;">
-										<div class="g-recaptcha" 
-											data-sitekey="6Lc4bVctAAAAADuhSfZEqZYApsRkwCRxFAANV9gl" 
-											data-callback="onCaptchaSuccess">
-										</div>
-									</div>
-
-									<!-- Botões -->
-									<div class="col-12">
-										<ul class="actions special">
-											<li><input type="submit" value="Enviar" class="primary" /></li>
-											<li><input type="button" value="Limpar" onclick="this.form.reset(); grecaptcha.reset();" /></li>
-										</ul>
-									</div>
-								</div>
-							</form>
-						</div>
-
-						<hr class="major" />
-						<!-- Bloco de e-mail com ícone -->
-						<div class="box" style="width: auto; max-width: 600px; margin: 0 auto; padding: 1em 1.5em; background: #f9f9f9; border-radius: 6px;">
-							<div class="svg-icon-item" style="display: flex; align-items: center; gap: 0.8rem;">
-								<div style="position: relative; display: inline-flex; flex-direction: column; align-items: center; flex-shrink: 0; width: 2.5em; height: 2.5em; justify-content: center;">
-									<img src="/qscience/assets/images/logo/email-logo.svg" alt="Envelope" id="emailIcon" style="width: 3em; height: 3em; transition: filter 0.3s; flex-shrink: 0; cursor: pointer;"/>
-									<span id="feedbackCopiar" style="position: absolute; top: 100%; left: 50%; transform: translateX(-50%); margin-top: 0.2rem; font-size: 0.7rem; font-weight: 600; white-space: nowrap; opacity: 0; transition: opacity 0.2s;"></span>
-								</div>
-								<span class="contact-text" style="margin-left: 15px;">
-									Se preferir, pode me escrever diretamente para meu email clicando no ícone ao lado.
-								</span>
+					<hr class="major" />
+					<!-- Bloco de e-mail com ícone -->
+					<div class="box" style="width: auto; max-width: 600px; margin: 0 auto; padding: 1em 1.5em; background: #f9f9f9; border-radius: 6px;">
+						<div class="svg-icon-item" style="display: flex; align-items: center; gap: 0.8rem;">
+							<div style="position: relative; display: inline-flex; flex-direction: column; align-items: center; flex-shrink: 0; width: 2.5em; height: 2.5em; justify-content: center;">
+								<img src="/qscience/assets/images/logo/email-logo.svg" alt="Envelope" id="emailIcon" style="width: 3em; height: 3em; transition: filter 0.3s; flex-shrink: 0; cursor: pointer;"/>
+								<span id="feedbackCopiar" style="position: absolute; top: 100%; left: 50%; transform: translateX(-50%); margin-top: 0.2rem; font-size: 0.7rem; font-weight: 600; white-space: nowrap; opacity: 0; transition: opacity 0.2s;"></span>
 							</div>
+							<span class="contact-text" style="margin-left: 15px;">
+								Se preferir, pode me escrever diretamente para meu email clicando no ícone ao lado.
+							</span>
 						</div>
+					</div>
 
-					</section>
+				</section>
 					
 					<!-- Rodapé da página -->
-					<footer id="footer">
-						<ul class="actions">
-							<li style="display: block; width: 50%; margin: 0 auto; text-align: center;">
-								<a href="#" class="button">Voltar ao topo</a>
-							</li>
-						</ul>
-					</footer>
+				<footer id="footer">
+					<ul class="actions">
+						<li style="display: block; width: 50%; margin: 0 auto; text-align: center;">
+							<a href="#" class="button">Voltar ao topo</a>
+						</li>
+					</ul>
+				</footer>
 
-				</div>
 			</div>
-
-			<!-- Sidebar -->
-			<div id="sidebar" class="inactive">
-				<div class="inner">
-					<section id="search" class="alt">
-						<img src="/qscience/assets/images/logo/cat-logo.svg" alt="Gato logomarca do site" style="height: 2em; width: auto; vertical-align: middle; margin-right: 0.5em; margin-bottom: 5px;">
-						<strong>Q</strong>-Science
-						<form method="post" action="#">
-							<input type="text" name="query" id="query" placeholder="Pesquisar..." />
-						</form>
-					</section>
-
-					<nav id="menu">
-						<header class="major">
-							<h2>Menu</h2>
-						</header>
-						<ul>
-							<li><a href="/qscience/br/index.html">Home</a></li>
-							<li>
-								<span class="opener">Pesquisa</span>
-								<ul>
-									<li><a href="#">Visão Geral</a></li>
-									<li><a href="#">Trabalhos atuais</a></li>
-									<li><a href="#">Dissertação</a></li>
-									<li><a href="#">Trabalho de Conclusão de Curso</a></li>
-									<li>
-										<span class="opener">Minhas Iniciações Científicas</span>
-										<ul>
-											<li><a href="#">Visão Geral</a></li>
-											<li><a href="#">2023 - Operador de Laplace e Características Geometricas de Espaços Curvos</a></li>
-											<li><a href="#">2022 - Iniciação à Geometria Diferencial</a></li>
-											<li><a href="#">2021 - Estudo da Análise em $\mathbb{R}^n$</a></li>
-											<li><a href="#">2020 - Métodos Variacionais em Equações Diferenciais Parciais</a></li>
-										</ul>
-									</li>
-								</ul>
-							</li>
-							<li>
-								<span class="opener">Estudos</span>
-								<ul>
-									<li><a href="#">Visão Geral</a></li>
-									<li><a href="#">Anotações de Aulas</a></li>
-									<li><a href="#">Anotações de Estudos</a></li>
-									<li><a href="#">Material da Monitoria</a></li>
-									<li><a href="#">Slides</a></li>
-									<li><a href="#">Tópicos Adicionais</a></li>
-								</ul>
-							</li>
-							<li>
-								<span class="opener">Extensão</span>
-								<ul>
-									<li><a href="/qscience/br/extensao/index.html">Visão Geral</a></li>
-									<li><a href="#">Apresentações Orais</a></li>
-									<li><a href="#">Mini Cursos</a></li>
-									<li><a href="#">Posters</a></li>
-									<li><a href="#">Tópicos Adicionais</a></li>
-								</ul>
-							</li>
-							<li>
-								<span class="opener">Meus textos</span>
-								<ul>
-									<li><a href="#">Visão Geral</a></li>
-									<li><a href="#">Filosofia</a></li>
-									<li><a href="#">Física</a></li>
-									<li><a href="#">Matemática</a></li>
-									<li><a href="#">Política & Sociedade</a></li>
-								</ul>
-							</li>
-							<li><a href="/qscience/br/bio.html">Bio completa</a></li>
-							<li><a href="/qscience/br/creditos.html">Créditos</a></li>
-							<li><a href="/qscience/br/contato.html"><strong>Contato</strong></a></li>
-						</ul>
-					</nav>
-
-					<section>
-						<header class="major">
-							<h2>Publicações Recentes</h2>
-						</header>
-						<div class="mini-posts">
-							<article>
-								<a href="#" class="image"><img src="/qscience/br/pesquisa/tcc/tcc_pub.svg" alt="Imagem com convite para conhecer meu TCC" /></a>
-								<p>Publicação do TCC aqui.</p>
-							</article>
-							<article>
-								<a href="#" class="image"><img src="/qscience/br/pesquisa/ics/pub/ic_pub.svg" alt="Imagem com convite para conhecer minhas iniciações científica" /></a>
-								<p>Publicação da minha última IC</p>
-							</article>
-							<article>
-								<a href="#" class="image"><img src="/qscience/br/extras/apresentacao_pub.svg" alt="Imagem com convite para conhecer a origem do site" /></a>
-								<p>A pensar...</p>
-							</article>
-						</div>
-					</section>
-
-					<section>
-						<header class="major">
-							<h2>Redes sociais</h2>
-						</header>
-						<p><strong>Me acompanhe em:</strong></p>
-						<ul class="contact">
-							<li class="svg-icon-item">
-								<img src="/qscience/assets/images/logo/bluesky-logo.svg" alt="Bluesky" class="svg-icon" />
-								<a href="https://bsky.app/profile/bonner.bsky.social" target="_blank" rel="noopener noreferrer">@bonner</a>
-							</li>
-							<li class="svg-icon-item">
-								<img src="/qscience/assets/images/logo/insta-logo.svg" alt="Instagram" class="svg-icon" />
-								<a href="https://www.instagram.com/jimi.7z" target="_blank" rel="noopener noreferrer">@jimi.7z</a>
-							</li>
-						</ul>
-					</section>
-
-					<section>
-						<div class="box" style="border-left: 4px solid #a90a15; padding: 1em;">
-							<ul class="contact">
-								<li class="svg-icon-item">
-									<img src="/qscience/assets/images/logo/university-logo.svg" alt="Universidade" class="svg-icon" />
-									<span class="contact-text">
-										Atualmente estou aguardando a confirmação da bolsa para dar início ao Mestrado...
-									</span>
-								</li>
-							</ul>
-						</div>
-					</section>
-
-					<footer id="footer">
-						<p class="copyright">&copy;2026 Jimi.7z. All rights reserved. Design by: <a href="https://html5up.net/editorial" target="_blank" rel="noopener noreferrer">HTML5 UP</a>. Redesign by: Willian Bonner.</p>
-					</footer>
-				</div>
-			</div>
-
 		</div>
 
 		<!-- Overlay de agradecimento -->
@@ -403,6 +271,7 @@
 		<script src="/qscience/assets/codes/js/browser.min.js"></script>
 		<script src="/qscience/assets/codes/js/breakpoints.min.js"></script>
 		<script src="/qscience/assets/codes/js/util.js"></script>
+		<script src="/qscience/assets/codes/js/sidebar.js"></script>
 		<script src="/qscience/assets/codes/js/main.js"></script>
 		<script src="/qscience/assets/codes/js/language.js"></script>
 		

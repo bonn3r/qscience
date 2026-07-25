@@ -263,3 +263,22 @@ ul.contact li.svg-icon-item .svg-icon {
 ul.contact li.svg-icon-item a:hover .svg-icon {
     filter: brightness(0) saturate(100%) invert(40%) sepia(100%) saturate(1000%) hue-rotate(0deg) brightness(100%) contrast(120%);
 }
+
+/* Item de menu ativo (link correspondente à página atual) */
+#menu .active-link {
+    font-weight: 700 !important;
+    color: #111010 !important;
+    background-color: #434749;
+}
+
+/* Item pai (li) que contém um link ativo ou um submenu ativo */
+#menu .active-menu-item > a,
+#menu .active-parent > a {
+    font-weight: 700 !important;
+    /*color: #ad0000 !important;*/
+}
+
+/* Opcional: manter o opener ativo com a mesma cor */
+#menu .opener.active {
+    font-weight: 700;
+}

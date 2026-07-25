@@ -3,61 +3,10 @@ Autor: Jimi.7z
 Data de criação: 20/07/2026
 Versão: 1.0
 
-Última atualização: -
+Versão: 2.0 - Data: 24/07/2026
+    - Separação da sidebar
+
 */
-
-/*(function() {
-	// Só executa se não estiver já em uma subpasta de idioma
-	var path = window.location.pathname;
-
-	if (path.includes('/br/') || path.includes('/en/')) {
-		return; // já está na página correta
-	}
-
-	// Detecta idioma do navegador
-	var userLang = navigator.language || navigator.languages[0] || 'en';
-	var targetPath = userLang.toLowerCase().startsWith('pt') ? '/qscience/br/' : '/qscience/en/';
-	var countdownEl = document.getElementById('countdown');
-	var seconds = 3;
-
-	// Atualiza o contador a cada segundo
-	var interval = setInterval(function() {
-		seconds--;
-		if (countdownEl) {
-			countdownEl.textContent = 'Redirecionando em ' + seconds + ' segundos...';
-		}
-
-		if (seconds <= 0) {
-			clearInterval(interval);
-				window.location.href = targetPath;
-			}
-		}, 1000);
-
-	// Se o usuário clicar em qualquer link do dropdown, cancela o redirecionamento automático
-	var dropdownLinks = document.querySelectorAll('.lang-dropdown-menu a');
-
-	dropdownLinks.forEach(function(link) {
-		link.addEventListener('click', function(e) {
-			clearInterval(interval);
-			// O redirecionamento será feito pelo link normalmente
-		});
-	});
-
-	// Toggle do dropdown (mantido do script original)
-	var btn = document.getElementById('langDropdownBtn');
-		var menu = document.getElementById('langDropdownMenu');
-		if (btn && menu) {
-			btn.addEventListener('click', function(e) {
-				e.stopPropagation();
-				menu.classList.toggle('show');
-			});
-			document.addEventListener('click', function() {
-				menu.classList.remove('show');
-			});
-		}
-})
-();*/
-
 (function() {
     var path = window.location.pathname;
     var isLangPage = path.includes('/br/') || path.includes('/en/');
@@ -136,4 +85,3 @@ Versão: 1.0
         });
     }
 })();
-
