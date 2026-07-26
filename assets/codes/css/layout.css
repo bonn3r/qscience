@@ -313,7 +313,7 @@ Código: layout - configura o estilo do main, side bar, header, footer, banner e
     padding: 0 2em 0.1em 2em;
   }
   #main > .inner > section {
-    padding: 3em 0 1em 0;
+    padding: 3em 1em 1em 1em; /*onde modifica os distânciamentos Em cima, direita, baixo e esquerda do conteúdo -- giro horário!*/
   }
 }
 
@@ -411,32 +411,64 @@ Código: layout - configura o estilo do main, side bar, header, footer, banner e
     right: 0;
     width: 100%;
     max-width: 100%;
-    padding: 6.5em 0 1em 0;
+    padding: 2em 0em 2em 0;
     margin: 0;
     box-sizing: border-box;
     background: var(--bg-header);
     border-bottom: solid 5px var(--border-header);
     z-index: 1000;
-    display: -moz-flex;
+    /*display: -moz-flex;
     display: -webkit-flex;
-    display: -ms-flex;
+    display: -ms-flex;*/
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    justify-content: flex-start;  /* alinha ao topo, evita esticar */
+    overflow: visible !important;  /* garante que nada seja cortado */
   }
+
   #header .logo {
     font-size: 1.25em;
     margin: 0;
-    padding-left: 1.2em;
+    padding: 1em;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    left: 1em;
   }
   #header .icons {
-    height: 5em;
-    line-height: 5em;
-    position: absolute;
-    right: 1em;
-    top: 0;
-    padding-right: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.8em;
+    margin-top: 1em;
+    padding: 0.4em;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: visible; !important;
   }
+
+  #header .icons img {
+    width: 23px;       /* pode ajustar para um tamanho que caiba */
+    height: 23px;
+    vertical-align: middle;
+    display: block;    /* evita espaços extras */
+  }
+
+  /* Se houver um link <a> ao redor da imagem, ajuste também */
+  #header .icons a {
+    display: flex;
+    align-items: center;
+    /*justify-content: center;*/
+    padding: 1px;      /* pequeno espaço ao redor do ícone */
+  }
+
   #main > .inner {
     padding-top: 1em;
+    max-width: 90%;
   }
 }
 

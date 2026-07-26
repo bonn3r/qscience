@@ -1,17 +1,18 @@
 /*
 Criado em: 29/06/2026
 Autor: Jimi	
-Código: Componentes - contém todos os componentes reutilizáveis: artigo/sessão, formulários, caixas, ícones, imagens, listas, ações, contato, paginação, tabela e botões.
+Código: language - contém as configurações do botão de idiomas e alternar os modos claro/escuro.
 Última atualização: 25/07/2026
 Versão: 2.0
 */
 
 /* ========== Botão de idioma especial (retangular) ========== */
+
 .lang-dropdown {
   position: fixed;
   top: 1.2em;
   right: 1.5em;
-  z-index: 1000;
+  z-index: 1001;
 }
 
 .lang-dropdown-btn {
@@ -40,12 +41,13 @@ Versão: 2.0
   width: 24px;
   height: 16px;
   border-radius: 2px;
-  object-fit: cover;
+  object-fit: cover;*/
 }
 
-/* Menu dropdown – mantido igual */
+/* Menu dropdown – mantido igual*/
 .lang-dropdown-menu {
   position: absolute;
+  z-index: 1002;
   top: 110%;
   right: 0;
   background: var(--bg-dropdown);
@@ -99,4 +101,147 @@ Versão: 2.0
   border-bottom: none !important;
   text-decoration: none !important;
   outline: none !important;
+}
+
+/* ============================================================ */
+/* CONTAINER PRINCIPAL – FLEXÍVEL E RESPONSIVO                  */
+/* ============================================================ */
+
+.lang-dropdown {
+  position: fixed;
+  top: 1.2em;
+  right: 1.5em;
+  z-index: 1001;
+  display: flex;
+  flex-direction: row;      /* padrão: lado a lado */
+  align-items: center;
+  gap: 8px;                /* espaçamento entre os botões */
+  background: transparent;
+}
+
+/* ============================================================ */
+/* BOTÃO DE IDIOMA (já existente, manter estilo)                */
+/* ============================================================ */
+
+.lang-dropdown-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-dropdown);
+  backdrop-filter: blur(4px);
+  border: 1px solid var(--border-light);
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: var(--shadow-toggle);
+  transition: all 0.2s ease;
+  width: 36px;
+  height: 30px;
+}
+
+.lang-dropdown-btn:hover {
+  background: var(--bg-body);
+  box-shadow: var(--shadow-dropdown);
+}
+
+.lang-dropdown-btn img {
+  display: block;
+  width: 24px;
+  height: 16px;
+  border-radius: 2px;
+  object-fit: cover;
+}
+
+/* ============================================================ */
+/* BOTÃO DE TEMA (agora sem position:fixed, usa o flex do pai) */
+/* ============================================================ */
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-dropdown);
+  backdrop-filter: blur(4px);
+  border: 1px solid var(--border-light);
+  border-radius: 4px;
+  padding: 6px 12px;
+  width: 36px;
+  height: 30px;
+  cursor: pointer;
+  box-shadow: var(--shadow-toggle);
+  transition: all 0.2s ease;
+  /* Remove position:fixed, top, right, z-index – agora herda do pai */
+}
+
+.theme-toggle:hover {
+  background: var(--bg-body);
+  box-shadow: var(--shadow-dropdown);
+}
+
+.theme-toggle .theme-img {
+  width: 18px;
+  height: 18px;
+  display: block;
+  object-fit: contain;
+}
+
+/* ============================================================ */
+/* MENU DROPDOWN – mantido igual, alinhado à direita            */
+/* ============================================================ */
+
+.lang-dropdown-menu {
+  position: absolute;
+  top: 110%;
+  right: 0;
+  background: var(--bg-dropdown);
+  border-radius: 8px;
+  box-shadow: var(--shadow-dropdown);
+  padding: 6px 0;
+  min-width: 160px;
+  display: none;
+  list-style: none;
+  margin: 0;
+  border: 1px solid var(--border-light);
+  /* demais estilos já existentes */
+}
+
+.lang-dropdown-menu.show {
+  display: block;
+}
+
+/* ============================================================ */
+/* RESPONSIVO – empilhar em telas pequenas                      */
+/* ============================================================ */
+
+@media screen and (max-width: 736px) {
+  .lang-dropdown {
+    flex-direction: column;   /* empilha verticalmente */
+    align-items: flex-end;    /* alinha à direita */
+    gap: 6px;
+    top: 0.8em;
+    right: 1em;
+  }
+
+  .lang-dropdown-btn,
+  .theme-toggle {
+    width: 32px;
+    height: 28px;
+  }
+
+  .lang-dropdown-btn img {
+    width: 20px;
+    height: 14px;
+  }
+
+  .theme-toggle .theme-img {
+    width: 16px;
+    height: 16px;
+  }
+
+  /* Ajuste do menu para não sobrepor os botões */
+  .lang-dropdown-menu {
+    top: calc(100% + 8px);
+    right: 0;
+    min-width: 140px;
+  }
 }
