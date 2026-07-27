@@ -1,40 +1,64 @@
 <!DOCTYPE HTML>
 <!--
-	Original creator:	
-		Editorial by HTML5 UP
-		html5up.net | @ajlkn
-		Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-
-	Edited by:
-		Jimi.7z
-		Created in: 24/07/2026
-		Versão: 1.0 - Data: 24/07/2026
-			- 
+Criado em: 19/07/2026
+Autor: Jimi.7z
+Código: Página de encaminhamento automático para o idioma do usuário.
+Version: 2.1
 -->
 <html>
 	<head>
-		<title>Q-Science | Página fonte</title>
+		<title>Q-Science | Página Fonte</title>
 		<link rel="icon" href="/qscience/assets/images/logo/cat-logo.svg" type="image/svg+xml" />
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="/qscience/assets/codes/css/main.css" />
-		<!-- MathJax -->
+		<link rel="stylesheet" href="/qscience/assets/codes/css/main.css"/>
+		<!-- MathJax (opcional) -->
 		<script src="/qscience/assets/codes/js/mathjax_config.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
 	</head>
-	
 	<body class="is-preload">
 		
+		<!-- Menu lateral -->
+		<div id="sidebar"></div>
+
+		<!-- Seletor de Idiomas e modo noturno -->
+		<div class="lang-dropdown" id="langDropdown">
+			<!-- Botão de alternância de tema -->
+			<button class="theme-toggle" id="theme-toggle" aria-label="Alternar modo noturno">
+  				<!-- Ícone de lua (visível no modo claro) -->
+  				<img src="/qscience/assets/images/logo/moon-logo.svg" alt="Alternar para modo escuro" class="theme-img" id="moonImg"/>
+  
+				<!-- Ícone de sol (visível no modo escuro) -->
+				<img src="/qscience/assets/images/logo/sun-logo.svg" alt="Alternar para modo claro" class="theme-img" id="sunImg" style="display: none;"/>
+			</button>
+
+			<button class="lang-dropdown-btn" id="langDropdownBtn" aria-haspopup="true" aria-expanded="false">
+				<img src="/qscience/assets/images/logo/brazilian-logo.svg" alt="Português" style="width:24px; height:16px; border-radius:2px;">
+			</button>
+			
+			<ul class="lang-dropdown-menu" id="langDropdownMenu" role="menu">
+				<li role="none">
+					<a href="/qscience/br/" role="menuitem" class="active-lang">
+					<img src="/qscience/assets/images/logo/brazilian-logo.svg" alt="Português">Português</a>
+				</li>
+		
+				<li role="none">
+					<a href="/qscience/en/" role="menuitem">
+					<img src="/qscience/assets/images/logo/united-kingdom-logo.svg" alt="English">English</a>
+				</li>
+			</ul>
+		</div>
+
 		<!-- Main -->
 		<div id="main">
 			<div class="inner">
 
-			<!-- Cabeçalho -->
+				<!-- Cabeçalho -->
 				<header id="header">
-					<a href="/qscience/en/index.html" class="logo">
-						<img src="/qscience/assets/images/logo/cat-logo.svg" alt="Gato logomarca do site" style="height: 2em; width: auto; vertical-align: middle; margin-right: 0.5em;">
-						<strong>Q</strong>-Science
+					<a href="/qscience/br/index.html" class="logo">
+						<img src="/qscience/assets/images/logo/cat-logo.svg" alt="Gato logomarca do site" style="height: 2em; width: auto; vertical-align: middle; margin-right: 0.8em;">
+						<span class="letra-q">Q</span>-science
 					</a>
 									
 					<ul class="icons">
@@ -71,177 +95,9 @@
 					</ul>
 				</header>
 
-			<!-- Seletor de Idiomas -->
-				<div class="lang-dropdown" id="langDropdown" >
-					<button class="lang-dropdown-btn" id="langDropdownBtn" aria-haspopup="true" aria-expanded="false">
-						<img src="/qscience/assets/images/logo/brazilian-logo.svg" alt="página em português" style="width:24px; height:16px; border-radius:2px;">
-					</button>
-			
-					<ul class="lang-dropdown-menu" id="langDropdownMenu" role="menu">
-						<li role="none">
-							<a href="/qscience/br/" role="menuitem" class="active-lang">
-							<img src="/qscience/assets/images/logo/brazilian-logo.svg" alt="Português">Português</a>
-						</li>
-		
-						<li role="none">
-							<a href="/qscience/en/" role="menuitem">
-							<img src="/qscience/assets/images/logo/united-kingdom-logo.svg" alt="English">English</a>
-						</li>
-					</ul>
-				</div>
-
-			<!-- Corpo a página -->
-
-				<!-- Primeira sessão -->
 				<section>
-					Página fonte para outras páginas!
+					<h1>Texto aqui!</h1>
 				</section>
-                
-                <!-- Rodapé da página principal -->
-				<footer id="footer">
-					<ul class="actions">
-						<li style="display: block; width: 50%; margin: 0 auto; text-align: center;"><a href="#" class="button">Voltar ao topo</a></li>
-					</ul>
-				</footer>
-			</div>
-		</div>
-
-		<!-- Barra lateral (menu) -->
-		<div id="sidebar" class="inactive">
-			<div class="inner">
-
-				<!-- Logo do site + área de pesquisa -->
-				<section id="search" class="alt">
-					<img src="/qscience/assets/images/logo/cat-logo.svg" alt="Gato logomarca do site" style="height: 2em; width: auto; vertical-align: middle; margin-right: 0.5em; margin-bottom: 5px;">
-					<strong>Q</strong>-Science
-					<form method="post" action="#">
-						<input type="text" name="query" id="query" placeholder="Pesquisar..." />								
-					</form>
-				</section>
-
-				<!-- Menu -->
-				<nav id="menu">
-					<header class="major">
-						<h2>Menu</h2>
-					</header>
-					<ul>
-						<li><a href="/qscience/br/index.html">Home</a></li>
-						<li>
-							<span class="opener">Pesquisa</span>
-							<ul>
-								<li><a href="#">Visão Geral</a></li>
-								<li><a href="#">Trabalhos atuais</a></li>
-								<li><a href="#">Dissertação</a></li>
-								<li><a href="#">Trabalho de Conclusão de Curso</a></li>
-								<li>
-								<span class="opener">Minhas Iniciações Científicas</span>
-									<ul>
-										<li><a href="/qscience/br/pesquisa/ics/ics.html">Visão Geral</a></li>
-										<li><a href="#">2023 - Operador de Laplace e Características Geometricas de Espaços Curvos</a></li>
-										<li><a href="#">2022 - Iniciação à Geometria Diferencial</a></li>
-										<li><a href="#">2021 - Estudo da Análise em $\mathbb{R}^n$</a></li>
-										<li><a href="/qscience/br/pesquisa/ics/ic2020.html">2020 - Métodos Variacionais em Equações Diferenciais Parciais</a></li>
-									</ul>
-								</li>
-							</ul>
-						</li>
-						<li>
-							<span class="opener">Estudos</span>
-							<ul>
-								<li><a href="#">Visão Geral</a></li>
-								<li><a href="#">Anotações de Aulas</a></li>
-								<li><a href="#">Anotações de Estudos</a></li>
-								<li><a href="#">Material da Monitoria</a></li>
-								<li><a href="#">Slides</a></li>
-								<li><a href="#">Tópicos Adicionais</a></li>
-							</ul>
-						</li>
-						<li>
-							<span class="opener">Extensão</span>
-							<ul>
-								<li><a href="/qscience/br/extensao/index.html">Visão Geral</a></li>
-								<li><a href="#">Apresentações Orais</a></li>
-								<li><a href="#">Mini Cursos</a></li>
-								<li><a href="#">Posters</a></li>
-								<li><a href="#">Tópicos Adicionais</a></li>
-							</ul>
-						</li>
-						<li>
-							<span class="opener">Meus textos</span>
-							<ul>
-								<li><a href="#">Visão Geral</a></li>
-								<li><a href="#">Filosofia</a></li>
-								<li><a href="#">Física</a></li>
-								<li><a href="#">Matemática</a></li>
-								<li><a href="#">Política & Sociedade</a></li>
-							</ul>
-						</li>
-						<li><a href="/qscience/br/bio.html">Bio completa</a></li>
-						<li><a href="/qscience/br/creditos.html">Créditos</a></li>
-						<li><a href="/qscience/br/contato.html">Contato</a></li>
-					</ul>
-				</nav>
-
-				<!-- Publicações Importantes -->
-				<section>
-					<header class="major">
-						<h2>Publicações Importantes</h2>
-					</header>
-					
-					<div class="mini-posts">
-						<article>
-							<a href="#" class="image"><img src="/qscience/br/pesquisa/tcc/tcc_pub.svg" alt="Imagem com convite para conhecer meu TCC" /></a>
-							<p>Publicação do TCC aqui.</p>
-						</article>
-					
-						<article>
-							<a href="#" class="image"><img src="/qscience/br/pesquisa/ics/pub/ic_pub.svg" alt="Imagem com convite para conhecer minhas iniciações científica" /></a>
-							<p>Publicação da minha última IC</p>
-						</article>
-					
-						<article>
-							<a href="#" class="image"><img src="/qscience/br/extras/apresentacao_pub.svg" alt="Imagem com convite para conhecer a origem do site" /></a>
-							<p>A pensar...</p>
-						</article>
-					</div>
-				</section>
-
-				<!-- Redes Sociais -->
-				<section>
-					<header class="major">
-						<h2>Redes Sociais</h2>
-					</header>
-					<p><strong>Me acompanhe em:</strong></p>
-					<ul class="contact">
-						<li class="svg-icon-item">
-							<img src="/qscience/assets/images/logo/bluesky-logo.svg" alt="Logomarca Bluesky" class="svg-icon" />
-							<a href="https://bsky.app/profile/bonner.bsky.social" target="_blank" rel="noopener noreferrer">@bonner</a>
-						</li>
-						<li class="svg-icon-item">
-							<img src="/qscience/assets/images/logo/insta-logo.svg" alt="Logomarca Instagram" class="svg-icon" />
-							<a href="https://www.instagram.com/jimi.7z" target="_blank" rel="noopener noreferrer">@jimi.7z</a>
-						</li>
-					</ul>
-				</section>
-
-				<!-- Vínculo institucional atual-->
-				<section>
-					<div class="box" style="border-left: 4px solid #a90a15; padding: 1em;">
-						<ul class="contact">
-							<li class="svg-icon-item">
-								<img src="/qscience/assets/images/logo/university-logo.svg" alt="Logomarca Universidade" class="svg-icon" />
-								<span class="contact-text">
-									Atualmente sou estou aguardando a confirmação da bolsa para dar início ao Mestrado...
-								</span>
-							</li>
-						</ul>
-					</div>
-				</section>
-					
-				<!-- Rodapé com direitos autorais -->
-				<footer id="footer">
-					<p class="copyright">&copy;2026 Jimi.7z. All rights reserved. Design by: <a href="https://html5up.net/editorial" target="_blank" rel="noopener noreferrer">HTML5 UP</a>. Redesign by: Willian Bonner.</p>
-				</footer>
 
 			</div>
 		</div>
@@ -251,8 +107,9 @@
 		<script src="/qscience/assets/codes/js/browser.min.js"></script>
 		<script src="/qscience/assets/codes/js/breakpoints.min.js"></script>
 		<script src="/qscience/assets/codes/js/util.js"></script>
-		<script src="/qscience/assets/codes/js/main.js"></script>
+		<script src="/qscience/assets/codes/js/sidebar.js"></script>
 		<script src="/qscience/assets/codes/js/language.js"></script>
-
+		<script src="/qscience/assets/codes/js/theme.js"></script>
+		<script src="/qscience/assets/codes/js/main.js"></script>
 	</body>
 </html>

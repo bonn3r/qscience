@@ -16,6 +16,21 @@ Versão: 2.0
   text-align: right;
 }
 
+@font-face {
+  font-family: 'MinhaFonte';           /* Nome que você vai usar no CSS */
+  src: url('/qscience/assets/codes/webfonts/cookie.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;                  /* melhora performance */
+}
+
+.letra-q {
+  font-family: 'MinhaFonte', cursive;
+  font-size: 1.4em;        /* ajuste o tamanho para harmonizar */
+  color: var(--text-title); /* ou a cor que desejar */
+}
+
+
 /* Balão de voz – posicionamento será feito via JavaScript */
 #captchaTooltip {
   pointer-events: none;

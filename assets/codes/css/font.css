@@ -1,0 +1,18 @@
+@font-face {
+  font-family: 'MinhaFonte';           /* Nome que você vai usar no CSS */
+  src: url('../fonts/MinhaFonte.woff2') format('woff2'),
+       url('../fonts/MinhaFonte.woff') format('woff'),
+       url('../fonts/MinhaFonte.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;                  /* melhora performance */
+}
+
+/* Agora use a fonte em qualquer elemento */
+body {
+  font-family: 'MinhaFonte', sans-serif;
+}
+
+h1 {
+  font-family: 'MinhaFonte', serif;
+}

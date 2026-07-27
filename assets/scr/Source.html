@@ -1,28 +1,28 @@
 <!DOCTYPE HTML>
 <!--
-	Jimi.7z
-	Created in: 24/07/2026
-	Versão: 1.0 - Data: 24/07/2026	
+Criado em: 19/07/2026
+Autor: Jimi.7z
+Código: Página de encaminhamento automático para o idioma do usuário.
+Version: 2.1
 -->
 <html>
 	<head>
-		<title>Q-Science | Página fonte</title>
+		<title>Source page | Q-Science</title>
 		<link rel="icon" href="/qscience/assets/images/logo/cat-logo.svg" type="image/svg+xml" />
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="/qscience/assets/codes/css/main.css" />
-		<!-- MathJax -->
+		<link rel="stylesheet" href="/qscience/assets/codes/css/main.css"/>
+		<!-- MathJax (opcional) -->
 		<script src="/qscience/assets/codes/js/mathjax_config.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
-		<script src="/qscience/assets/codes/css/sidebar.css"></script>
 	</head>
-	
 	<body class="is-preload">
 		
+		<!-- Menu lateral -->
 		<div id="sidebar"></div>
 
-		<!-- Seletor de Idiomas & modo noturno -->
+		<!-- Seletor de Idiomas e modo noturno -->
 		<div class="lang-dropdown" id="langDropdown">
 			<!-- Botão de alternância de tema -->
 			<button class="theme-toggle" id="theme-toggle" aria-label="Alternar modo noturno">
@@ -34,17 +34,17 @@
 			</button>
 
 			<button class="lang-dropdown-btn" id="langDropdownBtn" aria-haspopup="true" aria-expanded="false">
-				<img src="/qscience/assets/images/logo/brazilian-logo.svg" alt="Português" style="width:24px; height:16px; border-radius:2px;">
+				<img src="/qscience/assets/images/logo/united-kingdom-logo.svg" alt="Português" style="width:24px; height:16px; border-radius:2px;">
 			</button>
 			
 			<ul class="lang-dropdown-menu" id="langDropdownMenu" role="menu">
 				<li role="none">
-					<a href="/qscience/br/" role="menuitem" class="active-lang">
+					<a href="/qscience/br/" role="menuitem">
 					<img src="/qscience/assets/images/logo/brazilian-logo.svg" alt="Português">Português</a>
 				</li>
 		
 				<li role="none">
-					<a href="/qscience/en/" role="menuitem">
+					<a href="/qscience/en/" role="menuitem" class="active-lang">
 					<img src="/qscience/assets/images/logo/united-kingdom-logo.svg" alt="English">English</a>
 				</li>
 			</ul>
@@ -54,16 +54,16 @@
 		<div id="main">
 			<div class="inner">
 
-			<!-- Cabeçalho -->
+				<!-- Cabeçalho -->
 				<header id="header">
-					<a href="/qscience/br/index.html" class="logo">
-						<img src="/qscience/assets/images/logo/cat-logo.svg" alt="Gato logomarca do site" style="height: 2em; width: auto; vertical-align: middle; margin-right: 0.5em;">
-						<strong>Q</strong>-Science
+					<a href="/qscience/en/index.html" class="logo">
+						<img src="/qscience/assets/images/logo/cat-logo.svg" alt="Gato logomarca do site" style="height: 2em; width: auto; vertical-align: middle; margin-right: 0.8em;">
+						<span class="letra-q">Q</span>-science
 					</a>
 									
 					<ul class="icons">
 						<li>
-							<a href="/qscience/br/arxiv.html" class="icon brands">
+							<a href="/qscience/en/arxiv.html" class="icon brands">
 								<img src="/qscience/assets/images/logo/arxiv-logo.svg" alt="Logomarca do arXiv" width="20" height="20" style="vertical-align:middle;">
 								<span class="label">Arxiv</span>
 							</a>
@@ -94,18 +94,11 @@
 						</li>
 					</ul>
 				</header>
-				
-				<!-- Primeira sessão -->
+
 				<section>
-					Página fonte para outras páginas!
+					<h1>Text Here</h1>
 				</section>
-                
-                <!-- Rodapé da página principal -->
-				<footer id="footer">
-					<ul class="actions">
-						<li style="display: block; width: 50%; margin: 0 auto; text-align: center;"><a href="#" class="button">Voltar ao topo</a></li>
-					</ul>
-				</footer>
+
 			</div>
 		</div>
 
@@ -114,10 +107,9 @@
 		<script src="/qscience/assets/codes/js/browser.min.js"></script>
 		<script src="/qscience/assets/codes/js/breakpoints.min.js"></script>
 		<script src="/qscience/assets/codes/js/util.js"></script>
+		<script src="/qscience/assets/codes/js/ensidebar.js"></script>
 		<script src="/qscience/assets/codes/js/language.js"></script>
-		<script src="/qscience/assets/codes/js/sidebar.js"></script>
 		<script src="/qscience/assets/codes/js/theme.js"></script>
 		<script src="/qscience/assets/codes/js/main.js"></script>
-		
 	</body>
 </html>

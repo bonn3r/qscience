@@ -1,11 +1,9 @@
 /*
+Criado em: 20/07/2026
 Autor: Jimi.7z
-Data de criação: 20/07/2026
-Versão: 1.0
-
-Versão: 2.0 - Data: 24/07/2026
-    - Separação da sidebar
-
+Código: Encaminhamento automático para a página no idioma do navegador do usuário; 
+        Configuração do dropdown de idiomas.
+Versão: 2.0
 */
 (function() {
     var path = window.location.pathname;
@@ -16,7 +14,7 @@ Versão: 2.0 - Data: 24/07/2026
         var userLang = navigator.language || navigator.languages[0] || 'en';
         var targetPath = userLang.toLowerCase().startsWith('pt') ? '/qscience/br/' : '/qscience/en/';
         var countdownEl = document.getElementById('countdown');
-        var seconds = 3;
+        var seconds = 1;
 
         var interval = setInterval(function() {
             seconds--;
