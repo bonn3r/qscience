@@ -403,7 +403,7 @@ Código: layout - configura o estilo do main, side bar, header, footer, banner e
 }
 
 /* ---------- MOBILE (até 736px) – Sticky (comportamento original) ---------- */
-@media screen and (max-width: 736px) {
+@media screen and (max-width: 736px){
   #header {
     position: sticky;
     top: 0;
@@ -448,13 +448,12 @@ Código: layout - configura o estilo do main, side bar, header, footer, banner e
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
-    overflow: visible; !important;
+    overflow: visible !important;
   }
 
   #header .icons img {
     width: 23px;       /* pode ajustar para um tamanho que caiba */
     height: 23px;
-    vertical-align: middle;
     display: block;    /* evita espaços extras */
   }
 

@@ -1,6 +1,6 @@
 $(function() {
     // Carrega o conteúdo da sidebar a partir do arquivo partial
-    $('#sidebar').load('/qscience/assets/scr/sidebar.html', function() {
+    $('#sidebar').load('/qscience/assets/scr/ensidebar.html', function() {
         // Após carregar, executa a inicialização do main.js
         // (supondo que main.js define uma função init que pode ser chamada)
 

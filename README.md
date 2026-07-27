@@ -33,18 +33,22 @@ As pastas de arquivos são organizadas da seguinte forma:
 					<li>📁 Futuras postagens</li>
 					<li>📁 logo</li>
 				</ul>
-				<li>📄 fonte.html</li>
-				<li>📄 source.html</li>
+				<li>📁 images</li>
+				<ul>
+					<li>📄 fonte.html</li>
+					<li>📄 source.html</li>
+					<li>📄 ensidebar.html</li>
+					<li>📄 sidebar.html</li>
+				</ul>
 			</ul>
 		<li>📁 br</li>
 			<ul>
-				<li>📁 cientifica</li>
 				<li>📁 estudos</li>
 				<li>📁 extensao</li>
 				<li>📁 extras</li>
+				<li>📁 meustextos</li>
 				<li>📁 pesquisa</li>
-				<li>📄 arxiv.html</li>
-				<li>⁝ (demais arquivos) </li>
+				<li>⁝ 📄 <em>arquivos .html</em> </li>
 			</ul>
 		<li>📁 en</li>
 			<ul>
