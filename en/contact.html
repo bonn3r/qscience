@@ -123,7 +123,7 @@ Version: 3.3
 
 								<!-- Mensagem -->
 								<div class="col-12">
-									<textarea name="Mensage" id="Mensagem" placeholder="Write your mensage..." rows="6" required></textarea>
+									<textarea name="Message" id="Mensagem" placeholder="Write your message..." rows="6" required></textarea>
 								</div>
 
 								<!-- reCAPTCHA -->
@@ -226,7 +226,7 @@ Version: 3.3
 		                }, 3000);
 		            }).catch(() => {
 		                icon.style.filter = 'brightness(0) saturate(100%) invert(20%) sepia(100%) saturate(5000%) hue-rotate(0deg) brightness(80%) contrast(110%)';
-		                feedback.textContent = 'Erro!';
+		                feedback.textContent = 'Error!';
 		                feedback.style.color = '#b00020';
 		                feedback.style.display = 'block';
 		                feedback.style.opacity = '1';
@@ -323,7 +323,7 @@ Version: 3.3
 		                    countdownSpan.textContent = seconds;
 		                    if (seconds <= 0) {
 		                        clearInterval(interval);
-		                        window.location.href = '/qscience/br/index.html';
+		                        window.location.href = '/qscience/en/index.html';
 		                    }
 		                }, 1000);
 
