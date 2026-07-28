@@ -22,9 +22,10 @@ Código: theme.css - Variáveis de tema para modo claro e escuro
   --bg-drawer-button: #e0e0e0;
 
   /* Textos principais */
-  --text-body: #7f888f;
+  --text-body: #383a3b;
+  --text-botton: #3b3b3b;
   --text-title: #3d4449;
-  --text-link: #ad0000;
+  --text-link: #3a3636;
   --text-menu: #3b3b3b;
   --text-menu-level2: #626567;
   --text-menu-level3: #828586;
@@ -113,4 +114,6 @@ Código: theme.css - Variáveis de tema para modo claro e escuro
   --shadow-dropdown: 0 8px 24px rgba(0, 0, 0, 0.4);
   --shadow-tooltip: 0 4px 12px rgba(0, 0, 0, 0.5);
   --shadow-toggle: 0 2px 8px rgba(0, 0, 0, 0.2);
+
+  --text-botton: #F3F3F3;
 }
