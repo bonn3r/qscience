@@ -41,7 +41,7 @@ Versão: 2.0
   width: 24px;
   height: 16px;
   border-radius: 2px;
-  object-fit: cover;*/
+  object-fit: cover;
 }
 
 /* Menu dropdown – mantido igual*/
@@ -213,7 +213,7 @@ Versão: 2.0
 /* RESPONSIVO – empilhar em telas pequenas                      */
 /* ============================================================ */
 
-@media screen and (max-width: 736px) {
+@media screen and (max-width: 736px){
   .lang-dropdown {
     flex-direction: column;   /* empilha verticalmente */
     align-items: flex-end;    /* alinha à direita */

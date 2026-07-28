@@ -667,7 +667,7 @@ button,
   letter-spacing: 0.075em;
   font-size: 0.83em;
   font-weight: 700;
-  /*color: var(--text-body) !important;*/
+  color: var(--text-botton) !important;
   text-decoration: none;
   white-space: nowrap;
   align-items: center;
@@ -688,7 +688,7 @@ input[type="reset"]:hover,
 input[type="button"]:hover,
 button:hover,
 .button:hover {
-  box-shadow: 0 0 4px rgba(24, 84, 175, 0.664);
+  box-shadow: 0 0 6px rgba(24, 84, 175, 0.7);
   transition: all 0.3s ease;
 }
 input[type="submit"]:active,
@@ -696,7 +696,8 @@ input[type="reset"]:active,
 input[type="button"]:active,
 button:active,
 .button:active {
-  background-color: rgba(32, 91, 179, 0.15);
+  background-color: var(--color-primary);
+  color: #ffffff !important;
   transform: scale(0.94);
 }
 input[type="submit"].icon:before,
@@ -734,9 +735,7 @@ input[type="reset"].primary,
 input[type="button"].primary,
 button.primary,
 .button.primary {
-  /*background-color: var(--color-primary-dark);
-  color: #ffffff !important;*/
-  background: var(--bg-drawer-button) !important;
+  background: var(--bg-toggle) !important;
   color: var(--text-botton) !important;
   border: none !important;
   box-shadow: inset 0 0 0 2px;
@@ -746,8 +745,8 @@ input[type="reset"].primary:hover,
 input[type="button"].primary:hover,
 button.primary:hover,
 .button.primary:hover {
-  /*background-color: var(--color-primary-hover);*/
-  box-shadow: 0 0 4px rgba(240, 242, 247, 0.664);
+  background-color: var(--color-primary-hover);
+  box-shadow: inset 0 0 4px;
   transition: all 0.3s ease;
 }
 input[type="submit"].primary:active,
@@ -755,7 +754,8 @@ input[type="reset"].primary:active,
 input[type="button"].primary:active,
 button.primary:active,
 .button.primary:active {
-  background-color: var(--color-primary-active);
+  background-color: var(--color-primary) !important;
+  color:#ffffff !important;
 }
 input[type="submit"].disabled,
 input[type="submit"]:disabled,

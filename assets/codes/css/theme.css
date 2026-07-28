@@ -40,6 +40,7 @@ Código: theme.css - Variáveis de tema para modo claro e escuro
 
   /* Cor principal */
   --color-primary: #ad0000;
+  --color-red: #ff0000;
   --color-primary-hover: #f67878;
   --color-primary-active: #f45c5c;
   --color-primary-dark: #8a0000;
