@@ -34,6 +34,7 @@ As pastas de arquivos são organizadas da seguinte forma:
 					<li>📁 logo</li>
 				</ul>
 				<li>📁 images</li>
+				<li>📁 scr</li>
 				<ul>
 					<li>📄 fonte.html</li>
 					<li>📄 source.html</li>

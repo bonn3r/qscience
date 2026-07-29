@@ -16,18 +16,26 @@ Version: 2.1
 		<!-- MathJax (opcional) -->
 		<script src="/qscience/assets/codes/js/mathjax_config.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+		<style>
+			#maine .inner {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;   /* centraliza verticalmente */
+				align-items: center;       /* centraliza horizontalmente */
+				min-height: 100vh;         /* ou height: 100% se o #main já tiver altura */
+				text-align: center;
+			}
+		</style>
 	</head>
 	<body class="is-preload">
-
+		
 		<!-- Main -->
-		<div id="main">
+		<div id="maine">
 			<div class="inner">
-				<section>
-					<h1 style="text-align: center;"><span class="letra-q">Q</span>-science</h1>
-					<div class="content" style="text-align: center;">
-						<div class="image">
-							<img src="/qscience/assets/images/logo/cat-logo.svg" alt="Gato logomarca do site" style="max-width: 350px; justify-content: center;">
-						</div>
+				<section class="major">
+					<h1><span class="letra-q">Q</span>-Science</h1>
+					<div class="image fit">
+						<img src="/qscience/assets/images/logo/cat-logo.svg" alt="Gato logomarca do site" style="display: block; margin: 0 auto; max-width: 350px;">
 					</div>
 				</section>
 
