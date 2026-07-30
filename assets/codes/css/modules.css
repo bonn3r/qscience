@@ -23,8 +23,10 @@ Versão: 2.0
   margin-top: 0;
   padding-top: 0;
 }
+/*=====================================
+== Features
+======================================*/
 
-/* Features */
 .features {
   display: -moz-flex;
   display: -webkit-flex;

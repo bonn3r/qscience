@@ -25,11 +25,12 @@ Versão: 2.0 - Data: 24/07/2026
 		<div class="lang-dropdown" id="langDropdown">
 			<!-- Botão de alternância de tema -->
 			<button class="theme-toggle" id="theme-toggle" aria-label="Alternar modo noturno">
-  				<!-- Ícone de lua (visível no modo claro) -->
-  				<img src="/qscience/assets/images/logo/moon-logo.svg" alt="Alternar para modo escuro" class="theme-img" id="moonImg"/>
-  
-				<!-- Ícone de sol (visível no modo escuro) -->
-				<img src="/qscience/assets/images/logo/sun-logo.svg" alt="Alternar para modo claro" class="theme-img" id="sunImg" style="display: none;"/>
+				<img src="/qscience/assets/images/logo/moon-logo.svg"
+				data-light-src="/qscience/assets/images/logo/moon-logo.svg"
+				data-dark-src="/qscience/assets/images/logo/sun-logo.svg"
+				alt="Alternar tema"
+				class="theme-img"
+				id="themeIcon" />
 			</button>
 
 			<button class="lang-dropdown-btn" id="langDropdownBtn" aria-haspopup="true" aria-expanded="false">
@@ -69,13 +70,25 @@ Versão: 2.0 - Data: 24/07/2026
 						</li>
 						<li>
 							<a href="https://github.com/bonn3r" target="_blank" rel="noopener noreferrer" class="icon brands">
-								<img src="/qscience/assets/images/logo/github-logo.svg" alt="Logomarca do Github" width="20" height="20" style="vertical-align:middle;">
+								<img src="/qscience/assets/images/logo/github-logo.svg"
+								data-light-src="/qscience/assets/images/logo/github-logo.svg"
+								data-dark-src="/qscience/assets/images/logo/github-logo-dark.svg"
+								alt="GitHub"
+								width="20"
+								height="20"
+								style="vertical-align:middle;" />
 								<span class="label">Github</span>
 							</a>
 						</li>
 						<li>
 							<a href="http://lattes.cnpq.br/3294938329763314" target="_blank" rel="noopener noreferrer" class="icon brands">
-								<img src="/qscience/assets/images/logo/lattes-logo.svg" alt="Logomarca da Plataforma Lattes" width="20" height="20" style="vertical-align:middle;">
+								<img src="/qscience/assets/images/logo/lattes-logo.svg"
+								data-light-src="/qscience/assets/images/logo/lattes-logo.svg"
+								data-dark-src="/qscience/assets/images/logo/lattes-logo-dark.svg"
+								alt="Logomarca da Plataforma Lattes"
+								width="20"
+								height="20"
+								style="vertical-align:middle;">
 								<span class="label">Lattes</span>
 							</a>
 						</li>
@@ -102,7 +115,7 @@ Versão: 2.0 - Data: 24/07/2026
 							<p>física - matemática - filosofia - sociedade</p>
 						</header>
 
-						<div class="box" style="width: auto; max-width: 600px; margin: 0 auto; padding: 1em 1.5em; margin-right: 0; border-left: 4px solid #ad0000; background: #f9f9f9; border-radius: 6px;">
+						<div class="box" style="width: auto; max-width: 600px; margin: 0 auto; padding: 1em 1.5em; margin-right: 0; border-left: 4px solid var(--color-primary); border-radius: 6px;">
 							<p style="font-size: 14px; text-align: left; margin-bottom: 5px;">
 								Embora a Física possa ser estudada como a Matemática Pura, não é como Matemática Pura que a Física é importante.
 							</p>
@@ -143,7 +156,10 @@ Versão: 2.0 - Data: 24/07/2026
 					<div class="features">
 						<article>
 							<span class="icon brands">
-								<img src="/qscience/assets/images/logo/scientist-logo.svg" alt="ícone de Pesquisa">
+								<img src="/qscience/assets/images/logo/microchip-logo.svg" alt="ícone de Pesquisa"
+								data-light-src="/qscience/assets/images/logo/microchip-logo.svg"
+								data-dark-src="/qscience/assets/images/logo/microchip-logo-dark.svg"
+								style="rotate: calc(315deg);">
 							</span>
 							<div class="content">
 								<h3><a href="/qscience/br/pesquisa/index.html">Pesquisa</a></h3>
@@ -153,7 +169,9 @@ Versão: 2.0 - Data: 24/07/2026
 				
 						<article>
 							<span class="icon brands">
-								<img src="/qscience/assets/images/logo/student-logo.svg" alt="Ícone de Estudos"></a>
+								<img src="/qscience/assets/images/logo/book-logo.svg" alt="Ícone de Estudos"
+								data-light-src="/qscience/assets/images/logo/book-logo.svg"
+								data-dark-src="/qscience/assets/images/logo/book-logo-dark.svg">
 							</span>
 							<div class="content">
 								<h3><a href="/qscience/br/estudos/index.html">Estudos</a></h3>
@@ -163,7 +181,7 @@ Versão: 2.0 - Data: 24/07/2026
 				
 						<article>
 							<span class="icon brands">
-								<img src="/qscience/assets/images/logo/teatcher-logo.svg" alt="Ícone de Extensão">
+								<img src="/qscience/assets/images/logo/quadro-logo.svg" alt="Ícone de Extensão">
 							</span>
 							<div class="content">
 								<h3><a href="/qscience/br/extensao/index.html">Extensão</a></h3>
@@ -192,12 +210,12 @@ Versão: 2.0 - Data: 24/07/2026
 						<h2>Quem sou eu</h2>
 					</header>
 						
-					<div class="box" style="display: flex; flex-wrap: wrap; gap: 2em; align-items: flex-start; width: 100%; max-width: 1000px; margin: 0 auto; border-left: 4px solid #ad0000; background: #f9f9f9; border-radius: 10px; padding: 1.5em; overflow: hidden;">
+					<div class="box" style="display: flex; flex-wrap: wrap; gap: 2em; align-items: flex-start; width: 100%; max-width: 1000px; margin: 0 auto; border-left: 4px solid #ad0000; border-radius: 10px; padding: 1.5em; overflow: hidden;">
 						<div style="flex: 1 1 60%; min-width: 200px; word-break: break-word; overflow-wrap: break-word;">
 							<p style="margin-top: 0;">
 								Me chamo Willian Bonner, ou melhor <strong>"Jimi"</strong>, bacharel em Física pela UFS, com formação em física matemática. No TCC, explorei a dinâmica não-linear de lasers, identificando regimes caóticos via simulações em Python. Atualmente, meu interesse atual está na interface entre Mecânica Quântica e Relatividade Geral. Uma definição melhor que essa, darei quando iniciar o mestrado.
 							</p>
-							<footer style="font-size: 0.75em; color: #999; text-align: center; margin-top: 1em;">
+							<footer style="font-size: 0.75em; text-align: center; margin-top: 1em;">
 								<a href="/qscience/br/bio.html" class="button">Bio completa</a>
 							</footer>
 						</div>
@@ -210,7 +228,7 @@ Versão: 2.0 - Data: 24/07/2026
 				<!-- Rodapé da página principal -->
 				<footer id="footer">
 					<ul class="actions">
-						<li style="display: block; width: 50%; margin: 0 auto; text-align: center;"><a href="#" class="button">Voltar ao topo</a></li>
+						<li style="display: block; width: 50%; margin: 0 auto; text-align: center;"><a href="#" class="button small">Voltar ao topo</a></li>
 					</ul>
 				</footer>
 			</div>

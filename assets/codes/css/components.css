@@ -225,6 +225,7 @@ input[type="radio"] + label:before {
 /* Box */
 .box {
   border-radius: 0.375em;
+  background-color: var(--bg-box) !important;
   border: solid 1px var(--border-color);
   margin-bottom: 2em;
   padding: 1.5em;
