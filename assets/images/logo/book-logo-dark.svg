@@ -22,7 +22,7 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:zoom="7.8080808"
-     inkscape:cx="50.52458"
+     inkscape:cx="50.588616"
      inkscape:cy="49.5"
      inkscape:current-layer="imagebot_2" />
   <title
@@ -50,7 +50,7 @@
            stroke-miterlimit="4"
            d="M 7.51301,62.19342 C 4.78298,66.57226 5.57343,69.63091 6.54074,72.62325 L 50.8233,103.02884 91.92388,85.70472 88.7419,83.5834 88.03479,80.04787 c 1.13136,-1.09248 2.19749,-2.17191 2.91682,-3.18198 0.19776,-1.20373 1.10748,-2.76345 -0.44194,-3.09359 L 43.57545,50.79133 11.49048,60.95599 9.98788,62.3702 Z"
            id="imagebot_32"
-           style="fill:#0073d1;fill-opacity:1;stroke:#200f34;stroke-width:0;stroke-dasharray:none;stroke-opacity:1" />
+           style="fill:#313f48;fill-opacity:1;stroke:#200f34;stroke-width:0;stroke-dasharray:none;stroke-opacity:1" />
         <path
            transform="translate(-4.44635,-5.85156)"
            label="Ebene 2"
@@ -89,7 +89,7 @@
            stroke-miterlimit="4"
            d="m 9.104,44.86931 3.27037,-0.88389 34.82501,-0.26516 38.80248,23.68808 -1.59099,0.88388 -1.59099,4.68458 c 0.45667,1.26691 0.41906,3.52239 1.5026,3.53554 L 35.88567,88.44476 6.89429,54.32686 C 7.32336,51.07184 6.13618,47.27808 9.104,44.86931 Z"
            id="imagebot_26"
-           style="fill:#0073d1;fill-opacity:1;stroke:#0a0f5f;stroke-width:0;stroke-dasharray:none;stroke-opacity:1" />
+           style="fill:#313f48;fill-opacity:1;stroke:#0a0f5f;stroke-width:0;stroke-dasharray:none;stroke-opacity:1" />
         <path
            transform="translate(-4.44635,-5.85156)"
            label="Ebene 2"
@@ -128,7 +128,7 @@
            stroke-miterlimit="4"
            d="M 46.05033,29.66651 8.04334,35.0582 C 6.75801,38.37441 4.72376,41.27872 7.95495,47.07902 L 47.72971,77.30783 92.63099,63.96119 89.27223,62.10504 c 0.08092,-3.48348 0.96134,-6.53053 2.82843,-10.25305 z"
            id="imagebot_20"
-           style="fill:#0073d1;fill-opacity:1;stroke:#0a0a2e;stroke-width:0.5;stroke-dasharray:none;stroke-opacity:1" />
+           style="fill:#313f48;fill-opacity:1;stroke:#0a0a2e;stroke-width:0.5;stroke-dasharray:none;stroke-opacity:1" />
         <path
            transform="translate(-4.44635,-5.85156)"
            label="Ebene 2"
