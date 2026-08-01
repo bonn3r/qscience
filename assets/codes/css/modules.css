@@ -27,7 +27,7 @@ Versão: 2.0
 == Features
 ======================================*/
 
-.features {
+/*.features {
   display: -moz-flex;
   display: -webkit-flex;
   display: -ms-flex;
@@ -180,7 +180,144 @@ Versão: 2.0
   .features article .icon:before {
     font-size: 1.25rem;
   }
+}*/
+
+/* Features */
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 0 2em -3em;
+  width: calc(100% + 3em);
 }
+.features article {
+  align-items: center;
+  display: flex;
+  margin: 0 0 3em 3em;
+  position: relative;
+  width: calc(50% - 3em);
+}
+.features article:nth-child(2n - 1) {
+  margin-right: 1.5em;
+}
+.features article:nth-child(2n) {
+  margin-left: 1.5em;
+}
+.features article:nth-last-child(1),
+.features article:nth-last-child(2) {
+  margin-bottom: 0;
+}
+.features article .icon {
+  display: flex;              /* ← ativa o Flexbox */
+  align-items: center;        /* ← centraliza verticalmente */
+  justify-content: center;    /* ← centraliza horizontalmente */
+  height: 10em;
+  width: 10em;
+  margin: 0 2em 0 0;
+  flex-shrink: 0;
+  flex-grow: 0;
+  position: relative;         /* necessário para o ::after (losango) */
+  cursor: pointer;
+}
+
+/* Losango (borda) - mantido exatamente como antes */
+.features article .icon::after {
+  transform: rotate(45deg);
+  border-radius: 0.25rem;
+  border: solid 2px var(--border-color);
+  content: '';
+  display: block;
+  height: 7em;
+  left: 50%;
+  margin: -3.5em 0 0 -3.5em;
+  position: absolute;
+  top: 50%;
+  width: 7em;
+  pointer-events: none;       /* para não atrapalhar o clique na imagem */
+}
+
+/* Imagem - agora é só um bloco normal, centralizado pelo Flexbox */
+.features article .icon img {
+  display: block;
+  width: 7em;
+  height: 7em;
+  object-fit: contain;        /* ou 'cover', dependendo do seu gosto */
+  z-index: 1;                 /* fica acima do ::after */
+  transition: transform 0.3s ease;
+  /* A rotação virá via variável CSS no HTML */
+  transform: rotate(var(--rot, 0deg));
+}
+
+/* Zoom no hover - sem conflito com a rotação */
+.features article:hover .icon img {
+  transform: rotate(var(--rot, 0deg)) scale(1.1);
+}
+/* Ajustes responsivos (mantendo as mesmas proporções) */
+@media screen and (max-width: 980px) {
+  .features {
+    margin: 0 0 2em 0;
+    width: 100%;
+  }
+  .features article {
+    margin: 0 0 3em 0;
+    width: 100%;
+  }
+  .features article:nth-child(2n - 1) {
+    margin-right: 0;
+  }
+  .features article:nth-child(2n) {
+    margin-left: 0;
+  }
+  .features article:nth-last-child(1),
+  .features article:nth-last-child(2) {
+    margin-bottom: 3em;
+  }
+  .features article:last-child {
+    margin-bottom: 0;
+  }
+  .features article .icon {
+    height: 8em;
+    line-height: 8em;
+    width: 8em;
+  }
+  .features article .icon::after {
+    height: 6em;
+    margin: -3em 0 0 -3em;
+    width: 6em;
+  }
+  .features article .icon img {
+    width: 6em;
+    height: 6em;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .features article {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .features article .icon {
+    height: 6em;
+    line-height: 6em;
+    margin: 0 0 1.5em 0;
+    width: 6em;
+  }
+  .features article .icon::after {
+    height: 4em;
+    margin: -2em 0 0 -2em;
+    width: 4em;
+  }
+  .features article .icon img {
+    width: 4em;
+    height: 4em;
+  }
+  /* Ajuste opcional para telas muito pequenas (mantido o segundo breakpoint) */
+  /*@media screen and (max-width: 480px) {
+    .features article .icon img {
+      /* mantém o tamanho definido acima 
+    }
+  }*/
+}
+
 
 /* Posts */
 .posts {

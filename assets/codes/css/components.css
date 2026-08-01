@@ -274,6 +274,7 @@ input[type="radio"] + label:before {
 }
 
 /* Image */
+
 .image {
   border-radius: 0.375em;
   border: 0;
