@@ -1,137 +1,171 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
-
-<svg
-   fill="#000000"
-   width="555.24902"
-   height="555.24902"
-   viewBox="-5.5 0 22.209961 22.209961"
-   version="1.1"
-   id="svg1"
-   sodipodi:docname="insta-logo.svg"
-   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:dc="http://purl.org/dc/elements/1.1/">
-  <defs
-     id="defs1" />
-  <sodipodi:namedview
-     id="namedview1"
-     pagecolor="#ffffff"
-     bordercolor="#000000"
-     borderopacity="0.25"
-     inkscape:showpageshadow="2"
-     inkscape:pageopacity="0.0"
-     inkscape:pagecheckerboard="0"
-     inkscape:deskcolor="#d1d1d1"
-     inkscape:zoom="1.3921681"
-     inkscape:cx="277.26536"
-     inkscape:cy="277.62451"
-     inkscape:current-layer="g6" />
-  <title
-     id="title1">instagram</title>
-  <metadata
-     id="metadata1">
-    <rdf:RDF>
-      <cc:Work
-         rdf:about="">
-        <dc:title>instagram</dc:title>
-      </cc:Work>
-    </rdf:RDF>
-  </metadata>
-  <g
-     id="g6"
-     inkscape:label="Camera"
-     transform="translate(-0.8950195,-0.8950195)">
-    <rect
-       style="display:inline;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.959976;stroke-linecap:round;stroke-opacity:1"
-       id="rect1"
-       width="21.25"
-       height="21.25"
-       x="-4.125"
-       y="1.375"
-       rx="2.0802069"
-       ry="2.0802069"
-       inkscape:label="Base" />
-    <g
-       id="g4"
-       inkscape:label="grade"
-       style="display:inline;fill:none;fill-opacity:0;stroke:#000000;stroke-opacity:1"
-       transform="matrix(1.1970444,0,-8.3794988e-4,0.99010651,0.46583755,0.6731499)">
-      <rect
-         style="fill:none;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.243389;stroke-linecap:round;stroke-opacity:1"
-         id="rect3"
-         width="1.0643017"
-         height="4.8747597"
-         x="-2.2817757"
-         y="3.2485492"
-         inkscape:label="grade-3" />
-      <rect
-         style="fill:none;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.243389;stroke-linecap:round;stroke-opacity:1"
-         id="rect3-8"
-         width="1.0643017"
-         height="4.8747597"
-         x="-0.15655014"
-         y="3.2497284"
-         inkscape:label="grade-2" />
-      <rect
-         style="fill:none;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.243389;stroke-linecap:round;stroke-opacity:1"
-         id="rect3-5"
-         width="1.0643017"
-         height="4.8747597"
-         x="1.9701868"
-         y="3.2479012"
-         inkscape:label="grade-1" />
-    </g>
-    <rect
-       style="display:inline;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.391861;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1"
-       id="rect2"
-       width="4.8881388"
-       height="4.8881388"
-       x="10.360221"
-       y="3.7536798"
-       rx="0"
-       ry="0"
-       inkscape:label="flash" />
-    <g
-       id="g7"
-       inkscape:label="Lente"
-       transform="translate(0,2.24)">
-      <circle
-         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.8;stroke-linecap:round;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-         id="path4"
-         cx="6.5"
-         cy="12"
-         r="6.2980256"
-         inkscape:label="lente1" />
-      <circle
-         style="display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.133456;stroke-linecap:round"
-         id="path4-1"
-         cx="6.5"
-         cy="12.000001"
-         r="3.9753692"
-         inkscape:label="lente2" />
-    </g>
-  </g>
-  <g
-     id="g3"
-     style="display:none;fill:#1d3366;fill-opacity:1;stroke:none;stroke-width:2.4;stroke-dasharray:none;stroke-opacity:1"
-     transform="translate(-4.125,-4.219)">
-    <path
-       d="m 10.625,20.219 c 2.219,0 3.969,-1.781 3.969,-4 0,-2.219 -1.75,-3.969 -3.969,-3.969 -2.219,0 -4,1.75 -4,3.969 0,2.219 1.781,4 4,4 z"
-       id="path3"
-       style="fill:#1d3366;fill-opacity:1;stroke:none;stroke-width:2.4;stroke-dasharray:none;stroke-opacity:1" />
-    <path
-       d="m 21.25,16.063 h -4.781 v 0.156 c 0,3.219 -2.625,5.844 -5.844,5.844 -3.219,0 -5.844,-2.625 -5.844,-5.844 V 16.063 H 0 v 8.656 c 0,1.156 0.969,2.125 2.125,2.125 h 17 c 1.156,0 2.125,-0.969 2.125,-2.125 z"
-       id="path2"
-       style="fill:#1d3366;fill-opacity:1;stroke:none;stroke-width:2.4;stroke-dasharray:none;stroke-opacity:1" />
-    <path
-       d="M 21.25,14.188 V 7.719 c 0,-1.156 -0.969,-2.125 -2.125,-2.125 h -17 C 0.969,5.594 0,6.563 0,7.719 v 6.469 h 5.156 c 0.813,-2.219 2.969,-3.813 5.469,-3.813 2.5,0 4.656,1.594 5.469,3.813 z M 1.844,7.469 h 1.063 v 4.875 H 1.844 Z m 2.125,0 h 1.063 v 4.875 H 3.969 Z m 2.125,0 h 1.063 v 3.063 c -0.344,0.25 -0.719,0.531 -1.063,0.813 V 7.47 Z m 8.25,0 h 5.031 v 4.875 H 16 c -0.438,-0.656 -1.031,-1.188 -1.656,-1.625 z"
-       id="path1"
-       style="fill:#1d3366;fill-opacity:1;stroke:none;stroke-width:2.4;stroke-dasharray:none;stroke-opacity:1" />
-  </g>
-</svg>
+<?xml version="1.0" ?>
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+<svg width="800px" height="800px" viewBox="0 0 100 100" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+	.st1{fill:#F5BB41;}
+	.st2{fill:#2167D1;}
+	.st3{fill:#3D84F3;}
+	.st4{fill:#4CA853;}
+	.st5{fill:#398039;}
+	.st6{fill:#D74F3F;}
+	.st7{fill:#D43C89;}
+	.st8{fill:#B2005F;}
+	.st9{fill:none;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	
+		.st10{fill-rule:evenodd;clip-rule:evenodd;fill:none;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	
+		.st11{fill-rule:evenodd;clip-rule:evenodd;fill:none;stroke:#040404;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st12{fill-rule:evenodd;clip-rule:evenodd;}
+	.st13{fill-rule:evenodd;clip-rule:evenodd;fill:#040404;}
+	.st14{fill:url(#SVGID_1_);}
+	.st15{fill:url(#SVGID_2_);}
+	.st16{fill:url(#SVGID_3_);}
+	.st17{fill:url(#SVGID_4_);}
+	.st18{fill:url(#SVGID_5_);}
+	.st19{fill:url(#SVGID_6_);}
+	.st20{fill:url(#SVGID_7_);}
+	.st21{fill:url(#SVGID_8_);}
+	.st22{fill:url(#SVGID_9_);}
+	.st23{fill:url(#SVGID_10_);}
+	.st24{fill:url(#SVGID_11_);}
+	.st25{fill:url(#SVGID_12_);}
+	.st26{fill:url(#SVGID_13_);}
+	.st27{fill:url(#SVGID_14_);}
+	.st28{fill:url(#SVGID_15_);}
+	.st29{fill:url(#SVGID_16_);}
+	.st30{fill:url(#SVGID_17_);}
+	.st31{fill:url(#SVGID_18_);}
+	.st32{fill:url(#SVGID_19_);}
+	.st33{fill:url(#SVGID_20_);}
+	.st34{fill:url(#SVGID_21_);}
+	.st35{fill:url(#SVGID_22_);}
+	.st36{fill:url(#SVGID_23_);}
+	.st37{fill:url(#SVGID_24_);}
+	.st38{fill:url(#SVGID_25_);}
+	.st39{fill:url(#SVGID_26_);}
+	.st40{fill:url(#SVGID_27_);}
+	.st41{fill:url(#SVGID_28_);}
+	.st42{fill:url(#SVGID_29_);}
+	.st43{fill:url(#SVGID_30_);}
+	.st44{fill:url(#SVGID_31_);}
+	.st45{fill:url(#SVGID_32_);}
+	.st46{fill:url(#SVGID_33_);}
+	.st47{fill:url(#SVGID_34_);}
+	.st48{fill:url(#SVGID_35_);}
+	.st49{fill:url(#SVGID_36_);}
+	.st50{fill:url(#SVGID_37_);}
+	.st51{fill:url(#SVGID_38_);}
+	.st52{fill:url(#SVGID_39_);}
+	.st53{fill:url(#SVGID_40_);}
+	.st54{fill:url(#SVGID_41_);}
+	.st55{fill:url(#SVGID_42_);}
+	.st56{fill:url(#SVGID_43_);}
+	.st57{fill:url(#SVGID_44_);}
+	.st58{fill:url(#SVGID_45_);}
+	.st59{fill:#040404;}
+	.st60{fill:url(#SVGID_46_);}
+	.st61{fill:url(#SVGID_47_);}
+	.st62{fill:url(#SVGID_48_);}
+	.st63{fill:url(#SVGID_49_);}
+	.st64{fill:url(#SVGID_50_);}
+	.st65{fill:url(#SVGID_51_);}
+	.st66{fill:url(#SVGID_52_);}
+	.st67{fill:url(#SVGID_53_);}
+	.st68{fill:url(#SVGID_54_);}
+	.st69{fill:url(#SVGID_55_);}
+	.st70{fill:url(#SVGID_56_);}
+	.st71{fill:url(#SVGID_57_);}
+	.st72{fill:url(#SVGID_58_);}
+	.st73{fill:url(#SVGID_59_);}
+	.st74{fill:url(#SVGID_60_);}
+	.st75{fill:url(#SVGID_61_);}
+	.st76{fill:url(#SVGID_62_);}
+	.st77{fill:none;stroke:#000000;stroke-width:3;stroke-miterlimit:10;}
+	.st78{fill:none;stroke:#FFFFFF;stroke-miterlimit:10;}
+	.st79{fill:#4BC9FF;}
+	.st80{fill:#5500DD;}
+	.st81{fill:#FF3A00;}
+	.st82{fill:#E6162D;}
+	.st83{fill:#F1F1F1;}
+	.st84{fill:#FF9933;}
+	.st85{fill:#B92B27;}
+	.st86{fill:#00ACED;}
+	.st87{fill:#BD2125;}
+	.st88{fill:#1877F2;}
+	.st89{fill:#6665D2;}
+	.st90{fill:#CE3056;}
+	.st91{fill:#5BB381;}
+	.st92{fill:#61C3EC;}
+	.st93{fill:#E4B34B;}
+	.st94{fill:#181EF2;}
+	.st95{fill:#FF0000;}
+	.st96{fill:#FE466C;}
+	.st97{fill:#FA4778;}
+	.st98{fill:#FF7700;}
+	.st99{fill-rule:evenodd;clip-rule:evenodd;fill:#1F6BF6;}
+	.st100{fill:#520094;}
+	.st101{fill:#4477E8;}
+	.st102{fill:#3D1D1C;}
+	.st103{fill:#FFE812;}
+	.st104{fill:#344356;}
+	.st105{fill:#00CC76;}
+	.st106{fill-rule:evenodd;clip-rule:evenodd;fill:#345E90;}
+	.st107{fill:#1F65D8;}
+	.st108{fill:#EB3587;}
+	.st109{fill-rule:evenodd;clip-rule:evenodd;fill:#603A88;}
+	.st110{fill:#E3CE99;}
+	.st111{fill:#783AF9;}
+	.st112{fill:#FF515E;}
+	.st113{fill:#FF4906;}
+	.st114{fill:#503227;}
+	.st115{fill:#4C7BD9;}
+	.st116{fill:#69C9D0;}
+	.st117{fill:#1B92D1;}
+	.st118{fill:#EB4F4A;}
+	.st119{fill:#513728;}
+	.st120{fill:#FF6600;}
+	.st121{fill-rule:evenodd;clip-rule:evenodd;fill:#B61438;}
+	.st122{fill:#FFFC00;}
+	.st123{fill:#141414;}
+	.st124{fill:#94D137;}
+	.st125{fill-rule:evenodd;clip-rule:evenodd;fill:#F1F1F1;}
+	.st126{fill-rule:evenodd;clip-rule:evenodd;fill:#66E066;}
+	.st127{fill:#2D8CFF;}
+	.st128{fill:#F1A300;}
+	.st129{fill:#4BA2F2;}
+	.st130{fill:#1A5099;}
+	.st131{fill:#EE6060;}
+	.st132{fill-rule:evenodd;clip-rule:evenodd;fill:#F48120;}
+	.st133{fill:#222222;}
+	.st134{fill:url(#SVGID_63_);}
+	.st135{fill:#0077B5;}
+	.st136{fill:#FFCC00;}
+	.st137{fill:#EB3352;}
+	.st138{fill:#F9D265;}
+	.st139{fill:#F5B955;}
+	.st140{fill:#DD2A7B;}
+	.st141{fill:#66E066;}
+	.st142{fill:#EB4E00;}
+	.st143{fill:#FFC794;}
+	.st144{fill:#B5332A;}
+	.st145{fill:#4E85EB;}
+	.st146{fill:#58A45C;}
+	.st147{fill:#F2BC42;}
+	.st148{fill:#D85040;}
+	.st149{fill:#464EB8;}
+	.st150{fill:#7B83EB;}
+</style>
+<g id="Layer_1"/>
+<g id="Layer_2">
+<g>
+<g>
+<g>
+<path class="st140" d="M75.352,18.949c-7.6,0.233-7.598,11.167,0,11.398C82.952,30.114,82.95,19.18,75.352,18.949z"/>
+<path class="st140" d="M50,25.547c-13.47,0-24.389,10.948-24.389,24.453c1.285,32.437,47.497,32.428,48.777,0      C74.389,36.495,63.469,25.547,50,25.547z M50,65.873c-8.743,0-15.831-7.107-15.831-15.873c0.834-21.055,30.832-21.05,31.663,0      C65.831,58.767,58.743,65.873,50,65.873z"/>
+<path class="st140" d="M97.208,30.418C96.856,13.751,86.252,3.141,69.581,2.792c-4.003-0.386-35.157-0.393-39.163,0      C13.751,3.144,3.141,13.748,2.792,30.419c-0.386,3.997-0.394,35.161,0,39.163c0.311,16.613,11.011,27.316,27.626,27.626      c4.003,0.39,35.157,0.39,39.163,0c5.055-0.231,8.508-1.034,11.529-2.208c10.587-4.229,15.76-13.636,16.098-25.419      C97.594,65.578,97.601,34.424,97.208,30.418z M69.191,88.659c-3.939,0.376-34.441,0.382-38.383,0      c-4.63-0.211-7.145-0.985-8.819-1.635c-14.449-6.702-9.969-20.255-10.65-38.858c0.015-4.321-0.009-13.036,0.001-17.357      c0.577-12.882,6.644-18.846,19.468-19.468c3.944-0.376,34.438-0.382,38.383,0c12.886,0.577,18.844,6.644,19.468,19.467      c0.255,3.079,0.44,19.887,0,28.393C89.134,75.177,88.406,87.722,69.191,88.659z"/>
+</g>
+</g>
+</g>
+</g>
+</svg>

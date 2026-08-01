@@ -48,8 +48,8 @@
    inkscape:pagecheckerboard="0"
    inkscape:deskcolor="#d1d1d1"
    inkscape:zoom="1.4126462"
-   inkscape:cx="251.30143"
-   inkscape:cy="273.60001"
+   inkscape:cx="250.94748"
+   inkscape:cy="274.30789"
    inkscape:current-layer="g23" />
 
 <g
@@ -57,7 +57,7 @@
    inkscape:label="imail"
    transform="translate(-10,-8.6)"><g
      id="g2"
-     style="display:inline;fill:#a3d8d7;fill-opacity:1"
+     style="display:none;fill:#a3d8d7;fill-opacity:1"
      inkscape:label="sombra 6">
 
 <g
@@ -65,7 +65,7 @@
    style="fill:#a3d8d7;fill-opacity:1">
 
 <polygon
-   points="25.3,33 25.3,30.2 37.5,22.4 37.5,25.3 "
+   points="25.3,30.2 37.5,22.4 37.5,25.3 25.3,33 "
    style="fill:#a3d8d7;fill-opacity:1"
    id="polygon1" />
 
@@ -73,7 +73,7 @@
 
 </g><g
      id="g4"
-     style="display:inline;fill:#a3d8d7;fill-opacity:1"
+     style="display:none;fill:#a3d8d7;fill-opacity:1"
      inkscape:label="sombra 5">
 
 <g
@@ -81,7 +81,7 @@
    style="fill:#a3d8d7;fill-opacity:1">
 
 <polygon
-   points="35.3,25.4 32.6,27.1 32.6,11 35.3,11 "
+   points="32.6,27.1 32.6,11 35.3,11 35.3,25.4 "
    style="fill:#a3d8d7;fill-opacity:1"
    id="polygon2" />
 
@@ -89,7 +89,7 @@
 
 </g><g
      id="g6"
-     style="display:inline;fill:#a3d8d7;fill-opacity:1"
+     style="display:none;fill:#a3d8d7;fill-opacity:1"
      inkscape:label="sombra 4">
 
 <g
@@ -108,7 +108,7 @@
 
 </g><g
      id="g8"
-     style="display:inline;fill:#a3d8d7;fill-opacity:1"
+     style="display:none;fill:#a3d8d7;fill-opacity:1"
      inkscape:label="sombra 3">
 
 <g
@@ -116,7 +116,7 @@
    style="fill:#a3d8d7;fill-opacity:1">
 
 <polygon
-   points="37.2,26.9 41.4,24.1 41.4,42.8 37.2,42.8 "
+   points="41.4,24.1 41.4,42.8 37.2,42.8 37.2,26.9 "
    style="fill:#a3d8d7;fill-opacity:1"
    id="polygon6" />
 
