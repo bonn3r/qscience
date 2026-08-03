@@ -8,11 +8,20 @@
   font-display: swap;                  /* melhora performance */
 }
 
-/* Agora use a fonte em qualquer elemento */
+@font-face {
+  font-family: 'Inconsolata';
+  src: url('/qscience/assets/codes/webfonts/Inconsolata.ttf') format('woff2');
+  font-weight: 200 900; /* Intervalo de pesos suportados */
+  font-stretch: 50% 200%; /* Intervalo de larguras suportadas */
+  font-style: normal;
+  font-display: swap; /* Melhora a performance de carregamento */
+}
+
+/* Agora use a fonte em qualquer elemento 
 body {
   font-family: 'MinhaFonte', sans-serif;
 }
 
 h1 {
   font-family: 'MinhaFonte', serif;
-}
+}*/

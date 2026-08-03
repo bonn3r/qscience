@@ -81,14 +81,21 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Botões "Copiar" dentro da gaveta BibTeX
-    document.querySelectorAll('.drawer-copy').forEach(btn => {
-        btn.addEventListener('click', function(e) {
-            e.preventDefault();
-            const target = this.getAttribute('data-target');
-            if (!target) return;
-            const drawerId = 'drawer-' + target;
-            copyBibtex(drawerId);
+    document.addEventListener('click', function(event) {
+        if (event.target.closest('#langDropdown')){
+            return;
+        }
+            
+        if (event.target.closest('.drawer-toggle')) {
+            return;
+        }
+    
+        if (event.target.closest('.drawer.open')) {
+            return;
+        }
+    
+        document.querySelectorAll('.drawer.open').forEach(function(drawer) {
+            drawer.classList.remove('open');
         });
-    });
+    });  
 });

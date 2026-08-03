@@ -1,10 +1,25 @@
 /*
 Criado em: 22/07/2026
 Autor: Jimi
-Código: Configuração das gavetas dos artigos
-Última atualização: 25/07/2026
-Versão: 2.0
+Código: Adiç
+Última atualização: 02/08/2026
+Versão: 2.1
 */
+
+
+.box.article-card {
+  width: auto;
+  max-width: 90%;
+  margin: 1.5em auto 0;
+  padding: 1em 1.5em;
+  border-radius: 6px;
+  /* herda as demais propriedades da classe .box */
+}
+@media screen and (max-width: 480px) {
+  .box.article-card {
+    max-width: 100%;
+  }
+}
 
 /* ========== Gavetas (Drawers) ========== */
 .drawer {
@@ -13,7 +28,7 @@ Versão: 2.0
   opacity: 0;
   transition: max-height 0.4s ease, opacity 0.3s ease, margin 0.3s ease;
   margin-top: 0;
-  border-top: 1px solid transparent;
+  font-size: 0.9em;
 }
 
 .drawer.open {
@@ -24,20 +39,22 @@ Versão: 2.0
 }
 
 .drawer-content {
-  padding: 0.5em 0;
-  background: var(--bg-drawer);
-  border-radius: 4px;
+  padding: 1.5em;
+  font-size: 0.9em;
+  background: var(--bg-color);
+  border: solid 1px var(--border-color);
+  border-radius: 6px;
+  
 }
 
 .drawer-content p {
-  margin: 0 0 0.75em 0;
+  margin: 0 0 3em 0;
 }
 
 .drawer-content pre {
   background: var(--bg-code);
-  padding: 0.75em 1em;
   border-radius: 4px;
-  overflow-x: auto;
+/*overflow-x: auto;*/
   font-size: 0.9em;
   white-space: pre-wrap;
   word-break: break-all;
@@ -46,8 +63,9 @@ Versão: 2.0
 .drawer-buttons {
   display: flex;
   gap: 0.5em;
-  justify-content: flex-end;
+  justify-content: center;
   margin-top: 0.5em;
+  text-align: unset;
 }
 
 /* Botões dentro da gaveta */
@@ -55,13 +73,14 @@ Versão: 2.0
 .drawer-copy {
   background: var(--bg-drawer-button) !important;
   color: var(--text-body) !important;
-  border: none !important;
+  border: solid 1px var(--border-color) !important;
   box-shadow: none !important;
 }
 
 .drawer-close:hover,
 .drawer-copy:hover {
   background: var(--bg-highlight-sidebar) !important;
+  border: solid 1px #000000;
 }
 
 /* Ajuste para os botões do card */

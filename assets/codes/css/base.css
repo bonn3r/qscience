@@ -210,25 +210,24 @@ blockquote {
 }
 
 code {
-  background: var(--bg-table-zebra);
+  background: var(--bg-code);
   border-radius: 0.375em;
   border: solid 1px var(--border-color);
-  font-family: "Courier New", monospace;
-  font-size: 0.9em;
-  margin: 0 0.25em;
+  font-family: "Inconsolata", monospace;
+  font-size: 1em;
   padding: 0.25em 0.65em;
 }
 
 pre {
   -webkit-overflow-scrolling: touch;
-  font-family: "Courier New", monospace;
+  font-family: "Inconsolata", monospace;
   font-size: 0.9em;
-  margin: 0 0 2em 0;
+  margin: 0 0 1em 0;
 }
 pre code {
   display: block;
   line-height: 1.75;
-  padding: 1em 1.5em;
+  padding: 1em;
   overflow-x: auto;
 }
 
