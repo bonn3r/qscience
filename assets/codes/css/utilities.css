@@ -30,43 +30,18 @@ Versão: 2.0
   color: var(--text-title); /* ou a cor que desejar */
 }
 
+/*paragráfo no <p>*/
+.pgf {
+    text-indent: 2em;
+  }
 
-/* Balão de voz – posicionamento será feito via JavaScript */
-#captchaTooltip {
-  pointer-events: none;
-  transition: opacity 0.2s;
-}
-
-/* Overlay de agradecimento */
-#thankYouOverlay {
-  display: none;
-}
-
-#captchaTooltip {
-  display: none;
-  position: fixed;
-  background: var(--bg-body);
-  border: 2px solid var(--color-primary);
-  border-radius: 12px;
-  padding: 12px 18px;
-  max-width: 260px;
-  box-shadow: var(--shadow-tooltip);
-  z-index: 9999;
-  font-size: 0.9rem;
-  color: var(--text-body);
-  pointer-events: none;
-  transition: opacity 0.2s;
-}
-
-#captchaTooltip::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 30px;
-  width: 0;
-  height: 0;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-top: 10px solid var(--bg-body);
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+.up-date{
+  background: var(--color-primary);
+  color: white;
+  font-size: 0.6em;
+  padding: 2px 8px;
+  border-radius: 4px;
+  border: 1.5px solid var(--border-light-b);
+  font-family: Inconsolata, monospace;
+  margin-bottom: 7em;
 }

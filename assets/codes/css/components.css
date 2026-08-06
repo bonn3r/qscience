@@ -24,7 +24,7 @@ header.major > :last-child {
   border-bottom: solid 3px var(--color-primary);
   display: inline-block;
   margin: 0 0 2em 0;
-  padding: 0 0.75em 0.5em 0;
+  padding: 0 0.75em 0 0.75em;
 }
 
 header.main > :last-child {
