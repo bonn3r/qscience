@@ -1,11 +1,15 @@
 /*
 Criado em: 25/07/2026
 Autor: Jimi
-Código: Automação da troca de modo claro-escuro
-Última atualização: 29/07/2026
-Versão: 3.0 – Controle genérico de imagens via data-*
+Código: Automação da troca de modo claro-escuro; Botão "voltar ao topo"
+Última atualização: 06/08/2026
+Versão: 4.0 – Controle genérico de imagens via data-*
 */
 
+
+/*
+  Troca de modo Claro-escuro
+*/
 (function() {
   'use strict';
 
@@ -58,4 +62,84 @@ Versão: 3.0 – Controle genérico de imagens via data-*
       applyTheme(systemDark);
     }
   });
+})();
+
+/*
+  Botão "voltar ao topo"
+*/
+
+(function(){
+  const btn = document.getElementById('topbtn');
+  let timeoutId = null;
+  let emRoll = false;
+
+  function VerifyEndPage(){
+    // Posição atual do scroll
+    const scrollY = window.scrollY || window.pageYOffset;
+    // Altura total da página
+    const hPage = document.documentElement.scrollHeight;
+    // Altura da janela visível
+    const hJanela = window.innerHeight;
+
+    // 🔥 DETECÇÃO MELHORADA:
+    // Posição do fundo da tela em relação ao topo da página
+    const posicaoFundoTela = scrollY + hJanela;
+    // Margem de tolerância (20px antes do fim absoluto)
+    const margem = 20;
+
+    function Mbtn(){
+      btn.classList.add('visivel');
+      // Cancela qualquer timeout pendente para esconder
+      if (timeoutId){
+        clearTimeout(timeoutId);
+        timeoutId = null;
+      }
+    }
+
+    function Ebtn(){
+      // 🔥 Garante que não fiquem timeouts antigos acumulados
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
+      timeoutId = setTimeout(() => {
+        btn.classList.remove('visivel');
+        timeoutId = null;
+      }, 200);
+    }
+
+    // Se o fundo da tela chegou perto do fundo da página → Mostra
+    if (posicaoFundoTela >= hPage - margem){
+      Mbtn();
+    } else {
+      Ebtn();
+    }
+  }
+
+  // --- Listeners (todos fora da VerifyEndPage para não duplicar) ---
+
+  // Scroll com throttle (controle de fluxo)
+  window.addEventListener('scroll', function(){
+    if (!emRoll){
+      window.requestAnimationFrame(function(){
+        VerifyEndPage();
+        emRoll = false;
+      });
+      emRoll = true;
+    }
+  });
+
+  // Clique no botão → rolagem suave
+  btn.addEventListener('click', function(){
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+
+  // Verifica ao carregar a página
+  window.addEventListener('load', VerifyEndPage);
+
+  // 🔥 NOVO: Verifica se o usuário redimensionar a janela
+  // (pois o "fim da página" muda quando a altura da janela muda)
+  window.addEventListener('resize', VerifyEndPage);
 })();

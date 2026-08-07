@@ -1,9 +1,9 @@
 /*
 Criado em: 29/06/2026
 Autor: Jimi	
-Código: language - contém as configurações do botão de idiomas e alternar os modos claro/escuro.
-Última atualização: 25/07/2026
-Versão: 2.0
+Código: language - contém as configurações do botão de idiomas, tema e "voltar ao topo"
+Última atualização: 07/08/2026
+Versão: 2.1 – Adicionado botão "voltar ao topo"
 */
 
 /* ========== Botão de idioma especial (retangular) ========== */
@@ -13,6 +13,13 @@ Versão: 2.0
   top: 1.2em;
   right: 1.5em;
   z-index: 1001;
+  display: flex;
+  justify-content: right;
+  flex-direction: row;
+  flex-wrap: wrap;          /* permite que o botão "voltar ao topo" ocupe a linha inferior */
+  align-items: center;
+  gap: 8px;
+  background: transparent;
 }
 
 .lang-dropdown-btn {
@@ -27,7 +34,7 @@ Versão: 2.0
   cursor: pointer;
   box-shadow: var(--shadow-toggle);
   transition: all 0.2s ease;
-  width: 36px;
+  width: 56px;
   height: 30px;
 }
 
@@ -44,7 +51,7 @@ Versão: 2.0
   object-fit: cover;
 }
 
-/* Menu dropdown – mantido igual*/
+/* Menu dropdown – mantido igual */
 .lang-dropdown-menu {
   position: absolute;
   z-index: 1002;
@@ -104,56 +111,7 @@ Versão: 2.0
 }
 
 /* ============================================================ */
-/* CONTAINER PRINCIPAL – FLEXÍVEL E RESPONSIVO                  */
-/* ============================================================ */
-
-.lang-dropdown {
-  position: fixed;
-  top: 1.2em;
-  right: 1.5em;
-  z-index: 1001;
-  display: flex;
-  flex-direction: row;      /* padrão: lado a lado */
-  align-items: center;
-  gap: 8px;                /* espaçamento entre os botões */
-  background: transparent;
-}
-
-/* ============================================================ */
-/* BOTÃO DE IDIOMA (já existente, manter estilo)                */
-/* ============================================================ */
-
-.lang-dropdown-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--bg-dropdown);
-  backdrop-filter: blur(4px);
-  border: 1px solid var(--border-light);
-  padding: 6px 12px;
-  border-radius: 4px;
-  cursor: pointer;
-  box-shadow: var(--shadow-toggle);
-  transition: all 0.2s ease;
-  width: 36px;
-  height: 30px;
-}
-
-.lang-dropdown-btn:hover {
-  background: var(--bg-body);
-  box-shadow: var(--shadow-dropdown);
-}
-
-.lang-dropdown-btn img {
-  display: block;
-  width: 24px;
-  height: 16px;
-  border-radius: 2px;
-  object-fit: cover;
-}
-
-/* ============================================================ */
-/* BOTÃO DE TEMA (agora sem position:fixed, usa o flex do pai) */
+/* BOTÃO DE TEMA                                                */
 /* ============================================================ */
 
 .theme-toggle {
@@ -165,12 +123,11 @@ Versão: 2.0
   border: 1px solid var(--border-light);
   border-radius: 4px;
   padding: 6px 12px;
-  width: 36px;
+  width: 56px;
   height: 30px;
   cursor: pointer;
   box-shadow: var(--shadow-toggle);
   transition: all 0.2s ease;
-  /* Remove position:fixed, top, right, z-index – agora herda do pai */
 }
 
 .theme-toggle:hover {
@@ -186,46 +143,76 @@ Versão: 2.0
 }
 
 /* ============================================================ */
-/* MENU DROPDOWN – mantido igual, alinhado à direita            */
+/* BOTÃO "VOLTAR AO TOPO"                                       */
 /* ============================================================ */
 
-.lang-dropdown-menu {
-  position: absolute;
-  top: 110%;
-  right: 0;
+#topbtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7em;
+  font-family: Inconsolata, monospace;;
   background: var(--bg-dropdown);
-  border-radius: 8px;
-  box-shadow: var(--shadow-dropdown);
-  padding: 6px 0;
-  min-width: 160px;
-  display: none;
-  list-style: none;
-  margin: 0;
+  backdrop-filter: blur(4px);
   border: 1px solid var(--border-light);
-  /* demais estilos já existentes */
+  border-radius: 4px;
+  padding: 2px;
+  height: 30px;
+  cursor: pointer;
+  box-shadow: var(--shadow-toggle);
+  transition: all 0.2s ease, opacity 0.3s, visibility 0.3s;
+
+  /* Força o botão a iniciar uma nova linha */
+  flex: 0 0 100%;        /* não cresce, não encolhe, base 100% */
+  
+  /* Largura máxima desejada (ex.: mesma dos dois botões superiores) */
+  max-width: 120px;        /* 36px + 8px gap + 36px */
+  
+  /* Centraliza horizontalmente na linha */
+  /*margin-left: auto;
+  margin-right: auto;*/
+
+  /* Visibilidade controlada pelo JS */
+  opacity: 0;
+  visibility: hidden;
 }
 
-.lang-dropdown-menu.show {
+#topbtn:hover {
+  background: var(--bg-body);
+  box-shadow: var(--shadow-dropdown);
+}
+
+#topbtn.visivel {
+  opacity: 1;
+  visibility: visible;
+}
+
+#topbtn img {
   display: block;
+  width: 70px;                    /* sugestão de tamanho para o ícone de seta */
+  height: 20px;
+  object-fit: contain;
 }
 
 /* ============================================================ */
 /* RESPONSIVO – empilhar em telas pequenas                      */
 /* ============================================================ */
 
-@media screen and (max-width: 736px){
+@media screen and (max-width: 736px) {
   .lang-dropdown {
-    flex-direction: column;   /* empilha verticalmente */
-    align-items: flex-end;    /* alinha à direita */
+    flex-direction: column;       /* empilha todos os botões verticalmente */
+    align-items: flex-end;
     gap: 6px;
     top: 0.8em;
     right: 1em;
   }
 
   .lang-dropdown-btn,
-  .theme-toggle {
+  .theme-toggle,
+  #topbtn {
     width: 32px;
     height: 28px;
+    flex: none;                   /* remove o stretch da linha inferior */
   }
 
   .lang-dropdown-btn img {
@@ -238,7 +225,11 @@ Versão: 2.0
     height: 16px;
   }
 
-  /* Ajuste do menu para não sobrepor os botões */
+  #topbtn img {
+    width: 16px;
+    height: 16px;
+  }
+
   .lang-dropdown-menu {
     top: calc(100% + 8px);
     right: 0;
