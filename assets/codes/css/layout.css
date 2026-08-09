@@ -23,7 +23,7 @@ Código: layout - configura o estilo do main, side bar, header, footer, banner e
 #main > .inner {
   padding: 0 6em 0.1em 6em;
   margin: 0 auto;
-  max-width: 78%;
+  max-width: 70%;
 }
 #main > .inner > section {
   padding: 6em 0 4em 0;
@@ -332,6 +332,8 @@ Código: layout - configura o estilo do main, side bar, header, footer, banner e
   transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
+
+
 /* Ajuste o padding do conteúdo principal para não ficar escondido atrás do header */
 #main > .inner {
   padding-top: 1em;
@@ -363,11 +365,21 @@ Código: layout - configura o estilo do main, side bar, header, footer, banner e
   border-bottom: 0;
   color: inherit;
   font-family: "Roboto Slab", serif;
-  font-size: 1.125em;
+  font-size: 1em;
 }
 
 #header .icons {
   text-align: right;
+}
+
+/* Alinha os ícones e o botão à direita, empilhados verticalmente */
+.header-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;   /* ou flex-start, conforme preferir */
+    flex: 1;                   /* ocupa o espaço restante ao lado do logo */
+    margin-left: auto;         /* empurra para a direita */
 }
 
 /* ---------- DESKTOP (acima de 737px) – Fixo no topo ---------- */
@@ -377,10 +389,9 @@ Código: layout - configura o estilo do main, side bar, header, footer, banner e
     top: 0;
     left: 0;
     right: 0;
-    width: 70%;
-    max-width: 80%;
+    width: 70%; /*Ajusta a largura do header*/
     margin: 0 auto;
-    padding: 2em 0 1em 0;
+    padding: 1em 2em 1em 2em;
     background: var(--bg-header);
     border-bottom: solid 5px var(--border-header);
     z-index: 1000;
@@ -394,7 +405,6 @@ Código: layout - configura o estilo do main, side bar, header, footer, banner e
 /* ---------- TABLET (até 1680px) – Ajuste do padding ---------- */
 @media screen and (max-width: 1680px) and (min-width: 737px) {
   #header {
-    padding-top: 2.5em;
     max-width: 100%;
   }
   #main > .inner {

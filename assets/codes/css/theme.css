@@ -46,6 +46,8 @@ Código: theme.css - Variáveis de tema para modo claro e escuro
   --color-primary-hover: #f67878;
   --color-primary-active: #f45c5c;
   --color-primary-dark: #8a0000;
+  --color-sec-hover: #ff000f;
+  --color-active: #d1cdcd;
 
   /* Bordas e divisores */
   --border-color: rgba(210, 215, 217, 0.75);
@@ -106,6 +108,8 @@ Código: theme.css - Variáveis de tema para modo claro e escuro
   --color-primary-hover: #cc5252d0;
   --color-primary-active: #e60000;
   --color-primary-dark: #cc0000;
+  --color-sec-hover: aquamarine;
+  --color-active: #4b4b4b;
 
   --border-color: rgba(255, 255, 255, 0.15);
   --border-menu: rgba(255, 255, 255, 0.1);

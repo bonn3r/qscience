@@ -8,7 +8,7 @@
    fill="none"
    version="1.1"
    id="svg2"
-   sodipodi:docname="utilitario-seta.svg"
+   sodipodi:docname="utilitario-seta-dark.svg"
    inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -32,7 +32,7 @@
   <g
      id="g2"
      inkscape:label="Seta"
-     style="fill:none;fill-opacity:1;stroke:#000000;stroke-opacity:1"
+     style="fill:none;fill-opacity:1;stroke:#eaeafa;stroke-opacity:1"
      transform="matrix(1.1627907,0,0,1.1627907,-1.9534884,-1.9417558)">
     <path
        d="m 12,22.4199 c 5.5228,0 10,-4.4771 10,-10 0,-5.52283 -4.4772,-9.99998 -10,-9.99998 -5.52285,0 -10,4.47715 -10,9.99998 0,5.5229 4.47715,10 10,10 z"
@@ -41,7 +41,7 @@
        stroke-linecap="round"
        stroke-linejoin="round"
        id="path1"
-       style="fill:none;fill-opacity:1;stroke:#000000;stroke-opacity:1" />
+       style="fill:none;fill-opacity:1;stroke:#eaeafa;stroke-opacity:1" />
     <path
        d="M 7.4416832,13.771069 10.712276,10.28407 c 0.16239,-0.180509 0.361018,-0.3248931 0.582895,-0.4236951 0.221762,-0.0988 0.461985,-0.149969 0.704829,-0.149969 0.242845,0 0.483068,0.05117 0.70483,0.149969 0.221876,0.0988 0.420505,0.2431861 0.582895,0.4236951 l 3.270592,3.486999"
        stroke="#000000"
@@ -49,6 +49,6 @@
        stroke-linecap="round"
        stroke-linejoin="round"
        id="path2"
-       style="fill:none;fill-opacity:1;stroke:#000000;stroke-opacity:1" />
+       style="fill:none;fill-opacity:1;stroke:#eaeafa;stroke-opacity:1" />
   </g>
 </svg>

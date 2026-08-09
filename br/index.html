@@ -2,7 +2,7 @@
 <!--
 Created in: 28/06/2026
 Editor: Jimi
-Versão: 2.0 - Data: 24/07/2026
+Versão: 3.0 - Data: 08/08/2026
 -->
 <html>
 	<head>
@@ -36,10 +36,6 @@ Versão: 2.0 - Data: 24/07/2026
 			<button class="lang-dropdown-btn" id="langDropdownBtn" aria-haspopup="true" aria-expanded="false">
 				<img src="/qscience/assets/images/logo/brazilian-logo.svg" alt="Português" style="width:24px; height:16px; border-radius:2px;">
 			</button>
-		
-			<button id="topbtn" aria-label="Voltar ao topo" class="primary">
-				Voltar ao topo
-			</button>
 			
 			<ul class="lang-dropdown-menu" id="langDropdownMenu" role="menu">
 				<li role="none">
@@ -61,55 +57,68 @@ Versão: 2.0 - Data: 24/07/2026
 
 			<!-- Cabeçalho -->
 				<header id="header">
-					<a href="/qscience/br/index.html" class="logo">
+					<span class="logo">
 						<img src="/qscience/assets/images/logo/cat-logo.svg" alt="Gato logomarca do site" style="height: 2em; width: auto; vertical-align: middle; margin-right: 0.8em;">
-						<span class="letra-q">Q</span>-Science
-					</a>
+						<a href="/qscience/br/index.html"><span class="letra-q" style="font-weight: bold;">Q</span>-Science</a>
+					</span>
 									
 					<ul class="icons">
-						<li>
-							<a href="/qscience/br/arxiv.html" class="icon brands">
-								<img src="/qscience/assets/images/logo/arxiv-logo.svg" alt="Logomarca do arXiv" width="20" height="20" style="vertical-align:middle;">
-								<span class="label">Arxiv</span>
-							</a>
-						</li>
-						<li>
-							<a href="https://github.com/bonn3r" target="_blank" rel="noopener noreferrer" class="icon brands">
-								<img src="/qscience/assets/images/logo/github-logo.svg"
-								data-light-src="/qscience/assets/images/logo/github-logo.svg"
-								data-dark-src="/qscience/assets/images/logo/github-logo-dark.svg"
-								alt="GitHub"
-								width="20"
-								height="20"
-								style="vertical-align:middle;" />
-								<span class="label">Github</span>
-							</a>
-						</li>
-						<li>
-							<a href="http://lattes.cnpq.br/3294938329763314" target="_blank" rel="noopener noreferrer" class="icon brands">
-								<img src="/qscience/assets/images/logo/lattes-logo.svg"
-								data-light-src="/qscience/assets/images/logo/lattes-logo.svg"
-								data-dark-src="/qscience/assets/images/logo/lattes-logo-dark.svg"
-								alt="Logomarca da Plataforma Lattes"
-								width="20"
-								height="20"
-								style="vertical-align:middle;">
-								<span class="label">Lattes</span>
-							</a>
-						</li>
-						<li>
-							<a href="https://linkedin.com/in/willianbonnerbsc" target="_blank" rel="noopener noreferrer" class="icon brands">
-								<img src="/qscience/assets/images/logo/linkedin-logo.svg" alt="Logomarca Linkedin" width="20" height="20" style="vertical-align:middle;">
-								<span class="label">Linked</span>
-							</a>
-						</li>
-						<li>
-							<a href="https://orcid.org/0009-0007-7458-8512" target="_blank" rel="noopener noreferrer" class="icon brands">
-								<img src="/qscience/assets/images/logo/orcid-logo.svg" alt="Logomarca Orcid" width="20" height="20" style="vertical-align:middle;">
-								<span class="label">ORCID</span>
-							</a>
-						</li>
-					</ul>
+							<li>
+								<button id="topbtn" aria-label="Voltar ao topo" style="height: 1em;">
+									Voltar ao topo 
+									<img src="/qscience/assets/images/utilitarios/utilitario-seta.svg"
+									data-light-src="/qscience/assets/images/utilitarios/utilitario-seta.svg"
+									data-dark-src="/qscience/assets/images/utilitarios/utilitario-seta-dark.svg">
+								</button>
+							</li>
+						
+							<li>
+								<a href="/qscience/br/arxiv.html" class="icon brands">
+									<img src="/qscience/assets/images/logo/arxiv-logo.svg" alt="Logomarca do arXiv" width="20" height="20" style="vertical-align:middle;">
+									<span class="label">Arxiv</span>
+								</a>
+							</li>
+							
+							<li>
+								<a href="https://github.com/bonn3r" target="_blank" rel="noopener noreferrer" class="icon brands">
+									<img src="/qscience/assets/images/logo/github-logo.svg"
+									data-light-src="/qscience/assets/images/logo/github-logo.svg"
+									data-dark-src="/qscience/assets/images/logo/github-logo-dark.svg"
+									alt="GitHub"
+									width="20"
+									height="20"
+									style="vertical-align:middle;" />
+									<span class="label">Github</span>
+								</a>
+							</li>
+							
+							<li>
+								<a href="http://lattes.cnpq.br/3294938329763314" target="_blank" rel="noopener noreferrer" class="icon brands">
+									<img src="/qscience/assets/images/logo/lattes-logo.svg"
+									data-light-src="/qscience/assets/images/logo/lattes-logo.svg"
+									data-dark-src="/qscience/assets/images/logo/lattes-logo-dark.svg"
+									alt="Logomarca da Plataforma Lattes"
+									width="20"
+									height="20"
+									style="vertical-align:middle;">
+									<span class="label">Lattes</span>
+								</a>
+							</li>
+						
+							<li>
+								<a href="https://linkedin.com/in/willianbonnerbsc" target="_blank" rel="noopener noreferrer" class="icon brands">
+									<img src="/qscience/assets/images/logo/linkedin-logo.svg" alt="Logomarca Linkedin" width="20" height="20" style="vertical-align:middle;">
+									<span class="label">Linked</span>
+								</a>
+							</li>
+						
+							<li>
+								<a href="https://orcid.org/0009-0007-7458-8512" target="_blank" rel="noopener noreferrer" class="icon brands">
+									<img src="/qscience/assets/images/logo/orcid-logo.svg" alt="Logomarca Orcid" width="20" height="20" style="vertical-align:middle;">
+									<span class="label">ORCID</span>
+								</a>
+							</li>
+						</ul>
 				</header>
 
 				<!-- Primeira sessão -->
@@ -164,68 +173,76 @@ Versão: 2.0 - Data: 24/07/2026
 
 				<!-- Descrição das principais áreas -->
 				<section>
-					<header class="major">
+					<header class="major" style="display: flex; justify-content: center;">
 						<h2>Organização e principal divisão do site</h2>
 					</header>
 
 					<p>Como o site tem mais de uma finalidade, separei os conteúdos de forma clara. Por aqui organizo minha produção técnico-intelectual em materiais didáticos e acadêmicos acumulados ao longo dos anos de estudo, resumos, fichamentos, materiais de monitoria e apresentações, além de alguns tópicos que eventualmente acho úteis ou interessantes de compartilhar. Cada área tem uma imagem clicável na interface: um clique e você vai direto para a página específica.</p>
 					
-					<div class="features">
-						<article>
-							<a href="/qscience/br/pesquisa/index.html"><span class="icon brands">
-								<img src="/qscience/assets/images/logo/microchip-logo.svg" alt="ícone de Pesquisa"
-								data-light-src="/qscience/assets/images/logo/microchip-logo.svg"
-								data-dark-src="/qscience/assets/images/logo/microchip-logo-dark.svg"
-								style="--rot: 315deg;">
-							</span></a>
+					<div class="row" style="display: flex; justify-content: center;">
+						<div class="col-4 col-6">
+							<div class="box">
+								<a href="/qscience/br/pesquisa/index.html" class="image" style="display: flex; justify-content: center;">
+									<img src="/qscience/assets/images/logo/microchip-logo.svg" alt="ícone de Pesquisa"
+									data-light-src="/qscience/assets/images/logo/microchip-logo.svg"
+									data-dark-src="/qscience/assets/images/logo/microchip-logo-dark.svg"
+									style="height: 200px;">
+								</a>
+								<header class="major" style="display: flex; justify-content: center; padding-top: 1em;">
+									<h3>Pesquisa</h3>
+								</header>
 							
-							<div class="content">
-								<h3>Pesquisa</h3>
 								<p>Esta seção agrupa todo o conteúdo relacionado à minha trajetória acadêmica em pesquisa científica. Aqui você encontrará uma visão geral das minhas atividades de pesquisa e projetos em andamento, informações (públicas) sobre minha pesquisa de mestrado, meu Trabalho de Conclusão de Curso (TCC) e meu histórico detalhado de Iniciações Científicas (ICs) que fiz durante a graduação.</p>
 							</div>
-						</article>
-				
-						<article>
-							<a href="/qscience/br/estudos/index.html">
-								<span class="icon brands">
+						</div>
+
+						<div class="col-4 col-6">
+							<div class="box">
+								<a href="/qscience/br/estudos/index.html" class="image" style="display: flex; justify-content: center;">
 									<img src="/qscience/assets/images/logo/book-logo.svg" alt="Ícone de Estudos"
 									data-light-src="/qscience/assets/images/logo/book-logo.svg"
-									data-dark-src="/qscience/assets/images/logo/book-logo-dark.svg">
-								</span>
-							</a>
-							<div class="content">
-								<h3>Estudos</h3>
+									data-dark-src="/qscience/assets/images/logo/book-logo-dark.svg"
+									style="height: 200px;">
+								</a>
+								<header class="major" style="display: flex; justify-content: center; padding-top: 1em;">
+									<h3>Estudos</h3>
+								</header>
+							
 								<p>Aqui organizo toda minha produção tecnico-intelectual relacionada aos estudos e material didático/acadêmico, ou seja, anotações importantes que fiz sobre as aulas, o material gerado por estudo autônomo, material que desenvolvi durante minhas atividades de monitorias, apresentações utilizadas em aulas e seminários, e demais tópicos que eu achar interessante compartilhar.</p>
 							</div>
-						</article>
-				
-						<article>
-							<a href="/qscience/br/extensao/index.html">
-								<span class="icon brands">
+						</div>
+
+						<div class="col-6">
+							<div class="box">
+								<a href="/qscience/br/extensao/index.html" class="image" style="display: flex; justify-content: center;">
 									<img src="/qscience/assets/images/logo/plane-logo.svg" alt="Ícone de Extensão"
 									data-light-src="/qscience/assets/images/logo/plane-logo.svg"
-									data-dark-src="/qscience/assets/images/logo/plane-logo-dark.svg">
-								</span>
-							</a>
-							<div class="content">
-								<h3>Extensão</h3>
+									data-dark-src="/qscience/assets/images/logo/plane-logo-dark.svg"
+									style="height: 200px;">
+								</a>
+								<header class="major" style="display: flex; justify-content: center; padding-top: 1em;">
+									<h3>Extensão</h3>
+								</header>
+							
 								<p>Aqui organizo minhas atividades de extensão universitária, bem como o material gerado a partir delas, ou seja, resumos e slides de apresentações orais, resumos, slides e listas de exercícios de mini mursos ministrados por mim, posters que eu apresentei e outras atividades de extensão importantes.</p>
 							</div>
-						</article>
-				
-						<article>
-							<a href="/qscience/br/meustextos/index.html">
-								<span class="icon brands">
+						</div>
+
+						<div class="col-6">
+							<div class="box">
+								<a href="/qscience/br/meustextos/index.html" class="image" style="display: flex; justify-content: center;">
 									<img src="/qscience/assets/images/logo/share-logo.svg" alt="Ícone de Meus Textos"
 									data-light-src="/qscience/assets/images/logo/share-logo.svg"
-									data-dark-src="/qscience/assets/images/logo/share-logo-dark.svg">
-								</span>
-							</a>
-							<div class="content">
-								<h3>Meus textos</h3>
+									data-dark-src="/qscience/assets/images/logo/share-logo-dark.svg"
+									style="height: 200px;">
+								</a>
+								<header class="major" style="display: flex; justify-content: center; padding-top: 1em;">
+									<h3>Meus Textos</h3>
+								</header>
+							
 								<p>Esta seção expõe minha produção intelectual com mais liberdade, ou seja, para além dos muros e formalismos da academia. Reúne meus escritos autorais, organizados por área de conhecimento: ensaios filosóficos e reflexões de caráter mais geral, incursões pela filosofia da física, notas e artigos matemáticos, além de análises (e eventuais opiniões) sobre política e a sociedade.</p>
-								</div>
-						</article>
+							</div>
+						</div>
 					</div>
 					
 					<p>A barra lateral também possui links para minhas redes sociais e email para contato.</p>
@@ -234,7 +251,7 @@ Versão: 2.0 - Data: 24/07/2026
 
 				<!-- Resumo de quem sou eu -->
 				<section>
-					<header class="major">
+					<header class="major" style="display: flex; justify-content: center;">
 						<h2>Quem sou eu</h2>
 					</header>
 						
@@ -259,13 +276,9 @@ Versão: 2.0 - Data: 24/07/2026
 					</div>
 				</section>
 				
-				<!-- Rodapé da página principal -->
-				<footer id="footer" >
-					<ul class="actions">
-						<button id="topbtn" class="button small topbtn">Voltar ao topo</button>
-					</ul>
+				<footer id="footer" style="display: flex; justify-content: center; font-size: 0.8em; font-family: Inconsolata, monospace;">
+					<p class="copyright">&copy;2026 Jimi.7z. All rights reserved. Created by: <a href="https://html5up.net/editorial" target="_blank" rel="noopener noreferrer">HTML5 UP</a>. Redesign by: Willian Bonner.</p>
 				</footer>
-			</div>
 		</div>
 
 		<!-- Scripts -->
@@ -274,8 +287,7 @@ Versão: 2.0 - Data: 24/07/2026
 		<script src="/qscience/assets/codes/js/breakpoints.min.js"></script>
 		<script src="/qscience/assets/codes/js/util.js"></script>
 		<script src="/qscience/assets/codes/js/sidebar.js"></script>
-		<script src="/qscience/assets/codes/js/language.js"></script>
-		<script src="/qscience/assets/codes/js/theme.js"></script>
+		<script src="/qscience/assets/codes/js/rightbar.js"></script>
 		<script src="/qscience/assets/codes/js/main.js"></script>
 
 	</body>

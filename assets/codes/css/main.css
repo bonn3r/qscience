@@ -16,4 +16,5 @@ Código: Arquivo de imports do css, na ordem correta (sugerida pela IA DeepSeek)
 @import url("menu.css");
 @import url("utilities.css");
 @import url("language.css");
+@import url("rightbar.css");
 @import url("gaveta.css");

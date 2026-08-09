@@ -2,8 +2,8 @@
 Criado em: 29/06/2026
 Autor: Jimi	
 Código: language - contém as configurações do botão de idiomas, tema e "voltar ao topo"
-Última atualização: 07/08/2026
-Versão: 2.1 – Adicionado botão "voltar ao topo"
+Última atualização: 08/08/2026
+Versão: 2.2 – Reorganização: tema antes do idioma, apenas ícones
 */
 
 /* ========== Botão de idioma especial (retangular) ========== */
@@ -22,23 +22,43 @@ Versão: 2.1 – Adicionado botão "voltar ao topo"
   background: transparent;
 }
 
+/* --- Ordem dos botões --- */
+.theme-toggle {
+  order: 0;                 /* primeiro (em cima / à esquerda) */
+}
+
 .lang-dropdown-btn {
+  order: 1;                 /* segundo */
+}
+
+#topbtn {
+  order: 2;                 /* terceiro, forçado a quebrar linha */
+  flex: 0 0 100%;           /* ocupa toda a largura, inicia nova linha */
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease, opacity 0.3s, visibility 0.3s;
+}
+
+/* --- Estilos dos botões (compactos, só ícone) --- */
+.lang-dropdown-btn,
+.theme-toggle {
   display: flex;
   align-items: center;
   justify-content: center;
   background: var(--bg-dropdown);
   backdrop-filter: blur(4px);
   border: 1px solid var(--border-light);
-  padding: 6px 12px;
   border-radius: 4px;
+  padding: 4px 8px;          /* menos padding para ficar só o ícone */
+  width: 32px;               /* largura ajustada ao ícone */
+  height: 30px;
   cursor: pointer;
   box-shadow: var(--shadow-toggle);
   transition: all 0.2s ease;
-  width: 56px;
-  height: 30px;
 }
 
-.lang-dropdown-btn:hover {
+.lang-dropdown-btn:hover,
+.theme-toggle:hover {
   background: var(--bg-body);
   box-shadow: var(--shadow-dropdown);
 }
@@ -49,6 +69,13 @@ Versão: 2.1 – Adicionado botão "voltar ao topo"
   height: 16px;
   border-radius: 2px;
   object-fit: cover;
+}
+
+.theme-toggle .theme-img {
+  width: 18px;
+  height: 18px;
+  display: block;
+  object-fit: contain;
 }
 
 /* Menu dropdown – mantido igual */
@@ -67,7 +94,6 @@ Versão: 2.1 – Adicionado botão "voltar ao topo"
   margin: 0;
   border: 1px solid var(--border-light);
 }
-
 .lang-dropdown-menu.show {
   display: block;
 }
@@ -85,12 +111,12 @@ Versão: 2.1 – Adicionado botão "voltar ao topo"
 
 .lang-dropdown-menu li a:hover {
   background: var(--bg-table-zebra);
+  color: var(--color-sec-hover) !important;
 }
 
 .lang-dropdown-menu li a.active-lang {
-  background: rgba(0, 86, 179, 0.1);
+  background: var(--color-active);
   font-weight: 600;
-  color: var(--color-primary);
 }
 
 .lang-dropdown-menu li a img {
@@ -111,75 +137,51 @@ Versão: 2.1 – Adicionado botão "voltar ao topo"
 }
 
 /* ============================================================ */
-/* BOTÃO DE TEMA                                                */
-/* ============================================================ */
-
-.theme-toggle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--bg-dropdown);
-  backdrop-filter: blur(4px);
-  border: 1px solid var(--border-light);
-  border-radius: 4px;
-  padding: 6px 12px;
-  width: 56px;
-  height: 30px;
-  cursor: pointer;
-  box-shadow: var(--shadow-toggle);
-  transition: all 0.2s ease;
-}
-
-.theme-toggle:hover {
-  background: var(--bg-body);
-  box-shadow: var(--shadow-dropdown);
-}
-
-.theme-toggle .theme-img {
-  width: 18px;
-  height: 18px;
-  display: block;
-  object-fit: contain;
-}
-
-/* ============================================================ */
 /* BOTÃO "VOLTAR AO TOPO"                                       */
 /* ============================================================ */
 
-#topbtn {
+/*#topbtn {
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 0.7em;
-  font-family: Inconsolata, monospace;;
+  font-family: Inconsolata, monospace;
   background: var(--bg-dropdown);
   backdrop-filter: blur(4px);
   border: 1px solid var(--border-light);
   border-radius: 4px;
   padding: 2px;
-  height: 30px;
+  height: 1px;
   cursor: pointer;
   box-shadow: var(--shadow-toggle);
   transition: all 0.2s ease, opacity 0.3s, visibility 0.3s;
 
-  /* Força o botão a iniciar uma nova linha */
-  flex: 0 0 100%;        /* não cresce, não encolhe, base 100% */
+  /* Força a nova linha 
+  flex: 0 0 100%;
+  max-width: 120px;
   
-  /* Largura máxima desejada (ex.: mesma dos dois botões superiores) */
-  max-width: 120px;        /* 36px + 8px gap + 36px */
-  
-  /* Centraliza horizontalmente na linha */
-  /*margin-left: auto;
-  margin-right: auto;*/
-
-  /* Visibilidade controlada pelo JS */
+  /* Visibilidade controlada pelo JS 
   opacity: 0;
   visibility: hidden;
-}
+}*/
 
-#topbtn:hover {
-  background: var(--bg-body);
-  box-shadow: var(--shadow-dropdown);
+#topbtn {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  display: inline-flex;
+  align-items: bottom;
+  gap: 0.4em;
+  font-size: 0.6em;
+  font-family: Inconsolata, monospace;
+  padding: 1.2em;
+  text-decoration: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+  flex: none;             /*não esticar */
+  margin-top: 0.2em;     /* separação dos ícones */
 }
 
 #topbtn.visivel {
@@ -189,8 +191,9 @@ Versão: 2.1 – Adicionado botão "voltar ao topo"
 
 #topbtn img {
   display: block;
-  width: 70px;                    /* sugestão de tamanho para o ícone de seta */
-  height: 20px;
+  align-items: center;
+  height: 1.1em;
+  width: 1.1em;
   object-fit: contain;
 }
 
@@ -207,12 +210,28 @@ Versão: 2.1 – Adicionado botão "voltar ao topo"
     right: 1em;
   }
 
-  .lang-dropdown-btn,
-  .theme-toggle,
+  .lang-dropdown-btn {
+  display: flex;
+  align-items: right;
+  justify-content: center;
+  background: var(--bg-dropdown);
+  backdrop-filter: blur(4px);
+  border: 1px solid var(--border-light);
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: var(--shadow-toggle);
+  transition: all 0.2s ease;
+  width: 32px;
+  height: 28px;
+}
+
+.theme-toggle,
   #topbtn {
     width: 32px;
     height: 28px;
     flex: none;                   /* remove o stretch da linha inferior */
+    padding: 2px 4px;
   }
 
   .lang-dropdown-btn img {
