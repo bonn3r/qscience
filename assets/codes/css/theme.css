@@ -74,7 +74,7 @@ Código: theme.css - Variáveis de tema para modo claro e escuro
 /* Modo noturno – ativado pela classe .dark-mode no <body> */
 .dark-mode {
   --bg-body: #0b0f19;
-  --bg-sidebar: #2c2c2c;
+  --bg-sidebar: #121929;
   --bg-header: #0b0f19;
 
   --bg-box: #0c1319;
@@ -84,7 +84,7 @@ Código: theme.css - Variáveis de tema para modo claro e escuro
   --bg-input: #2a2a2a;
   --bg-table-zebra: rgba(255, 255, 255, 0.05);
   --bg-dropdown: #2a2a2a;
-  --bg-highlight-sidebar: #3a3a3a;
+  --bg-highlight-sidebar: \#192236;
   --bg-toggle: rgba(255, 255, 255, 0.15);
   --bg-drawer-button: #444444;
   --border-light-b: #f1eded;
@@ -92,7 +92,7 @@ Código: theme.css - Variáveis de tema para modo claro e escuro
   --text-body: #cccccc;
   --text-wp: #dddddd;
   --text-title: #eeeeee;
-  --text-link: #ff6b6b;
+  --text-link: #ff1f1f;
   --text-menu: #dddddd;
   --text-menu-level2: #bbbbbb;
   --text-menu-level3: #999999;
@@ -113,7 +113,7 @@ Código: theme.css - Variáveis de tema para modo claro e escuro
 
   --border-color: rgba(255, 255, 255, 0.15);
   --border-menu: rgba(255, 255, 255, 0.1);
-  --border-header: #ff4d4d;
+  --border-header: #ff1f1f;
   --border-light: #444444;
   --border-toggle-mobile: rgba(255, 255, 255, 0.15);
 

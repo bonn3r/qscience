@@ -1,0 +1,198 @@
+/*
+Criado em: 09/08/2026
+Autor: DeepSeek
+Código: rightbar - Estilos visuais para o botão "Índice" e seu painel.
+Versão: 2.0 – Adaptado para CSS Grid (layout delegado ao language.css)
+*/
+
+/* ============================================================ */
+/* BOTÃO "ÍNDICE" – estilo visual (layout via Grid)             */
+/* ============================================================ */
+
+#toc-toggle {
+  /* Remove qualquer propriedade de layout que conflite com o Grid */
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4em;
+  font-family: Inconsolas, monospace;
+  font-weight: 100;
+  font-size: 0.8em;
+  padding: 4px 8px;
+  background: var(--bg-dropdown);
+  backdrop-filter: blur(4px);
+  border: 1px solid var(--border-light);
+  border-radius: 4px;
+  box-shadow: var(--shadow-toggle);
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  color: var(--text-color);
+  width: 100px;
+  max-width: 100px;
+  height: 30px;
+  /* just-self e grid posicionamento são definidos no language.css */
+}
+
+#toc-toggle:hover {
+  background: var(--bg-body);
+  box-shadow: var(--shadow-dropdown);
+}
+
+#toc-toggle img {
+  display: block;
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  margin: 0 0 0 6px;
+}
+
+#toc-toggle .toc-btn-text {
+  display: inline;
+}
+
+/* ============================================================ */
+/* PAINEL DO ÍNDICE – estilo visual (layout via Grid)           */
+/* ============================================================ */
+
+#toc-panel {
+  background: var(--bg-dropdown);
+  backdrop-filter: blur(4px);
+  border: none;
+  border-radius: 8px;
+  box-shadow: var(--shadow-dropdown);
+  padding: 0;
+  min-width: 200px;
+  max-width: 280px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  pointer-events: none;
+}
+
+#toc-panel.open {
+  max-height: 60vh;
+  border: 1px solid var(--border-light);
+  padding: 0.6em 0;
+  pointer-events: auto;
+}
+
+/* ----- Estilização da lista de links ----- */
+#toc-panel ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#toc-panel ul li {
+  margin: 0;
+  padding: 0;
+}
+
+#toc-panel ul li a {
+  display: block;
+  padding: 0.45em 1.2em;
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 0.9em;
+  font-family: Inconsolas, monospace;
+  border-left: 3px solid transparent;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#toc-panel ul li a:hover {
+  background: var(--bg-hover-sidebar, #f1f3f5);
+  color: var(--color-primary, #007bff);
+  border-left-color: var(--color-primary, #007bff);
+}
+
+#toc-panel ul li a.active {
+  background: var(--bg-active-sidebar, #e9ecef);
+  color: var(--color-primary, #007bff);
+  border-left-color: var(--color-primary, #007bff);
+  font-weight: 600;
+}
+
+/* ----- Subitens (aninhados) ----- */
+#toc-panel ul ul {
+  padding-left: 1em;
+}
+#toc-panel ul ul li a {
+  font-size: 0.85em;
+  padding-left: 1.8em;
+}
+
+/* ----- Scroll customizado ----- */
+#toc-panel::-webkit-scrollbar {
+  width: 4px;
+}
+#toc-panel::-webkit-scrollbar-track {
+  background: transparent;
+}
+#toc-panel::-webkit-scrollbar-thumb {
+  background: var(--border-color, #ced4da);
+  border-radius: 4px;
+}
+
+/* ============================================================ */
+/* RESPONSIVIDADE – telas menores que 1024px                    */
+/* ============================================================ */
+
+@media screen and (max-width: 1024px) {
+  #toc-toggle {
+    width: 32px;
+    height: 28px;
+    padding: 2px 4px;
+    font-size: 0;         /* esconde o texto */
+  }
+  #toc-toggle img {
+    width: 16px;
+    height: 16px;
+    margin: 0;
+  }
+  #toc-toggle .toc-btn-text {
+    display: none;
+  }
+
+  #toc-panel {
+    min-width: 180px;
+    /* O grid já ajusta a largura automaticamente */
+  }
+}
+
+/* ============================================================ */
+/* RESPONSIVIDADE – mobile (até 736px)                          */
+/* ============================================================ */
+
+@media screen and (max-width: 736px) {
+  #toc-toggle {
+    width: 32px;
+    height: 28px;
+    padding: 6px;
+    font-size: 0;
+  }
+  #toc-toggle img {
+    width: 16px;
+    height: 16px;
+    margin: 0;
+  }
+  #toc-toggle .toc-btn-text {
+    display: none;
+  }
+
+  #toc-panel {
+    min-width: 160px;
+    max-width: 220px;
+  }
+  #toc-panel ul li a {
+    font-size: 0.85em;
+    padding: 0.4em 1em;
+  }
+}

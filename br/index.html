@@ -23,32 +23,34 @@ Versão: 3.0 - Data: 08/08/2026
 
 		<!-- Seletor de Idiomas -->
 		<div class="lang-dropdown" id="langDropdown">
-			<!-- Botão de alternância de tema -->
-			<button class="theme-toggle" id="theme-toggle" aria-label="Alternar modo noturno">
-				<img src="/qscience/assets/images/logo/moon-logo.svg"
-				data-light-src="/qscience/assets/images/logo/moon-logo.svg"
-				data-dark-src="/qscience/assets/images/logo/sun-logo.svg"
-				alt="Alternar tema"
-				class="theme-img"
-				id="themeIcon" />
-			</button>
+			<div class="lang-top">
+				<button class="theme-toggle" id="theme-toggle" aria-label="Alternar modo noturno">
+					<img src="/qscience/assets/images/logo/moon-logo.svg"
+					data-light-src="/qscience/assets/images/logo/moon-logo.svg"
+					data-dark-src="/qscience/assets/images/logo/sun-logo.svg"
+					alt="Alternar tema"
+					class="theme-img"
+					id="themeIcon" />
+				</button>
 
-			<button class="lang-dropdown-btn" id="langDropdownBtn" aria-haspopup="true" aria-expanded="false">
-				<img src="/qscience/assets/images/logo/brazilian-logo.svg" alt="Português" style="width:24px; height:16px; border-radius:2px;">
-			</button>
-			
+				<button class="lang-dropdown-btn" id="langDropdownBtn" aria-haspopup="true" aria-expanded="false">
+					<img src="/qscience/assets/images/logo/brazilian-logo.svg" alt="Português" style="width:24px; height:16px; border-radius:2px;">
+				</button>
+			</div>
+
+			<!-- Gaveta de idiomas (agora antes do botão Índice) -->
 			<ul class="lang-dropdown-menu" id="langDropdownMenu" role="menu">
 				<li role="none">
 					<a href="/qscience/br/" role="menuitem" class="active-lang">
 					<img src="/qscience/assets/images/logo/brazilian-logo.svg" alt="Português">Português</a>
 				</li>
-		
+
 				<li role="none">
 					<a href="/qscience/en/" role="menuitem">
 					<img src="/qscience/assets/images/logo/united-kingdom-logo.svg" alt="English">English</a>
 				</li>
 			</ul>
-		</div>
+	</div>
 
 
 		<!-- Main -->
@@ -63,66 +65,72 @@ Versão: 3.0 - Data: 08/08/2026
 					</span>
 									
 					<ul class="icons">
-							<li>
-								<button id="topbtn" aria-label="Voltar ao topo" style="height: 1em;">
-									Voltar ao topo 
-									<img src="/qscience/assets/images/utilitarios/utilitario-seta.svg"
-									data-light-src="/qscience/assets/images/utilitarios/utilitario-seta.svg"
-									data-dark-src="/qscience/assets/images/utilitarios/utilitario-seta-dark.svg">
-								</button>
-							</li>
+						<li>
+							<button id="topbtn" aria-label="Voltar ao topo">
+								<span class="topbtn-text">Voltar ao topo</span>
+								<img src="/qscience/assets/images/utilitarios/utilitario-seta.svg"
+								data-light-src="/qscience/assets/images/utilitarios/utilitario-seta.svg"
+								data-dark-src="/qscience/assets/images/utilitarios/utilitario-seta-dark.svg"
+								alt="">
+							</button>
+						</li>
+
 						
-							<li>
-								<a href="/qscience/br/arxiv.html" class="icon brands">
-									<img src="/qscience/assets/images/logo/arxiv-logo.svg" alt="Logomarca do arXiv" width="20" height="20" style="vertical-align:middle;">
-									<span class="label">Arxiv</span>
-								</a>
-							</li>
+						
+						<li>
+							<a href="/qscience/br/arxiv.html" class="icon brands">
+								<img src="/qscience/assets/images/logo/arxiv-logo.svg" alt="Logomarca do arXiv" width="20" height="20" style="vertical-align:middle;">
+								<span class="label">Arxiv</span>
+							</a>
+						</li>
 							
-							<li>
-								<a href="https://github.com/bonn3r" target="_blank" rel="noopener noreferrer" class="icon brands">
-									<img src="/qscience/assets/images/logo/github-logo.svg"
-									data-light-src="/qscience/assets/images/logo/github-logo.svg"
-									data-dark-src="/qscience/assets/images/logo/github-logo-dark.svg"
-									alt="GitHub"
-									width="20"
-									height="20"
-									style="vertical-align:middle;" />
-									<span class="label">Github</span>
-								</a>
-							</li>
+						<li>
+							<a href="https://github.com/bonn3r" target="_blank" rel="noopener noreferrer" class="icon brands">
+								<img src="/qscience/assets/images/logo/github-logo.svg"
+								data-light-src="/qscience/assets/images/logo/github-logo.svg"
+								data-dark-src="/qscience/assets/images/logo/github-logo-dark.svg"
+								alt="GitHub"
+								width="20"
+								height="20"
+								style="vertical-align:middle;" />
+								<span class="label">Github</span>
+							</a>
+						</li>
 							
-							<li>
-								<a href="http://lattes.cnpq.br/3294938329763314" target="_blank" rel="noopener noreferrer" class="icon brands">
-									<img src="/qscience/assets/images/logo/lattes-logo.svg"
-									data-light-src="/qscience/assets/images/logo/lattes-logo.svg"
-									data-dark-src="/qscience/assets/images/logo/lattes-logo-dark.svg"
-									alt="Logomarca da Plataforma Lattes"
-									width="20"
-									height="20"
-									style="vertical-align:middle;">
-									<span class="label">Lattes</span>
-								</a>
-							</li>
+						<li>
+							<a href="http://lattes.cnpq.br/3294938329763314" target="_blank" rel="noopener noreferrer" class="icon brands">
+								<img src="/qscience/assets/images/logo/lattes-logo.svg"
+								data-light-src="/qscience/assets/images/logo/lattes-logo.svg"
+								data-dark-src="/qscience/assets/images/logo/lattes-logo-dark.svg"
+								alt="Logomarca da Plataforma Lattes"
+								width="20"
+								height="20"
+								style="vertical-align:middle;">
+								<span class="label">Lattes</span>
+							</a>
+						</li>
 						
-							<li>
-								<a href="https://linkedin.com/in/willianbonnerbsc" target="_blank" rel="noopener noreferrer" class="icon brands">
-									<img src="/qscience/assets/images/logo/linkedin-logo.svg" alt="Logomarca Linkedin" width="20" height="20" style="vertical-align:middle;">
-									<span class="label">Linked</span>
-								</a>
-							</li>
+						<li>
+							<a href="https://linkedin.com/in/willianbonnerbsc" target="_blank" rel="noopener noreferrer" class="icon brands">
+								<img src="/qscience/assets/images/logo/linkedin-logo.svg" alt="Logomarca Linkedin" width="20" height="20" style="vertical-align:middle;">
+								<span class="label">Linked</span>
+							</a>
+						</li>
 						
-							<li>
-								<a href="https://orcid.org/0009-0007-7458-8512" target="_blank" rel="noopener noreferrer" class="icon brands">
-									<img src="/qscience/assets/images/logo/orcid-logo.svg" alt="Logomarca Orcid" width="20" height="20" style="vertical-align:middle;">
-									<span class="label">ORCID</span>
-								</a>
-							</li>
-						</ul>
+						<li>
+							<a href="https://orcid.org/0009-0007-7458-8512" target="_blank" rel="noopener noreferrer" class="icon brands">
+								<img src="/qscience/assets/images/logo/orcid-logo.svg" alt="Logomarca Orcid" width="20" height="20" style="vertical-align:middle;">
+								<span class="label">ORCID</span>
+							</a>
+						</li>
+					</ul>
 				</header>
+
+				
 
 				<!-- Primeira sessão -->
 				<section>
+					
 					<div class="content">
 						<header style="text-align: center;">
 							<h1><span class="letra-q">Q</span>-Science</h1>
@@ -180,67 +188,87 @@ Versão: 3.0 - Data: 08/08/2026
 					<p>Como o site tem mais de uma finalidade, separei os conteúdos de forma clara. Por aqui organizo minha produção técnico-intelectual em materiais didáticos e acadêmicos acumulados ao longo dos anos de estudo, resumos, fichamentos, materiais de monitoria e apresentações, além de alguns tópicos que eventualmente acho úteis ou interessantes de compartilhar. Cada área tem uma imagem clicável na interface: um clique e você vai direto para a página específica.</p>
 					
 					<div class="row" style="display: flex; justify-content: center;">
-						<div class="col-4 col-6">
-							<div class="box">
-								<a href="/qscience/br/pesquisa/index.html" class="image" style="display: flex; justify-content: center;">
-									<img src="/qscience/assets/images/logo/microchip-logo.svg" alt="ícone de Pesquisa"
-									data-light-src="/qscience/assets/images/logo/microchip-logo.svg"
-									data-dark-src="/qscience/assets/images/logo/microchip-logo-dark.svg"
-									style="height: 200px;">
-								</a>
-								<header class="major" style="display: flex; justify-content: center; padding-top: 1em;">
-									<h3>Pesquisa</h3>
-								</header>
+						<div class="col-12 col-12-medium" style="max-width: 85%;">
+							<div class="box" style="display: flex; flex-wrap: wrap; gap: 2em; align-items: flex-start; justify-content: center;">
+								<div style="flex: 0 0 210px; max-width: 100%; text-align: center; justify-content: center;">
+									<a href="/qscience/br/pesquisa/index.html" class="image" style="display: flex; justify-content: center;">
+										<img src="/qscience/assets/images/logo/microchip-logo.svg" alt="ícone de Pesquisa"
+										data-light-src="/qscience/assets/images/logo/microchip-logo.svg"
+										data-dark-src="/qscience/assets/images/logo/microchip-logo-dark.svg"
+										style="height: 200px;">
+									</a>
+								</div>
+								
+								<div style="flex: 1 1 60%; min-width: 200px; word-break: break-word; overflow-wrap: break-word;">
+									<header class="major" style="display: flex; justify-content: center;">
+										<h3>Pesquisa</h3>
+									</header>
 							
-								<p>Esta seção agrupa todo o conteúdo relacionado à minha trajetória acadêmica em pesquisa científica. Aqui você encontrará uma visão geral das minhas atividades de pesquisa e projetos em andamento, informações (públicas) sobre minha pesquisa de mestrado, meu Trabalho de Conclusão de Curso (TCC) e meu histórico detalhado de Iniciações Científicas (ICs) que fiz durante a graduação.</p>
+									<p>Esta seção agrupa todo o conteúdo relacionado à minha trajetória acadêmica em pesquisa científica. Aqui você encontrará uma visão geral das minhas atividades de pesquisa e projetos em andamento, informações (públicas) sobre minha pesquisa de mestrado, meu Trabalho de Conclusão de Curso (TCC) e meu histórico de Iniciações Científicas (ICs) que fiz durante a graduação.</p>
+								</div>
 							</div>
 						</div>
 
-						<div class="col-4 col-6">
-							<div class="box">
-								<a href="/qscience/br/estudos/index.html" class="image" style="display: flex; justify-content: center;">
-									<img src="/qscience/assets/images/logo/book-logo.svg" alt="Ícone de Estudos"
-									data-light-src="/qscience/assets/images/logo/book-logo.svg"
-									data-dark-src="/qscience/assets/images/logo/book-logo-dark.svg"
-									style="height: 200px;">
-								</a>
-								<header class="major" style="display: flex; justify-content: center; padding-top: 1em;">
-									<h3>Estudos</h3>
-								</header>
+						<div class="col-12 col-12-medium" style="max-width: 85%;">
+							<div class="box" style="display: flex; flex-wrap: wrap; gap: 2em; align-items: flex-start;">
+								<div style="flex: 0 0 210px; max-width: 100%; text-align: center; justify-content: center;">
+									<a href="/qscience/br/estudos/index.html" class="image" style="display: flex; justify-content: center;">
+										<img src="/qscience/assets/images/logo/book-logo.svg" alt="Ícone de Estudos"
+										data-light-src="/qscience/assets/images/logo/book-logo.svg"
+										data-dark-src="/qscience/assets/images/logo/book-logo-dark.svg"
+										style="height: 200px;">
+									</a>
+								</div>
+
+								<div style="flex: 1 1 60%; min-width: 200px; word-break: break-word; overflow-wrap: break-word;">
+									<header class="major" style="display: flex; justify-content: center;">
+										<h3>Estudos</h3>
+									</header>
 							
-								<p>Aqui organizo toda minha produção tecnico-intelectual relacionada aos estudos e material didático/acadêmico, ou seja, anotações importantes que fiz sobre as aulas, o material gerado por estudo autônomo, material que desenvolvi durante minhas atividades de monitorias, apresentações utilizadas em aulas e seminários, e demais tópicos que eu achar interessante compartilhar.</p>
+									<p>Aqui organizo toda minha produção tecnico-intelectual relacionada aos estudos e material didático/acadêmico, ou seja, anotações importantes que fiz sobre as aulas, o material gerado por estudo autônomo, material que desenvolvi durante minhas atividades de monitorias, apresentações utilizadas em aulas e seminários, e demais tópicos que eu achar interessante compartilhar.</p>
+								</div>
 							</div>
 						</div>
 
-						<div class="col-6">
-							<div class="box">
-								<a href="/qscience/br/extensao/index.html" class="image" style="display: flex; justify-content: center;">
-									<img src="/qscience/assets/images/logo/plane-logo.svg" alt="Ícone de Extensão"
-									data-light-src="/qscience/assets/images/logo/plane-logo.svg"
-									data-dark-src="/qscience/assets/images/logo/plane-logo-dark.svg"
-									style="height: 200px;">
-								</a>
-								<header class="major" style="display: flex; justify-content: center; padding-top: 1em;">
-									<h3>Extensão</h3>
-								</header>
+						<div class="col-12 col-12-medium" style="max-width: 85%;">
+							<div class="box" style="display: flex; flex-wrap: wrap; gap: 2em; align-items: flex-start;">
+								<div style="flex: 0 0 210px; max-width: 100%; text-align: center; justify-content: center;">
+									<a href="/qscience/br/extensao/index.html" class="image" style="display: flex; justify-content: center;">
+										<img src="/qscience/assets/images/logo/plane-logo.svg" alt="Ícone de Extensão"
+										data-light-src="/qscience/assets/images/logo/plane-logo.svg"
+										data-dark-src="/qscience/assets/images/logo/plane-logo-dark.svg"
+										style="height: 200px;">
+									</a>
+								</div>
+
+								<div style="flex: 1 1 60%; min-width: 200px; word-break: break-word; overflow-wrap: break-word;">
+									<header class="major" style="display: flex; justify-content: center;">
+										<h3>Extensão</h3>
+									</header>
 							
-								<p>Aqui organizo minhas atividades de extensão universitária, bem como o material gerado a partir delas, ou seja, resumos e slides de apresentações orais, resumos, slides e listas de exercícios de mini mursos ministrados por mim, posters que eu apresentei e outras atividades de extensão importantes.</p>
+									<p>Aqui organizo minhas atividades de extensão universitária, bem como o material gerado a partir delas, ou seja, resumos e slides de apresentações orais, resumos, slides e listas de exercícios de mini mursos ministrados por mim, posters que eu apresentei e outras atividades de extensão importantes.</p>
+								</div>
 							</div>
 						</div>
 
-						<div class="col-6">
-							<div class="box">
-								<a href="/qscience/br/meustextos/index.html" class="image" style="display: flex; justify-content: center;">
-									<img src="/qscience/assets/images/logo/share-logo.svg" alt="Ícone de Meus Textos"
-									data-light-src="/qscience/assets/images/logo/share-logo.svg"
-									data-dark-src="/qscience/assets/images/logo/share-logo-dark.svg"
-									style="height: 200px;">
-								</a>
-								<header class="major" style="display: flex; justify-content: center; padding-top: 1em;">
-									<h3>Meus Textos</h3>
-								</header>
+						<div class="col-12 col-12-medium" style="max-width: 85%;">
+							<div class="box" style="display: flex; flex-wrap: wrap; gap: 2em; align-items: flex-start;">
+								<div style="flex: 0 0 210px; max-width: 100%; text-align: center; justify-content: center;">
+									<a href="/qscience/br/meustextos/index.html" class="image" style="display: flex; justify-content: center;">
+										<img src="/qscience/assets/images/logo/share-logo.svg" alt="Ícone de Meus Textos"
+										data-light-src="/qscience/assets/images/logo/share-logo.svg"
+										data-dark-src="/qscience/assets/images/logo/share-logo-dark.svg"
+										style="height: 200px;">
+									</a>
+								</div>
+
+								<div style="flex: 1 1 60%; min-width: 200px; word-break: break-word; overflow-wrap: break-word;">
+									<header class="major" style="display: flex; justify-content: center;">
+										<h3>Meus Textos</h3>
+									</header>
 							
-								<p>Esta seção expõe minha produção intelectual com mais liberdade, ou seja, para além dos muros e formalismos da academia. Reúne meus escritos autorais, organizados por área de conhecimento: ensaios filosóficos e reflexões de caráter mais geral, incursões pela filosofia da física, notas e artigos matemáticos, além de análises (e eventuais opiniões) sobre política e a sociedade.</p>
+									<p>Esta seção expõe minha produção intelectual com mais liberdade, ou seja, para além dos muros e formalismos da academia. Reúne meus escritos autorais, organizados por área de conhecimento: ensaios filosóficos e reflexões de caráter mais geral, incursões pela filosofia da física, notas e artigos matemáticos, além de análises (e eventuais opiniões) sobre política e a sociedade.</p>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -255,7 +283,7 @@ Versão: 3.0 - Data: 08/08/2026
 						<h2>Quem sou eu</h2>
 					</header>
 						
-					<div class="box" style="display: flex; flex-wrap: wrap; gap: 2em; align-items: flex-start; width: 100%; max-width: 900px; margin: 0 auto; border-left: 4px solid #ad0000; border-radius: 10px; padding: 1.5em; overflow: hidden;">
+					<div class="box" style="display: flex; flex-wrap: wrap; gap: 2em; align-items: flex-start; width: 100%; max-width: 900px; margin: 0 auto; border-left: 4px solid var(--border-header); border-radius: 10px; padding: 1.5em; overflow: hidden; justify-content: center;">
 						<div style="flex: 1 1 60%; min-width: 200px; word-break: break-word; overflow-wrap: break-word;">
 							<p style="margin-top: 0;">
 								Olá visitante, formalmente me chamo Willian Bonner (porém, prefiro meu apelido do ensino médio <strong>"Jimi"</strong>), tenho 28 anos e sou de Aracaju-SE. Sou bacharel em Física pela UFS e aguardo a chamada da bolsa para iniciar o mestrado (na UFPE).
@@ -267,8 +295,9 @@ Versão: 3.0 - Data: 08/08/2026
 								Então, depois de anos, coloquei meu plano em ação e criei este site.
 							</p>
 						</div>
-						<div style="flex: 0 0 250px; max-width: 100%; text-align: center;">
-							<img src="/qscience/assets/images/fotos/eu.png" alt="Imagem estilizada de Willian Bonner (autor do site)." style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.6);" />
+						<div style="flex: 0 0 250px; max-width: 100%;">
+							<img src="/qscience/assets/images/fotos/eu.png" alt="Imagem estilizada de Willian Bonner (autor do site)." 
+							style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.6); justify-content: right;" />
 						</div>
 						<footer style="display: block; width: 50%; margin: 0 auto; text-align: center;">
 							<a href="/qscience/br/biografia.html" class="button small">Biografia completa</a>

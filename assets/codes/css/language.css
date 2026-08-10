@@ -1,45 +1,36 @@
 /*
 Criado em: 29/06/2026
-Autor: Jimi	
+Autor: Jimi
 Código: language - contém as configurações do botão de idiomas, tema e "voltar ao topo"
-Última atualização: 08/08/2026
-Versão: 2.2 – Reorganização: tema antes do idioma, apenas ícones
+Última atualização: 10/08/2026
+Versão: 3.1 – Correção: empilha botões em telas < 1024px
 */
 
-/* ========== Botão de idioma especial (retangular) ========== */
+/* ========== Container principal (Grid com 1 coluna) ========== */
 
 .lang-dropdown {
   position: fixed;
   top: 1.2em;
   right: 1.5em;
   z-index: 1001;
-  display: flex;
-  justify-content: right;
-  flex-direction: row;
-  flex-wrap: wrap;          /* permite que o botão "voltar ao topo" ocupe a linha inferior */
-  align-items: center;
-  gap: 8px;
+  display: grid;
+  grid-template-columns: 1fr;      /* única coluna */
+  gap: 8px;                        /* espaçamento vertical entre todas as linhas */
   background: transparent;
+  justify-items: end;              /* alinha todo o conteúdo à direita */
 }
 
-/* --- Ordem dos botões --- */
-.theme-toggle {
-  order: 0;                 /* primeiro (em cima / à esquerda) */
+/* ========== Primeira linha: flex com tema + idioma ========== */
+
+.lang-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;                       /* espaçamento horizontal entre tema e idioma */
+  justify-content: flex-end;      /* alinha os botões à direita */
 }
 
-.lang-dropdown-btn {
-  order: 1;                 /* segundo */
-}
+/* ========== Estilos dos botões (tema, idioma, índice) ========== */
 
-#topbtn {
-  order: 2;                 /* terceiro, forçado a quebrar linha */
-  flex: 0 0 100%;           /* ocupa toda a largura, inicia nova linha */
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.2s ease, opacity 0.3s, visibility 0.3s;
-}
-
-/* --- Estilos dos botões (compactos, só ícone) --- */
 .lang-dropdown-btn,
 .theme-toggle {
   display: flex;
@@ -49,8 +40,9 @@ Versão: 2.2 – Reorganização: tema antes do idioma, apenas ícones
   backdrop-filter: blur(4px);
   border: 1px solid var(--border-light);
   border-radius: 4px;
-  padding: 4px 8px;          /* menos padding para ficar só o ícone */
-  width: 32px;               /* largura ajustada ao ícone */
+  padding: 4px 8px;
+  width: 46px;                    /* largura desejada */
+  max-width: 46px;
   height: 30px;
   cursor: pointer;
   box-shadow: var(--shadow-toggle);
@@ -78,24 +70,28 @@ Versão: 2.2 – Reorganização: tema antes do idioma, apenas ícones
   object-fit: contain;
 }
 
-/* Menu dropdown – mantido igual */
+/* ========== Gaveta de idiomas (animada) ========== */
+
 .lang-dropdown-menu {
-  position: absolute;
+  position: relative;
   z-index: 1002;
-  top: 110%;
-  right: 0;
   background: var(--bg-dropdown);
   border-radius: 8px;
   box-shadow: var(--shadow-dropdown);
-  padding: 6px 0;
-  min-width: 160px;
-  display: none;
+  padding: 0;
+  max-width: 260px;
+  max-height: 0;
+  overflow: hidden;
   list-style: none;
   margin: 0;
-  border: 1px solid var(--border-light);
+  border: none;                    /* sem borda quando fechado */
+  transition: max-height 0.3s ease, padding 0.3s ease;
 }
+
 .lang-dropdown-menu.show {
-  display: block;
+  max-height: 200px;
+  padding: 6px 0;
+  border: 1px solid var(--border-light);
 }
 
 .lang-dropdown-menu li a {
@@ -136,34 +132,130 @@ Versão: 2.2 – Reorganização: tema antes do idioma, apenas ícones
   outline: none !important;
 }
 
-/* ============================================================ */
-/* BOTÃO "VOLTAR AO TOPO"                                       */
-/* ============================================================ */
+/* ========== Botão Índice ========== */
 
-/*#topbtn {
+#toc-toggle {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.7em;
-  font-family: Inconsolata, monospace;
   background: var(--bg-dropdown);
   backdrop-filter: blur(4px);
   border: 1px solid var(--border-light);
   border-radius: 4px;
-  padding: 2px;
-  height: 1px;
+  padding: 4px 8px;
+  width: 100px;
+  max-width: 100px;
+  height: 30px;
   cursor: pointer;
   box-shadow: var(--shadow-toggle);
-  transition: all 0.2s ease, opacity 0.3s, visibility 0.3s;
+  transition: all 0.2s ease;
+  font-family: Inconsolas, monospace;
+  font-weight: 100;
+  font-size: 0.8em;
+  justify-self: end;              /* alinha o botão à direita dentro da célula */
+}
 
-  /* Força a nova linha 
-  flex: 0 0 100%;
-  max-width: 120px;
-  
-  /* Visibilidade controlada pelo JS 
-  opacity: 0;
-  visibility: hidden;
-}*/
+#toc-toggle:hover {
+  background: var(--bg-body);
+  box-shadow: var(--shadow-dropdown);
+}
+
+#toc-toggle img {
+  display: block;
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  margin: 0 0 0 6px;
+}
+
+#toc-toggle .toc-btn-text {
+  display: inline;
+}
+
+/* ========== Gaveta de índice (animada) ========== */
+
+#toc-panel {
+  z-index: 1002;
+  background: var(--bg-dropdown);
+  backdrop-filter: blur(4px);
+  border: none;                    /* sem borda quando fechado */
+  border-radius: 8px;
+  box-shadow: var(--shadow-dropdown);
+  padding: 0;
+  min-width: 200px;
+  max-width: 280px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  pointer-events: none;
+  justify-self: end;
+}
+
+#toc-panel.open {
+  max-height: 60vh;
+  padding: 0.6em 0;
+  pointer-events: auto;
+  border: 1px solid var(--border-light);
+}
+
+#toc-panel ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#toc-panel ul li {
+  margin: 0;
+  padding: 0;
+}
+
+#toc-panel ul li a {
+  display: block;
+  padding: 0.45em 1.2em;
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 0.9em;
+  font-family: Inconsolas, monospace;
+  border-left: 3px solid transparent;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#toc-panel ul li a:hover {
+  background: var(--bg-hover-sidebar, #f1f3f5);
+  color: var(--color-primary, #007bff);
+  border-left-color: var(--color-primary, #007bff);
+}
+
+#toc-panel ul li a.active {
+  background: var(--bg-active-sidebar, #e9ecef);
+  color: var(--color-primary, #007bff);
+  border-left-color: var(--color-primary, #007bff);
+  font-weight: 600;
+}
+
+#toc-panel ul ul {
+  padding-left: 1em;
+}
+#toc-panel ul ul li a {
+  font-size: 0.85em;
+  padding-left: 1.8em;
+}
+
+#toc-panel::-webkit-scrollbar {
+  width: 4px;
+}
+#toc-panel::-webkit-scrollbar-track {
+  background: transparent;
+}
+#toc-panel::-webkit-scrollbar-thumb {
+  background: var(--border-color, #ced4da);
+  border-radius: 4px;
+}
+
+/* ========== Botão "Voltar ao topo" ========== */
 
 #topbtn {
   -moz-appearance: none;
@@ -171,17 +263,26 @@ Versão: 2.2 – Reorganização: tema antes do idioma, apenas ícones
   -ms-appearance: none;
   appearance: none;
   display: inline-flex;
-  align-items: bottom;
+  align-items: center;
+  justify-content: center;
   gap: 0.4em;
   font-size: 0.6em;
   font-family: Inconsolata, monospace;
+  font-weight: 100;
   padding: 1.2em;
+  background: var(--bg-dropdown);
+  backdrop-filter: blur(4px);
+  border: 1px solid var(--border-light);
+  border-radius: 4px;
+  box-shadow: var(--shadow-toggle);
   text-decoration: none;
+  cursor: pointer;
+  max-width: 120px;
+  justify-self: end;
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s, visibility 0.3s;
-  flex: none;             /*não esticar */
-  margin-top: 0.2em;     /* separação dos ícones */
+  margin-top: 0.2em;
 }
 
 #topbtn.visivel {
@@ -191,67 +292,151 @@ Versão: 2.2 – Reorganização: tema antes do idioma, apenas ícones
 
 #topbtn img {
   display: block;
-  align-items: center;
   height: 1.1em;
   width: 1.1em;
   object-fit: contain;
 }
 
+#topbtn .topbtn-text {
+  display: inline;
+}
+
 /* ============================================================ */
-/* RESPONSIVO – empilhar em telas pequenas                      */
+/* RESPONSIVO – tela menor que 1024px                           */
 /* ============================================================ */
 
-@media screen and (max-width: 736px) {
+@media screen and (max-width: 1024px) {
   .lang-dropdown {
-    flex-direction: column;       /* empilha todos os botões verticalmente */
-    align-items: flex-end;
     gap: 6px;
     top: 0.8em;
     right: 1em;
   }
 
-  .lang-dropdown-btn {
-  display: flex;
-  align-items: right;
-  justify-content: center;
-  background: var(--bg-dropdown);
-  backdrop-filter: blur(4px);
-  border: 1px solid var(--border-light);
-  padding: 6px 12px;
-  border-radius: 4px;
-  cursor: pointer;
-  box-shadow: var(--shadow-toggle);
-  transition: all 0.2s ease;
-  width: 32px;
-  height: 28px;
+  /* ---- Empilha tema e idioma verticalmente ---- */
+  .lang-top {
+    flex-direction: column;      /* empilha verticalmente */
+    align-items: flex-end;       /* alinha à direita */
+    gap: 6px;                    /* espaçamento vertical entre eles */
+  }
+
+  .lang-dropdown-btn,
+  .theme-toggle {
+    width: 32px;
+    height: 28px;
+    padding: 2px 4px;
+  }
+  .lang-dropdown-btn img {
+    width: 20px;
+    height: 14px;
+  }
+  .theme-toggle .theme-img {
+    width: 16px;
+    height: 16px;
+  }
+
+  #toc-toggle {
+    width: 32px;
+    height: 28px;
+    padding: 2px 4px;
+    font-size: 0;
+  }
+  #toc-toggle img {
+    width: 16px;
+    height: 16px;
+    margin: 0;
+  }
+  #toc-toggle .toc-btn-text {
+    display: none;
+  }
+
+  #toc-panel {
+    min-width: 180px;
+  }
+
+  #topbtn {
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    max-width: none;
+    margin: 0;
+    font-size: 0;
+    border-radius: 4px;
+    background: var(--bg-dropdown);
+    backdrop-filter: blur(4px);
+    border: 1px solid var(--border-light);
+    box-shadow: var(--shadow-toggle);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-self: end;
+  }
+  #topbtn .topbtn-text {
+    display: none;
+  }
+  #topbtn img {
+    width: 24px;
+    height: 24px;
+    display: block;
+    object-fit: contain;
+    margin: 0;
+  }
 }
 
-.theme-toggle,
+/* ============================================================ */
+/* RESPONSIVO – mobile (até 736px) – mantido igual              */
+/* ============================================================ */
+
+@media screen and (max-width: 736px) {
+  .lang-dropdown {
+    gap: 6px;
+    top: 0.8em;
+    right: 1em;
+  }
+
+  /* Já está empilhado, mas garantimos a consistência */
+  .lang-top {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+  }
+
+  .lang-dropdown-btn,
+  .theme-toggle,
+  #toc-toggle,
   #topbtn {
     width: 32px;
     height: 28px;
-    flex: none;                   /* remove o stretch da linha inferior */
-    padding: 2px 4px;
+    padding: 6px;
   }
 
   .lang-dropdown-btn img {
     width: 20px;
     height: 14px;
   }
-
   .theme-toggle .theme-img {
     width: 16px;
     height: 16px;
   }
-
-  #topbtn img {
+  #toc-toggle img {
     width: 16px;
     height: 16px;
+    margin: 0;
+  }
+  #toc-toggle .toc-btn-text {
+    display: none;
   }
 
-  .lang-dropdown-menu {
-    top: calc(100% + 8px);
-    right: 0;
-    min-width: 140px;
+  #toc-panel {
+    min-width: 160px;
+    max-width: 220px;
+  }
+  #toc-panel ul li a {
+    font-size: 0.85em;
+    padding: 0.4em 1em;
+  }
+
+  #topbtn img {
+    width: 24px;
+    height: 24px;
   }
 }

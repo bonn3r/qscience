@@ -1,9 +1,9 @@
 /*
   rightbar.js – Barra lateral direita unificada
-  Versão: 1.0
-  Inclui: Tema (claro/escuro), idioma (dropdown), botão voltar ao topo
+  Versão: 2.0 – Adaptado para CSS Grid (layout definitivo)
+  Inclui: Tema (claro/escuro), idioma (dropdown), botão voltar ao topo, índice
   Autor: Jimi
-  Última atualização: 06/08/2026
+  Última atualização: 10/08/2026
 */
 
 // ============================================================
@@ -71,7 +71,7 @@
     const userLang = navigator.language || navigator.languages[0] || 'en';
     const targetPath = userLang.toLowerCase().startsWith('pt') ? '/qscience/br/' : '/qscience/en/';
     const countdownEl = document.getElementById('countdown');
-    /*let seconds = 1;*/
+    let seconds = 3; // ajuste conforme necessário
 
     const interval = setInterval(function() {
       seconds--;
@@ -100,8 +100,12 @@
     btn.addEventListener('click', function(e) {
       e.stopPropagation();
       menu.classList.toggle('show');
-      const arrow = this.querySelector('.arrow');
-      if (arrow) arrow.classList.toggle('open');
+
+      // Fecha o painel de índice se o idioma for aberto
+      if (menu.classList.contains('show')) {
+        const tocPanel = document.getElementById('toc-panel');
+        if (tocPanel) tocPanel.classList.remove('open');
+      }
     });
 
     document.addEventListener('click', function() {
@@ -135,7 +139,7 @@
 
 
 // ============================================================
-// 3. BOTÃO "VOLTAR AO TOPO" – ATUALIZADO
+// 3. BOTÃO "VOLTAR AO TOPO"
 // ============================================================
 (function() {
   'use strict';
@@ -151,10 +155,7 @@
     const hPage = document.documentElement.scrollHeight;
     const hJanela = window.innerHeight;
 
-    // ============================================================
-    // 🔥 CORREÇÃO: Se a página NÃO tem rolagem, esconde o botão
-    // e interrompe a execução imediatamente.
-    // ============================================================
+    // Se a página NÃO tem rolagem, esconde o botão
     if (hPage <= hJanela) {
       btn.classList.remove('visivel');
       if (timeoutId) {
@@ -212,3 +213,76 @@
   window.addEventListener('load', verifyEndPage);
   window.addEventListener('resize', verifyEndPage);
 })();
+
+
+// ============================================================
+// 4. ÍNDICE (TOC) – Painel e navegação
+// ============================================================
+document.addEventListener('DOMContentLoaded', function() {
+  const toggleBtn = document.getElementById('toc-toggle');
+  const panel = document.getElementById('toc-panel');
+
+  // ----- Controle do painel de índice -----
+  if (toggleBtn && panel) {
+    toggleBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const isOpening = !panel.classList.contains('open');
+      panel.classList.toggle('open');
+      // Fecha o menu de idiomas se o índice for aberto
+      if (isOpening) {
+        const langMenu = document.getElementById('langDropdownMenu');
+        if (langMenu) langMenu.classList.remove('show');
+      }
+    });
+
+    // Fechar ao clicar em um link
+    panel.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', function() {
+        panel.classList.remove('open');
+      });
+    });
+
+    // Fechar ao clicar fora
+    document.addEventListener('click', function(e) {
+      if (!panel.contains(e.target) && !toggleBtn.contains(e.target)) {
+        panel.classList.remove('open');
+      }
+    });
+  }
+
+  // ----- Destaque automático do item ativo (scroll) -----
+  if (panel) {
+    const sections = document.querySelectorAll('section[id], div[id]');
+    const navLinks = panel.querySelectorAll('a');
+
+    function updateActiveLink() {
+      let currentId = '';
+      sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= 120) {
+          currentId = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + currentId) {
+          link.classList.add('active');
+          link.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+        }
+      });
+    }
+
+    let ticking = false;
+    window.addEventListener('scroll', function() {
+      if (!ticking) {
+        window.requestAnimationFrame(function() {
+          updateActiveLink();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+    updateActiveLink(); // inicial
+  }
+});

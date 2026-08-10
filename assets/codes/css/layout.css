@@ -115,19 +115,25 @@ Código: layout - configura o estilo do main, side bar, header, footer, banner e
   transition: left 0.5s ease;
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
   border: 0;
-  display: block;
-  height: 4.5em;
-  line-height: 4.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 35px;
+  line-height: 35px;
+  background: var(--bg-body);
+  border-radius: 0.375em;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  border: 1px solid #e0e0e0;
   outline: 0;
   overflow: hidden;
   position: absolute;
   text-align: center;
-  text-indent: -10em;
+  text-indent: -12em;
   white-space: nowrap;
   top: 1em;
-  width: 4.5em;
   z-index: 10001;
-  left: 26em;
+  left: 27em;
 }
 
 /* Ícone base – hambúrguer */
@@ -143,7 +149,7 @@ Código: layout - configura o estilo do main, side bar, header, footer, banner e
   font-family: 'Font Awesome 5 Free';
   font-weight: 900;
   content: '\f0c9';
-  font-size: 1.5rem;
+  font-size: 1rem;
   height: inherit;
   left: 0;
   line-height: inherit;
@@ -216,65 +222,9 @@ Código: layout - configura o estilo do main, side bar, header, footer, banner e
 }
 
 /* ======================================================================= */
-/* BREAKPOINTS                                                             */
+/* BREAKPOINTS - Mobile configuration                                      */
 /* ======================================================================= */
 
-/* 1680px – Sidebar 24em */
-@media screen and (max-width: 1680px) {
-  #sidebar {
-    width: 24em;
-  }
-  #sidebar.inactive {
-    left: -24em;
-  }
-  #sidebar > .inner {
-    padding: 1.66667em 1.66667em 1.33333em 1.66667em;
-    width: 24em;
-  }
-  #sidebar > .inner > .alt {
-    margin: -1.66667em 0 3.33333em -1.66667em;
-    padding: 1.66667em;
-    width: calc(100% + 3.33333em);
-  }
-  #sidebar .toggle {
-    height: 4em;
-    line-height: 4em;
-    width: 4em;
-    left: 24em;
-    top: 1em;
-  }
-  #sidebar .toggle:before {
-    font-size: 1.3rem;
-  }
-}
-
-/* 1280px – Sidebar 26em (padrão) – apenas ajustes de espaçamento */
-@media screen and (max-width: 1280px) {
-  #sidebar {
-    width: 26em;
-  }
-  #sidebar.inactive {
-    left: -26em;
-  }
-  #sidebar > .inner {
-    width: 26em;
-  }
-  #sidebar .toggle {
-    height: 4em;
-    line-height: 4em;
-    width: 4em;
-    left: 26em;
-    top: 0.5em;
-  }
-  #sidebar .toggle:before {
-    font-size: 1.3rem;
-  }
-  body.is-preload #sidebar {
-    display: none;
-  }
-}
-
-/* 736px (mobile) */
 @media screen and (max-width: 736px) {
   #sidebar {
     width: 22em;
@@ -286,11 +236,32 @@ Código: layout - configura o estilo do main, side bar, header, footer, banner e
     width: 22em;
   }
   #sidebar .toggle {
-    height: 3.5em;
-    line-height: 3.5em;
-    width: 3.5em;
-    left: 22em;
-    top: 0.5em;
+    text-decoration: none;
+  -moz-transition: left 0.5s ease;
+  -webkit-transition: left 0.5s ease;
+  -ms-transition: left 0.5s ease;
+  transition: left 0.5s ease;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  border: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 35px;
+  line-height: 35px;
+  background: var(--bg-body);
+  border-radius: 0.375em;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  border: 1px solid #e0e0e0;
+  outline: 0;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  text-indent: -12em;
+  white-space: nowrap;
+  top: 1em;
+  z-index: 10001;
+  left: 23em;
   }
   #sidebar .toggle:before {
     font-size: 1.1rem;

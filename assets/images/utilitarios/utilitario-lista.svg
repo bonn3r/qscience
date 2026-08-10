@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+
+<svg
+   width="800px"
+   height="800px"
+   viewBox="0 0 24 24"
+   version="1.1"
+   id="svg5"
+   sodipodi:docname="utilitario-lista.svg"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <defs
+     id="defs5" />
+  <sodipodi:namedview
+     id="namedview5"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.96625"
+     inkscape:cx="400"
+     inkscape:cy="400"
+     inkscape:current-layer="svg5" />
+  <title
+     id="title1">List</title>
+  <g
+     id="g5"
+     transform="matrix(1.358763,0,0,1.3757045,-4.305156,-4.508454)"
+     style="stroke-width:0.731418">
+    <line
+       x1="10"
+       y1="7"
+       x2="19"
+       y2="7"
+       id="Path"
+       stroke="#0c0310"
+       stroke-width="1.46284"
+       stroke-linecap="round" />
+    <line
+       x1="5"
+       y1="7"
+       x2="6"
+       y2="7"
+       id="line1"
+       stroke="#0c0310"
+       stroke-width="1.46284"
+       stroke-linecap="round" />
+    <line
+       x1="10"
+       y1="17"
+       x2="19"
+       y2="17"
+       id="line2"
+       stroke="#0c0310"
+       stroke-width="1.46284"
+       stroke-linecap="round" />
+    <line
+       x1="5"
+       y1="17"
+       x2="6"
+       y2="17"
+       id="line3"
+       stroke="#0c0310"
+       stroke-width="1.46284"
+       stroke-linecap="round" />
+    <line
+       x1="10"
+       y1="12"
+       x2="19"
+       y2="12"
+       id="line4"
+       stroke="#0c0310"
+       stroke-width="1.46284"
+       stroke-linecap="round" />
+    <line
+       x1="5"
+       y1="12"
+       x2="6"
+       y2="12"
+       id="line5"
+       stroke="#0c0310"
+       stroke-width="1.46284"
+       stroke-linecap="round" />
+  </g>
+  <g
+     id="Page-1"
+     stroke="none"
+     stroke-width="1"
+     fill="none"
+     fill-rule="evenodd"
+     style="display:none">
+    <g
+       id="List">
+      <rect
+         id="Rectangle"
+         fill-rule="nonzero"
+         x="0"
+         y="0"
+         width="24"
+         height="24" />
+    </g>
+  </g>
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title>List</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+</svg>
