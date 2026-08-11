@@ -21,38 +21,36 @@ Versão: 2.0 - Data: 24/07/2026
 		
 		<div id="sidebar"></div>
 
-		<!-- Seletor de Idiomas -->
 		<div class="lang-dropdown" id="langDropdown">
-			<!-- Botão de alternância de tema -->
-			<button class="theme-toggle" id="theme-toggle" aria-label="Alternar modo noturno">
-				<img src="/qscience/assets/images/logo/moon-logo.svg"
-				data-light-src="/qscience/assets/images/logo/moon-logo.svg"
-				data-dark-src="/qscience/assets/images/logo/sun-logo.svg"
-				alt="Alternar tema"
-				class="theme-img"
-				id="themeIcon" />
-			</button>
+			<div class="lang-top">
+				<button class="theme-toggle" id="theme-toggle" aria-label="Alternar modo noturno">
+					<img src="/qscience/assets/images/logo/moon-logo.svg"
+		            data-light-src="/qscience/assets/images/logo/moon-logo.svg"
+		            data-dark-src="/qscience/assets/images/logo/sun-logo.svg"
+            		alt="Alternar tema"
+		            class="theme-img"
+		            id="themeIcon" />
+				</button>
 
-			<button class="lang-dropdown-btn" id="langDropdownBtn" aria-haspopup="true" aria-expanded="false">
-				<img src="/qscience/assets/images/logo/brazilian-logo.svg" alt="Português" style="width:24px; height:16px; border-radius:2px;">
-			</button>
-		
-			<button id="topbtn" aria-label="Voltar ao topo" class="primary">
-				Voltar ao topo
-			</button>
-			
-			<ul class="lang-dropdown-menu" id="langDropdownMenu" role="menu">
-				<li role="none">
-					<a href="/qscience/br/" role="menuitem" class="active-lang">
-					<img src="/qscience/assets/images/logo/brazilian-logo.svg" alt="Português">Português</a>
-				</li>
-		
-				<li role="none">
-					<a href="/qscience/en/" role="menuitem">
-					<img src="/qscience/assets/images/logo/united-kingdom-logo.svg" alt="English">English</a>
-				</li>
-			</ul>
-		</div>
+				<button class="lang-dropdown-btn" id="langDropdownBtn" aria-haspopup="true" aria-expanded="false">
+					<img src="/qscience/assets/images/logo/brazilian-logo.svg" alt="Português" style="width:24px; height:16px; border-radius:2px;">
+				</button>
+			</div>
+
+	        <!-- Gaveta de idiomas (agora antes do botão Índice) -->
+	        <ul class="lang-dropdown-menu" id="langDropdownMenu" role="menu">
+		        <li role="none">
+			        <a href="/qscience/br/" role="menuitem" class="active-lang">
+			        <img src="/qscience/assets/images/logo/brazilian-logo.svg" alt="Português">Português</a>
+		        </li>
+
+		        <li role="none">
+			        <a href="/qscience/en/arxiv.html" role="menuitem">
+			        <img src="/qscience/assets/images/logo/united-kingdom-logo.svg" alt="English">English</a>
+		        </li>
+	        </ul>
+        </div>
+
 
 		<!-- Main -->
 		<div id="main">
@@ -60,18 +58,29 @@ Versão: 2.0 - Data: 24/07/2026
 
 			<!-- Cabeçalho -->
 				<header id="header">
-					<a href="/qscience/br/index.html" class="logo">
+					<span class="logo">
 						<img src="/qscience/assets/images/logo/cat-logo.svg" alt="Gato logomarca do site" style="height: 2em; width: auto; vertical-align: middle; margin-right: 0.8em;">
-						<span class="letra-q">Q</span>-Science
-					</a>
+						<a href="/qscience/br/index.html" style="color: var(--text-title);"><span class="letra-q">Q</span>-Science</a>
+					</span>
 									
 					<ul class="icons">
 						<li>
-							<a href="/qscience/br/arxiv.html" class="icon brands">
+							<button id="topbtn" aria-label="Voltar ao topo">
+								<span class="topbtn-text">Voltar ao topo</span>
+								<img src="/qscience/assets/images/utilitarios/utilitario-seta.svg"
+								data-light-src="/qscience/assets/images/utilitarios/utilitario-seta.svg"
+								data-dark-src="/qscience/assets/images/utilitarios/utilitario-seta-dark.svg"
+								alt="">
+							</button>
+						</li>
+						
+						<li>
+							<a href="#" class="icon brands">
 								<img src="/qscience/assets/images/logo/arxiv-logo.svg" alt="Logomarca do arXiv" width="20" height="20" style="vertical-align:middle;">
 								<span class="label">Arxiv</span>
 							</a>
 						</li>
+							
 						<li>
 							<a href="https://github.com/bonn3r" target="_blank" rel="noopener noreferrer" class="icon brands">
 								<img src="/qscience/assets/images/logo/github-logo.svg"
@@ -84,6 +93,7 @@ Versão: 2.0 - Data: 24/07/2026
 								<span class="label">Github</span>
 							</a>
 						</li>
+							
 						<li>
 							<a href="http://lattes.cnpq.br/3294938329763314" target="_blank" rel="noopener noreferrer" class="icon brands">
 								<img src="/qscience/assets/images/logo/lattes-logo.svg"
@@ -96,12 +106,14 @@ Versão: 2.0 - Data: 24/07/2026
 								<span class="label">Lattes</span>
 							</a>
 						</li>
+						
 						<li>
 							<a href="https://linkedin.com/in/willianbonnerbsc" target="_blank" rel="noopener noreferrer" class="icon brands">
 								<img src="/qscience/assets/images/logo/linkedin-logo.svg" alt="Logomarca Linkedin" width="20" height="20" style="vertical-align:middle;">
 								<span class="label">Linked</span>
 							</a>
 						</li>
+						
 						<li>
 							<a href="https://orcid.org/0009-0007-7458-8512" target="_blank" rel="noopener noreferrer" class="icon brands">
 								<img src="/qscience/assets/images/logo/orcid-logo.svg" alt="Logomarca Orcid" width="20" height="20" style="vertical-align:middle;">
@@ -111,16 +123,20 @@ Versão: 2.0 - Data: 24/07/2026
 					</ul>
 				</header>
 
+				
+
                 <section>
                 
                     <span class="image main">
-                        <img src="/qscience/assets/images/fotos/arxiv-foto.svg" alt="" height="150px"
+                        <img src="/qscience/assets/images/fotos/arxiv-foto.svg" alt="" height="180px"
                         data-light-src="/qscience/assets/images/fotos/arxiv-foto.svg"
                         data-dark-src="/qscience/assets/images/fotos/arxiv-foto-dark.svg"
                         />
                     </span>
 
-                    <p>Até o momento, o Arxiv não possui uma página dedicada para exibir os artigos lá publicados. Portanto, resolvi fazer minha própria página "todos meus artigos". Seguem meus pré-prints publicados no Arxiv.</p>
+					<span class="up-date">Atualizado em: 10/08/2026</span><span class="up-date" style="background-color: var(--bg-tag-green); margin-left: 0.3em;">Número de artigos: 0</span>
+
+                    <p class="paragrafo" style="margin-top: 3em; margin-bottom: 3em;">Até o momento, o Arxiv não possui uma página dedicada para exibir os artigos lá publicados. Portanto, resolvi fazer minha própria página "todos meus artigos". Seguem meus pré-prints publicados no Arxiv.</p>
                     
                     <!-- ========== Card exemplo ========== -->
                     <div class="box article-card">
@@ -214,6 +230,10 @@ primaryClass = {quant-ph}
 
             </section>
 			</div>
+			
+			<footer id="footer" style="display: flex; justify-content: center; font-size: 0.8em; font-family: Inconsolata, monospace;">
+					<p class="copyright">&copy;2026 Jimi.7z. All rights reserved. Created by: <a href="https://html5up.net/editorial" target="_blank" rel="noopener noreferrer">HTML5 UP</a>. Redesign by: Willian Bonner.</p>
+				</footer>
 		</div>
 
 		<!-- Scripts -->
@@ -225,6 +245,7 @@ primaryClass = {quant-ph}
 		<script src="/qscience/assets/codes/js/language.js"></script>
         <script src="/qscience/assets/codes/js/gaveta.js"></script>
 		<script src="/qscience/assets/codes/js/theme.js"></script>
+		<script src="/qscience/assets/codes/js/rightbar.js"></script>
 		<script src="/qscience/assets/codes/js/main.js"></script>
 
 	</body>

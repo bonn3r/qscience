@@ -340,6 +340,8 @@ Código: layout - configura o estilo do main, side bar, header, footer, banner e
 }
 
 #header .icons {
+  display: flex;
+  justify-content: end;
   text-align: right;
 }
 

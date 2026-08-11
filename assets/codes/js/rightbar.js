@@ -71,7 +71,7 @@
     const userLang = navigator.language || navigator.languages[0] || 'en';
     const targetPath = userLang.toLowerCase().startsWith('pt') ? '/qscience/br/' : '/qscience/en/';
     const countdownEl = document.getElementById('countdown');
-    let seconds = 3; // ajuste conforme necessário
+    let seconds = 1; // ajuste conforme necessário
 
     const interval = setInterval(function() {
       seconds--;

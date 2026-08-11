@@ -21,17 +21,19 @@ Código: theme.css - Variáveis de tema para modo claro e escuro
   --bg-highlight-sidebar: #eff1f2;
   --bg-toggle: rgba(222, 225, 226, 0.75);
   --bg-drawer-button: #e0e0e0;
+  --bg-tag-green: green;
 
   /* Textos principais */
   --text-body: #383a3b;
   --text-wp: #ffffff;
   --text-botton: #3b3b3b;
   --text-title: #3d4449;
-  --text-link: #3a3636;
+  --text-link: #0000ff;
   --text-menu: #3b3b3b;
   --text-menu-level2: #626567;
   --text-menu-level3: #828586;
   --text-input: #7f888f;
+  --text-black: #000000;
 
   /* Textos secundários */
   --text-muted: #9fa3a6;
@@ -88,6 +90,7 @@ Código: theme.css - Variáveis de tema para modo claro e escuro
   --bg-toggle: rgba(255, 255, 255, 0.15);
   --bg-drawer-button: #444444;
   --border-light-b: #f1eded;
+  --bg-tag-green: rgb(0, 88, 0);
 
   --text-body: #cccccc;
   --text-wp: #dddddd;
@@ -97,6 +100,7 @@ Código: theme.css - Variáveis de tema para modo claro e escuro
   --text-menu-level2: #bbbbbb;
   --text-menu-level3: #999999;
   --text-input: #cccccc;
+  --text-black: #ffffff;
 
   --text-muted: #888888;
   --text-caption: #aaaaaa;

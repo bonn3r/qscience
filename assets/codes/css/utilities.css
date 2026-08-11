@@ -30,32 +30,30 @@ Versão: 2.0
   color: var(--text-title); /* ou a cor que desejar */
 }
 
+.letra-q:hover{
+  color: var(--color-primary);
+}
+
 /*paragráfo no <p>*/
-.pgf {
+.paragrafo {
     text-indent: 2em;
   }
 
 .up-date {
     background: var(--color-primary);
-    color: #fff;
-    font-size: 0.6em;
-    padding: 2px 8px;
+    color: #000000;
+    font-size: 0.5em;
+    padding: 0 4px 0 4px;
     border-radius: 4px;
     border: 1.5px solid var(--border-light-b);
+    color: var(--text-wp);
     font-family: Inconsolata, monospace;
     text-decoration: none;
     display: inline-flex;      /* para alinhar texto e ícone */
     align-items: center;
-    gap: 0.5em;                /* espaço entre texto e ícone */
-    transition: opacity 0.3s ease, background 0.2s;
 }
 
-.up-date:hover {
-    opacity: 0.85;
-    color: #fff;
-}
-
-/* Ícone dentro do botão */
-.up-date i {
-    font-size: 0.9em;
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 7.7em;
 }
