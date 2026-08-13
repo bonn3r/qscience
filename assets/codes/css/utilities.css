@@ -37,6 +37,7 @@ Versão: 2.0
 /*paragráfo no <p>*/
 .paragrafo {
     text-indent: 2em;
+    text-align: justify;
   }
 
 .up-date {

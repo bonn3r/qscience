@@ -204,10 +204,15 @@ sup {
 }
 
 blockquote {
-  border-left: solid 3px var(--border-color);
-  font-style: italic;
-  margin: 0 0 2em 0;
-  padding: 0.5em 0 0.5em 2em;
+  border-left: solid 4px var(--border-color);
+  border-right: solid 4px var(--border-color);
+  border-top: solid 1px var(--border-color);
+  border-bottom: solid 1px var(--border-color);
+  border-radius: 6px;
+  text-align: justify;
+  font-family: Inconsolas, monospace;
+  margin: 0 2em 0em 2em;
+  padding: 0.5em 1.5em 0.5em 1.5em;
 }
 
 code {
