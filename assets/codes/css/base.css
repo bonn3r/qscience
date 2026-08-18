@@ -93,9 +93,7 @@ a {
   -webkit-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
   -ms-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
   transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
-  color: var(--text-link);
-  font-family: Inconsolata, monospace;
-  font-weight: 600;
+  color: var(--color-saberse);
   text-decoration: none;
 }
 a:hover {

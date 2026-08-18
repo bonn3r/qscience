@@ -141,6 +141,31 @@ Versão: 2.0 – Adaptado para CSS Grid (layout delegado ao language.css)
   border-radius: 4px;
 }
 
+.marcador{
+    background: var(--color-marcador);
+    font-size: 0.6em;
+    padding: 0 6px 0 6px;
+    border-radius: 4px;
+    border: 1.5px solid var(--border-light);
+    color: var(--color-marc-letra);
+    font-family: Inconsolata, monospace;
+    text-decoration: none;
+    display: inline-flex;      /* para alinhar texto e ícone */
+    align-items: center;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+.post-date{
+  font-size: 0.8em;
+  margin: 0.5em 0 0.5em 0 
+}
+
+.post-description {
+    margin-top: 2em;
+    margin-bottom: 1em;
+}
+
 /* ============================================================ */
 /* RESPONSIVIDADE – telas menores que 1024px                    */
 /* ============================================================ */
@@ -195,4 +220,156 @@ Versão: 2.0 – Adaptado para CSS Grid (layout delegado ao language.css)
     font-size: 0.85em;
     padding: 0.4em 1em;
   }
+}
+
+/* ============================================================ */
+/* SELETOR DESLIZANTE (LISTA / GRADE)                           */
+/* ============================================================ */
+
+/* Wrapper para alinhar o seletor à direita */
+.view-toggle-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 2rem;
+}
+
+/* Track (fundo do seletor) */
+.toggle-slider {
+    display: inline-flex;
+    position: relative;
+    background-color: var(--bg-slider);
+    border-radius: 30px;
+    padding: 4px;
+    cursor: pointer;
+    min-width: 180px; /* Ajuste conforme o tamanho do texto */
+    user-select: none;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+/* Indicador branco que desliza */
+.toggle-highlight {
+    position: absolute;
+    top: 4px;
+    bottom: 4px;
+    left: 4px;
+    width: calc(50% - 4px); /* Ocupa exatamente metade do espaço */
+    background-color: #ffffff;
+    border-radius: 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1;
+}
+
+/* Quando o modo GRADE está ativo, o indicador desliza para a direita */
+.toggle-slider.grid-active .toggle-highlight {
+    transform: translateX(100%);
+}
+
+/* Estilos dos textos (labels) */
+.toggle-label {
+    flex: 1;
+    text-align: center;
+    padding: 6px 16px;
+    z-index: 2; /* Fica acima do indicador */
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #888;
+    transition: color 0.3s ease;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+}
+
+/* Cor do texto quando a opção está ativa */
+.toggle-label.active {
+    color: #222; /* Altere para a cor principal do seu site, ex: #007bff */
+}
+
+/* Ícones dentro do label (opcional) */
+.toggle-label i {
+    margin-right: 6px;
+}
+
+/* ============================================
+   CONTAINER DE POSTS - LISTA E GRADE
+   ============================================ */
+
+/* --- MODO LISTA (padrão) --- */
+.posts-container.list-view {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.posts-container.list-view .post-item {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 1.5rem;
+    padding-left: 1em;
+
+}
+
+/* --- MODO GRADE --- */
+.posts-container.grid-view {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.posts-container.grid-view .post-item {
+    border: 1px solid #e0e0e0;
+    background-color: var(--bg-grade) !important;
+    border-radius: 8px;
+    padding: 1.5rem;
+    background: #f9f9f9;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Garante altura consistente entre cards */
+}
+
+.posts-container.grid-view .post-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Opcional: esconder a descrição no modo grade e mostrar apenas no hover */
+.posts-container.grid-view .post-description {
+    display: none;
+    margin-top: 2em;
+    margin-bottom: 1em;
+    color: var(--text-color);
+}
+
+.posts-container.grid-view .post-item:hover .post-description {
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+/* ============================================
+   RESPONSIVIDADE
+   ============================================ */
+
+/* Telas muito pequenas (celulares) */
+@media (max-width: 480px) {
+    .toggle-slider {
+        min-width: 140px;
+    }
+    .toggle-label {
+        font-size: 0.8rem;
+        padding: 4px 10px;
+    }
+}
+
+/* Tablets e celulares grandes */
+@media (max-width: 768px) {
+    .posts-container.grid-view {
+        grid-template-columns: 1fr; /* Grade vira coluna única */
+    }
+
+    .posts-container.grid-view .post-description {
+        display: block; /* Mostra a descrição mesmo no modo grade para melhor leitura */
+    }
 }

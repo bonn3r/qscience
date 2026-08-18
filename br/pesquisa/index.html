@@ -153,14 +153,14 @@ Versão: 3.0
 				<section>
                     <div class="content">
 						<header style="text-align: center;">
-							<span class="image main">
+							<span class="image fit">
                                 <img src="/qscience/br/pesquisa/assets/images-capas/capa-pesquisa-page.svg" alt="" height="220px"
                                 data-light-src="/qscience/br/pesquisa/assets/images-capas/capa-pesquisa-page.svg"
                                 data-dark-src="/qscience/br/pesquisa/assets/images-capas/capa-pesquisa-page-dark.svg"/>
                             </span>
 						</header>
 
-                        <div class="up-date" style="margin-bottom: 4em;">Atualizado em: 13/08/2026</div>
+                        <div class="up-date" style="margin-bottom: 4em;">Atualizado em: 14/08/2026</div>
                         
                         <p class="paragrafo">Somos uma espécie capaz de olhar para o céu e perguntar <strong>por que ele é azul?</strong> A ciência de base nos oferece uma estrutura teórica para tentar respondê-la, ao mesmo tempo que confronta nossas hipóteses com evidências extraídas do mundo ao nosso redor. E, acima de tudo, um cientista gosta de falar para todo mundo qual é o sentido e o significado do seu trabalho.</p>
 
@@ -174,60 +174,50 @@ Versão: 3.0
 						<h2>Trabalhos mais recentes</h2>
 					</header>
 
-					<p class="paragrafo" style="margin-bottom: 3em;">Abaixo, as páginas com as postagens cientificas mais recentes.</p>
+					<!-- Botão de alternância -->
+					<div class="view-toggle-wrapper">
+    					<div class="toggle-slider" id="viewToggle">
+        					<!-- Opção Lista -->
+        					<span class="toggle-label active" data-view="list">
+            					<i class="fas fa-list"></i> Lista
+        					</span>
+        
+							<!-- Opção Grade -->
+        					<span class="toggle-label" data-view="grid">
+            					<i class="fas fa-th"></i> Grade
+        					</span>
+        
+							<!-- Indicador que vai deslizar -->
+							 <div class="toggle-highlight"></div>
+						</div>
+					</div>
 
-									<div class="posts">
-										<article>
-											<a href="#" class="image">
-												<img src="/qscience/br/pesquisa/assets/images-miniposts/minipost-tcc.svg" alt=""
-												data-light-src="/qscience/br/pesquisa/assets/images-miniposts/minipost-tcc.svg"
-												data-dark-src="/qscience/br/pesquisa/assets/images-miniposts/minipost-tcc-dark.svg"/>
-											</a>
-											<h3>Meu trabalho de conclusão de curso</h3>
-											<p style="text-align: justify;">Post com principais resultados do meu TCC, pequenos comentários sobre o processo de escrita e disponibilização do arquivo final.</p>
-											
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic02.jpg" alt="" /></a>
-											<h3>Nulla amet dolore</h3>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-											<ul class="actions">
-												<li><a href="#" class="button">More</a></li>
-											</ul>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic03.jpg" alt="" /></a>
-											<h3>Tempus ullamcorper</h3>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-											<ul class="actions">
-												<li><a href="#" class="button">More</a></li>
-											</ul>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic04.jpg" alt="" /></a>
-											<h3>Sed etiam facilis</h3>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-											<ul class="actions">
-												<li><a href="#" class="button">More</a></li>
-											</ul>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic05.jpg" alt="" /></a>
-											<h3>Feugiat lorem aenean</h3>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-											<ul class="actions">
-												<li><a href="#" class="button">More</a></li>
-											</ul>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic06.jpg" alt="" /></a>
-											<h3>Amet varius aliquam</h3>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-											<ul class="actions">
-												<li><a href="#" class="button">More</a></li>
-											</ul>
-										</article>
-									</div>
+					<!-- Container dos posts -->
+					<section class="posts-container list-view">
+						
+						<!-- Cada post é um item -->
+    					<article class="post-item">
+        					<h4><a href="/qscience/br/pesquisa/tcc/tcc.html">Dinâmica em Lasers: Equações de Taxa e de Maxwell-Bloch</a></h4>
+
+							<span class="post-date">27 de Fevereiro, 2026</span>
+        				
+							<div class="post-tags">
+            					<span class="marcador">Pesquisa</span>
+            					<span class="marcador">Graduação</span>
+								<span class="marcador">TCC</span>
+        					</div>
+        					
+							<p class="post-description">Breves comentários sobre o processo de escrita do meu TCC, reuniões e disponibilização do arquivo final.<br><br><span style="font-family: Inconsolata, monospace;"><strong>Título:</strong> Análise de Sistemas Sinâmicos em Laser: Estudos das Equações de Taxa e de Maxwell-Bloch</span>.</p>
+    					</article>
+    					
+						<!-- Repita para outros posts -->
+					</section>
+				</section>
+
+				<section>
+					<header>
+						<h2>teste!</h2>
+					</header>
 				</section>
 				
 				<footer id="footer" style="display: flex; justify-content: center; font-size: 0.8em; font-family: Inconsolata, monospace;">

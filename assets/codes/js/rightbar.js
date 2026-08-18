@@ -286,3 +286,78 @@ document.addEventListener('DOMContentLoaded', function() {
     updateActiveLink(); // inicial
   }
 });
+
+// ============================================================
+// 5. ALTERNÂNCIA ENTRE LISTA E GRADE NAS PÁGINAS
+// ============================================================
+
+/**
+ * Sistema de alternância entre visualização LISTA e GRADE
+ * com persistência no localStorage e animação suave do seletor.
+ */
+document.addEventListener('DOMContentLoaded', function() {
+
+    // ----- Elementos do DOM -----
+    const container = document.querySelector('.posts-container');
+    const toggleSlider = document.getElementById('viewToggle');
+    const labels = toggleSlider.querySelectorAll('.toggle-label');
+    const STORAGE_KEY = 'qscience_view_mode';
+
+    // Se o container não existir, interrompe a execução (evita erros)
+    if (!container || !toggleSlider) {
+        console.warn('Elementos .posts-container ou #viewToggle não encontrados.');
+        return;
+    }
+
+    /**
+     * Função principal que aplica o modo de visualização.
+     * @param {string} mode - 'list' ou 'grid'
+     */
+    function setViewMode(mode) {
+        // 1. Atualiza a classe do container de posts
+        container.classList.remove('list-view', 'grid-view');
+        container.classList.add(mode + '-view');
+
+        // 2. Atualiza a classe do seletor para mover o indicador
+        toggleSlider.classList.remove('list-active', 'grid-active');
+        toggleSlider.classList.add(mode + '-active');
+
+        // 3. Atualiza a classe 'active' nos textos (labels)
+        labels.forEach(label => {
+            label.classList.remove('active');
+            if (label.dataset.view === mode) {
+                label.classList.add('active');
+            }
+        });
+
+        // 4. Salva a preferência no localStorage do navegador
+        try {
+            localStorage.setItem(STORAGE_KEY, mode);
+        } catch (e) {
+            // Ignora erros de storage (ex: modo privado)
+        }
+    }
+
+    // ----- Restaura a preferência salva (ou define 'list' como padrão) -----
+    let savedMode = 'list';
+    try {
+        const stored = localStorage.getItem(STORAGE_KEY);
+        if (stored === 'list' || stored === 'grid') {
+            savedMode = stored;
+        }
+    } catch (e) {
+        // Ignora erros de storage
+    }
+    setViewMode(savedMode);
+
+    // ----- Adiciona eventos de clique em cada opção (Lista / Grade) -----
+    labels.forEach(label => {
+        label.addEventListener('click', function(e) {
+            const mode = this.dataset.view;
+            // Se a opção clicada já estiver ativa, não faz nada
+            if (this.classList.contains('active')) return;
+            setViewMode(mode);
+        });
+    });
+
+});

@@ -68,6 +68,7 @@ ul.contact li a:hover .svg-icon {
   text-decoration: none;
   -webkit-tap-highlight-color: var(--text-menu);
   position: relative;
+  font-family: Inconsolas, monospace;
 }
 
 #menu ul a.opener:before,
@@ -119,6 +120,7 @@ ul.contact li a:hover .svg-icon {
 
 #menu > ul > li {
   border-top: solid 1px var(--border-menu);
+  font-family: "Roboto Slab", serif;
   margin: 0.5em 0 0 0;
   padding: 0.5em 0 0 0;
 }
