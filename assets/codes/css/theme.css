@@ -13,6 +13,7 @@ Código: theme.css - Variáveis de tema para modo claro e escuro
   /* Fundos secundários */
   --bg-box: #f2f2f2;
   --bg-boxer: #f2f2f2;
+  --bg-box-white: #ffffff;
   --bg-drawer: #fefefe;
   --bg-code: #f6f8fa;
   --bg-input: #ffffff;
@@ -90,6 +91,7 @@ Código: theme.css - Variáveis de tema para modo claro e escuro
   --bg-header: #0b0f19;
 
   --bg-box: #0c1319;
+  --bg-box-white: #2a2a2a;
   --bg-slider: #0c1319;
   --bg-boxer: #2e2c2c;
   --bg-drawer: #2a2a2a;

@@ -568,6 +568,7 @@ Código: layout - configura o estilo do main, side bar, header, footer, banner e
 /* Inverte a ordem das colunas em telas pequenas */
 @media screen and (max-width: 980px) {   /* ou 736px, conforme desejar */
   .bio-row {
+    max-width: 90%;
     display: flex;
     align-items: center;
     flex-direction: column-reverse;      /* inverte a ordem dos filhos */
