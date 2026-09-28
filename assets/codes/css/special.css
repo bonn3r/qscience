@@ -1,0 +1,320 @@
+/* ==========================================================================
+   special.css
+   Componente: Oscilador Harmônico Quântico — integrado ao Q-Science
+   --------------------------------------------------------------------------
+   • Escopo restrito a `#main .inner > section` — não vaza para o header do
+     site, sidebar, lang-dropdown, rodapé ou outras seções.
+   • Variáveis de tema (--bg-*, --text-*, --color-*, --border-*) são herdadas
+     de `theme.css`. Nada é redeclarado aqui.
+   • Reset, tipografia base e estilo genérico de botões/formulários vêm de
+     `reset.css`, `base.css` e `components.css`. Aqui ficam apenas os ajustes
+     específicos da simulação.
+   • Layout dimensionado para caber dentro de `<div class="content">`, com
+     aside compacto (~220–260px) e coluna de gráficos flexível.
+   ========================================================================== */
+
+/* ---------- Cabeçalho da simulação (título + subtítulo) ---------- */
+#main .inner > section header {
+  padding: 0 0 1.2em 0;
+  border-bottom: 2px solid var(--border-header);
+  margin: 0 0 1.8em 0;
+}
+#main .inner > section header h1 {
+  font-size: 1.6em;
+  margin: 0 0 0.4em;
+  line-height: 1.3;
+}
+#main .inner > section header p,
+#main .inner > section header p.sub {
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.85em;
+  font-weight: 400;
+  letter-spacing: normal;
+  text-transform: none;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* ---------- Grade principal: painel de controles + gráficos ---------- */
+#main .inner > section main {
+  display: grid;
+  /* aside mais estreito + coluna de gráficos flexível, sem estourar */
+  grid-template-columns: minmax(220px, 260px) minmax(0, 1fr);
+  gap: 1.5em;
+  align-items: start;
+  margin-top: 1.5em;
+}
+
+#main .inner > section aside {
+  background: var(--bg-sidebar);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.2em 1.1em;
+  box-shadow: var(--shadow-sidebar);
+  /* permite que o aside encolha sem forçar overflow */
+  min-width: 0;
+}
+
+#main .inner > section .plots {
+  padding: 0.5em 0;
+  /* CRUCIAL: sem isso, itens de grid assumem min-width:auto
+     e podem transbordar o container */
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* ---------- Formulários ---------- */
+#main .inner > section fieldset {
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  margin: 0 0 1.2em 0;
+  padding: 1em 1.1em;
+  background: var(--bg-box-white);
+  min-width: 0;
+}
+
+/* Ajuste fino dentro do aside compacto */
+#main .inner > section aside fieldset {
+  padding: 0.8em 0.9em;
+  margin-bottom: 1em;
+}
+
+#main .inner > section legend {
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.72em;
+  font-weight: 600;
+  color: var(--text-muted);
+  padding: 0 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+#main .inner > section label {
+  display: block;
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.88em;
+  font-weight: 400;
+  margin: 0.8em 0 0.3em;
+  color: var(--text-body);
+}
+
+#main .inner > section aside label {
+  font-size: 0.82em;
+  margin: 0.6em 0 0.25em;
+}
+
+#main .inner > section .row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* input[type=number] — não é estilizado por components.css */
+#main .inner > section input[type="number"] {
+  width: 90px;
+  height: auto;
+  background: var(--bg-input);
+  border: 1px solid var(--border-color);
+  color: var(--text-body);
+  border-radius: 5px;
+  padding: 5px 8px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.9em;
+  appearance: auto;
+  -webkit-appearance: auto;
+}
+
+#main .inner > section aside input[type="number"] {
+  width: 70px;
+  font-size: 0.85em;
+  padding: 4px 6px;
+}
+
+/* range — reset.css remove a aparência nativa; restauramos */
+#main .inner > section input[type="range"] {
+  width: 100%;
+  height: auto;
+  margin: 0.2em 0 0.6em;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  accent-color: var(--color-primary);
+  appearance: auto;
+  -webkit-appearance: auto;
+}
+
+/* select — aparência nativa (sem a seta SVG de components.css) */
+#main .inner > section select {
+  width: 100%;
+  height: auto;
+  background: var(--bg-input);
+  background-image: none;
+  color: var(--text-body);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 0.6em 0.8em;
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.9em;
+  margin-bottom: 0.8em;
+  appearance: auto;
+  -webkit-appearance: auto;
+}
+
+/* ---------- Botões ----------
+   Ajusta o estilo padrão do Q-Science (Roboto Slab, altura 3.5em,
+   box-shadow inset) para o visual compacto da simulação. */
+#main .inner > section button {
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.9em;
+  font-weight: 600;
+  letter-spacing: normal;
+  height: auto;
+  line-height: 1.5;
+  padding: 0.7em 1.2em;
+  border-radius: 6px;
+  border: none;
+  background: var(--color-primary);
+  color: #ffffff !important;
+  box-shadow: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+#main .inner > section button:hover {
+  background: var(--color-primary-hover);
+  box-shadow: none;
+  transform: none;
+}
+#main .inner > section button:active {
+  transform: none;
+  background: var(--color-primary-hover);
+}
+#main .inner > section button.secondary {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-body) !important;
+}
+#main .inner > section button.secondary:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary) !important;
+  background: transparent;
+}
+
+#main .inner > section .btnrow {
+  display: flex;
+  gap: 0.6em;
+  margin-top: 0.8em;
+  flex-wrap: wrap;
+}
+
+#main .inner > section .btnrow button {
+  flex: 1 1 auto;
+}
+
+/* Versão compacta para o aside reduzido */
+#main .inner > section aside .btnrow {
+  gap: 0.4em;
+}
+#main .inner > section aside .btnrow button {
+  padding: 0.55em 0.9em;
+  font-size: 0.82em;
+}
+
+/* ---------- Blocos de modo (a / b / c) ---------- */
+#main .inner > section .mode-block { display: none; }
+#main .inner > section .mode-block.active { display: block; }
+
+/* ---------- Canvas e gráficos ---------- */
+#main .inner > section canvas {
+  width: 100%;
+  max-width: 100%;          /* nunca excede a coluna */
+  height: auto;             /* o JS reescreve via style; aqui é fallback */
+  background: var(--bg-code);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  display: block;
+}
+
+#main .inner > section .plot-title {
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.85em;
+  color: var(--text-muted);
+  margin: 1em 0 0.4em;
+  font-weight: 600;
+}
+
+/* Ajuste compacto quando dentro da coluna estreita */
+#main .inner > section .plots .plot-title {
+  font-size: 0.8em;
+  margin: 0.6em 0 0.3em;
+}
+
+#main .inner > section .legend-line {
+  display: flex;
+  gap: 1.2em;
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.82em;
+  color: var(--text-muted);
+  margin: 0.3em 0 0.2em;
+}
+
+#main .inner > section .plots .legend-line {
+  font-size: 0.78em;
+  gap: 1em;
+}
+
+#main .inner > section .swatch {
+  display: inline-block;
+  width: 14px;
+  height: 3px;
+  margin-right: 5px;
+  vertical-align: middle;
+  border-radius: 2px;
+}
+
+#main .inner > section .time {
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.9em;
+  color: var(--color-primary);
+  margin-top: 0.8em;
+  font-weight: 600;
+}
+
+#main .inner > section p.note {
+  color: var(--text-muted);
+  font-size: 0.8em;
+  line-height: 1.55;
+  margin: 0.6em 0 0;
+}
+
+#main .inner > section aside p.note {
+  font-size: 0.75em;
+}
+
+#main .inner > section .val {
+  display: inline-block;
+  min-width: 1.6em;
+}
+
+/* ---------- MathJax no modo escuro (contraste) ---------- */
+body.dark-mode #main .inner > section mjx-container {
+  color: var(--text-body) !important;
+}
+
+/* ---------- Responsivo ---------- */
+@media screen and (max-width: 980px) {
+  #main .inner > section main {
+    grid-template-columns: 1fr;
+    gap: 1.2em;
+  }
+  #main .inner > section aside  { order: 2; }
+  #main .inner > section .plots { order: 1; }
+}
+
+@media screen and (max-width: 600px) {
+  #main .inner > section main {
+    gap: 1em;
+  }
+  #main .inner > section aside {
+    padding: 1em 0.9em;
+  }
+}

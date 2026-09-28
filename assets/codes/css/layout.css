@@ -273,7 +273,7 @@ Código: layout - configura o estilo do main, side bar, header, footer, banner e
     content: '';
     height: 3.5em;
     left: 0;
-    position: absolute;
+    /*position: absolute;*/
     top: 0;
     width: 3.5em;
     z-index: -1;
