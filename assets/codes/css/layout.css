@@ -2,6 +2,7 @@
 Criado em 29/06/2026
 Autor: Jimi
 Código: layout - configura o estilo do main, side bar, header, footer, banner e estilos associados.
+Última atualização: toggle unificado — mesmo comportamento em todas as telas.
 */
 
 /* ======================================================================= */
@@ -34,7 +35,7 @@ Código: layout - configura o estilo do main, side bar, header, footer, banner e
 }
 
 /* ======================================================================= */
-/* SIDEBAR – FIXA EM TODOS OS TAMANHOS                                   */
+/* SIDEBAR – FIXA EM TODOS OS TAMANHOS                                     */
 /* ======================================================================= */
 
 #sidebar {
@@ -105,7 +106,10 @@ Código: layout - configura o estilo do main, side bar, header, footer, banner e
 }
 
 /* ======================================================================= */
-/* TOGGLE (HAMBÚRGUER / X) – POSICIONADO NA BORDA DIREITA DA SIDEBAR      */
+/* TOGGLE (HAMBÚRGUER / X) – POSICIONADO NA BORDA DIREITA DA SIDEBAR       */
+/* Comportamento único em todos os tamanhos de tela.                       */
+/* O `left: calc(100% + 1em)` faz o botão acompanhar automaticamente a     */
+/* largura da sidebar, seja 26em (desktop) ou 22em (mobile).               */
 /* ======================================================================= */
 #sidebar .toggle {
   text-decoration: none;
@@ -123,7 +127,7 @@ Código: layout - configura o estilo do main, side bar, header, footer, banner e
   line-height: 35px;
   background: var(--bg-body);
   border-radius: 0.375em;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   border: 1px solid #e0e0e0;
   outline: 0;
   overflow: hidden;
@@ -132,8 +136,8 @@ Código: layout - configura o estilo do main, side bar, header, footer, banner e
   text-indent: -12em;
   white-space: nowrap;
   top: 1em;
+  left: calc(100% + 1em);   /* acompanha a largura da sidebar automaticamente */
   z-index: 10001;
-  left: 27em;
 }
 
 /* Ícone base – hambúrguer */
@@ -182,7 +186,7 @@ Código: layout - configura o estilo do main, side bar, header, footer, banner e
 }
 
 /* ======================================================================= */
-/* SEARCH (dentro da sidebar)                                             */
+/* SEARCH (dentro da sidebar)                                              */
 /* ======================================================================= */
 #search form {
   text-decoration: none;
@@ -223,6 +227,8 @@ Código: layout - configura o estilo do main, side bar, header, footer, banner e
 
 /* ======================================================================= */
 /* BREAKPOINTS - Mobile configuration                                      */
+/* O toggle é o mesmo em todos os tamanhos — aqui só ajustamos a largura   */
+/* da sidebar e do conteúdo principal.                                     */
 /* ======================================================================= */
 
 @media screen and (max-width: 736px) {
@@ -235,61 +241,18 @@ Código: layout - configura o estilo do main, side bar, header, footer, banner e
   #sidebar > .inner {
     width: 22em;
   }
-  #sidebar .toggle {
-    text-decoration: none;
-  -moz-transition: left 0.5s ease;
-  -webkit-transition: left 0.5s ease;
-  -ms-transition: left 0.5s ease;
-  transition: left 0.5s ease;
-  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
-  border: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 35px;
-  line-height: 35px;
-  background: var(--bg-body);
-  border-radius: 0.375em;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  border: 1px solid #e0e0e0;
-  outline: 0;
-  overflow: hidden;
-  position: absolute;
-  text-align: center;
-  text-indent: -12em;
-  white-space: nowrap;
-  top: 1em;
-  z-index: 10001;
-  left: 23em;
-  }
-  #sidebar .toggle:before {
-    font-size: 1.1rem;
-    color: var(--text-icon-toggle);
-  }
-  #sidebar .toggle:after {
-    background: var(--bg-toggle);
-    border-radius: 0.375em;
-    content: '';
-    height: 3.5em;
-    left: 0;
-    /*position: absolute;*/
-    top: 0;
-    width: 3.5em;
-    z-index: -1;
-  }
 
   /* Ajustes no conteúdo principal para mobile */
   #main > .inner {
     padding: 0 2em 0.1em 2em;
   }
   #main > .inner > section {
-    padding: 3em 1em 1em 1em; /*onde modifica os distânciamentos Em cima, direita, baixo e esquerda do conteúdo -- giro horário!*/
+    padding: 3em 1em 1em 1em; /* Em cima, direita, baixo, esquerda */
   }
 }
 
 /* ======================================================================= */
-/* HEADER, BANNER, FOOTER (sem alterações)                                */
+/* HEADER, BANNER, FOOTER                                                  */
 /* ======================================================================= */
 
 #header {
@@ -303,15 +266,13 @@ Código: layout - configura o estilo do main, side bar, header, footer, banner e
   transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
-
-
 /* Ajuste o padding do conteúdo principal para não ficar escondido atrás do header */
 #main > .inner {
   padding-top: 1em;
 }
 
 /* ======================================================================= */
-/* HEADER – Base (comum a todos os tamanhos)                             */
+/* HEADER – Base (comum a todos os tamanhos)                               */
 /* ======================================================================= */
 #header {
   display: -moz-flex;
@@ -347,12 +308,12 @@ Código: layout - configura o estilo do main, side bar, header, footer, banner e
 
 /* Alinha os ícones e o botão à direita, empilhados verticalmente */
 .header-controls {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: center;   /* ou flex-start, conforme preferir */
-    flex: 1;                   /* ocupa o espaço restante ao lado do logo */
-    margin-left: auto;         /* empurra para a direita */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  flex: 1;
+  margin-left: auto;
 }
 
 /* ---------- DESKTOP (acima de 737px) – Fixo no topo ---------- */
@@ -362,7 +323,7 @@ Código: layout - configura o estilo do main, side bar, header, footer, banner e
     top: 0;
     left: 0;
     right: 0;
-    width: 70%; /*Ajusta a largura do header*/
+    width: 70%; /* Ajusta a largura do header */
     margin: 0 auto;
     padding: 1em 2em 1em 2em;
     background: var(--bg-header);
@@ -385,8 +346,8 @@ Código: layout - configura o estilo do main, side bar, header, footer, banner e
   }
 }
 
-/* ---------- MOBILE (até 736px) – Sticky (comportamento original) ---------- */
-@media screen and (max-width: 736px){
+/* ---------- MOBILE (até 736px) – Sticky ---------- */
+@media screen and (max-width: 736px) {
   #header {
     position: sticky;
     top: 0;
@@ -400,15 +361,12 @@ Código: layout - configura o estilo do main, side bar, header, footer, banner e
     background: var(--bg-header);
     border-bottom: solid 5px var(--border-header);
     z-index: 1000;
-    /*display: -moz-flex;
-    display: -webkit-flex;
-    display: -ms-flex;*/
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    justify-content: flex-start;  /* alinha ao topo, evita esticar */
-    overflow: visible !important;  /* garante que nada seja cortado */
+    justify-content: flex-start;
+    overflow: visible !important;
   }
 
   #header .logo {
@@ -435,17 +393,15 @@ Código: layout - configura o estilo do main, side bar, header, footer, banner e
   }
 
   #header .icons img {
-    width: 23px;       /* pode ajustar para um tamanho que caiba */
+    width: 23px;
     height: 23px;
-    display: block;    /* evita espaços extras */
+    display: block;
   }
 
-  /* Se houver um link <a> ao redor da imagem, ajuste também */
   #header .icons a {
     display: flex;
     align-items: center;
-    /*justify-content: center;*/
-    padding: 1px;      /* pequeno espaço ao redor do ícone */
+    padding: 1px;
   }
 
   #main > .inner {
@@ -566,11 +522,11 @@ Código: layout - configura o estilo do main, side bar, header, footer, banner e
 }
 
 /* Inverte a ordem das colunas em telas pequenas */
-@media screen and (max-width: 980px) {   /* ou 736px, conforme desejar */
+@media screen and (max-width: 980px) {
   .bio-row {
     max-width: 90%;
     display: flex;
     align-items: center;
-    flex-direction: column-reverse;      /* inverte a ordem dos filhos */
+    flex-direction: column-reverse;
   }
 }

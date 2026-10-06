@@ -159,7 +159,7 @@
 
 		// Clique em links
 		$sidebar.on('click', 'a', function(event) {
-			if (breakpoints.active('>large')) return;
+			if (breakpoints.active('>k4')) return;
 
 			var $a = $(this),
 				href = $a.attr('href'),
@@ -185,13 +185,13 @@
 
 		// Previne borbulhamento de eventos touch
 		$sidebar.on('click touchend touchstart touchmove', function(event) {
-			if (breakpoints.active('>large')) return;
+			if (breakpoints.active('>k4')) return;
 			event.stopPropagation();
 		});
 
 		// Clique fora da sidebar (body) fecha a sidebar
 		$body.on('click touchend', function(event) {
-			if (breakpoints.active('>large')) return;
+			if (breakpoints.active('>k4')) return;
 			$sidebar.addClass('inactive');
 			syncWrapperWithSidebar();
 			closeAllSubmenus(); // também fecha submenus
@@ -206,7 +206,7 @@
 
 			$window
 				.on('scroll.sidebar-lock', function() {
-					if (breakpoints.active('<=large')) {
+					if (breakpoints.active('<=k4')) {
 						$sidebar_inner
 							.data('locked', 0)
 							.css('position', '')

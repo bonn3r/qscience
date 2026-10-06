@@ -1,39 +1,12 @@
 /* ==========================================================================
-   special.css
-   Componente: Oscilador Harmônico Quântico — integrado ao Q-Science
-   --------------------------------------------------------------------------
-   • Escopo restrito a `#main .inner > section` — não vaza para o header do
-     site, sidebar, lang-dropdown, rodapé ou outras seções.
-   • Variáveis de tema (--bg-*, --text-*, --color-*, --border-*) são herdadas
-     de `theme.css`. Nada é redeclarado aqui.
-   • Reset, tipografia base e estilo genérico de botões/formulários vêm de
-     `reset.css`, `base.css` e `components.css`. Aqui ficam apenas os ajustes
-     específicos da simulação.
-   • Layout dimensionado para caber dentro de `<div class="content">`, com
-     aside compacto (~220–260px) e coluna de gráficos flexível.
-   ========================================================================== */
+  Criado por: Jimi.7z (Willian Bonner) em 24/09/2026
+	Última atualização: 03/10/2026
+	Arquivo de reset do css
+	Versão: 1.0
+  special.css
+  Componente: Ajustste do exercício do Oscilador Harmônico Quântico integrado ao meu site.
+========================================================================== */
 
-/* ---------- Cabeçalho da simulação (título + subtítulo) ---------- */
-#main .inner > section header {
-  padding: 0 0 1.2em 0;
-  border-bottom: 2px solid var(--border-header);
-  margin: 0 0 1.8em 0;
-}
-#main .inner > section header h1 {
-  font-size: 1.6em;
-  margin: 0 0 0.4em;
-  line-height: 1.3;
-}
-#main .inner > section header p,
-#main .inner > section header p.sub {
-  font-family: "Open Sans", sans-serif;
-  font-size: 0.85em;
-  font-weight: 400;
-  letter-spacing: normal;
-  text-transform: none;
-  color: var(--text-muted);
-  margin: 0;
-}
 
 /* ---------- Grade principal: painel de controles + gráficos ---------- */
 #main .inner > section main {
@@ -158,65 +131,6 @@
   margin-bottom: 0.8em;
   appearance: auto;
   -webkit-appearance: auto;
-}
-
-/* ---------- Botões ----------
-   Ajusta o estilo padrão do Q-Science (Roboto Slab, altura 3.5em,
-   box-shadow inset) para o visual compacto da simulação. */
-#main .inner > section button {
-  font-family: "Open Sans", sans-serif;
-  font-size: 0.9em;
-  font-weight: 600;
-  letter-spacing: normal;
-  height: auto;
-  line-height: 1.5;
-  padding: 0.7em 1.2em;
-  border-radius: 6px;
-  border: none;
-  background: var(--color-primary);
-  color: #ffffff !important;
-  box-shadow: none;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-#main .inner > section button:hover {
-  background: var(--color-primary-hover);
-  box-shadow: none;
-  transform: none;
-}
-#main .inner > section button:active {
-  transform: none;
-  background: var(--color-primary-hover);
-}
-#main .inner > section button.secondary {
-  background: transparent;
-  border: 1px solid var(--border-color);
-  color: var(--text-body) !important;
-}
-#main .inner > section button.secondary:hover {
-  border-color: var(--color-primary);
-  color: var(--color-primary) !important;
-  background: transparent;
-}
-
-#main .inner > section .btnrow {
-  display: flex;
-  gap: 0.6em;
-  margin-top: 0.8em;
-  flex-wrap: wrap;
-}
-
-#main .inner > section .btnrow button {
-  flex: 1 1 auto;
-}
-
-/* Versão compacta para o aside reduzido */
-#main .inner > section aside .btnrow {
-  gap: 0.4em;
-}
-#main .inner > section aside .btnrow button {
-  padding: 0.55em 0.9em;
-  font-size: 0.82em;
 }
 
 /* ---------- Blocos de modo (a / b / c) ---------- */
