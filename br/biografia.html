@@ -1,231 +1,220 @@
 <!DOCTYPE HTML>
 <!--
-Created in: 28/06/2026
-Editor: Jimi
-Versão: 3.0 - Data: 08/08/2026
+Criado em: 28/06/2026
+Atualizado em: 09/10/2026
+Autor: Jimi
+Coautor: Gemini
+Projeto: Q-Science
 -->
-<html>
-	<head>
-		<title>Willian Bonner | Q-Science</title>
-		<link rel="icon" href="/qscience/assets/images/logo/cat-logo.svg" type="image/svg+xml" />
-		<meta name="description" content="Página pessoal de Willian Bonner, físico formado pela UFS, com interesses em Física Matemática, Relatividade Geral e Divulgação Científica." />
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="/qscience/assets/codes/css/main.css" />
-		<!-- MathJax -->
-		<script src="/qscience/assets/codes/js/mathjax_config.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
-	</head>
-	
-	<body class="is-preload">
-		
-		<div id="sidebar"></div>
+<html lang="pt-BR">
+  <head>
+    <title>Willian Bonner | Q-Science</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="Página pessoal e biografia de Willian Bonner, físico formado pela UFS e mestrando pela UFPE, com interesses em Física Matemática, Relatividade Geral e Divulgação Científica." />
+    <link rel="icon" href="/qscience/assets/images/logo/cat-logo.svg" type="image/svg+xml" />
 
-		<!-- Seletor de Idiomas -->
-		<div class="lang-dropdown" id="langDropdown">
-			<div class="lang-top">
-				<button class="theme-toggle" id="theme-toggle" aria-label="Alternar modo noturno">
-					<img src="/qscience/assets/images/logo/moon-logo.svg"
-		            data-light-src="/qscience/assets/images/logo/moon-logo.svg"
-		            data-dark-src="/qscience/assets/images/logo/sun-logo.svg"
-            		alt="Alternar tema"
-		            class="theme-img"
-		            id="themeIcon" />
-				</button>
+    <!-- Google Fonts (carregamento otimizado com preconnect) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,400;1,600&family=Roboto+Slab:wght@400;700&display=swap" />
 
-				<button class="lang-dropdown-btn" id="langDropdownBtn" aria-haspopup="true" aria-expanded="false">
-					<img src="/qscience/assets/images/logo/brazilian-logo.svg" alt="Português" style="width:24px; height:16px; border-radius:2px;">
-				</button>
-			</div>
+    <!-- Ícones Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 
-	        <!-- Gaveta de idiomas (agora antes do botão Índice) -->
-	        <ul class="lang-dropdown-menu" id="langDropdownMenu" role="menu">
-		        <li role="none">
-			        <a href="/qscience/br/" role="menuitem" class="active-lang">
-			        <img src="/qscience/assets/images/logo/brazilian-logo.svg" alt="Português">Português</a>
-		        </li>
+    <!-- Novos Estilos Modulares Consolidados -->
+    <link rel="stylesheet" href="/qscience/assets/codes/css/theme.css" />
+    <link rel="stylesheet" href="/qscience/assets/codes/css/core.css" />
+    <link rel="stylesheet" href="/qscience/assets/codes/css/components.css" />
+    <link rel="stylesheet" href="/qscience/assets/codes/css/modules.css" />
 
-		        <li role="none">
-			        <a href="/qscience/en/biography.html" role="menuitem">
-			        <img src="/qscience/assets/images/logo/united-kingdom-logo.svg" alt="English">English</a>
-		        </li>
-	        </ul>
-        </div>
+    <!-- MathJax (Configuração e motor SVG) -->
+    <script src="/qscience/assets/codes/js/mathjax_config.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+  </head>
 
+  <body class="is-preload">
+    <!-- Barra Lateral Injetada Dinamicamente -->
+    <div id="sidebar"></div>
 
-		<!-- Main -->
-		<div id="main">
-			<div class="inner">
+    <!-- Seletor de Idiomas e Tema Noturno -->
+    <div class="lang-dropdown" id="langDropdown">
+      <div class="lang-top">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Alternar modo noturno" title="Alternar modo claro/escuro">
+          <img src="/qscience/assets/images/logo/moon-logo.svg"
+               data-light-src="/qscience/assets/images/logo/moon-logo.svg"
+               data-dark-src="/qscience/assets/images/logo/sun-logo.svg"
+               alt="Alternar tema"
+               class="theme-img"
+               id="themeIcon" />
+        </button>
 
-			<!-- Cabeçalho -->
-				<header id="header">
-					<span class="logo">
-						<img src="/qscience/assets/images/logo/cat-logo.svg" alt="Gato logomarca do site" style="height: 2em; width: auto; vertical-align: middle; margin-right: 0.8em;">
-						<a href="/qscience/br/index.html" style="color: var(--text-title);"><span class="letra-q">Q</span>-Science</a>
-					</span>
-									
-					<ul class="icons">
-						<li>
-							<button id="topbtn" aria-label="Voltar ao topo">
-								<span class="topbtn-text">Voltar ao topo</span>
-								<img src="/qscience/assets/images/utilitarios/utilitario-seta.svg"
-								data-light-src="/qscience/assets/images/utilitarios/utilitario-seta.svg"
-								data-dark-src="/qscience/assets/images/utilitarios/utilitario-seta-dark.svg"
-								alt="">
-							</button>
-						</li>
+        <button class="lang-dropdown-btn" id="langDropdownBtn" aria-haspopup="true" aria-expanded="false" aria-label="Seletor de idioma">
+          <img src="/qscience/assets/images/logo/brazilian-logo.svg" alt="Português" style="width:24px; height:16px; border-radius:2px;">
+        </button>
+      </div>
 
-						
-						
-						<li>
-							<a href="/qscience/br/arxiv.html" class="icon brands">
-								<img src="/qscience/assets/images/logo/arxiv-logo.svg" alt="Logomarca do arXiv" width="20" height="20" style="vertical-align:middle;">
-								<span class="label">Arxiv</span>
-							</a>
-						</li>
-							
-						<li>
-							<a href="https://github.com/bonn3r" target="_blank" rel="noopener noreferrer" class="icon brands">
-								<img src="/qscience/assets/images/logo/github-logo.svg"
-								data-light-src="/qscience/assets/images/logo/github-logo.svg"
-								data-dark-src="/qscience/assets/images/logo/github-logo-dark.svg"
-								alt="GitHub"
-								width="20"
-								height="20"
-								style="vertical-align:middle;" />
-								<span class="label">Github</span>
-							</a>
-						</li>
-							
-						<li>
-							<a href="http://lattes.cnpq.br/3294938329763314" target="_blank" rel="noopener noreferrer" class="icon brands">
-								<img src="/qscience/assets/images/logo/lattes-logo.svg"
-								data-light-src="/qscience/assets/images/logo/lattes-logo.svg"
-								data-dark-src="/qscience/assets/images/logo/lattes-logo-dark.svg"
-								alt="Logomarca da Plataforma Lattes"
-								width="20"
-								height="20"
-								style="vertical-align:middle;">
-								<span class="label">Lattes</span>
-							</a>
-						</li>
-						
-						<li>
-							<a href="https://linkedin.com/in/willianbonnerbsc" target="_blank" rel="noopener noreferrer" class="icon brands">
-								<img src="/qscience/assets/images/logo/linkedin-logo.svg" alt="Logomarca Linkedin" width="20" height="20" style="vertical-align:middle;">
-								<span class="label">Linked</span>
-							</a>
-						</li>
-						
-						<li>
-							<a href="https://orcid.org/0009-0007-7458-8512" target="_blank" rel="noopener noreferrer" class="icon brands">
-								<img src="/qscience/assets/images/logo/orcid-logo.svg" alt="Logomarca Orcid" width="20" height="20" style="vertical-align:middle;">
-								<span class="label">ORCID</span>
-							</a>
-						</li>
-					</ul>
-				</header>
+      <!-- Gaveta de Idiomas -->
+      <ul class="lang-dropdown-menu" id="langDropdownMenu" role="menu">
+        <li role="none">
+          <a href="/qscience/br/" role="menuitem" class="active-lang">
+            <img src="/qscience/assets/images/logo/brazilian-logo.svg" alt="Português">Português
+          </a>
+        </li>
+        <li role="none">
+          <a href="/qscience/en/biography.html" role="menuitem">
+            <img src="/qscience/assets/images/logo/united-kingdom-logo.svg" alt="English">English
+          </a>
+        </li>
+      </ul>
+    </div>
 
-				<!-- Primeira sessão -->
-				<section>
-					<div class="content">
-						<header class="major" style="text-align: center;">
-							<h1>Quem sou eu</h1>
-						</header>
-						<div class="up-date">Atualizado em: 05/09/2026</div>
-						<div class="row bio-row">
-							<div class="col-7 col-12-medium">
-								
-								<p class="paragrafo">Quando criança, eu era do tipo que destruía os brinquedos para tentar entender como eles funcionavam. Meus pais, ao notarem essa curiosidade, sempre me incentivaram a ler: meu pai me dava gibis e minha mãe, livros escolares de todas as séries. Meus tios, Fernando e Eliana, também tiveram um papel fundamental, presenteando-me com obras que despertaram meu gosto pela ciência – em especial, pela Física. Mais tarde, o jogo Half-Life, com sua narrativa de ficção científica e física especulativa, consolidou meu interesse pela física teórica. Esse caminho culminou em 2019, quando ingressei na Universidade Federal de Sergipe para dar os primeiros passos rumo à carreira de físico.</p>
+    <!-- Main -->
+    <div id="main">
+      <div class="inner">
 
-								<p class="paragrafo">Durante a graduação, busquei me envolver em iniciações científicas, dividindo meu tempo entre os departamentos de Matemática e Física. No DMA, sob orientação do professor <a href="http://lattes.cnpq.br/2053976233616645" target="_blank" rel="noopener noreferrer">Ricardo Pinheiro</a>, mergulhei na análise real e funcional ao longo de três iniciações científicas. Na primeira, o professor já possuía um projeto bem delimitado: estudei tópicos de análise funcional para compreender os métodos variacionais e aplicá-los a EDPs não lineares (uma ferramenta que mais tarde se revelaria essencial em meu trabalho com sistemas complexos; no ano seguinte, escrevemos um projeto sob medida para minha formação). Estudei introdução à análise no $\mathbb{R}^n$ em paralelo com a disciplina de Análise Real, que cursei como eletiva. Essa experiência aprofundou minha formação matemática para além do usual em um curso de física: vi de perto demonstrações, estruturas lógicas, a construção dos números reais e sua expansão para $\mathbb{R}^n$, um rigor que levo comigo até hoje. Em um terceiro momento, dedicamo-nos à introdução à geometria diferencial aplicada à mecânica relativística, o que despertou definitivamente meu interesse pela forma de como a Matemática interage com a Física. Ao final desse estudo, percebi que meu caminho seria trilhado na física, não na matemática pura. Foi nesse momento que procurei o professor Andrei Smirnov para iniciar minha jornada na física matemática.</p>
+        <!-- Cabeçalho Superior -->
+        <header id="header">
+          <span class="logo">
+            <img src="/qscience/assets/images/logo/cat-logo.svg" alt="Logomarca Q-Science" style="height: 2em; width: auto; vertical-align: middle; margin-right: 0.8em;">
+            <a href="/qscience/br/index.html" style="color: var(--text-title);"><span class="letra-q">Q</span>-Science</a>
+          </span>
 
-								<p class="paragrafo">No DFI, em uma quarta iniciação científica sob orientação do professor <a href="http://lattes.cnpq.br/9436635099000071" target="_blank" rel="noopener noreferrer">Andrei Smirnov</a>, direcionei minha pesquisa para a física matemática, com foco em variedades de curvatura negativa e na construção do operador de Laplace-Beltrami. Nesse projeto, aprofundamos o estudo de variedades hiperbólicas e pseudo-esferas, desenvolvendo um código computacional na plataforma MAXIMA para calcular, a partir de uma parametrização qualquer, o tensor métrico, os símbolos de Christoffel, os tensores de Riemann e Ricci, a curvatura escalar e o operador de Laplace-Beltrami. Essa experiência me ensinou o valor da computação simbólica na física teórica e consolidou meu interesse em unir formalismo matemático rigoroso com ferramentas computacionais para explorar problemas fundamentais da física. Embora o projeto não tenha sido concluído, a jornada foi muito importante para me preparar para os desafios seguintes.</p>
+          <ul class="icons">
+            <li>
+              <button id="topbtn" aria-label="Voltar ao topo">
+                <span class="topbtn-text">Voltar ao topo</span>
+                <img src="/qscience/assets/images/utilitarios/utilitario-seta.svg"
+                     data-light-src="/qscience/assets/images/utilitarios/utilitario-seta.svg"
+                     data-dark-src="/qscience/assets/images/utilitarios/utilitario-seta-dark.svg"
+                     alt="">
+              </button>
+            </li>
 
-								<p class="paragrafo">Meu Trabalho de Conclusão de Curso, orientado pelo professor <a href="http://lattes.cnpq.br/1957149198783008" target="_blank" rel="noopener noreferrer">Gerson Cortês Duarte-filho</a>, foi uma experiência de aplicar meus conhecimentos matemáticos e computacionais a um problema concreto da física: a dinâmica de sistemas laser. Estudamos dois regimes de modelagem: o modelo clássico, baseado nas equações de taxa para lasers de três níveis, que, devido à rápida transição do terceiro estado excitado para o segundo, pode ser reduzido a um sistema de dois níveis. E as equações de Maxwell-Bloch, que combinam um campo eletromagnético clássico com uma abordagem quântica para os átomos. Para explorar esses modelos, desenvolvi códigos em Python, validando os resultados com dados experimentais da literatura. Embora a dinâmica não-linear e os lasers não sejam minha área de foco principal, essa experiência consolidou minhas habilidades em modelagem computacional e análise de sistemas complexos. Competências que pretendo levar para meus estudos em física matemática e relatividade geral.</p>
+            <li>
+              <a href="/qscience/br/arxiv.html" class="icon brands" title="Artigos no arXiv" aria-label="arXiv">
+                <img src="/qscience/assets/images/logo/arxiv-logo.svg" alt="Logomarca do arXiv" width="20" height="20" style="vertical-align:middle;">
+              </a>
+            </li>
 
-								<p class="paragrafo">Fora da vida acadêmica, sou um amante da música. Dedico algumas horas da semana para ouvir exclusivamente álbuns inteiros dos meus artistas favoritos, prestando atenção nas nuances, nos instrumentos, nas letras e na mensagem que o artista quis transmitir. Também sou lutador de jiu-jitsu e ciclista entusiasta: no jiu-jitsu, graduei-me para a faixa azul em um ano e treino sempre que possível; no ciclismo, percorro cerca de 90 km por semana, tentando manter a média de 20 km/h com uma bike simples dos anos 2000... assim que me estailizar em terras recifenses, montarei uma bike nova!.</p>
+            <li>
+              <a href="https://github.com/bonn3r" target="_blank" rel="noopener noreferrer" class="icon brands" title="GitHub" aria-label="GitHub">
+                <img src="/qscience/assets/images/logo/github-logo.svg"
+                     data-light-src="/qscience/assets/images/logo/github-logo.svg"
+                     data-dark-src="/qscience/assets/images/logo/github-logo-dark.svg"
+                     alt="GitHub" width="20" height="20" style="vertical-align:middle;">
+              </a>
+            </li>
 
-								<p class="paragrafo">[Em breve adiciono textos sobre o grupo de pesquisa....]</p>
-							</div>
+            <li>
+              <a href="http://lattes.cnpq.br/3294938329763314" target="_blank" rel="noopener noreferrer" class="icon brands" title="Currículo Lattes" aria-label="Currículo Lattes">
+                <img src="/qscience/assets/images/logo/lattes-logo.svg"
+                     data-light-src="/qscience/assets/images/logo/lattes-logo.svg"
+                     data-dark-src="/qscience/assets/images/logo/lattes-logo-dark.svg"
+                     alt="Plataforma Lattes" width="20" height="20" style="vertical-align:middle;">
+              </a>
+            </li>
 
-							<div class="col-4 col-12-medium" style="margin-left: 3em;">
-							<div class="box" style="background: var(--bg-box-white) !important;">
-								<div style="text-align: center; margin-bottom: 2rem;">
-									<img src="/qscience/assets/images/fotos/eu_2.jpeg"
-									alt="Willian Bonner"
-									class="foto-perfil" />
-									<figcaption style="display: block; margin-top: 0.5em; font-size: 0.9em; text-align: center; font-family: 'Times New Roman', Times, serif;">
-										<strong>Willian Bonner</strong>, 2026.
-									</figcaption>
-								</div>
+            <li>
+              <a href="https://linkedin.com/in/willianbonnerbsc" target="_blank" rel="noopener noreferrer" class="icon brands" title="LinkedIn" aria-label="LinkedIn">
+                <img src="/qscience/assets/images/logo/linkedin-logo.svg" alt="LinkedIn" width="20" height="20" style="vertical-align:middle;">
+              </a>
+            </li>
 
-								<div class="formacao-wrapper">
-									<div class="section-subheading">Formação Acadêmica</div>
-									
-									<div class="box" style="padding: 1em;">
-										<ul class="contact">
-											<li class="svg-icon-item">
-												<img src="/qscience/assets/images/logo/data-search-logo.svg" alt="University logo" 
-												data-light-src="/qscience/assets/images/logo/data-search-logo.svg"
-												data-dark-src="/qscience/assets/images/logo/data-search-logo-dark.svg"
-												style="height: 38px;"
-												/>
-												<div class="description">
-													<p class="course">Mestrando em Física, 2026 -</p>
-													<p class="institution">Universidade Federal de Pernambuco (UFPE)</p>
-												</div>
-											</li>
-										</ul>
-									</div>
+            <li>
+              <a href="https://orcid.org/0009-0007-7458-8512" target="_blank" rel="noopener noreferrer" class="icon brands" title="ORCID" aria-label="ORCID">
+                <img src="/qscience/assets/images/logo/orcid-logo.svg" alt="ORCID" width="20" height="20" style="vertical-align:middle;">
+              </a>
+            </li>
+          </ul>
+        </header>
 
-									<div class="box" style="padding: 1em;">
-										<ul class="contact">
-											<li class="svg-icon-item">
-												<img src="/qscience/assets/images/logo/diploma-logo.svg" alt="University logo" class="svg-icon"
-												data-dark-src="/qscience/assets/images/logo/diploma-logo-dark.svg"
-												data-light-src="/qscience/assets/images/logo/diploma-logo.svg"
-												/>
-												<div class="description">
-													<p class="course">Graduação em Física, 2025</p>
-													<p class="institution">Universidade Federal de Sergipe (UFS)</p>
-												</div>
-											</li>
-										</ul>
-									</div>
-								</div>
+        <!-- Seção Biografia -->
+        <section>
+          <div class="content">
+            <header class="major" style="text-align: center;">
+              <h1>Quem sou eu</h1>
+            </header>
+            <div class="up-date" style="margin-bottom: 2em;">Atualizado em: 05/09/2026</div>
 
-								<div class="interesses-wrapper" style="margin-top: 2rem;">
-    								<div class="section-subheading">
-										Interesses de Pesquisa
-									</div>
-    								<ul class="ul-interests mb-0">
-   	    								<li>Interesse 01</li>
-										<li>Interesse 02</li>
-										<li>Interesse 03</li>
-										<li>Interesse 04</li>
-									</ul>
-								</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</section>
-				
-				<footer id="footer" style="display: flex; justify-content: center; font-size: 0.8em; font-family: Inconsolata, monospace;">
-					<p class="copyright">&copy;2026 Jimi.7z. All rights reserved. Created by: <a href="https://html5up.net/editorial" target="_blank" rel="noopener noreferrer">HTML5 UP</a>. Redesign by: Willian Bonner.</p>
-				</footer>
-		</div>
+            <div class="row bio-row">
+              <!-- Coluna de Texto Principal -->
+              <div class="col-7 col-12-medium">
+                <p class="paragrafo">
+                  Quando criança, eu era do tipo que destruía os brinquedos para tentar entender como eles funcionavam. Meus pais, ao notarem essa curiosidade, sempre me incentivaram a ler: meu pai me dava gibis e minha mãe, livros escolares de todas as séries. Meus tios, Fernando e Eliana, também tiveram um papel fundamental, presenteando-me com obras que despertaram meu gosto pela ciência – em especial, pela Física. Mais tarde, o jogo Half-Life, com sua narrativa de ficção científica e física especulativa, consolidou meu interesse pela física teórica. Esse caminho culminou em 2019, quando ingressei na Universidade Federal de Sergipe para dar os primeiros passos rumo à carreira de físico.
+                </p>
 
-		<!-- Scripts -->
-		<script src="/qscience/assets/codes/js/jquery.min.js"></script>
-		<script src="/qscience/assets/codes/js/browser.min.js"></script>
-		<script src="/qscience/assets/codes/js/breakpoints.min.js"></script>
-		<script src="/qscience/assets/codes/js/util.js"></script>
-		<script src="/qscience/assets/codes/js/sidebar.js"></script>
-		<script src="/qscience/assets/codes/js/rightbar.js"></script>
-		<script src="/qscience/assets/codes/js/main.js"></script>
+                <p class="paragrafo">
+                  Durante a graduação, busquei me envolver em iniciações científicas, dividindo meu tempo entre os departamentos de Matemática e Física. No DMA, sob orientação do professor <a href="http://lattes.cnpq.br/2053976233616645" target="_blank" rel="noopener noreferrer">Ricardo Pinheiro</a>, mergulhei na análise real e funcional ao longo de três iniciações científicas. Na primeira, o professor já possuía um projeto bem delimitado: estudei tópicos de análise funcional para compreender os métodos variacionais e aplicá-los a EDPs não lineares (uma ferramenta que mais tarde se revelaria essencial em meu trabalho com sistemas complexos; no ano seguinte, escrevemos um projeto sob medida para minha formação). Estudei introdução à análise no $\mathbb{R}^n$ em paralelo com a disciplina de Análise Real, que cursei como eletiva. Essa experiência aprofundou minha formação matemática para além do usual em um curso de física: vi de perto demonstrações, estruturas lógicas, a construção dos números reais e sua expansão para $\mathbb{R}^n$, um rigor que levo comigo até hoje. Em um terceiro momento, dedicamo-nos à introdução à geometria diferencial aplicada à mecânica relativística, o que despertou definitivamente meu interesse pela forma de como a Matemática interage com a Física. Ao final desse estudo, percebi que meu caminho seria trilhado na física, não na matemática pura. Foi nesse momento que procurei o professor Andrei Smirnov para iniciar minha jornada na física matemática.
+                </p>
 
-	</body>
+                <p class="paragrafo">
+                  No DFI, em uma quarta iniciação científica sob orientação do professor <a href="http://lattes.cnpq.br/9436635099000071" target="_blank" rel="noopener noreferrer">Andrei Smirnov</a>, direcionei minha pesquisa para a física matemática, com foco em variedades de curvatura negativa e na construção do operador de Laplace-Beltrami. Nesse projeto, aprofundamos o estudo de variedades hiperbólicas e pseudo-esferas, desenvolvendo um código computacional na plataforma MAXIMA para calcular, a partir de uma parametrização qualquer, o tensor métrico, os símbolos de Christoffel, os tensores de Riemann e Ricci, a curvatura escalar e o operador de Laplace-Beltrami. Essa experiência me ensinou o valor da computação simbólica na física teórica e consolidou meu interesse em unir formalismo matemático rigoroso com ferramentas computacionais para explorar problemas fundamentais da física. Embora o projeto não tenha sido concluído, a jornada foi muito importante para me preparar para os desafios seguintes.
+                </p>
+
+                <p class="paragrafo">
+                  Meu Trabalho de Conclusão de Curso, orientado pelo professor <a href="http://lattes.cnpq.br/1957149198783008" target="_blank" rel="noopener noreferrer">Gerson Cortês Duarte-filho</a>, foi uma experiência de aplicar meus conhecimentos matemáticos e computacionais a um problema concreto da física: a dinâmica de sistemas laser. Estudamos dois regimes de modelagem: o modelo clássico, baseado nas equações de taxa para lasers de três níveis, que, devido à rápida transição do terceiro estado excitado para o segundo, pode ser reduzido a um sistema de dois níveis. E as equações de Maxwell-Bloch, que combinam um campo eletromagnético clássico com uma abordagem quântica para os átomos. Para explorar esses modelos, desenvolvi códigos em Python, validando os resultados com dados experimentais da literatura. Embora a dinâmica não-linear e os lasers não sejam minha área de foco principal, essa experiência consolidou minhas habilidades em modelagem computacional e análise de sistemas complexos. Competências que pretendo levar para meus estudos em física matemática e relatividade geral.
+                </p>
+
+                <p class="paragrafo">
+                  Fora da vida acadêmica, sou um amante da música. Dedico algumas horas da semana para ouvir exclusivamente álbuns inteiros dos meus artistas favoritos, prestando atenção nas nuances, nos instrumentos, nas letras e na mensagem que o artista quis transmitir. Também sou lutador de jiu-jitsu e ciclista entusiasta: no jiu-jitsu, graduei-me para a faixa azul em um ano e treino sempre que possível; no ciclismo, percorro cerca de 90 km por semana, tentando manter a média de 20 km/h com uma bike simples dos anos 2000... assim que me estabilizar em terras recifenses, montarei uma bike nova!
+                </p>
+
+                <p class="paragrafo">
+                  <em>[Em breve adiciono textos sobre o grupo de pesquisa...]</em>
+                </p>
+              </div>
+
+              <!-- Coluna Lateral de Perfil e Formação -->
+              <div class="col-4 col-12-medium" style="margin-left: 3em;">
+                <div class="box" style="background: var(--bg-box-white) !important;">
+                  <figure style="text-align: center; margin: 0 0 2rem 0;">
+                    <img src="/qscience/assets/images/fotos/eu_2.jpeg"
+                         alt="Willian Bonner"
+                         class="foto-perfil" />
+                    <figcaption style="display: block; margin-top: 0.5em; font-size: 0.9em; text-align: center; font-family: 'Times New Roman', Times, serif;">
+                      <strong>Willian Bonner</strong>, 2026.
+                    </figcaption>
+                  </figure>
+
+                  <div class="formacao-wrapper">
+                    <div class="section-subheading">Formação Acadêmica</div>
+
+                    <div class="box">
+                      <p>Mestrando em Física, 2026 -<br><strong style="display: flex; justify-content: center;">UFPE</strong></p>
+                    </div>
+
+                    <div class="box">
+                      <p>Barachel em Física, 2026<br><strong style="display: flex; justify-content: center;">UFS</strong></p>
+                    </div>
+                  </div>
+
+                  <div class="interesses-wrapper" style="margin-top: 2rem;">
+                    <div class="section-subheading">Interesses de Pesquisa</div>
+                    <ul class="ul-interests mb-0">
+                      <li>Física Matemática</li>
+                      <li>Relatividade Geral</li>
+                      <li>Geometria Diferencial</li>
+                      <li>Divulgação Científica</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Rodapé -->
+        <footer id="footer" style="display: flex; justify-content: center; font-size: 0.8em; font-family: 'Inconsolata', monospace;">
+          <p class="copyright">&copy;2026 Jimi.7z. All rights reserved. Created by: <a href="https://html5up.net/editorial" target="_blank" rel="noopener noreferrer">HTML5 UP</a>. Redesign by: Willian Bonner.</p>
+        </footer>
+
+      </div>
+    </div>
+
+    <!-- Scripts Otimizados e Consolidados -->
+    <script src="/qscience/assets/codes/js/vendor.min.js"></script>
+    <script src="/qscience/assets/codes/js/main.js"></script>
+    <script src="/qscience/assets/codes/js/app-ui.js"></script>
+  </body>
 </html>

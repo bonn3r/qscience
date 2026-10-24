@@ -85,50 +85,30 @@ Versão: 1.0 - Data: --/--/----
         </ul>
 	</nav>
 
-	<!-- Publicações Importantes -->
-	<section>
-		<header class="major" style="display: flex; justify-content: center;">
-			<h2 style="font-size: 1.5em;;">Publicações Importantes</h2>
-		</header>
-					
-		<div class="mini-posts">
-			<article>
-				<a href="/qscience/br/pesquisa/tcc.html" class="image"><img src="/qscience/br/pesquisa/tcc/tcc_pub.svg" alt="Imagem com convite para conhecer meu TCC" /></a>
-				<p>Conheça meu TCC! Disponibilizei aqui os principais resultados e todo o material produzido durante a pesquisa.</p>
-			</article>
-					
-			<article>
-				<a href="/qscience/br/pesquisa/ics/ics.html" class="image"><img src="/qscience/br/pesquisa/ics/pub/ic_pub.svg" alt="Imagem com convite para conhecer minhas iniciações científica" /></a>
-				<p>Iniciações Científicas: passeio entre o DMA-UFS e DFI-UFS.</p>
-			</article>
-					
-			<article>
-				<a href="/qscience/br/extras/significado-de-qscience.html" class="image"><img src="/qscience/br/extras/apresentacao_pub.svg" alt="Imagem com convite para conhecer a origem do site" /></a>
-				<p>O que "Q-Science" significa? Um breve resumo sobre a origem e significado dos símbolos desse site.</p>
-	    	</article>
-		</div>
-	</section>
-
 	<!-- Email para contato -->
 	<section>
 		<header class="major" style="display: flex; justify-content: center;">
-			<h2>Email para contato</h2>
-		</header>
-		<div class="boxer" style="width: auto; max-width: 600px; margin: 0 auto; background: #f9f9f9; padding: 1em 1.5em; border-radius: 6px;">
-			<div class="svg-icon-item" style="display: flex; align-items: center; gap: 0.8rem;">
-				<div style="position: relative; display: inline-flex; flex-direction: column; align-items: center; flex-shrink: 0; width: 3.5em; height: 2.5em; justify-content: center;">
-					<img src="/qscience/assets/images/logo/email-logo.svg" alt="Envelope"
-						data-light-src="/qscience/assets/images/logo/email-logo.svg"
-						data-dark-src="/qscience/assets/images/logo/email-logo-dark.svg"
-						id="emailIcon"
-						style="width: 3em; height: 3em; transition: filter 0.3s; flex-shrink: 0; cursor: pointer;"/>
-					<span id="feedbackCopiar" style="position: absolute; top: 100%; left: 50%; transform: translateX(-50%); margin-top: 0.2rem; font-size: 0.7rem; font-weight: 600; white-space: nowrap; opacity: 0; transition: opacity 0.2s;"></span>
-				</div>
-				<span class="contact-text" style="margin-left: 15px;">
-					Clique no ícone à esquerda para copiar meu email.
-				</span>
-			</div>
-		</div>
+    		<h2>Email para contato</h2>
+  		</header>
+  		<div class="boxer" style="width: auto; max-width: 600px; margin: 0 auto; background: var(--bg-box, #f9f9f9); padding: 1em 1.5em; border-radius: 6px;">
+    		<div class="svg-icon-item" style="display: flex; align-items: center; gap: 0.8rem;">
+      			<div style="position: relative; display: inline-flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+        			<button type="button" id="btnCopyEmail" class="btn-copy-email" aria-label="Copiar endereço de e-mail" style="background: none; border: none; padding: 0; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+          				<img 
+							src="/qscience/assets/images/logo/email-logo-dark.svg"
+               				data-light-src="/qscience/assets/images/logo/email-logo.svg"
+               				data-dark-src="/qscience/assets/images/logo/email-logo-dark.svg"
+               				alt="Envelope de e-mail"
+							class="email-icon"
+               				style="width: 3em; height: 3em; transition: transform 0.2s, filter 0.2s;" />
+        			</button>
+        		<span class="copy-feedback" role="status" aria-live="polite" style="position: absolute; top: 100%; left: 50%; transform: translateX(-50%); margin-top: 0.25rem; font-size: 0.75rem; font-weight: 600; white-space: nowrap; opacity: 0; visibility: hidden; transition: opacity 0.2s, visibility 0.2s;"></span>
+      			</div>
+      			<span class="contact-text" style="margin-left: 10px;">
+        			Clique no ícone à esquerda para copiar meu email.
+      			</span>
+    		</div>
+  		</div>
 	</section>
 
 	<!-- Redes Sociais -->
@@ -141,12 +121,17 @@ Versão: 1.0 - Data: --/--/----
 		<ul class="contact">
 			<li class="svg-icon-item">
 				<img src="/qscience/assets/images/logo/bluesky-logo.svg" alt="Logomarca Bluesky" class="svg-icon" />
-				<a href="https://bsky.app/profile/bonner.bsky.social" target="_blank" rel="noopener noreferrer">@bonner.bsky.social</a>
+				<a href="https://bsky.app/profile/bonner.bsky.social" target="_blank" rel="noopener noreferrer">@bonner</a>
 			</li>
 	
             <li class="svg-icon-item">
 			    <img src="/qscience/assets/images/logo/insta-logo.svg" alt="Logomarca Instagram" class="svg-icon" />
 			    <a href="https://www.instagram.com/jimi.7z" target="_blank" rel="noopener noreferrer">@jimi.7z</a>
+		    </li>
+
+			<li class="svg-icon-item">
+			    <img src="/qscience/assets/images/logo/twitter-logo.svg"  alt="Logomarca Twitter" class="svg-icon"/>
+			    <a href="https://x.com/jimi7z" target="_blank" rel="noopener noreferrer">@jimi7z</a>
 		    </li>
 		</ul>
 	</section>

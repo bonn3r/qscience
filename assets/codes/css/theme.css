@@ -1,8 +1,46 @@
-/*
+/*==========================================================================
 Criado em 25/07/2026
+Atualizado em 06/10/2026
 Autor: Jimi
-Código: theme.css - Variáveis de tema para modo claro e escuro
-*/
+Coautor: Gemini
+Código: theme.css - Fundação, Tipografia Local e Variáveis de Tema (Light & Dark)
+Projeto: Q-Science
+==========================================================================*/
+
+/*--------------------------------------------------------------------------
+  1. REGISTRO DE FONTES LOCAIS (@font-face)
+-------------------------------------------------------------------------- */
+
+@font-face {
+  font-family: 'Inconsolata';
+  src: url('/qscience/assets/codes/webfonts/Inconsolata.ttf') format('truetype');
+  font-weight: 200 900;
+  font-stretch: 50% 200%;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'CookieFont';
+  src: url('/qscience/assets/codes/webfonts/cookie.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'MinhaFonte';
+  src: url('../fonts/MinhaFonte.woff2') format('woff2'),
+       url('../fonts/MinhaFonte.woff') format('woff'),
+       url('../fonts/MinhaFonte.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* --------------------------------------------------------------------------
+  2. TEMA CLARO (Default :root)
+-------------------------------------------------------------------------- */
 
 :root {
   /* Fundos principais */
@@ -10,7 +48,7 @@ Código: theme.css - Variáveis de tema para modo claro e escuro
   --bg-sidebar: #f5f6f7;
   --bg-header: #ffffff;
 
-  /* Fundos secundários */
+  /* Fundos secundários e componentes */
   --bg-box: #f2f2f2;
   --bg-boxer: #f2f2f2;
   --bg-box-white: #ffffff;
@@ -18,12 +56,13 @@ Código: theme.css - Variáveis de tema para modo claro e escuro
   --bg-code: #f6f8fa;
   --bg-input: #ffffff;
   --bg-table-zebra: rgba(230, 235, 237, 0.25);
-  --bg-dropdown: rgba(255, 255, 255, 0.9);
+  --bg-dropdown: rgba(255, 255, 255, 0.95);
   --bg-highlight-sidebar: #eff1f2;
   --bg-toggle: rgba(222, 225, 226, 0.75);
   --bg-drawer-button: #e0e0e0;
   --bg-slider: #eaeaea;
-  --bg-tag-green: green;
+  --bg-grade: #eaeaea;
+  --bg-tag-green: #2e7d32;
 
   /* Textos principais */
   --text-body: #383a3b;
@@ -37,14 +76,14 @@ Código: theme.css - Variáveis de tema para modo claro e escuro
   --text-input: #7f888f;
   --text-black: #000000;
 
-  /* Textos secundários */
-  --text-muted: #9fa3a6;
+  /* Textos secundários e auxiliares */
+  --text-muted: #767a7d; /* Contraste ajustado para WCAG AA */
   --text-caption: #666666;
   --text-icon-toggle: #85939e;
   --text-opener: #3b3b3b;
   --text-placeholder: #9fa3a6;
 
-  /* Cor principal */
+  /* Cores de destaque e ação */
   --color-primary: #ad0000;
   --color-red: #ff0000;
   --color-primary-hover: #f67878;
@@ -52,6 +91,10 @@ Código: theme.css - Variáveis de tema para modo claro e escuro
   --color-primary-dark: #8a0000;
   --color-sec-hover: #ff000f;
   --color-active: #d1cdcd;
+  --color-saberse: #007bff;
+  --color-marcador: #cfcfcf;
+  --color-marc-letra: #000000;
+  --buton-active: #f1eded;
 
   /* Bordas e divisores */
   --border-color: rgba(210, 215, 217, 0.75);
@@ -61,97 +104,98 @@ Código: theme.css - Variáveis de tema para modo claro e escuro
   --border-light-b: #000000;
   --border-toggle-mobile: rgba(222, 225, 226, 0.75);
 
-  /* Ícones e setas */
+  /* Ícones */
   --icon-color: #7f888f;
   --icon-opener: #3b3b3b;
   --icon-features: #f56a6a;
-  --icon-contact-svg: #0F99AB;
-  --buton-active: #f1eded;
+  --icon-contact-svg: #0f99ab;
 
   /* Sombras */
   --shadow-sidebar: 0 0 5em 0 rgba(0, 0, 0, 0.175);
   --shadow-dropdown: 0 8px 24px rgba(0, 0, 0, 0.12);
   --shadow-tooltip: 0 4px 12px rgba(0, 0, 0, 0.2);
   --shadow-toggle: 0 2px 8px rgba(0, 0, 0, 0.06);
-  --shadow-box: 0 0 10px rgba(0,0,0,0.6);
-
-  /* Added my me */
-
-  --color-marcador: #cfcfcf;
-  --color-marc-letra: #000000;
-  --color-saberse: #007bff;
-  --color-sombra:rgba(26, 25, 25, 0.404);
-  --bg-grade: #eaeaea;
+  --shadow-box: 0 0 10px rgba(0, 0, 0, 0.6);
+  --color-sombra: rgba(26, 25, 25, 0.404);
 }
 
-/* Modo noturno – ativado pela classe .dark-mode no <body> */
+/* --------------------------------------------------------------------------
+  3. TEMA ESCURO (.dark-mode no <body>)
+-------------------------------------------------------------------------- */
+
 .dark-mode {
+  /* Fundos principais */
   --bg-body: #0b0f19;
   --bg-sidebar: #121929;
   --bg-header: #0b0f19;
 
+  /* Fundos secundários e componentes */
   --bg-box: #0c1319;
-  --bg-box-white: #2a2a2a;
+  --bg-box-white: #1e2638;
   --bg-slider: #0c1319;
-  --bg-boxer: #2e2c2c;
-  --bg-drawer: #2a2a2a;
-  --bg-code: #323232;
-  --bg-input: #2a2a2a;
+  --bg-boxer: #162035;
+  --bg-drawer: #1a233a;
+  --bg-code: #161e31;
+  --bg-input: #1a233a;
   --bg-table-zebra: rgba(255, 255, 255, 0.05);
-  --bg-dropdown: #2a2a2a;
-  --bg-highlight-sidebar: \#192236;
+  --bg-dropdown: #1a233a;
+  --bg-highlight-sidebar: #192236; /* Correção do escape '\#' */
   --bg-toggle: rgba(255, 255, 255, 0.15);
-  --bg-drawer-button: #444444;
-  --border-light-b: #f1eded;
-  --bg-tag-green: rgb(0, 88, 0);
+  --bg-drawer-button: #2a3550;
+  --bg-grade: #121829;
+  --bg-tag-green: #1b5e20;
 
-  --text-body: #cccccc;
-  --text-wp: #dddddd;
-  --text-title: #eeeeee;
-  --text-link: #ff1f1f;
-  --text-menu: #dddddd;
-  --text-menu-level2: #bbbbbb;
-  --text-menu-level3: #999999;
-  --text-input: #cccccc;
+  /* Textos principais */
+  --text-body: #d1d5db;
+  --text-wp: #ffffff;
+  --text-botton: #f3f3f3;
+  --text-title: #f3f4f6;
+  --text-link: #ff4d4d;
+  --text-menu: #e5e7eb;
+  --text-menu-level2: #9ca3af;
+  --text-menu-level3: #6b7280;
+  --text-input: #d1d5db;
   --text-black: #ffffff;
 
-  --text-muted: #888888;
-  --text-caption: #aaaaaa;
-  --text-icon-toggle: #aaaaaa;
-  --text-opener: #b8b5b5;
-  --text-placeholder: #777777;
+  /* Textos secundários e auxiliares */
+  --text-muted: #9ca3af;
+  --text-caption: #9ca3af;
+  --text-icon-toggle: #9ca3af;
+  --text-opener: #d1d5db;
+  --text-placeholder: #6b7280;
 
-  --color-primary: #ad000091;
-  --color-primary-hover: #cc5252d0;
-  --color-primary-active: #e60000;
-  --color-primary-dark: #cc0000;
-  --color-sec-hover: aquamarine;
-  --color-active: #4b4b4b;
-
-  --border-color: rgba(255, 255, 255, 0.15);
-  --border-menu: rgba(255, 255, 255, 0.1);
-  --border-header: #ff1f1f;
-  --border-light: #444444;
-  --border-toggle-mobile: rgba(255, 255, 255, 0.15);
-
-  --icon-color: #aaaaaa;
-  --icon-opener: #dddddd;
-  --icon-features: #ff6b6b;
-  --icon-contact-svg: #66ccff;
-  --buton-active: rgba(255, 255, 255, 0.15);
-
-  --shadow-sidebar: 0 0 5em 0 rgba(0, 0, 0, 0.5);
-  --shadow-dropdown: 0 8px 24px rgba(0, 0, 0, 0.4);
-  --shadow-tooltip: 0 4px 12px rgba(0, 0, 0, 0.5);
-  --shadow-toggle: 0 2px 8px rgba(0, 0, 0, 0.2);
-  --shadow-box: 0 0 10px rgba(255, 255, 255, 0.6);
-
-  --text-botton: #F3F3F3;
-
+  /* Cores de destaque e ação */
+  --color-primary: #e02424; /* Sem opacidade para garantir contraste */
+  --color-red: #ff3b30;
+  --color-primary-hover: #f87171;
+  --color-primary-active: #ef4444;
+  --color-primary-dark: #b91c1c;
+  --color-sec-hover: #5eead4;
+  --color-active: #374151;
+  --color-saberse: #60a5fa;
   --color-marcador: #212e50;
   --color-marc-letra: #ffffff;
+  --buton-active: rgba(255, 255, 255, 0.15);
 
-  --bg-grade: #121829;
-  --color-sombra:rgba(218, 218, 218, 0.404);
-  --color-saberse: #64a6ec;
+  /* Bordas e divisores */
+  --border-color: rgba(255, 255, 255, 0.15);
+  --border-menu: rgba(255, 255, 255, 0.1);
+  --border-header: #e02424;
+  --border-light: #2d3748;
+  --border-light-b: #4b5563;
+  --border-toggle-mobile: rgba(255, 255, 255, 0.15);
+
+  /* Ícones */
+  --icon-color: #9ca3af;
+  --icon-opener: #d1d5db;
+  --icon-features: #f87171;
+  --icon-contact-svg: #38bdf8;
+
+  /* Sombras */
+  --shadow-sidebar: 0 0 5em 0 rgba(0, 0, 0, 0.6);
+  --shadow-dropdown: 0 8px 24px rgba(0, 0, 0, 0.5);
+  --shadow-tooltip: 0 4px 12px rgba(0, 0, 0, 0.6);
+  --shadow-toggle: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-box: 0 0 10px rgba(0, 0, 0, 0.8);
+  --color-sombra: rgba(0, 0, 0, 0.6);
 }

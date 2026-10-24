@@ -1,17 +1,17 @@
-/* ==========================================================================
-  Criado por: Jimi.7z (Willian Bonner) em 24/09/2026
-	Última atualização: 03/10/2026
-	Arquivo de reset do css
-	Versão: 1.0
-  special.css
-  Componente: Ajustste do exercício do Oscilador Harmônico Quântico integrado ao meu site.
-========================================================================== */
+/*==========================================================================
+Criado em 24/09/2026
+Atualizado em 06/10/2026
+Autor: Jimi
+Coautor: Gemini
+Código: special.css - Simulação do Oscilador Harmónico Quântico, Canvas e MathJax
+Projeto: Q-Science
+==========================================================================*/
 
-
-/* ---------- Grade principal: painel de controles + gráficos ---------- */
+/* --------------------------------------------------------------------------
+   1. GRADE PRINCIPAL DO EXPERIMENTO (PAINEL + GRÁFICOS)
+   -------------------------------------------------------------------------- */
 #main .inner > section main {
   display: grid;
-  /* aside mais estreito + coluna de gráficos flexível, sem estourar */
   grid-template-columns: minmax(220px, 260px) minmax(0, 1fr);
   gap: 1.5em;
   align-items: start;
@@ -24,19 +24,18 @@
   border-radius: 8px;
   padding: 1.2em 1.1em;
   box-shadow: var(--shadow-sidebar);
-  /* permite que o aside encolha sem forçar overflow */
   min-width: 0;
 }
 
 #main .inner > section .plots {
   padding: 0.5em 0;
-  /* CRUCIAL: sem isso, itens de grid assumem min-width:auto
-     e podem transbordar o container */
   min-width: 0;
   max-width: 100%;
 }
 
-/* ---------- Formulários ---------- */
+/* --------------------------------------------------------------------------
+   2. FORMULÁRIOS E CONTROLOS TÉCNICOS
+   -------------------------------------------------------------------------- */
 #main .inner > section fieldset {
   border: 1px solid var(--border-color);
   border-radius: 8px;
@@ -46,7 +45,6 @@
   min-width: 0;
 }
 
-/* Ajuste fino dentro do aside compacto */
 #main .inner > section aside fieldset {
   padding: 0.8em 0.9em;
   margin-bottom: 1em;
@@ -80,9 +78,10 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  margin: 0;
 }
 
-/* input[type=number] — não é estilizado por components.css */
+/* Controlo numérico (inputs específicos da simulação) */
 #main .inner > section input[type="number"] {
   width: 90px;
   height: auto;
@@ -94,7 +93,6 @@
   font-family: "Open Sans", sans-serif;
   font-size: 0.9em;
   appearance: auto;
-  -webkit-appearance: auto;
 }
 
 #main .inner > section aside input[type="number"] {
@@ -103,7 +101,7 @@
   padding: 4px 6px;
 }
 
-/* range — reset.css remove a aparência nativa; restauramos */
+/* Controlo deslizante (range) */
 #main .inner > section input[type="range"] {
   width: 100%;
   height: auto;
@@ -113,10 +111,9 @@
   background: transparent;
   accent-color: var(--color-primary);
   appearance: auto;
-  -webkit-appearance: auto;
 }
 
-/* select — aparência nativa (sem a seta SVG de components.css) */
+/* Seletores do painel científico */
 #main .inner > section select {
   width: 100%;
   height: auto;
@@ -130,18 +127,24 @@
   font-size: 0.9em;
   margin-bottom: 0.8em;
   appearance: auto;
-  -webkit-appearance: auto;
 }
 
-/* ---------- Blocos de modo (a / b / c) ---------- */
-#main .inner > section .mode-block { display: none; }
-#main .inner > section .mode-block.active { display: block; }
+/* Blocos de modo (a / b / c) */
+#main .inner > section .mode-block {
+  display: none;
+}
 
-/* ---------- Canvas e gráficos ---------- */
+#main .inner > section .mode-block.active {
+  display: block;
+}
+
+/* --------------------------------------------------------------------------
+   3. TELAS GRÁFICAS (CANVAS) E LEGENDA
+   -------------------------------------------------------------------------- */
 #main .inner > section canvas {
   width: 100%;
-  max-width: 100%;          /* nunca excede a coluna */
-  height: auto;             /* o JS reescreve via style; aqui é fallback */
+  max-width: 100%;
+  height: auto;
   background: var(--bg-code);
   border: 1px solid var(--border-color);
   border-radius: 8px;
@@ -156,7 +159,6 @@
   font-weight: 600;
 }
 
-/* Ajuste compacto quando dentro da coluna estreita */
 #main .inner > section .plots .plot-title {
   font-size: 0.8em;
   margin: 0.6em 0 0.3em;
@@ -209,12 +211,16 @@
   min-width: 1.6em;
 }
 
-/* ---------- MathJax no modo escuro (contraste) ---------- */
+/* --------------------------------------------------------------------------
+   4. RENDERIZAÇÃO MATHJAX NO MODO NOTURNO
+   -------------------------------------------------------------------------- */
 body.dark-mode #main .inner > section mjx-container {
   color: var(--text-body) !important;
 }
 
-/* ---------- Responsivo ---------- */
+/* --------------------------------------------------------------------------
+   5. RESPONSIVIDADE
+   -------------------------------------------------------------------------- */
 @media screen and (max-width: 980px) {
   #main .inner > section main {
     grid-template-columns: 1fr;

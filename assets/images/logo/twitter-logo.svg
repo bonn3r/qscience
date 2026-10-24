@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+
+<svg
+   width="800px"
+   height="800px"
+   viewBox="0 -4 48 48"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="twitter-logo.svg"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.2415625"
+     inkscape:cx="-534.02329"
+     inkscape:cy="93.143596"
+     inkscape:current-layer="Icons" />
+  <title
+     id="title1">Twitter-color</title>
+  <desc
+     id="desc1">Created with Sketch.</desc>
+  <defs
+     id="defs1" />
+  <g
+     id="Icons"
+     stroke="none"
+     stroke-width="1"
+     fill="none"
+     fill-rule="evenodd">
+    <path
+       d="M 47.642408,4.9581536 C 45.904203,5.7496068 44.032714,6.2848363 42.069597,6.523973 44.074363,5.294096 45.612648,3.3439413 46.337362,1.0208326 44.460324,2.1596094 42.386146,2.9880741 40.170344,3.4321937 38.404377,1.4991159 35.880365,0.29201144 33.087021,0.29201144 c -5.356226,0 -9.701731,4.45547366 -9.701731,9.95008056 0,0.780062 0.08328,1.537352 0.249896,2.266163 C 15.568915,12.092604 8.4189496,8.1353474 3.6291682,2.1083588 2.7933925,3.583078 2.3157951,5.294096 2.3157951,7.116139 c 0,3.450505 1.7132205,6.496739 4.3177524,8.28177 -1.5882626,-0.04838 -3.0876779,-0.501066 -4.3982718,-1.241268 v 0.122416 c 0,4.822732 3.3459018,8.845467 7.7886023,9.756489 -0.8135714,0.233451 -1.6715614,0.350171 -2.5573242,0.350171 -0.6247596,0 -1.2356329,-0.05981 -1.8270613,-0.176504 1.2356231,3.95156 4.8175435,6.829823 9.0658735,6.906694 -3.320918,2.670432 -7.5081531,4.261872 -12.0535871,4.261872 -0.7830291,0 -1.5577205,-0.04553 -2.31575607,-0.136645 4.29552827,2.818469 9.39907917,4.466855 14.87747317,4.466855 17.85409,0 27.614137,-15.159996 27.614137,-28.310043 0,-0.432728 -0.0079,-0.865466 -0.02503,-1.289661 l 4.839758,-5.1501314"
+       id="Twitter"
+       style="fill:#00aaec;fill-opacity:1;stroke:#000000;stroke-width:0.24;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:label="Twitter"
+       sodipodi:nodetypes="ccccssccsccscsccscsscc" />
+  </g>
+  <metadata
+     id="metadata1">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title>Twitter-color</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+</svg>

@@ -1,56 +1,60 @@
 <!DOCTYPE HTML>
 <!--
 Criado em: 19/07/2026
+Atualizado em: 15/10/2026
 Autor: Jimi.7z
+Coautor: Gemini
 Código: Página de encaminhamento automático para o idioma do usuário.
-Version: 2.1
+Versão: 3.0
 -->
-<html>
-	<head>
-		<title>Q-Science</title>
-		<link rel="icon" href="/qscience/assets/images/logo/cat-logo.svg" type="image/svg+xml" />
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="/qscience/assets/codes/css/main.css"/>
-		<!-- MathJax (opcional) -->
-		<script src="/qscience/assets/codes/js/mathjax_config.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
-		<style>
-			#maine .inner {
-				display: flex;
-				flex-direction: column;
-				justify-content: center;   /* centraliza verticalmente */
-				align-items: center;       /* centraliza horizontalmente */
-				min-height: 100vh;         /* ou height: 100% se o #main já tiver altura */
-				text-align: center;
-			}
-		</style>
-	</head>
-	<body class="is-preload">
-		
-		<!-- Main -->
-		<div id="maine">
-			<div class="inner">
-				<section class="major">
-					<h1><span class="letra-q">Q</span>-Science</h1>
-					<div class="image fit">
-						<img src="/qscience/assets/images/logo/cat-logo.svg" alt="Gato logomarca do site" style="display: block; margin: 0 auto; max-width: 350px;">
-					</div>
-				</section>
+<html lang="pt-BR">
+  <head>
+    <title>Q-Science</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="icon" href="/qscience/assets/images/logo/cat-logo.svg" type="image/svg+xml" />
 
-				<footer id="footer">
-					<p class="copyright" style="text-align: center;">&copy;2026 Jimi.7z. All rights reserved.</br>Create and design by: <a href="https://html5up.net/editorial" target="_blank" rel="noopener noreferrer">HTML5 UP</a>.</br>Redesign by: Willian Bonner.</p>
-				</footer>
-			</div>
-		</div>
+    <!-- Google Fonts (otimizado com preconnect) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,400;1,600&family=Roboto+Slab:wght@400;700&display=swap" />
 
-		<!-- Scripts -->
-		<script src="/qscience/assets/codes/js/jquery.min.js"></script>
-		<script src="/qscience/assets/codes/js/browser.min.js"></script>
-		<script src="/qscience/assets/codes/js/breakpoints.min.js"></script>
-		<script src="/qscience/assets/codes/js/util.js"></script>
-		<script src="/qscience/assets/codes/js/rightbar.js"></script>
-		<script src="/qscience/assets/codes/js/main.js"></script>
-	</body>
+    <!-- Ícones Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+    <!-- Estilos Modulares Consolidados -->
+    <link rel="stylesheet" href="/qscience/assets/codes/css/theme.css" />
+    <link rel="stylesheet" href="/qscience/assets/codes/css/core.css" />
+    <link rel="stylesheet" href="/qscience/assets/codes/css/components.css" />
+    <link rel="stylesheet" href="/qscience/assets/codes/css/modules.css" />
+  </head>
+
+  <body class="is-preload">
+    <!-- Main Splash -->
+    <div id="maine">
+      <div class="inner">
+        <section class="major" style="text-align: center;">
+        	<h1><span class="letra-q">Q</span>-Science</h1>
+        	<div class="image fit">
+        		<img src="/qscience/assets/images/logo/cat-logo.svg" alt="Gato logomarca do site" style="display: block; margin: 0 auto; max-width: 350px;">
+        	</div>
+        	<!-- Elemento de feedback visual de encaminhamento acionado pelo app-ui.js -->
+			<p id="countdown" style="text-align: center; margin-top: 1.5em; font-weight: 600; color: var(--text-muted);"></p>
+        </section>
+
+        <footer id="footer">
+          <p class="copyright" style="text-align: center;">
+            &copy;2026 Jimi.7z. All rights reserved.<br>
+            Create and design by: <a href="https://html5up.net/editorial" target="_blank" rel="noopener noreferrer">HTML5 UP</a>.<br>
+            Redesign by: Willian Bonner.
+          </p>
+        </footer>
+      </div>
+    </div>
+
+    <!-- Scripts Modulares Consolidados (executam o encaminhamento automático via app-ui.js) -->
+    <script src="/qscience/assets/codes/js/vendor.min.js"></script>
+    <script src="/qscience/assets/codes/js/main.js"></script>
+    <script src="/qscience/assets/codes/js/app-ui.js"></script>
+  </body>
 </html>

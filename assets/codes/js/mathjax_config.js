@@ -1,16 +1,27 @@
-/*
-	Criado por: Jimi.7z (Willian Bonner) em 02/07/2026
-	Última atualização: 
-	Arquivo: Configuração da biblioteca MathJax. Serve para exibir equações com latex no site
-	Versão: 1.0
-*/
+/*==========================================================================
+Criado em 02/07/2026
+Atualizado em 06/10/2026
+Autor: Jimi
+Coautor: Gemini
+Código: mathjax_config.js - Configuração das Regras e Delimitadores TeX/LaTeX
+Projeto: Q-Science
+==========================================================================*/
 
-MathJax = {
-    tex: {
-        inlineMath: [['$', '$'], ['\\(', '\\)']],
-        displayMath: [['$$', '$$'], ['\\[', '\\]']]
-    },
-    svg: {
-        fontCache: 'global'
-    }
+/* --------------------------------------------------------------------------
+ 1. CONFIGURAÇÃO GLOBAL DO MOTOR MATHJAX
+ -------------------------------------------------------------------------- */
+window.MathJax = {
+  tex: {
+    inlineMath: [
+      ['$', '$'],
+      ['\\(', '\\)']
+    ],
+    displayMath: [
+      ['$$', '$$'],
+      ['\\[', '\\]']
+    ]
+  },
+  svg: {
+    fontCache: 'global'
+  }
 };

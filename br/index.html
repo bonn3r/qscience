@@ -1,326 +1,332 @@
 <!DOCTYPE HTML>
 <!--
-Created in: 28/06/2026
-Editor: Jimi
-Versão: 3.0 - Data: 08/08/2026
+Criado em: 28/06/2026
+Atualizado em: 06/10/2026
+Autor: Jimi
+Coautor: Gemini
+Projeto: Q-Science
 -->
-<html>
-	<head>
-		<title>Página Principal | Q-Science</title>
-		<link rel="icon" href="/qscience/assets/images/logo/cat-logo.svg" type="image/svg+xml" />
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="/qscience/assets/codes/css/main.css" />
-		<!-- MathJax -->
-		<script src="/qscience/assets/codes/js/mathjax_config.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
-	</head>
-	
-	<body class="is-preload">
-		
-		<div id="sidebar"></div>
+<html lang="pt-BR">
+  <head>
+    <title>Página Principal | Q-Science</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="Q-Science: Portal acadêmico e de divulgação científica em Física, Matemática, Filosofia e Sociedade." />
+    <link rel="icon" href="/qscience/assets/images/logo/cat-logo.svg" type="image/svg+xml" />
 
-		<!-- Seletor de Idiomas -->
-		<div class="lang-dropdown" id="langDropdown">
-			<div class="lang-top">
-				<button class="theme-toggle" id="theme-toggle" aria-label="Alternar modo noturno">
-					<img src="/qscience/assets/images/logo/moon-logo.svg"
-					data-light-src="/qscience/assets/images/logo/moon-logo.svg"
-					data-dark-src="/qscience/assets/images/logo/sun-logo.svg"
-					alt="Alternar tema"
-					class="theme-img"
-					id="themeIcon" />
-				</button>
+    <!-- Google Fonts (carregamento otimizado com preconnect) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,400;1,600&family=Roboto+Slab:wght@400;700&display=swap" />
 
-				<button class="lang-dropdown-btn" id="langDropdownBtn" aria-haspopup="true" aria-expanded="false">
-					<img src="/qscience/assets/images/logo/brazilian-logo.svg" alt="Português" style="width:24px; height:16px; border-radius:2px;">
-				</button>
-			</div>
+    <!-- Ícones Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 
-			<!-- Gaveta de idiomas (agora antes do botão Índice) -->
-			<ul class="lang-dropdown-menu" id="langDropdownMenu" role="menu">
-				<li role="none">
-					<a href="/qscience/br/" role="menuitem" class="active-lang">
-					<img src="/qscience/assets/images/logo/brazilian-logo.svg" alt="Português">Português</a>
-				</li>
+    <!-- Novos Estilos Modulares Consolidados -->
+    <link rel="stylesheet" href="/qscience/assets/codes/css/theme.css" />
+    <link rel="stylesheet" href="/qscience/assets/codes/css/core.css" />
+    <link rel="stylesheet" href="/qscience/assets/codes/css/components.css" />
+    <link rel="stylesheet" href="/qscience/assets/codes/css/modules.css" />
 
-				<li role="none">
-					<a href="/qscience/en/" role="menuitem">
-					<img src="/qscience/assets/images/logo/united-kingdom-logo.svg" alt="English">English</a>
-				</li>
-			</ul>
-		</div>
+    <!-- MathJax (Configuração e motor SVG) -->
+    <script src="/qscience/assets/codes/js/mathjax_config.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+  </head>
 
+  <body class="is-preload">
+    <!-- Barra Lateral Injetada Dinamicamente -->
+    <div id="sidebar"></div>
 
-		<!-- Main -->
-		<div id="main">
-			<div class="inner">
+    <!-- Seletor de Idiomas e Tema Noturno -->
+    <div class="lang-dropdown" id="langDropdown">
+      <div class="lang-top">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Alternar modo noturno" title="Alternar modo claro/escuro">
+          <img src="/qscience/assets/images/logo/moon-logo.svg"
+               data-light-src="/qscience/assets/images/logo/moon-logo.svg"
+               data-dark-src="/qscience/assets/images/logo/sun-logo.svg"
+               alt="Alternar tema"
+               class="theme-img"
+               id="themeIcon" />
+        </button>
 
-			<!-- Cabeçalho -->
-				<header id="header">
-					<span class="logo">
-						<img src="/qscience/assets/images/logo/cat-logo.svg" alt="Gato logomarca do site" style="height: 2em; width: auto; vertical-align: middle; margin-right: 0.8em;">
-						<a href="/qscience/br/index.html" style="color: var(--text-title);"><span class="letra-q">Q</span>-Science</a>
-					</span>
-									
-					<ul class="icons">
-						<li>
-							<button id="topbtn" aria-label="Voltar ao topo">
-								<span class="topbtn-text">Voltar ao topo</span>
-								<img src="/qscience/assets/images/utilitarios/utilitario-seta.svg"
-								data-light-src="/qscience/assets/images/utilitarios/utilitario-seta.svg"
-								data-dark-src="/qscience/assets/images/utilitarios/utilitario-seta-dark.svg"
-								alt="">
-							</button>
-						</li>
+        <button class="lang-dropdown-btn" id="langDropdownBtn" aria-haspopup="true" aria-expanded="false" aria-label="Seletor de idioma">
+          <img src="/qscience/assets/images/logo/brazilian-logo.svg" alt="Português" style="width:24px; height:16px; border-radius:2px;">
+        </button>
+      </div>
 
-						
-						
-						<li>
-							<a href="/qscience/br/arxiv.html" class="icon brands">
-								<img src="/qscience/assets/images/logo/arxiv-logo.svg" alt="Logomarca do arXiv" width="20" height="20" style="vertical-align:middle;">
-								<span class="label">Arxiv</span>
-							</a>
-						</li>
-							
-						<li>
-							<a href="https://github.com/bonn3r" target="_blank" rel="noopener noreferrer" class="icon brands">
-								<img src="/qscience/assets/images/logo/github-logo.svg"
-								data-light-src="/qscience/assets/images/logo/github-logo.svg"
-								data-dark-src="/qscience/assets/images/logo/github-logo-dark.svg"
-								alt="GitHub"
-								width="20"
-								height="20"
-								style="vertical-align:middle;" />
-								<span class="label">Github</span>
-							</a>
-						</li>
-							
-						<li>
-							<a href="http://lattes.cnpq.br/3294938329763314" target="_blank" rel="noopener noreferrer" class="icon brands">
-								<img src="/qscience/assets/images/logo/lattes-logo.svg"
-								data-light-src="/qscience/assets/images/logo/lattes-logo.svg"
-								data-dark-src="/qscience/assets/images/logo/lattes-logo-dark.svg"
-								alt="Logomarca da Plataforma Lattes"
-								width="20"
-								height="20"
-								style="vertical-align:middle;">
-								<span class="label">Lattes</span>
-							</a>
-						</li>
-						
-						<li>
-							<a href="https://linkedin.com/in/willianbonnerbsc" target="_blank" rel="noopener noreferrer" class="icon brands">
-								<img src="/qscience/assets/images/logo/linkedin-logo.svg" alt="Logomarca Linkedin" width="20" height="20" style="vertical-align:middle;">
-								<span class="label">Linked</span>
-							</a>
-						</li>
-						
-						<li>
-							<a href="https://orcid.org/0009-0007-7458-8512" target="_blank" rel="noopener noreferrer" class="icon brands">
-								<img src="/qscience/assets/images/logo/orcid-logo.svg" alt="Logomarca Orcid" width="20" height="20" style="vertical-align:middle;">
-								<span class="label">ORCID</span>
-							</a>
-						</li>
-					</ul>
-				</header>
-				
-				<!-- Primeira sessão -->
-				<section>
-					<div class="content">
-						<header style="text-align: center;">
-							<h1><span class="letra-q">Q</span>-Science</h1>
-							<p>física - matemática - filosofia - sociedade</p>
-						</header>
+      <!-- Gaveta de Idiomas -->
+      <ul class="lang-dropdown-menu" id="langDropdownMenu" role="menu">
+        <li role="none">
+          <a href="/qscience/br/" role="menuitem" class="active-lang">
+            <img src="/qscience/assets/images/logo/brazilian-logo.svg" alt="Português">Português
+          </a>
+        </li>
+        <li role="none">
+          <a href="/qscience/en/" role="menuitem">
+            <img src="/qscience/assets/images/logo/united-kingdom-logo.svg" alt="English">English
+          </a>
+        </li>
+      </ul>
+    </div>
 
-						<div class="box" style="width: auto; max-width: 600px; margin: 0 auto; padding: 1em 1.5em; margin-right: 0; border-left: 4px solid var(--color-primary); border-radius: 6px;">
-							<p style="font-size: 14px; text-align: left; margin-bottom: 5px;">
-								Embora a Física possa ser estudada como a Matemática Pura, não é como Matemática Pura que a Física é importante.
-							</p>
-							<p style="font-size: 12px; text-align: right; margin-bottom: 0;">
-								<strong>- Bertrand Russell.</strong>
-							</p>
-						</div>
+    <!-- Main -->
+    <div id="main">
+      <div class="inner">
 
-						<p class="paragrafo">
-							<div class="image left" style="width: 300px;">
-								<img src="/qscience/assets/images/minhas-imagens/colider-01.png" alt="Foto da minha gata Miranda" style="border-radius: 12px; border-color: black; box-shadow: 0 0 10px rgba(0,0,0,0.6);" 
-								data-light-src="/qscience/assets/images/minhas-imagens/colider-01.png"
-								data-dark-src="/qscience/assets/images/minhas-imagens/colider-dark-01.png"
-								/>
-								<figcaption style="display: block; width: 100%; margin-top: 0.5em; font-size: 0.6em; text-align: justify; color: var(--text-black)">
-									Detector CMS do LHC. <em>(<strong>Fonte:</strong> <a href="https://cds.cern.ch/record/995912">CERN</a>, foto de M. Brice 2006)</em>
-								</figcaption>
-							</div>
-						</p>
-						<p class="paragrafo">
-							A ciência é, em grande parte, uma busca pela compreensão da natureza além da percepção humana. A Física, por sua vez, é um ramo da ciência que visa compreender uma gama de fenômenos utilizando como principal linguagem a matemática. Essa compreensão, entretanto, não se encerra nos cálculos: ela exige reflexão filosófica rigorosa sobre o que conhecemos, por que conhecemos, como isso é importante e qual seu impacto na sociedade. A Física pode ser descrita como uma grande floresta com uma fauna e flora própria que mantém todo ecossistema vivo. E eu, como físico recém-formado, sou uma célula procarionte que faz parte da construção e manutenção desse sistema.
-						</p>
+        <!-- Cabeçalho Superior -->
+        <header id="header">
+          <span class="logo">
+            <img src="/qscience/assets/images/logo/cat-logo.svg" alt="Logomarca Q-Science" style="height: 2em; width: auto; vertical-align: middle; margin-right: 0.8em;">
+            <a href="/qscience/br/index.html" style="color: var(--text-title);"><span class="letra-q">Q</span>-Science</a>
+          </span>
 
-						<p class="paragrafo">
-							Além disso, todo aspirante a cientista como eu sabe [ou deveria saber] que ciência não se faz sozinho. Ela é construída com a contribuição direta e indireta de muitas pessoas. Com esse espírito, e influenciado pelo site do professor Derley Alves, o <a href="https://resenhascifi.wordpress.com" target="_blank" rel="noopener noreferrer">Resenha Sci-Fi</a>, também resolvi escrever fora dos limites ocultos e bizarros das redes sociais. 
-							
-							<div class="image right" style="width: 190px;">
-								<img src="/qscience/assets/images/minhas-imagens/atomo-01.svg" alt="Imagem estilizada da representação de um átomo."
-								data-light-src="/qscience/assets/images/minhas-imagens/atomo-01.svg"
-								data-dark-src="/qscience/assets/images/minhas-imagens/atomo-dark-01.svg"
-								style="border-radius: 12px;" />
-								<figcaption style="display: block; width: 100%; margin-top: 0.5em; font-size: 0.6em; text-align: justify; color: var(--text-black);">
-									Átomo. <em>(<strong>Fonte:</strong> Arcevo pessoal do autor.)</em>
-								</figcaption>
-							</div>
-						</p>
-						
-						<p class="paragrafo">Junta-se a isso a motivação de criar um site que categoriza e divulga minhas contribuições científicas, o que aprenderei durante a jornada do mestrado e no doutorado e, é claro, minhas reflexões, posicionamentos políticos e afins.							
-						</p>
+          <ul class="icons">
+            <li>
+              <button id="topbtn" aria-label="Voltar ao topo">
+                <span class="topbtn-text">Voltar ao topo</span>
+                <img src="/qscience/assets/images/utilitarios/utilitario-seta.svg"
+                     data-light-src="/qscience/assets/images/utilitarios/utilitario-seta.svg"
+                     data-dark-src="/qscience/assets/images/utilitarios/utilitario-seta-dark.svg"
+                     alt="">
+              </button>
+            </li>
 
-						<p class="paragrafo">
-							O site também funciona como um portfólio, onde publico e comento minhas pesquisas acadêmicas atuais e revisito minha produção universitária. Caso haja interesse em discutir os temas aqui abordados, os meios de contato estão disponíveis no menu principal.
-						</p>
-							
-					</div>
-				</section>
+            <li>
+              <a href="/qscience/br/arxiv.html" class="icon brands" title="Artigos no arXiv" aria-label="arXiv">
+                <img src="/qscience/assets/images/logo/arxiv-logo.svg" alt="Logomarca do arXiv" width="20" height="20">
+              </a>
+            </li>
 
-				<!-- Descrição das principais áreas -->
-				<section>
-					<header class="major" style="display: flex; justify-content: center;">
-						<h2>Organização e principal divisão do site</h2>
-					</header>
+            <li>
+              <a href="https://github.com/bonn3r" target="_blank" rel="noopener noreferrer" class="icon brands" title="GitHub" aria-label="GitHub">
+                <img src="/qscience/assets/images/logo/github-logo.svg"
+                     data-light-src="/qscience/assets/images/logo/github-logo.svg"
+                     data-dark-src="/qscience/assets/images/logo/github-logo-dark.svg"
+                     alt="GitHub" width="20" height="20">
+              </a>
+            </li>
 
-					<p class="paragrafo">Como o site tem mais de uma finalidade, separei os conteúdos de forma clara. Por aqui organizo minha produção técnico-intelectual em materiais didáticos e acadêmicos acumulados ao longo dos anos de estudo, resumos, fichamentos, materiais de monitoria e apresentações, além de alguns tópicos que eventualmente acho úteis ou interessantes de compartilhar. Cada área tem uma imagem clicável na interface: um clique e você vai direto para a página específica.</p>
-					
-					<div class="row" style="display: flex; justify-content: center;">
-						<div class="col-12 col-12-medium" style="max-width: 85%;">
-							<div class="box" style="display: flex; flex-wrap: wrap; gap: 2em; align-items: flex-start; justify-content: center;">
-								<div style="flex: 0 0 210px; max-width: 100%; text-align: center; justify-content: center;">
-									<a href="/qscience/br/pesquisa/index.html" class="image" style="display: flex; justify-content: center;">
-										<img src="/qscience/assets/images/logo/microchip-logo.svg" alt="ícone de Pesquisa"
-										data-light-src="/qscience/assets/images/logo/microchip-logo.svg"
-										data-dark-src="/qscience/assets/images/logo/microchip-logo-dark.svg"
-										style="height: 200px;">
-									</a>
-								</div>
-								
-								<div style="flex: 1 1 60%; min-width: 200px; word-break: break-word; overflow-wrap: break-word;">
-									<header class="major" style="display: flex; justify-content: center;">
-										<h3>Pesquisa</h3>
-									</header>
-							
-									<p>Esta seção agrupa todo o conteúdo relacionado à minha trajetória acadêmica em pesquisa científica. Aqui você encontrará uma visão geral das minhas atividades de pesquisa e projetos em andamento, informações (públicas) sobre minha pesquisa de mestrado, meu Trabalho de Conclusão de Curso (TCC) e meu histórico de Iniciações Científicas (ICs) que fiz durante a graduação.</p>
-								</div>
-							</div>
-						</div>
+            <li>
+              <a href="http://lattes.cnpq.br/3294938329763314" target="_blank" rel="noopener noreferrer" class="icon brands" title="Currículo Lattes" aria-label="Currículo Lattes">
+                <img src="/qscience/assets/images/logo/lattes-logo.svg"
+                     data-light-src="/qscience/assets/images/logo/lattes-logo.svg"
+                     data-dark-src="/qscience/assets/images/logo/lattes-logo-dark.svg"
+                     alt="Plataforma Lattes" width="20" height="20">
+              </a>
+            </li>
 
-						<div class="col-12 col-12-medium" style="max-width: 85%;">
-							<div class="box" style="display: flex; flex-wrap: wrap; gap: 2em; align-items: flex-start;">
-								<div style="flex: 0 0 210px; max-width: 100%; text-align: center; justify-content: center;">
-									<a href="/qscience/br/estudos/index.html" class="image" style="display: flex; justify-content: center;">
-										<img src="/qscience/assets/images/logo/book-logo.svg" alt="Ícone de Estudos"
-										data-light-src="/qscience/assets/images/logo/book-logo.svg"
-										data-dark-src="/qscience/assets/images/logo/book-logo-dark.svg"
-										style="height: 200px;">
-									</a>
-								</div>
+            <li>
+              <a href="https://linkedin.com/in/willianbonnerbsc" target="_blank" rel="noopener noreferrer" class="icon brands" title="LinkedIn" aria-label="LinkedIn">
+                <img src="/qscience/assets/images/logo/linkedin-logo.svg" alt="LinkedIn" width="20" height="20">
+              </a>
+            </li>
 
-								<div style="flex: 1 1 60%; min-width: 200px; word-break: break-word; overflow-wrap: break-word;">
-									<header class="major" style="display: flex; justify-content: center;">
-										<h3>Estudos</h3>
-									</header>
-							
-									<p>Aqui organizo toda minha produção tecnico-intelectual relacionada aos estudos e material didático/acadêmico, ou seja, anotações importantes que fiz sobre as aulas, o material gerado por estudo autônomo, material que desenvolvi durante minhas atividades de monitorias, apresentações utilizadas em aulas e seminários, e demais tópicos que eu achar interessante compartilhar.</p>
-								</div>
-							</div>
-						</div>
+            <li>
+              <a href="https://orcid.org/0009-0007-7458-8512" target="_blank" rel="noopener noreferrer" class="icon brands" title="ORCID" aria-label="ORCID">
+                <img src="/qscience/assets/images/logo/orcid-logo.svg" alt="ORCID" width="20" height="20">
+              </a>
+            </li>
+          </ul>
+        </header>
 
-						<div class="col-12 col-12-medium" style="max-width: 85%;">
-							<div class="box" style="display: flex; flex-wrap: wrap; gap: 2em; align-items: flex-start;">
-								<div style="flex: 0 0 210px; max-width: 100%; text-align: center; justify-content: center;">
-									<a href="/qscience/br/extensao/index.html" class="image" style="display: flex; justify-content: center;">
-										<img src="/qscience/assets/images/logo/plane-logo.svg" alt="Ícone de Extensão"
-										data-light-src="/qscience/assets/images/logo/plane-logo.svg"
-										data-dark-src="/qscience/assets/images/logo/plane-logo-dark.svg"
-										style="height: 200px;">
-									</a>
-								</div>
+        <!-- Seção de Abertura / Apresentação -->
+        <section>
+          <div class="content">
+            <header style="text-align: center;">
+              <h1><span class="letra-q">Q</span>-Science</h1>
+              <p>física - matemática - filosofia - sociedade</p>
+            </header>
 
-								<div style="flex: 1 1 60%; min-width: 200px; word-break: break-word; overflow-wrap: break-word;">
-									<header class="major" style="display: flex; justify-content: center;">
-										<h3>Extensão</h3>
-									</header>
-							
-									<p>Aqui organizo minhas atividades de extensão universitária, bem como o material gerado a partir delas, ou seja, resumos e slides de apresentações orais, resumos, slides e listas de exercícios de mini mursos ministrados por mim, posters que eu apresentei e outras atividades de extensão importantes.</p>
-								</div>
-							</div>
-						</div>
+            <div class="box" style="width: auto; max-width: 600px; margin: 0 auto 2em auto; padding: 1em 1.5em; margin-right: 0; border-left: 4px solid var(--color-primary); border-radius: 6px;">
+              <p style="font-size: 14px; text-align: left; margin-bottom: 5px;">
+                Embora a Física possa ser estudada como a Matemática Pura, não é como Matemática Pura que a Física é importante.
+              </p>
+              <p style="font-size: 12px; text-align: right; margin-bottom: 0;">
+                <strong>- Bertrand Russell.</strong>
+              </p>
+            </div>
 
-						<div class="col-12 col-12-medium" style="max-width: 85%;">
-							<div class="box" style="display: flex; flex-wrap: wrap; gap: 2em; align-items: flex-start;">
-								<div style="flex: 0 0 210px; max-width: 100%; text-align: center; justify-content: center;">
-									<a href="/qscience/br/meustextos/index.html" class="image" style="display: flex; justify-content: center;">
-										<img src="/qscience/assets/images/logo/share-logo.svg" alt="Ícone de Meus Textos"
-										data-light-src="/qscience/assets/images/logo/share-logo.svg"
-										data-dark-src="/qscience/assets/images/logo/share-logo-dark.svg"
-										style="height: 200px;">
-									</a>
-								</div>
+            <!-- Figura Flutuante à Esquerda -->
+            <figure class="image left" style="width: 300px; margin: 0 1.5em 1em 0;">
+              <img src="/qscience/assets/images/minhas-imagens/colider-01.png"
+                   alt="Detector CMS do LHC"
+                   data-light-src="/qscience/assets/images/minhas-imagens/colider-01.png"
+                   data-dark-src="/qscience/assets/images/minhas-imagens/colider-dark-01.png"
+                   style="border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.6); display: block; width: 100%;" />
+              <figcaption style="display: block; width: 100%; margin-top: 0.5em; font-size: 0.6em; text-align: justify; color: var(--text-black);">
+                Detector CMS do LHC. <em>(<strong>Fonte:</strong> <a href="https://cds.cern.ch/record/995912" target="_blank" rel="noopener noreferrer">CERN</a>, foto de M. Brice 2006)</em>
+              </figcaption>
+            </figure>
 
-								<div style="flex: 1 1 60%; min-width: 200px; word-break: break-word; overflow-wrap: break-word;">
-									<header class="major" style="display: flex; justify-content: center;">
-										<h3>Meus Textos</h3>
-									</header>
-							
-									<p>Esta seção expõe minha produção intelectual com mais liberdade, ou seja, para além dos muros e formalismos da academia. Reúne meus escritos autorais, organizados por área de conhecimento: ensaios filosóficos e reflexões de caráter mais geral, incursões pela filosofia da física, notas e artigos matemáticos, além de análises (e eventuais opiniões) sobre política e a sociedade.</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					
-					<p class="paragrafo">A barra lateral também possui links para minhas redes sociais e email para contato.</p>
-						
-				</section>
+            <p class="paragrafo">
+              A ciência é, em grande parte, uma busca pela compreensão da natureza além da percepção humana. A Física, por sua vez, é um ramo da ciência que visa compreender uma gama de fenômenos utilizando como principal linguagem a matemática. Essa compreensão, entretanto, não se encerra nos cálculos: ela exige reflexão filosófica rigorosa sobre o que conhecemos, por que conhecemos, como isso é importante e qual seu impacto na sociedade. A Física pode ser descrita como uma grande floresta com uma fauna e flora própria que mantém todo ecossistema vivo. E eu, como físico recém-formado, sou uma célula procarionte que faz parte da construção e manutenção desse sistema.
+            </p>
 
-				<!-- Resumo de quem sou eu -->
-				<section>
-					<header class="major" style="display: flex; justify-content: center;">
-						<h2>Quem sou eu</h2>
-					</header>
-						
-					<div class="box" style="display: flex; flex-wrap: wrap; gap: 2em; align-items: flex-start; width: 100%; max-width: 900px; margin: 0 auto; border-left: 4px solid var(--border-header); border-radius: 10px; padding: 1.5em; overflow: hidden; justify-content: center;">
-						<div style="flex: 1 1 60%; min-width: 200px; word-break: break-word; overflow-wrap: break-word;">
-							<p style="margin-top: 0;">
-								Olá visitante, formalmente me chamo Willian Bonner (porém, prefiro meu apelido do ensino médio <strong>"Jimi"</strong>), tenho 29 anos e sou de Aracaju-SE. Sou bacharel em Física pela UFS e mestrando pela UFPE.
-							</p>
-							<p>
-								Sempre me interessei por divulgação científica. No entanto, não gosto de gravar vídeos nem escrever posts gigantes que serão soterrados pelos algoritmos bisonhos das redes sociais, que, para piorar, ainda não têm suporte para LaTeX.
-							</p>
-							<p>
-								Então, depois de anos, coloquei meu plano em ação e criei este site.
-							</p>
-						</div>
-						<div style="flex: 0 0 250px; max-width: 100%;">
-							<img src="/qscience/assets/images/fotos/eu.png" alt="Imagem estilizada de Willian Bonner (autor do site)." 
-							style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.6); justify-content: right;" />
-						</div>
-						<footer style="display: block; width: 50%; margin: 0 auto; text-align: center;">
-							<a href="/qscience/br/biografia.html" class="button small">Biografia completa</a>
-						</footer>
-					</div>
-				</section>
-				
-				<footer id="footer" style="display: flex; justify-content: center; font-size: 0.8em; font-family: Inconsolata, monospace;">
-					<p class="copyright">&copy;2026 Jimi.7z. All rights reserved. Created by: <a href="https://html5up.net/editorial" target="_blank" rel="noopener noreferrer">HTML5 UP</a>. Redesign by: Willian Bonner.</p>
-				</footer>
-		</div>
+            <p class="paragrafo">
+              Além disso, todo aspirante a cientista como eu sabe [ou deveria saber] que ciência não se faz sozinho. Ela é construída com a contribuição direta e indireta de muitas pessoas. Com esse espírito, e influenciado pelo site do professor Derley Alves, o <a href="https://resenhascifi.wordpress.com" target="_blank" rel="noopener noreferrer">Resenha Sci-Fi</a>, também resolvi escrever fora dos limites ocultos e bizarros das redes sociais.
+            </p>
 
-		<!-- Scripts -->
-		<script src="/qscience/assets/codes/js/jquery.min.js"></script>
-		<script src="/qscience/assets/codes/js/browser.min.js"></script>
-		<script src="/qscience/assets/codes/js/breakpoints.min.js"></script>
-		<script src="/qscience/assets/codes/js/util.js"></script>
-		<script src="/qscience/assets/codes/js/sidebar.js"></script>
-		<script src="/qscience/assets/codes/js/rightbar.js"></script>
-		<script src="/qscience/assets/codes/js/main.js"></script>
+            <!-- Figura Flutuante à Direita -->
+            <figure class="image right" style="width: 190px; margin: 0 0 1em 1.5em;">
+              <img src="/qscience/assets/images/minhas-imagens/atomo-01.svg"
+                   alt="Imagem estilizada da representação de um átomo."
+                   data-light-src="/qscience/assets/images/minhas-imagens/atomo-01.svg"
+                   data-dark-src="/qscience/assets/images/minhas-imagens/atomo-dark-01.svg"
+                   style="border-radius: 12px; display: block; width: 100%;" />
+              <figcaption style="display: block; width: 100%; margin-top: 0.5em; font-size: 0.6em; text-align: justify; color: var(--text-black);">
+                Átomo. <em>(<strong>Fonte:</strong> Acervo pessoal do autor.)</em>
+              </figcaption>
+            </figure>
 
-	</body>
+            <p class="paragrafo">
+              Junta-se a isso a motivação de criar um site que categoriza e divulga minhas contribuições científicas, o que aprenderei durante a jornada do mestrado e no doutorado e, é claro, minhas reflexões, posicionamentos políticos e afins.
+            </p>
+
+            <p class="paragrafo">
+              O site também funciona como um portfólio, onde publico e comento minhas pesquisas acadêmicas atuais e revisito minha produção universitária. Caso haja interesse em discutir os temas aqui abordados, os meios de contato estão disponíveis no menu principal.
+            </p>
+          </div>
+        </section>
+
+        <!-- Descrição das Principais Áreas -->
+        <section>
+          <header class="major" style="display: flex; justify-content: center;">
+            <h2>Organização e principal divisão do site</h2>
+          </header>
+
+          <p class="paragrafo">
+            Como o site tem mais de uma finalidade, separei os conteúdos de forma clara. Por aqui organizo minha produção técnico-intelectual em materiais didáticos e acadêmicos acumulados ao longo dos anos de estudo, resumos, fichamentos, materiais de monitoria e apresentações, além de alguns tópicos que eventualmente acho úteis ou interessantes de compartilhar. Cada área tem uma imagem clicável na interface: um clique e você vai direto para a página específica.
+          </p>
+
+          <div class="row" style="display: flex; justify-content: center;">
+            <!-- Card 1: Pesquisa -->
+            <div class="col-12 col-12-medium" style="max-width: 85%;">
+              <div class="box" style="display: flex; flex-wrap: wrap; gap: 2em; align-items: flex-start; justify-content: center;">
+                <div style="flex: 0 0 210px; max-width: 100%; text-align: center; justify-content: center;">
+                  <a href="/qscience/br/pesquisa/index.html" class="image" style="display: flex; justify-content: center;">
+                    <img src="/qscience/assets/images/logo/microchip-logo.svg"
+                         alt="Ícone de Pesquisa"
+                         data-light-src="/qscience/assets/images/logo/microchip-logo.svg"
+                         data-dark-src="/qscience/assets/images/logo/microchip-logo-dark.svg"
+                         style="height: 200px;">
+                  </a>
+                </div>
+                <div style="flex: 1 1 60%; min-width: 200px; word-break: break-word; overflow-wrap: break-word;">
+                  <header class="major" style="display: flex; justify-content: center;">
+                    <h3>Pesquisa</h3>
+                  </header>
+                  <p>Esta seção agrupa todo o conteúdo relacionado à minha trajetória acadêmica em pesquisa científica. Aqui você encontrará uma visão geral das minhas atividades de pesquisa e projetos em andamento, informações (públicas) sobre minha pesquisa de mestrado, meu Trabalho de Conclusão de Curso (TCC) e meu histórico de Iniciações Científicas (ICs) que fiz durante a graduação.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2: Estudos -->
+            <div class="col-12 col-12-medium" style="max-width: 85%;">
+              <div class="box" style="display: flex; flex-wrap: wrap; gap: 2em; align-items: flex-start; justify-content: center;">
+                <div style="flex: 0 0 210px; max-width: 100%; text-align: center; justify-content: center;">
+                  <a href="/qscience/br/estudos/index.html" class="image" style="display: flex; justify-content: center;">
+                    <img src="/qscience/assets/images/logo/book-logo.svg"
+                         alt="Ícone de Estudos"
+                         data-light-src="/qscience/assets/images/logo/book-logo.svg"
+                         data-dark-src="/qscience/assets/images/logo/book-logo-dark.svg"
+                         style="height: 200px;">
+                  </a>
+                </div>
+                <div style="flex: 1 1 60%; min-width: 200px; word-break: break-word; overflow-wrap: break-word;">
+                  <header class="major" style="display: flex; justify-content: center;">
+                    <h3>Estudos</h3>
+                  </header>
+                  <p>Aqui organizo toda minha produção técnico-intelectual relacionada aos estudos e material didático/acadêmico, ou seja, anotações importantes que fiz sobre as aulas, o material gerado por estudo autônomo, material que desenvolvi durante minhas atividades de monitorias, apresentações utilizadas em aulas e seminários, e demais tópicos que eu achar interessante compartilhar.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3: Extensão -->
+            <div class="col-12 col-12-medium" style="max-width: 85%;">
+              <div class="box" style="display: flex; flex-wrap: wrap; gap: 2em; align-items: flex-start; justify-content: center;">
+                <div style="flex: 0 0 210px; max-width: 100%; text-align: center; justify-content: center;">
+                  <a href="/qscience/br/extensao/index.html" class="image" style="display: flex; justify-content: center;">
+                    <img src="/qscience/assets/images/logo/plane-logo.svg"
+                         alt="Ícone de Extensão"
+                         data-light-src="/qscience/assets/images/logo/plane-logo.svg"
+                         data-dark-src="/qscience/assets/images/logo/plane-logo-dark.svg"
+                         style="height: 200px;">
+                  </a>
+                </div>
+                <div style="flex: 1 1 60%; min-width: 200px; word-break: break-word; overflow-wrap: break-word;">
+                  <header class="major" style="display: flex; justify-content: center;">
+                    <h3>Extensão</h3>
+                  </header>
+                  <p>Aqui organizo minhas atividades de extensão universitária, bem como o material gerado a partir delas, ou seja, resumos e slides de apresentações orais, resumos, slides e listas de exercícios de minicursos ministrados por mim, pôsteres que eu apresentei e outras atividades de extensão importantes.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 4: Meus Textos -->
+            <div class="col-12 col-12-medium" style="max-width: 85%;">
+              <div class="box" style="display: flex; flex-wrap: wrap; gap: 2em; align-items: flex-start; justify-content: center;">
+                <div style="flex: 0 0 210px; max-width: 100%; text-align: center; justify-content: center;">
+                  <a href="/qscience/br/meustextos/index.html" class="image" style="display: flex; justify-content: center;">
+                    <img src="/qscience/assets/images/logo/share-logo.svg"
+                         alt="Ícone de Meus Textos"
+                         data-light-src="/qscience/assets/images/logo/share-logo.svg"
+                         data-dark-src="/qscience/assets/images/logo/share-logo-dark.svg"
+                         style="height: 200px;">
+                  </a>
+                </div>
+                <div style="flex: 1 1 60%; min-width: 200px; word-break: break-word; overflow-wrap: break-word;">
+                  <header class="major" style="display: flex; justify-content: center;">
+                    <h3>Meus Textos</h3>
+                  </header>
+                  <p>Esta seção expõe minha produção intelectual com mais liberdade, ou seja, para além dos muros e formalismos da academia. Reúne meus escritos autorais, organizados por área de conhecimento: ensaios filosóficos e reflexões de caráter mais geral, incursões pela filosofia da física, notas e artigos matemáticos, além de análises (e eventuais opiniões) sobre política e a sociedade.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p class="paragrafo">A barra lateral também possui links para minhas redes sociais e email para contato.</p>
+        </section>
+
+        <!-- Resumo de quem sou eu -->
+        <section>
+          <header class="major" style="display: flex; justify-content: center;">
+            <h2>Quem sou eu</h2>
+          </header>
+
+          <div class="box" style="display: flex; flex-wrap: wrap; gap: 2em; align-items: flex-start; width: 100%; max-width: 900px; margin: 0 auto; border-left: 4px solid var(--border-header); border-radius: 10px; padding: 1.5em; overflow: hidden; justify-content: center;">
+            <div style="flex: 1 1 60%; min-width: 200px; word-break: break-word; overflow-wrap: break-word;">
+              <p style="margin-top: 0;">
+                Olá visitante, formalmente me chamo Willian Bonner (porém, prefiro meu apelido do ensino médio <strong>"Jimi"</strong>), tenho 29 anos e sou de Aracaju-SE. Sou bacharel em Física pela UFS e mestrando pela UFPE.
+              </p>
+              <p>
+                Sempre me interessei por divulgação científica. No entanto, não gosto de gravar vídeos nem escrever posts gigantes que serão soterrados pelos algoritmos das redes sociais, que, para piorar, ainda não têm suporte nativo para LaTeX.
+              </p>
+              <p>
+                Então, depois de anos, coloquei meu plano em ação e criei este site.
+              </p>
+            </div>
+            <div style="flex: 0 0 250px; max-width: 100%;">
+              <img src="/qscience/assets/images/fotos/eu.png"
+                   alt="Imagem estilizada de Willian Bonner (autor do site)."
+                   style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.6);" />
+            </div>
+            <footer style="display: block; width: 50%; margin: 0 auto; text-align: center;">
+              <a href="/qscience/br/biografia.html" class="button small">Biografia completa</a>
+            </footer>
+          </div>
+        </section>
+
+        <!-- Rodapé -->
+        <footer id="footer" style="display: flex; justify-content: center; font-size: 0.8em; font-family: 'Inconsolata', monospace;">
+          <p class="copyright">&copy;2026 Jimi.7z. All rights reserved. Created by: <a href="https://html5up.net/editorial" target="_blank" rel="noopener noreferrer">HTML5 UP</a>. Redesign by: Willian Bonner.</p>
+        </footer>
+
+      </div>
+    </div>
+
+    <!-- Scripts Otimizados e Consolidados -->
+    <script src="/qscience/assets/codes/js/vendor.min.js"></script>
+    <script src="/qscience/assets/codes/js/main.js"></script>
+    <script src="/qscience/assets/codes/js/app-ui.js"></script>
+  </body>
 </html>
