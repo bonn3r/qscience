@@ -1,0 +1,423 @@
+/* =====================================================================
+   Harmônicos esféricos e densidades radiais — Willian Bonner Melo
+   FISI 711 — Teoria Quântica I · Lista 4, Problema 10
+   ===================================================================== */
+
+:root {
+    --bg: #0d1117;
+    --panel: #9c9191;
+    --bg-box: #141b24;
+    --bg-border: #334155;
+    --text-blk: #1a1a1a;
+    --line: #25313f;
+    --text: #dfe8f0;
+    --muted: #e3e3e391;
+    --well: #5ec8f8;
+    --hyd: #f7b955;
+    --accent: #f4f4f56e;
+    --border-color: rgba(255, 255, 255, 0.15);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'IBM Plex Serif', serif;
+    font-weight: 400;
+    line-height: 1.45;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+    background: var(--bg);
+    padding: 2em 24px 1em;
+    border-bottom: 1px solid var(--bg-border);
+}
+
+h1 {
+    font-family: 'IBM Plex Serif', serif;
+    font-size: 1.35rem;
+    font-weight: 400;
+    color: var(--text);
+    margin: 0 0 4px;
+}
+
+.page-title {
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.1rem;
+    margin: 0 0 12px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.sub {
+    color: var(--muted);
+    font-size: 0.85rem;
+    margin: 0 0 8px;
+    font-family: 'Times', serif;
+}
+
+.page-sub {
+    text-align: center;
+    padding-bottom: 2em;
+}
+
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px 24px 40px;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    font-size: 0.8em;
+    font-family: 'Inconsolata', monospace;
+    color: var(--muted);
+    padding: 0 24px 28px;
+}
+
+/* ---------- painéis ---------- */
+
+section {
+    background: var(--bg-box);
+    padding: 20px 25px;
+    margin-bottom: 22px;
+    border-radius: 6px;
+    border: 1px solid var(--bg-border);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.grid2 {
+    display: grid;
+    grid-template-columns: minmax(280px, 440px) 1fr;
+    gap: 24px;
+    align-items: start;
+}
+
+.ctrl-box {
+    padding: 0 20px 20px 20px;
+    border: 1px solid var(--bg-border);
+    border-radius: 6px;
+}
+
+.cmpgrid {
+    display: grid;
+    gap: 18px;
+    grid-template-columns: 1fr;
+}
+
+.cmpgrid.two {
+    grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 800px) {
+    .grid2,
+    .cmpgrid.two {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ---------- controles ---------- */
+
+label {
+    display: block;
+    font-size: 0.85rem;
+    margin: 10px 0 4px;
+}
+
+select {
+    width: 100%;
+    background-color: #0a0f15;
+    color: var(--text);
+    border: 1px solid var(--bg-border);
+    border-radius: 6px;
+    padding: 6px 32px 6px 10px;
+    font-family: inherit;
+    font-size: 0.9rem;
+    cursor: pointer;
+    outline: none;
+    color-scheme: dark;
+
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23f4f4f5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+}
+
+select:hover {
+    border-color: #64748b;
+}
+
+select:focus {
+    outline: none;
+    box-shadow: none;
+    border-color: var(--bg-border);
+}
+
+select:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.ctrls {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 8px 18px;
+    align-items: end;
+    margin-bottom: 16px;
+}
+
+button {
+    background: var(--accent);
+    color: var(--bg);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-weight: 600;
+    padding: 8px 20px;
+    font-family: inherit;
+    cursor: pointer;
+    margin-top: 1em;
+}
+
+#resetView {
+    display: block;
+    margin: 1em auto 0;
+}
+
+/* botão de comparação no item (b) */
+.cmp-wrap {
+    display: flex;
+    align-items: flex-end;
+}
+
+.cmp-toggle {
+    width: 100%;
+    margin-top: 0;
+    padding: 7px 14px;
+    background: #1a1a1a;
+    color: var(--text);
+    border: 1px solid var(--bg-border);
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.cmp-toggle:hover {
+    background: #273244;
+}
+
+.cmp-toggle.active,
+.cmp-toggle.active:hover {
+    background: #dfe8f0;   /* mais claro quando ligado */
+    color: #0d1117;
+    border-color: #dfe8f0;
+}
+
+/* ---------- canvases ---------- */
+
+canvas {
+    display: block;
+    width: 100%;
+    background: #0a0f15;
+    border: 1px solid var(--bg-border);
+    border-radius: 8px;
+}
+
+#sph {
+    aspect-ratio: 1;
+    touch-action: none;
+    cursor: grab;
+}
+
+#sph:active {
+    cursor: grabbing;
+}
+
+.plot {
+    height: 300px;
+}
+
+/* ---------- escala de cor ---------- */
+
+.cbar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+    font: 0.75rem Menlo, Consolas, monospace;
+    color: var(--muted);
+}
+
+#cbgrad {
+    flex: 1;
+    height: 10px;
+    border-radius: 5px;
+}
+
+/* ---------- textos auxiliares ---------- */
+
+.hint,
+.info {
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+
+.info div {
+    margin: 3px 0;
+}
+
+.ptitle {
+    font: 0.82rem Menlo, Consolas, monospace;
+    color: var(--text);
+    margin-bottom: 6px;
+}
+
+#infoA {
+    margin-top: 14px;
+}
+
+/* ---------- tabelas (centralizadas) ---------- */
+
+.tables {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 32px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.tables > div {
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+    font: 0.78rem Menlo, Consolas, monospace;
+    margin: 6px auto 0;
+}
+
+th,
+td {
+    border: 1px solid var(--bg-border);
+    padding: 4px 10px;
+    text-align: right;
+}
+
+th {
+    color: var(--muted);
+    font-weight: normal;
+}
+
+td.sel {
+    background: #1f3a4d;
+    color: #fff;
+}
+
+/* ---------- discussão ---------- */
+
+.disc li {
+    margin: 7px 0;
+    font-size: 0.92rem;
+}
+
+sub,
+sup {
+    font-size: 0.7em;
+}
+
+/* painel de comparação começa oculto (o JS alterna via style inline) */
+#p2 {
+    display: none;
+}
+
+/* ---------- seleção de exercício (abas) ---------- */
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 0 0 18px;
+}
+
+.tab-btn {
+    margin-top: 0;
+    background: #1a1a1a;
+    color: var(--text);
+    border: 1px solid var(--bg-border);
+    border-radius: 6px;
+    padding: 8px 16px;
+    font-family: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease;
+}
+
+.tab-btn:hover {
+    background: #273244;
+}
+
+.tab-btn.active {
+    background: #4b4a4aa3;
+    color: #ffffff;
+}
+
+.tab-panel {
+    display: none;
+}
+
+.tab-panel.active {
+    display: block;
+}
+
+/* ---------- ajustes MathJax ---------- */
+
+mjx-container:not([display="true"]) {
+    margin: 0 0.15em;
+}
+
+mjx-container mjx-script > [size="s"] {
+    font-size: 58%;
+}
+
+mjx-container mjx-msub > mjx-script > * {
+    position: relative;
+    top: 0em;
+    left: 0em;
+}
+
+mjx-container mjx-msup > mjx-script > * {
+    position: relative;
+    top: 0em;
+    left: 0em;
+}
+
+mjx-container mjx-msubsup > mjx-script > :first-child {
+    position: relative;
+    top: -0.5em;
+    left: 0.15em;
+}
+
+mjx-container mjx-msubsup > mjx-script > :last-child {
+    position: relative;
+    top: 0.2em;
+}

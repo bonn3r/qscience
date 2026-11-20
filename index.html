@@ -1,0 +1,141 @@
+<!--
+Criado por: Willian Bonner em 02/07/2026
+Arquivo: Exercício avaliativo de Mecânica Quântica I
+Versão: 1.2
+-->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Willian Bonner Melo | Lista IV, Problema 10</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400&family=Inconsolata:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+  <h1>Meu Site que não está pronto</h1>
+</header>
+
+<main>
+  <h1 class="page-title">Atividade de Teoria Quântica I</h1>
+  <p class="sub page-sub">FISI 711 - Teoria Quântica I, Lista IV, Problema 10</p>
+
+  <p style="text-indent: 1.5em;">Esse programa em HTML permite visualizar os harmônicos esféricos e comparar as densidades de probabilidade radiais dos potenciais do átomo de hidrogênio e o poço esférico infinito de raio $a$, dado por<br> $$V(r) = \left\{\begin{array}{c}0 \textrm{, se } r < a\\ \infty\textrm{, se } r \geq a\end{array}\right.\, .$$</p>
+
+  <p style="padding-top: 2em; padding-bottom: 1em;">Clique em um dos botões abaixo para selecionar o item do problema:</p>
+
+  <div class="tabs" role="tablist">
+    <button type="button" class="tab-btn active" data-target="itemA">Item (a) — Harmônicos esféricos</button>
+    <button type="button" class="tab-btn" data-target="itemB">Item (b) — Densidades radiais</button>
+  </div>
+
+  <!-- ===================== (a) harmônicos esféricos ===================== -->
+  <section id="itemA" class="tab-panel active">
+    <h2>Harmônicos esféricos $\big|\textrm{Y}_{\ell}^{m}(\theta, \phi)\big|$ na esfera unitária</h2>
+
+    <p style="text-indent: 1.5em;">Para movimentar a esfera, arraste-a com cursor (ou dedo). Os eixos cartesianos estão representados por <span style="color: rgb(255, 0, 0)">vermelho</span> para o eixo $x$, <span style="color: rgb(18, 204, 18)">verde</span> para o eixo $y$ e <span style="color: rgb(104, 104, 255)">azul</span> para o eixo $z$.</p>
+
+    <div class="grid2">
+      <div>
+        <canvas id="sph" width="440" height="440"></canvas>
+        <div class="cbar"><span>0</span><div id="cbgrad"></div><span id="cb1"></span></div>
+      </div>
+
+      <div class="ctrl-box">
+        <label for="lA">Número quântico $\ell =$ <b id="lAv">2</b></label>
+        <select id="lA">
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2" selected>2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+
+        <label for="mA">Número quântico $m =$ <b id="mAv">1</b></label>
+        <select id="mA">
+          <!-- Preenchido dinamicamente pelo script.js conforme o valor de l -->
+        </select>
+
+        <button type="button" id="resetView">Restaurar vista</button>
+
+        <div class="info" id="infoA" style="padding-top: 1em;"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== (b) densidades radiais ===================== -->
+  <section id="itemB" class="tab-panel">
+    <h2>Densidade de probabilidade radial $\textrm{P}_{nl}(r) = r^2\big|\textrm{R}_{nl}(r)\big|^2$</h2>
+
+    <div class="ctrls">
+      <div>
+        <label for="sys">Sistema</label>
+        <select id="sys">
+          <option value="well">Poço esférico infinito (raio a)</option>
+          <option value="hyd">Átomo de hidrogênio (Z = 1)</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="nB">Número quântico $n =$ <b id="nBv">2</b></label>
+        <select id="nB">
+          <option value="1">1</option>
+          <option value="2" selected>2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="lB">Número quântico $\ell =$ <b id="lBv">0</b></label>
+        <select id="lB">
+          <!-- Preenchido dinamicamente pelo script.js conforme o sistema e n -->
+        </select>
+      </div>
+
+      <div class="cmp-wrap">
+        <button type="button" id="cmpBtn" class="cmp-toggle" aria-pressed="false">Comparar com o outro sistema</button>
+      </div>
+    </div>
+
+    <div class="cmpgrid" id="panels">
+      <div>
+        <div class="ptitle" id="t1"></div>
+        <canvas class="plot" id="c1"></canvas>
+        <div class="info" id="i1"></div>
+      </div>
+      <div id="p2">
+        <div class="ptitle" id="t2"></div>
+        <canvas class="plot" id="c2"></canvas>
+        <div class="info" id="i2"></div>
+      </div>
+    </div>
+
+    <div class="tables" id="tables"></div>
+  </section>
+
+  <!-- ===================== discussão ===================== -->
+  <section class="disc">
+    <h2>Discussão (item b)</h2>
+    <ul>
+      <li><b>Nós radiais.</b> Poço: P<sub>nl</sub> tem <b>n − 1</b> nós em 0 &lt; r &lt; a, qualquer que seja l (o n-ésimo zero de j<sub>l</sub> é a própria parede r = a). Hidrogênio: <b>n − l − 1</b> nós.</li>
+      <li><b>Alturas dos máximos.</b> Poço com l = 0: todos os lóbulos têm a mesma altura (P = 2 sen²(nπr/a)/a). Para l &gt; 0 os lóbulos internos são um pouco menores (barreira centrífuga) e as alturas tendem a se igualar para fora. Hidrogênio: o lóbulo mais externo é o maior e os internos são bem menores; o último máximo fica perto de r ≈ n²a<sub>0</sub> (exato para l = n−1), então os máximos ficam mais baixos e largos quando n cresce.</li>
+      <li><b>Espaçamento entre nós.</b> Poço: aproximadamente uniforme (V = 0 dentro do poço; Δr ≈ πa/x<sub>nl</sub>, exatamente a/n para l = 0). Hidrogênio: cresce com r, pois E − V(r) = −1/(2n²) + 1/r diminui para fora e o comprimento de onda local aumenta; os nós se concentram perto do núcleo.</li>
+      <li><b>Degenerescência em l.</b> Hidrogênio: sim, E<sub>n</sub> = −13,6 eV/n² não depende de l (degenerescência “acidental” do potencial 1/r, ligada ao vetor de Runge–Lenz). Poço: não, E<sub>nl</sub> = x<sub>nl</sub>² ħ²/(2ma²) depende de l; só resta a degenerescência 2l + 1 em m (veja as tabelas acima).</li>
+      <li><b>Por que P<sub>nl</sub> não depende de m.</b> Em um potencial central, a equação radial contém só l(l+1)/r² (barreira centrífuga), logo R<sub>nl</sub> não depende de m; além disso ∫|Y<sub>l</sub><sup>m</sup>|² dΩ = 1 elimina a parte angular de P<sub>nl</sub>. A independência de m reflete a simetria rotacional (degenerescência 2l + 1).</li>
+    </ul>
+  </section>
+</main>
+
+<footer id="footer">
+  <p class="copyright">&copy;2026 Jimi.7z. All rights reserved. Created by: Willian Bonner Melo.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
